@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Groupwork — public dashboard</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="wrap wide">
+    <header class="page">
+      <h1>Groupwork — live dashboard</h1>
+      <p class="sub">Approved submissions and summary stats. Updates live, no sign-in.</p>
+    </header>
+
+    <div id="status" class="notice info">Loading approved submissions…</div>
+
+    <!-- Summary stats -->
+    <section id="statsSection" hidden>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num" id="totalApproved">0</div>
+          <div class="lbl">approved submissions</div>
+        </div>
+      </div>
+      <div class="charts">
+        <div class="chart-card">
+          <h3>By scenario / track</h3>
+          <canvas id="scenarioChart" height="220" role="img"
+                  aria-label="Bar chart of approved submissions by scenario"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Oversight: interwoven vs staged</h3>
+          <canvas id="oversightChart" height="220" role="img"
+                  aria-label="Pie chart of interwoven versus staged oversight"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approved group cards -->
+    <section id="cards"></section>
+
+    <p class="experimental">
+      Experimental dashboard. Only approved submissions appear here; the HackMD note
+      remains the official record.
+    </p>
+  </main>
+
+  <script type="module" src="./dashboard.js"></script>
+</body>
+</html>

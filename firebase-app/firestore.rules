@@ -1,0 +1,160 @@
+rules_version = '2';
+
+// ---------------------------------------------------------------------------
+// Security rules are the ONLY trust boundary here. The client is untrusted:
+// anyone can open the deployed app and call Firestore directly, so every
+// guarantee below must hold in these rules, not in the UI.
+//
+// Model
+//   groups/{groupId}      one document per group (the workflow + responses)
+//   groupNames/{nameLower} uniqueness index; doc id is the normalised name
+//
+// Identities
+//   - Groups sign in ANONYMOUSLY. The creating device's uid is recorded in
+//     ownerUids; other devices join by entering the group's joinCode.
+//   - The facilitator signs in with their GOOGLE account; rules recognise that one
+//     account by its verified email. Set FACILITATOR_EMAIL below to your account.
+//
+// No personal data is expected: only a group-chosen, non-identifying name.
+// ---------------------------------------------------------------------------
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function facilitatorEmail() {
+      // The one privileged account: the email on the Google account the facilitator
+      // signs in with. Change this to your facilitator login.
+      return 'you@example.com';
+    }
+    function isFacilitator() {
+      // Authorised purely by the verified email claim — provider-agnostic (it does not
+      // matter HOW they signed in, only that the token carries this email). Requiring
+      // email_verified closes a self-registration vector: no one can mint this email
+      // claim without controlling the account. Google sign-in always sets it true.
+      return request.auth != null
+        && request.auth.token.email == facilitatorEmail()
+        && request.auth.token.email_verified == true;
+    }
+    function isOwner(data) {
+      return request.auth != null && (request.auth.uid in data.ownerUids);
+    }
+    function unchanged(key) {
+      return request.resource.data[key] == resource.data[key];
+    }
+    function sessionCode() {
+      // The per-session passcode the facilitator sets (config/app). get() bypasses
+      // read rules; if the doc is missing this denies — the app stays locked until a
+      // passcode is set for the session.
+      return get(/databases/$(database)/documents/config/app).data.sessionCode;
+    }
+
+    // --- App config -------------------------------------------------------
+    // config/app holds the SECRET per-session passcode. Facilitator-only read/write, so
+    // a group can never just read the passcode instead of being told it. Group creation
+    // (below) compares the typed passcode against config/app.sessionCode via get().
+    match /config/app {
+      allow read, write: if isFacilitator();
+    }
+    // config/clock is the (non-secret) session countdown. ANY signed-in device may READ
+    // it, so groups can show the timer; only the facilitator may WRITE, and only the four
+    // clock fields — hasOnly() stops any secret ever being smuggled onto this
+    // group-readable doc. (No /config/{doc} wildcard below, so this hasOnly is the only
+    // write rule that applies and is genuinely enforced.)
+    match /config/clock {
+      allow read: if request.auth != null;
+      allow write: if isFacilitator()
+        && request.resource.data.keys().hasOnly(['running', 'durationSec', 'startedAt', 'endsAt']);
+    }
+
+    // --- Name uniqueness index -------------------------------------------
+    // Holds only a groupId pointer (no secrets). Readable by any signed-in
+    // device so the app can check availability and resolve name -> id when a
+    // second device joins. Create-only for untrusted clients and never updatable:
+    // a name, once taken, cannot be reassigned or deleted by a group. Only the
+    // FACILITATOR may delete an entry, so an inappropriate name can be freed (this
+    // backs the rename control on the dashboard).
+    match /groupNames/{nameLower} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+                    && request.resource.data.keys().hasOnly(['groupId'])
+                    && request.resource.data.groupId is string;
+      allow update: if false;
+      allow delete: if isFacilitator();
+    }
+
+    // --- Group documents --------------------------------------------------
+    match /groups/{groupId} {
+
+      // READ: owners, the facilitator, or anyone once a submission is approved
+      // (that last clause is what powers the PUBLIC dashboard — and only that).
+      allow read: if isOwner(resource.data)
+                  || isFacilitator()
+                  || resource.data.status == 'approved';
+
+      // CREATE: a signed-in device claims a brand-new group it owns, in draft,
+      // with a joinCode of its own. It cannot create something already approved
+      // or owned by anyone else.
+      allow create: if request.auth != null
+        && request.resource.data.ownerUids == [request.auth.uid]
+        && request.resource.data.status == 'draft'
+        && request.resource.data.name is string
+        && request.resource.data.nameLower is string
+        && request.resource.data.joinCode is string
+        && request.resource.data.joinCode.size() >= 4
+        // Per-session passcode gate: the group must type the facilitator's passcode.
+        && request.resource.data.sessionCode is string
+        && request.resource.data.sessionCode == sessionCode();
+
+      // UPDATE (owner editing): only while the doc is editable, and the owner
+      // may not change ownership, the name, or the joinCode, nor self-approve.
+      // An owner may keep the doc 'draft' or 'reopened' while editing, or 'submitted'.
+      allow update: if isOwner(resource.data)
+        && resource.data.status in ['draft', 'reopened']
+        && request.resource.data.status in ['draft', 'reopened', 'submitted']
+        && unchanged('ownerUids')
+        && unchanged('name')
+        && unchanged('nameLower')
+        && unchanged('joinCode')
+        && unchanged('sessionCode');
+
+      // UPDATE (joining): a second device adds ITSELF to ownerUids by proving
+      // it knows the joinCode. It may change nothing else. A wrong code changes
+      // the joinCode field, which both the equality check and affectedKeys
+      // reject — so guessing fails closed.
+      // Joining is allowed ONLY before submission (draft/reopened) — a submitted or
+      // approved group cannot gain new owners, so its work cannot be overwritten.
+      allow update: if request.auth != null
+        && resource.data.status in ['draft', 'reopened']
+        && request.resource.data.joinCode == resource.data.joinCode
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['ownerUids', 'updatedAt'])
+        && request.resource.data.ownerUids.hasAll(resource.data.ownerUids)
+        && (request.auth.uid in request.resource.data.ownerUids);
+
+      // UPDATE (facilitator vetting): may only move status and leave a note —
+      // never edit a group's content. This is the approve / reopen control.
+      // On APPROVE the facilitator must also blank joinCode and sessionCode, so the
+      // now-publicly-readable document carries no secrets.
+      allow update: if isFacilitator()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'facilitatorNote', 'updatedAt', 'joinCode', 'sessionCode'])
+        && request.resource.data.status in ['submitted', 'approved', 'reopened', 'draft']
+        && (request.resource.data.status != 'approved'
+            || (request.resource.data.joinCode == '' && request.resource.data.sessionCode == ''));
+
+      // UPDATE (facilitator rename): fix an inappropriate or personal name without
+      // destroying the group's work. Facilitator-only, and may touch ONLY the name and
+      // its lower-case index key (the client swaps groupNames in the same transaction).
+      // Owners cannot rename: their own update rule pins name/nameLower unchanged.
+      allow update: if isFacilitator()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'nameLower', 'updatedAt'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.nameLower is string
+        && request.resource.data.nameLower.size() > 0;
+
+      // DELETE: facilitator only (e.g. to clear a test or an inappropriate name).
+      allow delete: if isFacilitator();
+    }
+
+    // Everything not matched above is denied by default.
+  }
+}

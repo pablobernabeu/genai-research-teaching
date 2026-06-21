@@ -1,0 +1,25 @@
+{
+  "name": "ai-assistance-workshop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Teaching kit and open archive for a two-part workshop (30 + 30 minutes, split by a networking lunch) on the responsible and effective use of generative AI in research and teaching.",
+  "license": "CC-BY-4.0",
+  "scripts": {
+    "build": "npm run build:html && npm run build:pdf",
+    "build:html": "marp --config-file ./marp.config.mjs ./slides.md -o ./dist/slides.html",
+    "build:pdf": "marp --config-file ./marp.config.mjs ./slides.md -o ./dist/slides.pdf",
+    "build:pptx": "marp --config-file ./marp.config.mjs ./slides.md -o ./dist/slides.pptx",
+    "build:docs": "node scripts/md2pdf.mjs project_tracks.md evaluation_rubric_template.md",
+    "build:preview": "npm run build:pdf && npm run build:grouppack && npm run build:facilitatorpack",
+    "build:handouts": "node scripts/md2pdf.mjs --out dist/handouts docs/role_cards.md docs/data_decision_aid.md docs/starter_prompts.md docs/worked_examples.md evaluation_rubric_template.md docs/cue_cards.md docs/museum_of_caught_errors.md docs/morning_checklist.md docs/facilitator_run_sheet.md project_tracks.md",
+    "build:grouppack": "node scripts/md2pdf.mjs --out dist/handouts --bundle group-pack docs/group_pack_cover.md docs/role_cards.md docs/data_decision_aid.md evaluation_rubric_template.md docs/worked_examples.md docs/starter_prompts.md",
+    "build:facilitatorpack": "node scripts/md2pdf.mjs --out dist/handouts --bundle facilitator-pack docs/cue_cards.md docs/facilitator_run_sheet.md docs/morning_checklist.md",
+    "watch": "marp --config-file ./marp.config.mjs -w -s .",
+    "preview": "marp --config-file ./marp.config.mjs -p ./slides.md",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.2.3",
+    "markdown-it": "^14.2.0"
+  }
+}

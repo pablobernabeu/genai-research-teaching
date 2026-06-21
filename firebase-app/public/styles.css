@@ -1,0 +1,339 @@
+/* styles.css — calm, shared styling for all three pages.
+   Teal accent, system font, readable cards, accessible contrast, mobile-first. */
+
+:root {
+  --teal: #0f6e6e;
+  --teal-dark: #0b5252;
+  --teal-tint: #e6f2f2;
+  --ink: #1c2b2b;
+  --muted: #5a6a6a;
+  --line: #d6e0e0;
+  --bg: #f5f8f8;
+  --card: #ffffff;
+  --amber: #8a5a00;
+  --amber-tint: #fff4e0;
+  --green: #1d6f42;
+  --green-tint: #e3f3ea;
+  --blue: #18557a;
+  --blue-tint: #e2eef5;
+  --grey-tint: #eceeee;
+  --danger: #8a1c1c;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 4rem;
+}
+
+.wrap.wide { max-width: 1100px; }
+
+header.page {
+  border-bottom: 3px solid var(--teal);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+header.page h1 {
+  margin: 0 0 0.2rem;
+  font-size: 1.5rem;
+  color: var(--teal-dark);
+}
+
+header.page .sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+h2 { color: var(--teal-dark); font-size: 1.2rem; }
+h3 { color: var(--ink); font-size: 1.05rem; margin: 0 0 0.4rem; }
+
+a { color: var(--teal); }
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 1.1rem;
+}
+
+.card h3 { color: var(--teal-dark); }
+
+/* Forms */
+label {
+  display: block;
+  font-weight: 600;
+  margin: 0.85rem 0 0.3rem;
+  font-size: 0.95rem;
+}
+
+label .hint {
+  display: block;
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(15, 110, 110, 0.35);
+  outline-offset: 1px;
+  border-color: var(--teal);
+}
+
+textarea { min-height: 4.5rem; resize: vertical; }
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background: #f3f5f5;
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+/* Buttons */
+button {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  background: var(--teal);
+  color: #fff;
+}
+
+button:hover { background: var(--teal-dark); }
+button:focus-visible { outline: 3px solid rgba(15, 110, 110, 0.45); outline-offset: 2px; }
+button:disabled { background: #9bb3b3; cursor: not-allowed; }
+
+button.secondary {
+  background: #fff;
+  color: var(--teal-dark);
+  border-color: var(--teal);
+}
+button.secondary:hover { background: var(--teal-tint); }
+
+button.ghost {
+  background: transparent;
+  color: var(--teal-dark);
+  border-color: var(--line);
+}
+button.ghost:hover { background: var(--teal-tint); }
+
+.btn-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1rem; }
+
+/* Status badges */
+.badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.badge.draft { background: var(--grey-tint); color: #444; }
+.badge.submitted { background: var(--blue-tint); color: var(--blue); }
+.badge.reopened { background: var(--amber-tint); color: var(--amber); }
+.badge.approved { background: var(--green-tint); color: var(--green); }
+
+/* The join code, shown prominently */
+.joincode {
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+  font-size: 1.8rem;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  color: var(--teal-dark);
+  background: var(--teal-tint);
+  border: 1px dashed var(--teal);
+  border-radius: 10px;
+  padding: 0.5rem 0.9rem;
+  display: inline-block;
+}
+
+.code-block {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+/* Notices */
+.notice {
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  margin: 0.8rem 0;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+}
+.notice.info { background: var(--teal-tint); color: var(--teal-dark); border-color: #bcdcdc; }
+.notice.warn { background: var(--amber-tint); color: var(--amber); border-color: #e8d3a6; }
+.notice.error { background: #fdecec; color: var(--danger); border-color: #f0c4c4; }
+.notice.ok { background: var(--green-tint); color: var(--green); border-color: #bfe2cd; }
+.notice[hidden] { display: none; }
+
+.experimental {
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px dashed var(--line);
+  margin-top: 1.5rem;
+  padding-top: 0.8rem;
+}
+
+.muted { color: var(--muted); }
+.small { font-size: 0.85rem; }
+[hidden] { display: none !important; }
+
+/* Response display (read-only) */
+.responses dt {
+  font-weight: 700;
+  color: var(--teal-dark);
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+}
+.responses dd {
+  margin: 0.15rem 0 0;
+  white-space: pre-wrap;
+}
+.responses dd.empty { color: var(--muted); font-style: italic; }
+
+/* Stats / dashboard layout */
+.stat-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.2rem;
+  flex: 1 1 140px;
+  text-align: center;
+}
+.stat .num { font-size: 2rem; font-weight: 800; color: var(--teal-dark); }
+.stat .lbl { color: var(--muted); font-size: 0.85rem; }
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.chart-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1rem; }
+.chart-card h3 { text-align: center; }
+
+@media (max-width: 640px) {
+  .charts { grid-template-columns: 1fr; }
+  header.page h1 { font-size: 1.3rem; }
+  .joincode { font-size: 1.5rem; }
+}
+
+/* Card grid for dashboards */
+.group-card .meta {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+.group-card .meta h3 { margin: 0; }
+
+.signin-card { max-width: 420px; margin: 2rem auto; }
+
+.spinner { color: var(--muted); font-style: italic; }
+
+/* Re-readable instructions panel (group app) */
+details.instructions summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--teal-dark);
+}
+details.instructions[open] summary { margin-bottom: 0.3rem; }
+.instructions-body ol { margin: 0.3rem 0 0.5rem 1.1rem; padding: 0; }
+.instructions-body li { margin: 0.2rem 0; }
+.instructions-body p { margin: 0.4rem 0; }
+
+/* Calm session countdown chip (group app). Fixed in the corner, high-contrast text,
+   no animation (respects reduced-motion by having none), advisory only. */
+.timer-chip {
+  position: fixed;
+  right: 0.9rem;
+  bottom: 0.9rem;
+  z-index: 50;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  padding: 0.35rem 0.8rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+/* A single calm amber in the final minute — no red, no flashing. */
+.timer-chip.ending {
+  background: var(--amber-tint);
+  color: var(--amber);
+  border-color: #e8d3a6;
+}
+
+/* Visually hidden but still announced to screen readers (the timer's polite live region). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

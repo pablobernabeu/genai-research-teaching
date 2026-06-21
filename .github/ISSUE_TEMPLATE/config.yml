@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Repository README
+    url: https://github.com/
+    about: Start here for an overview of the workshop kit and how submissions work.

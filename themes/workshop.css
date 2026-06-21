@@ -1,0 +1,191 @@
+/* @theme workshop */
+
+/*
+ * Workshop theme — extends the built-in Marp `gaia` theme.
+ *
+ * Two things are wired in deliberately:
+ *   1. A persistent logo, top-right on every slide.
+ *   2. A persistent disclaimer footer (set via the `footer:` directive in slides.md).
+ *
+ * The logo is embedded below as a base64 data URI so the deck builds with no
+ * local-file flags and renders identically offline. The placeholder is a dashed
+ * "UNIVERSITY OF OXFORD" wordmark box, standing in for the official University of
+ * Oxford logo. Drop in the official asset from Oxford's visual-identity toolkit:
+ * EITHER swap the data URI below for the official logo (base64-encoded), OR replace
+ * it with url('../assets/logo.svg') and build with `--allow-local-files` (already
+ * enabled in marp.config.mjs). The source SVG of the placeholder lives at
+ * assets/logo.svg. Use the Oxford logo only; do not add the host's branding.
+ *
+ * British English; calm, academic palette intended to read as professional
+ * rather than promotional.
+ */
+
+@import 'gaia';
+
+:root {
+  /* A restrained academic palette: near-white ground, ink text, teal accent. */
+  --color-background: #fbfbfc;
+  --color-foreground: #1c2024;
+  --color-highlight: #0f6e6e;        /* links and accents */
+  --color-highlight-hover: #0b5757;
+  --color-dimmed: #5b6470;
+
+  --workshop-accent: #0f6e6e;
+  --workshop-rule: #d6dbe0;
+  --workshop-redline: #a3271f;
+  --workshop-paper: #ffffff;
+}
+
+/* Base typography ------------------------------------------------------- */
+
+section {
+  font-family: "Helvetica Neue", "Segoe UI", Arial, system-ui, sans-serif;
+  font-size: 26px;
+  line-height: 1.4;
+  padding: 64px 70px 78px;
+  letter-spacing: 0.1px;
+}
+
+section h1,
+section h2,
+section h3 {
+  color: var(--workshop-accent);
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+section h1 { font-size: 1.55em; line-height: 1.15; }
+section h2 { font-size: 1.18em; }
+section h3 { font-size: 1.0em; color: var(--color-foreground); }
+
+section h1 strong,
+section h2 strong { color: var(--color-foreground); }
+
+/* A thin rule under a section-opening h2, for rhythm. */
+section h2 {
+  border-bottom: 2px solid var(--workshop-rule);
+  padding-bottom: 0.18em;
+  margin-bottom: 0.5em;
+}
+
+a { color: var(--color-highlight); }
+
+strong { color: var(--workshop-accent); }
+
+ul, ol { margin-top: 0.2em; }
+li { margin: 0.18em 0; }
+
+blockquote {
+  border-left: 4px solid var(--workshop-accent);
+  padding-left: 0.8em;
+  color: var(--color-dimmed);
+  font-style: italic;
+}
+
+code {
+  background: #e7eeef;
+  color: #0b4a4a;
+  border: 1px solid #cfdadb;
+  border-radius: 4px;
+  padding: 0.02em 0.3em;
+  font-size: 0.92em;
+}
+
+table {
+  font-size: 0.8em;
+  border-collapse: collapse;
+}
+table th {
+  background: #eef3f3;
+  color: var(--color-foreground);
+}
+table th, table td {
+  border: 1px solid var(--workshop-rule);
+  padding: 0.32em 0.55em;
+}
+
+/* Logo, top-right — shown only on `brand` slides (the cover and final page). */
+section.brand::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  right: 30px;
+  width: 168px;
+  height: 40px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjgiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCAxNjggNDAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iVW5pdmVyc2l0eSBvZiBPeGZvcmQgbG9nbyBwbGFjZWhvbGRlciI+CiAgPHJlY3QgeD0iMSIgeT0iMSIgd2lkdGg9IjE2NiIgaGVpZ2h0PSIzOCIgcng9IjgiIHJ5PSI4IiBmaWxsPSJub25lIiBzdHJva2U9ImdyYXkiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtZGFzaGFycmF5PSI0IDMiLz4KICA8dGV4dCB4PSI4NCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGxldHRlci1zcGFjaW5nPSIwLjUiIGZpbGw9ImdyYXkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlVOSVZFUlNJVFkgT0YgT1hGT1JEPC90ZXh0Pgo8L3N2Zz4K');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: contain;
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+/* Footer (the persistent disclaimer) ------------------------------------ */
+footer {
+  font-size: 13px;
+  color: var(--color-dimmed);
+  opacity: 0.92;
+  left: 70px;
+  right: 70px;
+  bottom: 18px;
+  line-height: 1.25;
+}
+
+/* Pagination, kept subtle. */
+section::after {
+  color: var(--color-dimmed);
+  font-size: 14px;
+}
+
+/* Lead / title slides --------------------------------------------------- */
+section.lead h1 {
+  font-size: 2.0em;
+  line-height: 1.1;
+}
+section.lead {
+  justify-content: center;
+}
+section.lead .subtitle {
+  color: var(--color-dimmed);
+  font-size: 1.05em;
+}
+
+/* Utility classes ------------------------------------------------------- */
+.small { font-size: 0.82em; }
+.tiny { font-size: 0.7em; color: var(--color-dimmed); }
+.muted { color: var(--color-dimmed); }
+.center { text-align: center; }
+
+/* Data-security red line callout. */
+.redline {
+  color: var(--workshop-redline);
+  font-weight: 700;
+}
+section .redbox {
+  border: 2px solid var(--workshop-redline);
+  border-radius: 8px;
+  padding: 0.85em 1.2em;
+  background: #fbf1f0;
+  margin: 1.1em 0 0.7em;
+}
+section .redbox p { margin: 0.2em 0; }
+
+/* Two-column helper for dense slides. */
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2em;
+}
+
+/* An at-a-glance schedule strip used on the agenda slide. */
+.clock {
+  font-variant-numeric: tabular-nums;
+  color: var(--workshop-accent);
+  font-weight: 700;
+}
+
+/* Invert (dark) section headings. */
+section.invert h1,
+section.invert h2,
+section.invert h3 { color: #7fd6d6; }
+section.invert strong { color: #7fd6d6; }

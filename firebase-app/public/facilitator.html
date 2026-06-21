@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Facilitator dashboard</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="wrap wide">
+    <header class="page">
+      <div class="topbar">
+        <div>
+          <h1>Facilitator dashboard</h1>
+          <p class="sub">Vet each submission — approve it, or reopen with a note.</p>
+        </div>
+        <button id="signOutBtn" class="ghost" hidden>Sign out</button>
+      </div>
+    </header>
+
+    <!-- ============ SIGN IN (facilitator's Google account only) ============ -->
+    <section id="signinView" class="card signin-card">
+      <h2>Sign in</h2>
+      <p class="muted small">
+        Facilitator account only — sign in with the Google account whose email matches
+        the security rules. Group devices do not sign in here. Access is enforced by the
+        security rules, not this page.
+      </p>
+      <div class="btn-row">
+        <button type="button" id="signinBtn">Sign in with Google</button>
+      </div>
+      <div id="signinError" class="notice error" hidden></div>
+    </section>
+
+    <!-- ============ DASHBOARD ============ -->
+    <section id="dashView" hidden>
+
+      <!-- Session passcode: only the facilitator account may read/write config/app. -->
+      <div class="card" id="sessionCodePanel">
+        <h2>Session passcode</h2>
+        <p class="muted small">
+          Groups need this to start. Set it at the start of the session and read it out.
+        </p>
+        <form id="sessionCodeForm" autocomplete="off">
+          <label for="sessionCodeInput">Passcode</label>
+          <input type="text" id="sessionCodeInput" name="sessionCodeInput"
+                 maxlength="40" spellcheck="false" autocomplete="off" />
+          <div class="btn-row">
+            <button type="submit" id="setSessionCodeBtn">Set passcode</button>
+          </div>
+        </form>
+        <p class="small muted" id="currentSessionCode" aria-live="polite"></p>
+        <div id="sessionCodeStatus" class="notice ok" hidden></div>
+      </div>
+
+      <!-- Session timer: optional, facilitator-controlled. Groups see a calm corner
+           countdown only while this is running. -->
+      <div class="card" id="sessionTimerPanel">
+        <h2>Session timer</h2>
+        <p class="muted small">
+          Optional. A calm countdown groups see in the corner of their screen. It is off
+          until you start it, and the workshop runs fine without it. Reset stops it for
+          everyone instantly.
+        </p>
+        <label for="timerMinutes">Minutes
+          <span class="hint">Set the length before you start (default 15 — the build window).</span>
+        </label>
+        <input type="number" id="timerMinutes" name="timerMinutes" min="1" max="120" value="15"
+               inputmode="numeric" />
+        <div class="btn-row">
+          <button type="button" id="startTimerBtn">Start countdown</button>
+          <button type="button" id="resetTimerBtn" class="secondary">Reset / stop</button>
+        </div>
+        <p class="small muted" id="timerStatus" aria-live="polite">Timer is off.</p>
+        <div id="timerError" class="notice error" hidden></div>
+      </div>
+
+      <div id="dashStatus" class="notice info">Loading groups…</div>
+      <p class="small muted" id="countLine"></p>
+      <div id="groupList"></div>
+    </section>
+  </main>
+
+  <script type="module" src="./facilitator.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Firebase CLI local state (deploy caches, emulator data, logs) — not source.
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log

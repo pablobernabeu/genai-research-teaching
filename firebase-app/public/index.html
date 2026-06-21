@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Groupwork hub — your group</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="page">
+      <h1>Groupwork hub</h1>
+      <p class="sub">Claim a name, do the core three, submit for review.</p>
+      <p class="small muted" style="margin:0.35rem 0 0">
+        Use <strong>either</strong> this app <strong>or</strong> your HackMD note — not both.
+        The app is optional, and the fallback if HackMD sign-up is blocked.
+      </p>
+    </header>
+
+    <!-- Connection / auth status -->
+    <div id="authNotice" class="notice info">Connecting…</div>
+
+    <!-- ================= LOGIN ================= -->
+    <section id="loginView" class="card" hidden>
+      <h2>Start or join a group</h2>
+      <p class="muted small">
+        Groups sign in anonymously — no account, no personal data. Leave the join
+        code blank to create a brand-new group; you'll get a code to share with a
+        second device.
+      </p>
+
+      <form id="loginForm" autocomplete="off">
+        <label for="groupName">Group name
+          <span class="hint">Choose a name that does not identify anyone (e.g. "Otters", "Team Kelp").</span>
+        </label>
+        <input type="text" id="groupName" name="groupName" required maxlength="40"
+               placeholder="e.g. Otters" />
+
+        <label for="joinCode">Join code
+          <span class="hint">Leave blank to create a new group. Enter the code to join an existing one.</span>
+        </label>
+        <input type="text" id="joinCode" name="joinCode" maxlength="6"
+               autocapitalize="characters" spellcheck="false"
+               placeholder="(blank = create)" style="text-transform:uppercase" />
+
+        <label for="sessionCode">Session passcode
+          <span class="hint">Given by the facilitator — needed to start a new group.</span>
+        </label>
+        <input type="text" id="sessionCode" name="sessionCode" maxlength="40"
+               autocomplete="off" spellcheck="false" />
+
+        <div class="btn-row">
+          <button type="submit" id="loginSubmit">Continue</button>
+        </div>
+      </form>
+
+      <div id="loginError" class="notice error" role="alert" hidden></div>
+    </section>
+
+    <!-- ================= GROUP WORKSPACE ================= -->
+    <section id="workView" hidden>
+
+      <!-- Join code, always visible once in a group -->
+      <div class="card">
+        <h3>Your group: <span id="groupTitle"></span> <span id="statusBadge" class="badge"></span></h3>
+        <p class="small muted" style="margin:0.2rem 0 0.6rem">Share this join code so a second device can join the same group:</p>
+        <div class="code-block">
+          <span class="joincode" id="joinCodeDisplay">––––––</span>
+          <button type="button" class="secondary" id="copyCode">Copy code</button>
+        </div>
+      </div>
+
+      <!-- Re-readable instructions (P1): open at any point without losing your work. -->
+      <details id="instructions" class="card instructions">
+        <summary>What am I doing here? — tap to re-read at any point</summary>
+        <div class="instructions-body">
+          <p class="small" style="margin-top:0.6rem"><strong>In ~15 minutes, get the core three done first:</strong></p>
+          <ol class="small">
+            <li><strong>One artefact move</strong> — run your tool on your problem and keep what is useful.</li>
+            <li><strong>One caught error</strong> — a moment it was fluent and wrong. Keep it.</li>
+            <li><strong>One insight</strong> — the limitation, or the safeguard, for the 45-second round.</li>
+          </ol>
+          <p class="small"><em>If you have ~5 minutes left:</em> sketch the automation–steering map (which steps
+            the tool ran, where you steered) and decide whether oversight was interwoven or staged.</p>
+          <p class="small"><strong>Red lines — never paste</strong> personal data, students' marks or notes,
+            unpublished or participant data, or confidential/embargoed material. When in doubt:
+            <strong>anonymise, synthesise or abstain</strong>.</p>
+        </div>
+      </details>
+
+      <!-- Facilitator note shown when reopened -->
+      <div id="reopenedNotice" class="notice warn" hidden></div>
+
+      <!-- Approved confirmation -->
+      <div id="approvedNotice" class="notice ok" hidden>
+        This submission has been <strong>approved</strong>. It now appears on the public
+        dashboard. The form below is read-only.
+      </div>
+
+      <!-- Submitted (awaiting review) -->
+      <div id="submittedNotice" class="notice info" hidden>
+        Submitted for review. The form is read-only while the facilitator looks at it.
+        If it's reopened you'll be able to edit again here.
+      </div>
+
+      <!-- The scenario picker + core five -->
+      <form id="workForm" class="card">
+        <h2>Your work</h2>
+
+        <label for="scenario">Scenario
+          <span class="hint">Pick the track you're working on, or "Own problem".</span>
+        </label>
+        <select id="scenario" name="scenario"></select>
+
+        <div id="ownProblemNotice" class="notice warn" hidden>
+          <strong>Bringing your own problem?</strong> Anonymise, synthesise or abstain —
+          never paste personal, student, unpublished or confidential data. If in any doubt,
+          pick a worked-example track above instead.
+        </div>
+
+        <label for="problem">The problem
+          <span class="hint">What, specifically, are you trying to do?</span>
+        </label>
+        <textarea id="problem" name="problem"></textarea>
+
+        <label for="artefact">The artefact
+          <span class="hint">What did the AI produce, and what did you keep?</span>
+        </label>
+        <textarea id="artefact" name="artefact"></textarea>
+
+        <label for="caughtErrors">Errors you caught
+          <span class="hint">What did you have to correct, reject, or verify?</span>
+        </label>
+        <textarea id="caughtErrors" name="caughtErrors"></textarea>
+
+        <label for="map">Automation–steering map <span class="muted small">(if you have ~5 min left)</span>
+          <span class="hint">Which steps the tool ran, and where <em>you</em> steered — decided, verified or overrode.</span>
+        </label>
+        <textarea id="map" name="map"></textarea>
+
+        <label for="oversight">Oversight model <span class="muted small">(if you have ~5 min left)</span></label>
+        <select id="oversight" name="oversight">
+          <option value="">— choose —</option>
+          <option value="interwoven">Interwoven (checking throughout)</option>
+          <option value="staged">Staged (check at set points)</option>
+        </select>
+
+        <label for="oversightWhy">Why that oversight model?</label>
+        <textarea id="oversightWhy" name="oversightWhy"></textarea>
+
+        <label for="insight">Key insight
+          <span class="hint">The one thing worth sharing with the room.</span>
+        </label>
+        <textarea id="insight" name="insight"></textarea>
+
+        <label for="fieldUse">Field reflection <span class="muted small">(optional — for the wrap-up / lightning round)</span>
+          <span class="hint">Is your field generally <strong>under-</strong> or <strong>over-using</strong> GenAI for
+            this kind of task? Why, with what consequences — and how would you redress it over the next two years?</span>
+        </label>
+        <textarea id="fieldUse" name="fieldUse"></textarea>
+
+        <p id="saveState" class="small muted" aria-live="polite">All changes save automatically.</p>
+
+        <div class="btn-row">
+          <button type="button" id="submitBtn">Submit for review</button>
+        </div>
+        <div id="workError" class="notice error" role="alert" hidden></div>
+      </form>
+
+      <p class="experimental">
+        Experimental — your HackMD note is the official record. This app runs in
+        parallel and does not replace it.
+      </p>
+    </section>
+  </main>
+
+  <!-- Calm session countdown (P3): shown only while the facilitator's timer is running.
+       The visible chip is aria-hidden (it would be noisy per-second); a separate polite
+       live region announces at coarse milestones for screen-reader users. -->
+  <div id="timerChip" class="timer-chip" hidden aria-hidden="true"></div>
+  <span id="timerAnnounce" class="sr-only" role="timer" aria-live="polite"></span>
+
+  <script type="module" src="./group.js"></script>
+</body>
+</html>

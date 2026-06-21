@@ -1,0 +1,95 @@
+name: Deploy preview to GitHub Pages
+
+# Publishes a live, rendered preview of the deck to GitHub Pages: the HTML slides,
+# the PDF and a small landing page that also links the repository materials.
+#
+# To turn it on: push this repository to GitHub, then in the repo go to
+# Settings -> Pages -> Build and deployment -> Source: "GitHub Actions". The preview
+# then goes live at https://<user>.github.io/<repo>/ on each push to main.
+#
+# Note: GitHub Pages on a PUBLIC repo is free but makes the preview public. If the
+# draft should stay private, prefer sharing the PDF (or a OneDrive/SharePoint link)
+# instead — see the README's "Sharing a preview" note.
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Marp CLI
+        run: |
+          npm install --no-save @marp-team/marp-cli@^4.2.3 \
+            || npm install --no-save --registry=https://registry.npmmirror.com @marp-team/marp-cli@^4.2.3
+
+      - name: Build deck (HTML, and PDF best-effort)
+        run: |
+          npx marp --config-file ./marp.config.mjs ./slides.md -o ./dist/slides.html
+          npx marp --config-file ./marp.config.mjs ./slides.md -o ./dist/slides.pdf || true
+
+      - name: Build landing page
+        run: |
+          REPO="${{ github.server_url }}/${{ github.repository }}"
+          cat > ./dist/index.html <<HTML
+          <!doctype html>
+          <html lang="en"><head><meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Preview — Generative AI in research and teaching</title>
+          <style>
+            body{font:16px/1.6 system-ui,"Segoe UI",Arial,sans-serif;max-width:42rem;margin:3rem auto;padding:0 1.25rem;color:#1c2024}
+            h1{color:#0f6e6e;font-size:1.5rem;margin:0 0 .25rem}
+            p.sub{color:#5b6470;margin:0 0 1.5rem}
+            ul{list-style:none;padding:0}
+            li{margin:.7rem 0}
+            a{color:#0f6e6e;font-weight:600;text-decoration:none}
+            a:hover{text-decoration:underline}
+            .note{color:#5b6470;font-size:.82rem;border-top:1px solid #d6dbe0;margin-top:2rem;padding-top:1rem}
+          </style></head><body>
+          <h1>Generative AI in research and teaching</h1>
+          <p class="sub">A practical, critical workshop — draft materials for preview.</p>
+          <ul>
+            <li>&#9656; <a href="./slides.html">Open the slides (rendered, in your browser)</a></li>
+            <li>&#9656; <a href="./slides.pdf">Download the slides (PDF)</a></li>
+            <li>&#9656; <a href="${REPO}">Repository — facilitator guide and the full kit</a></li>
+            <li>&#9656; <a href="${REPO}/blob/main/project_tracks.md">Core groupwork: the four project tracks</a></li>
+            <li>&#9656; <a href="${REPO}/blob/main/evaluation_rubric_template.md">Core groupwork: the evaluation rubric</a></li>
+          </ul>
+          <p class="note">Personal selection in a personal capacity; not the position of the University of Oxford (employer) or the host; not legal advice.</p>
+          </body></html>
+          HTML
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

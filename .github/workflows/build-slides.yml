@@ -1,0 +1,51 @@
+name: Build slides
+
+# Builds the Marp deck on every relevant push and pull request, and uploads the
+# rendered HTML and PDF as artifacts. HTML is the gating check; the PDF step is
+# allowed to fail softly in case a browser is unavailable on the runner.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'slides.md'
+      - 'themes/**'
+      - 'assets/**'
+      - 'marp.config.mjs'
+      - 'package.json'
+      - '.github/workflows/build-slides.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Marp CLI
+        # The default registry intermittently serves malformed metadata for
+        # speech-rule-engine (a MathJax dependency); fall back to a mirror if so.
+        run: |
+          npm install --no-save @marp-team/marp-cli@^4.2.3 \
+            || npm install --no-save --registry=https://registry.npmmirror.com @marp-team/marp-cli@^4.2.3
+
+      - name: Build HTML (gating)
+        run: npx marp --config-file ./marp.config.mjs ./slides.md -o ./dist/slides.html
+
+      - name: Build PDF (best effort)
+        continue-on-error: true
+        run: npx marp --config-file ./marp.config.mjs ./slides.md -o ./dist/slides.pdf
+
+      - name: Upload rendered slides
+        uses: actions/upload-artifact@v4
+        with:
+          name: slides
+          path: dist/
+          if-no-files-found: error
