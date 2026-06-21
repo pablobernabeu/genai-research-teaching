@@ -73,7 +73,7 @@ a { color: var(--color-highlight); }
 strong { color: var(--workshop-accent); }
 
 ul, ol { margin-top: 0.2em; }
-li { margin: 0.18em 0; }
+li { margin: 0.12em 0; }
 
 blockquote {
   border-left: 4px solid var(--workshop-accent);
@@ -124,7 +124,7 @@ section.brand::before {
 footer {
   font-size: 13px;
   color: var(--color-dimmed);
-  opacity: 0.92;
+  opacity: 1;
   left: 70px;
   right: 70px;
   bottom: 18px;
@@ -166,7 +166,7 @@ section .redbox {
   border-radius: 8px;
   padding: 0.85em 1.2em;
   background: #fbf1f0;
-  margin: 1.1em 0 0.7em;
+  margin: 0.7em 0 0.5em;
 }
 section .redbox p { margin: 0.2em 0; }
 
