@@ -266,6 +266,30 @@ Take a **real task**, use a tool on it, then **put it on trial**. Part 1 gave yo
 
 ---
 
+## Open the workshop app
+
+<div class="qr-row">
+
+<img class="qr" src="assets/app-qr.svg" alt="QR code linking to the group app at genai-research-teaching.web.app" />
+
+<div class="qr-text">
+
+<span class="bigurl">genai-research-teaching.web.app</span>
+
+**Scan the code**, or type the address into any browser.
+
+Your facilitator will read out the **session passcode** you need to start a group.
+
+<span class="small muted">Prefer HackMD? That works too — use **either** the app **or** HackMD, not both.</span>
+
+</div>
+
+</div>
+
+<!-- Display this while groups settle (13:15); read out the session passcode. One device per group creates; the others join with the 6-character code it shows. -->
+
+---
+
 ## How Part 2 runs — 30 minutes
 
 | When | Phase | Mins |

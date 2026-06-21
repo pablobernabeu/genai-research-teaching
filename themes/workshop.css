@@ -177,6 +177,34 @@ section .redbox p { margin: 0.2em 0; }
   gap: 1.2em;
 }
 
+/* App-access slide: a scannable QR beside a large-font URL. */
+.qr-row {
+  display: flex;
+  align-items: center;
+  gap: 1.6em;
+  margin-top: 0.7em;
+}
+.qr-row .qr {
+  width: 330px;
+  height: 330px;
+  flex: 0 0 auto;
+  background: #fff;
+  border: 1px solid var(--workshop-rule);
+  border-radius: 12px;
+  padding: 12px;
+}
+.qr-text { flex: 1 1 auto; }
+.bigurl {
+  display: block;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 1.55em;
+  font-weight: 700;
+  color: var(--workshop-accent);
+  letter-spacing: -0.3px;
+  margin-bottom: 0.45em;
+  word-break: break-all;
+}
+
 /* An at-a-glance schedule strip used on the agenda slide. */
 .clock {
   font-variant-numeric: tabular-nums;
