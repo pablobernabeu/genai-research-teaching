@@ -51,6 +51,7 @@ Pages (in `public/`):
 | `status` | string | `draft` → `submitted` → `approved`, or `reopened` (back to the group) |
 | `scenario` | string | chosen scenario label, or `Own problem` |
 | `track` | string | `A` / `B` / `C` / `D` / `` |
+| `shareConsent` | bool | the group's opt-in consent to include its (non-identifying) submission in the public archive; only consented, approved work is exported/PR'd |
 | `responses` | map | `problem`, `artefact`, `caughtErrors`, `map`, `oversight` (`interwoven`/`staged`/``), `oversightWhy`, `insight`, `fieldUse` (optional field reflection); optional deferred `rubric` map (five 1–5 scores) and `societal` |
 | `facilitatorNote` | string | set by the facilitator when reopening |
 | `createdAt` / `updatedAt` | timestamp | `serverTimestamp()` |

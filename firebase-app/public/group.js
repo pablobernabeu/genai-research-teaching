@@ -42,6 +42,7 @@ const workError = $("workError");
 const ownProblemNotice = $("ownProblemNotice");
 const timerChip = $("timerChip");
 const timerAnnounce = $("timerAnnounce");
+const shareConsent = $("shareConsent");
 
 // The response textareas we autosave. 'fieldUse' is the optional field reflection — not
 // part of the in-build "core three", but stored and restored like the rest.
@@ -247,6 +248,7 @@ async function createGroup(displayName, nameLower, sessionCode) {
         status: "draft",
         scenario: "",
         track: "",
+        shareConsent: false,
         responses: {
           problem: "",
           artefact: "",
@@ -410,6 +412,7 @@ function renderGroup(data) {
     const el = $(f);
     if (el) el.value = (data.responses && data.responses[f]) || "";
   }
+  shareConsent.checked = !!data.shareConsent;
   applyingRemote = false;
 
   // Lock / unlock every input.
@@ -437,6 +440,7 @@ function renderGroup(data) {
 function setFormEnabled(enabled) {
   scenarioSel.disabled = !enabled;
   oversightSel.disabled = !enabled;
+  shareConsent.disabled = !enabled;
   for (const f of RESPONSE_FIELDS) {
     const el = $(f);
     if (el) el.disabled = !enabled;
@@ -484,6 +488,7 @@ async function saveNow() {
       scenario,
       track: trackForScenario(scenario),
       responses,
+      shareConsent: shareConsent.checked,
       status: status === "reopened" ? "reopened" : "draft",
       updatedAt: serverTimestamp(),
     });
@@ -495,7 +500,7 @@ async function saveNow() {
 }
 
 // Wire autosave to all editable fields.
-[scenarioSel, oversightSel].forEach((el) => el.addEventListener("change", scheduleSave));
+[scenarioSel, oversightSel, shareConsent].forEach((el) => el.addEventListener("change", scheduleSave));
 RESPONSE_FIELDS.forEach((f) => {
   const el = $(f);
   if (el) el.addEventListener("input", scheduleSave);
@@ -542,6 +547,7 @@ submitBtn.addEventListener("click", async () => {
       scenario,
       track: trackForScenario(scenario),
       responses,
+      shareConsent: shareConsent.checked,
       status: "submitted",
       updatedAt: serverTimestamp(),
     });

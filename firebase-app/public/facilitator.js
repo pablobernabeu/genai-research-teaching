@@ -270,30 +270,35 @@ resetTimerBtn.addEventListener("click", async () => {
 // The app is the default record; this builds the archive the facilitator commits under
 // submissions/. Approved only — the curated, world-readable work.
 function buildSubmissionsMarkdown(groups) {
-  const approved = groups.filter((g) => g.status === "approved");
+  // The public archive is approved AND the group consented to sharing.
+  const shared = groups.filter((g) => g.status === "approved" && g.shareConsent);
   const date = new Date().toISOString().slice(0, 10);
   const val = (s) => (s && String(s).trim()) || "—";
-  let md = `# Approved submissions — ${date}\n\n${approved.length} approved group${approved.length === 1 ? "" : "s"}.\n`;
-  approved.forEach((g, i) => {
+  let md = `# Approved submissions — ${date}\n\n${shared.length} approved, consented group${shared.length === 1 ? "" : "s"}.\n`;
+  shared.forEach((g, i) => {
     const r = g.responses || {};
-    md += `\n---\n\n## ${i + 1}. ${g.name || "(unnamed)"}${g.track ? " · Track " + g.track : ""}\n\n`;
-    md += `**Scenario:** ${val(g.scenario)}\n\n`;
-    md += `### The problem\n${val(r.problem)}\n\n`;
-    md += `### The artefact\n${val(r.artefact)}\n\n`;
-    md += `### Errors caught\n${val(r.caughtErrors)}\n\n`;
-    md += `### Automation–steering map\n${val(r.map)}\n\n`;
-    md += `### Oversight model\n${val(r.oversight)}${r.oversightWhy && r.oversightWhy.trim() ? " — " + r.oversightWhy.trim() : ""}\n\n`;
-    md += `### Key insight\n${val(r.insight)}\n\n`;
-    md += `### Field reflection\n${val(r.fieldUse)}\n`;
+    // Compact headings: group as h3, field labels as bold leads (not headings).
+    md += `\n---\n\n### ${i + 1}. ${g.name || "(unnamed)"}${g.track ? " · Track " + g.track : ""}\n\n`;
+    md += `*Scenario: ${val(g.scenario)}*\n\n`;
+    md += `**The problem.** ${val(r.problem)}\n\n`;
+    md += `**The artefact.** ${val(r.artefact)}\n\n`;
+    md += `**Errors caught.** ${val(r.caughtErrors)}\n\n`;
+    md += `**Automation–steering map.** ${val(r.map)}\n\n`;
+    md += `**Oversight model.** ${val(r.oversight)}${r.oversightWhy && r.oversightWhy.trim() ? " — " + r.oversightWhy.trim() : ""}\n\n`;
+    md += `**Key insight.** ${val(r.insight)}\n\n`;
+    md += `**Field reflection.** ${val(r.fieldUse)}\n`;
   });
   return md;
 }
 
 exportBtn.addEventListener("click", () => {
   exportStatus.textContent = "";
-  const approvedCount = latestGroups.filter((g) => g.status === "approved").length;
-  if (approvedCount === 0) {
-    exportStatus.textContent = "No approved submissions yet — approve some first.";
+  const sharedCount = latestGroups.filter((g) => g.status === "approved" && g.shareConsent).length;
+  if (sharedCount === 0) {
+    const approvedCount = latestGroups.filter((g) => g.status === "approved").length;
+    exportStatus.textContent = approvedCount === 0
+      ? "No approved submissions yet — approve some first."
+      : "No approved group has consented to public sharing yet — only consented work is exported.";
     return;
   }
   const md = buildSubmissionsMarkdown(latestGroups);
@@ -308,7 +313,7 @@ exportBtn.addEventListener("click", () => {
   a.remove();
   URL.revokeObjectURL(url);
   exportStatus.textContent =
-    `Downloaded ${approvedCount} approved submission${approvedCount === 1 ? "" : "s"} as Markdown. Commit it under submissions/.`;
+    `Downloaded ${sharedCount} approved & consented submission${sharedCount === 1 ? "" : "s"} as Markdown. Commit it under submissions/.`;
 });
 
 // Sort: submitted first (they need attention), then by updatedAt descending.
@@ -367,6 +372,15 @@ function card(g) {
     meta.appendChild(sc);
   }
   el.appendChild(meta);
+
+  // Sharing consent — only consented work goes to the public archive / PR.
+  const consent = document.createElement("p");
+  consent.className = "small";
+  consent.style.margin = "0 0 0.3rem";
+  consent.innerHTML = g.shareConsent
+    ? '<strong style="color:var(--green)">✓ Consented to public sharing</strong>'
+    : '<span class="muted">Not consented to public sharing</span>';
+  el.appendChild(consent);
 
   // Responses.
   const dl = document.createElement("dl");

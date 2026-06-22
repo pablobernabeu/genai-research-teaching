@@ -356,3 +356,19 @@ details.instructions[open] summary { margin-bottom: 0.3rem; }
   white-space: nowrap;
   border: 0;
 }
+
+/* Opt-in consent to share the submission publicly. */
+label.consent {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin: 1rem 0 0.3rem;
+}
+label.consent input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.15rem;
+  flex: 0 0 auto;
+}
