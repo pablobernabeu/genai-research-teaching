@@ -95,11 +95,12 @@ export async function sha256Hex(text) {
   return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
-// The dashboard gate token binds the session NAME and the passcode together, so neither
-// alone unlocks it. The passcode itself is never stored — only this hash is (in
-// config/dashboard), which the dashboard re-computes from what a viewer types.
-export async function dashboardHash(sessionName, passcode) {
-  return sha256Hex(normaliseName(sessionName) + ":" + String(passcode));
+// The dashboard gate stores only a HASH of the passcode (in config/dashboard), never the
+// passcode itself; the dashboard re-computes this from what a viewer types and compares.
+// It reuses the one session passcode the facilitator already reads out for groups to
+// start, so a viewer needs nothing extra.
+export async function dashboardHash(passcode) {
+  return sha256Hex(String(passcode));
 }
 
 // A friendly message for the most common Firestore failures. We avoid leaking raw

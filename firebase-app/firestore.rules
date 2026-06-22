@@ -65,15 +65,15 @@ service cloud.firestore {
       allow write: if isFacilitator()
         && request.resource.data.keys().hasOnly(['running', 'durationSec', 'startedAt', 'endsAt']);
     }
-    // config/dashboard gates the PUBLIC dashboard. It holds the session NAME (not secret)
-    // and a SHA-256 HASH that binds the session name and the dashboard passcode — never the
-    // passcode itself. Any signed-in device may READ it (the dashboard verifies a typed
-    // passcode against the hash, client-side); only the facilitator may WRITE, and only
-    // these two fields — hasOnly stops any secret being smuggled onto this readable doc.
+    // config/dashboard gates the PUBLIC dashboard. It holds ONLY a SHA-256 HASH of the
+    // session passcode — never the passcode itself. Any signed-in device may READ it (the
+    // dashboard verifies a typed passcode against the hash, client-side); only the
+    // facilitator may WRITE, and only that one field — hasOnly stops any secret being
+    // smuggled onto this readable doc.
     match /config/dashboard {
       allow read: if request.auth != null;
       allow write: if isFacilitator()
-        && request.resource.data.keys().hasOnly(['sessionName', 'passHash']);
+        && request.resource.data.keys().hasOnly(['passHash']);
     }
 
     // --- Name uniqueness index -------------------------------------------

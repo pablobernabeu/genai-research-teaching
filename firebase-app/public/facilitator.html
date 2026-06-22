@@ -36,25 +36,20 @@
     <!-- ============ DASHBOARD ============ -->
     <section id="dashView" hidden>
 
-      <!-- Session name + passcode: only the facilitator account may read/write config. The
-           passcode lets groups start; the name + passcode together unlock the dashboard. -->
+      <!-- Session passcode: only the facilitator account may read/write config. Groups type
+           it to start, and the same passcode unlocks the public dashboard. -->
       <div class="card" id="sessionCodePanel">
-        <h2>Session name &amp; passcode</h2>
+        <h2>Session passcode</h2>
         <p class="muted small">
-          Groups type the <strong>passcode</strong> to start. The <strong>name and passcode together</strong>
-          unlock the public dashboard. Set both at the start of the session and read them out.
+          Groups type this to start, and the same passcode unlocks the public dashboard.
+          Set it at the start of the session and read it out.
         </p>
         <form id="sessionCodeForm" autocomplete="off">
-          <label for="sessionNameInput">Session name
-            <span class="hint">Shown on the dashboard gate, e.g. "Westminster · 24 June".</span>
-          </label>
-          <input type="text" id="sessionNameInput" name="sessionNameInput"
-                 maxlength="60" spellcheck="false" autocomplete="off" />
           <label for="sessionCodeInput">Passcode</label>
           <input type="text" id="sessionCodeInput" name="sessionCodeInput"
                  maxlength="40" spellcheck="false" autocomplete="off" />
           <div class="btn-row">
-            <button type="submit" id="setSessionCodeBtn">Set name &amp; passcode</button>
+            <button type="submit" id="setSessionCodeBtn">Set passcode</button>
           </div>
         </form>
         <p class="small muted" id="currentSessionCode" aria-live="polite"></p>

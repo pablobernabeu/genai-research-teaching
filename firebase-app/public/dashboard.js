@@ -25,7 +25,6 @@ const $ = (id) => document.getElementById(id);
 const statusEl = $("status");
 const gateView = $("gateView");
 const gateForm = $("gateForm");
-const gateName = $("gateName");
 const gatePass = $("gatePass");
 const gateBtn = $("gateBtn");
 const gateError = $("gateError");
@@ -105,26 +104,24 @@ function routeGate() {
     gateView.hidden = false;
     boardView.hidden = true;
     stopBoard();
-    if (gateConfig.sessionName) gateName.placeholder = gateConfig.sessionName;
   }
 }
 
 gateForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   gateError.hidden = true;
-  const name = gateName.value.trim();
   const pass = gatePass.value.trim();
-  if (!name || !pass) { showGateError("Enter the session name and passcode."); return; }
+  if (!pass) { showGateError("Enter the session passcode."); return; }
   gateBtn.disabled = true;
   gateBtn.textContent = "Checking…";
   try {
-    const h = await dashboardHash(name, pass);
+    const h = await dashboardHash(pass);
     if (gateConfig && h === gateConfig.passHash) {
       sessionStorage.setItem(GATE_KEY, gateConfig.passHash);
       gatePass.value = "";
       showBoard();
     } else {
-      showGateError("That session name or passcode was not recognised. Check them with your facilitator.");
+      showGateError("That passcode was not recognised. Check it with your facilitator.");
     }
   } catch (err) {
     showGateError(friendlyError(err));

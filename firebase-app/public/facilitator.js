@@ -29,7 +29,6 @@ const countLine = $("countLine");
 const groupList = $("groupList");
 const signOutBtn = $("signOutBtn");
 const sessionCodeForm = $("sessionCodeForm");
-const sessionNameInput = $("sessionNameInput");
 const sessionCodeInput = $("sessionCodeInput");
 const setSessionCodeBtn = $("setSessionCodeBtn");
 const currentSessionCode = $("currentSessionCode");
@@ -44,9 +43,7 @@ const exportStatus = $("exportStatus");
 
 let unsubscribe = null;
 let unsubscribeConfig = null; // config/app passcode listener
-let unsubscribeDashCfg = null; // config/dashboard session-name listener
 let unsubscribeClock = null;  // config/clock timer listener
-let dashNamePrefilled = false; // only prefill the session-name input once
 let timerStatusInterval = null;
 let latestGroups = [];        // newest snapshot, for the Markdown export
 
@@ -76,12 +73,10 @@ onAuthStateChanged(auth, (user) => {
     signOutBtn.hidden = false;
     startListening();
     startConfigListening();
-    startDashConfigListening();
     startClockListening();
   } else {
     if (unsubscribe) { unsubscribe(); unsubscribe = null; }
     if (unsubscribeConfig) { unsubscribeConfig(); unsubscribeConfig = null; }
-    if (unsubscribeDashCfg) { unsubscribeDashCfg(); unsubscribeDashCfg = null; }
     if (unsubscribeClock) { unsubscribeClock(); unsubscribeClock = null; }
     if (timerStatusInterval) { clearInterval(timerStatusInterval); timerStatusInterval = null; }
     signinView.hidden = false;
@@ -176,27 +171,9 @@ function startConfigListening() {
   );
 }
 
-// config/dashboard holds the session NAME (non-secret) + a passHash. Prefill the
-// session-name input once from it, so re-setting the passcode keeps the same name.
-function startDashConfigListening() {
-  if (unsubscribeDashCfg) return;
-  unsubscribeDashCfg = onSnapshot(
-    doc(db, "config", "dashboard"),
-    (snap) => {
-      const name = snap.exists() ? (snap.data().sessionName || "") : "";
-      if (name && !dashNamePrefilled && !sessionNameInput.value) {
-        sessionNameInput.value = name;
-        dashNamePrefilled = true;
-      }
-    },
-    () => { /* facilitator-only context; ignore transient errors */ }
-  );
-}
-
 sessionCodeForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   sessionCodeStatus.hidden = true;
-  const name = sessionNameInput.value.trim();
   const value = sessionCodeInput.value.trim();
   setSessionCodeBtn.disabled = true;
   setSessionCodeBtn.textContent = "Saving…";
@@ -204,26 +181,26 @@ sessionCodeForm.addEventListener("submit", async (e) => {
     // config/app holds the group-creation passcode (facilitator-only). merge so we set just
     // sessionCode and leave any other config untouched.
     await setDoc(doc(db, "config", "app"), { sessionCode: value }, { merge: true });
-    // config/dashboard gates the public dashboard with the name + passcode, stored only as a
-    // hash. Written ONLY when both are present; otherwise the dashboard stays locked.
+    // config/dashboard gates the public dashboard with the SAME passcode, stored only as a
+    // hash (never the passcode itself). Written whenever a passcode is set.
     let dashMsg;
-    if (name && value) {
-      const passHash = await dashboardHash(name, value);
-      await setDoc(doc(db, "config", "dashboard"), { sessionName: name, passHash });
-      dashMsg = ' The public dashboard now opens with the name "' + name + '" and this passcode.';
+    if (value) {
+      const passHash = await dashboardHash(value);
+      await setDoc(doc(db, "config", "dashboard"), { passHash });
+      dashMsg = " The public dashboard opens with this passcode too.";
     } else {
-      dashMsg = " Add a session name as well to open the public dashboard.";
+      dashMsg = " Set a passcode to open the public dashboard.";
     }
     sessionCodeStatus.hidden = false;
     sessionCodeStatus.className = "notice ok";
-    sessionCodeStatus.textContent = "Saved. Read the passcode (and session name) out to the room." + dashMsg;
+    sessionCodeStatus.textContent = "Passcode set. Read it out to the room." + dashMsg;
   } catch (err) {
     sessionCodeStatus.hidden = false;
     sessionCodeStatus.className = "notice error";
     sessionCodeStatus.textContent = "Could not save. " + friendlyError(err);
   } finally {
     setSessionCodeBtn.disabled = false;
-    setSessionCodeBtn.textContent = "Set name & passcode";
+    setSessionCodeBtn.textContent = "Set passcode";
   }
 });
 
