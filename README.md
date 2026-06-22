@@ -62,6 +62,8 @@ create.
 │   ├── pre_workshop_poll.md        ← short, anonymous warm-up poll
 │   ├── facilitator_run_sheet.md    ← minute-by-minute run sheet for the day
 │   ├── morning_checklist.md        ← what to do before the room fills
+│   ├── facilitator_day_of_reset.md ← one-page app reset checklist (passcode, timer, cleanup, export)
+│   ├── group_one_pager.md          ← one-page group quick-start (print 1–2 per table)
 │   ├── role_cards.md               ← optional prompt cards for the five group roles
 │   ├── cue_cards.md                ← print-ready facilitator cue cards
 │   ├── icebreaker.md               ← a senior-appropriate opener

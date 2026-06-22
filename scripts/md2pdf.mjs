@@ -38,6 +38,25 @@ li { margin: .15em 0; }
 .page-break { break-before: page; }
 `;
 
+// A denser variant for single-sheet handouts (the one-pagers): smaller type, tighter
+// margins and spacing, so a content-rich sheet fits on one printed side.
+const COMPACT_CSS = `
+@page { size: A4; margin: 9mm 11mm; }
+body { font: 9.2pt/1.26 "Segoe UI", Arial, system-ui, sans-serif; color: #1c2024; }
+h1, h2, h3 { color: #0f6e6e; line-height: 1.12; break-after: avoid; }
+h1 { font-size: 15pt; border-bottom: 2px solid #d6dbe0; padding-bottom: .1em; margin: 0 0 .25em; }
+h2 { font-size: 11pt; margin: .6em 0 .12em; border-bottom: 1px solid #e6eaee; padding-bottom: .07em; }
+h3 { font-size: 9.6pt; color: #1c2024; margin: .25em 0 .08em; }
+p { margin: .22em 0; }
+a { color: #0f6e6e; text-decoration: none; }
+strong { color: #0f6e6e; }
+em { color: #5b6470; }
+code { background: #eef2f2; border-radius: 3px; padding: .03em .25em; font-size: .9em; }
+ul, ol { padding-left: 1.1em; margin: .2em 0; }
+li { margin: .03em 0; }
+hr { border: none; border-top: 1px solid #d6dbe0; margin: .45em 0; }
+`;
+
 function findBrowser() {
   const candidates = [
     process.env.CHROME_PATH,
@@ -57,11 +76,14 @@ function findBrowser() {
 let args = process.argv.slice(2);
 let outDir = 'dist';
 let bundle = null;
+let compact = false;
 while (args[0] && args[0].startsWith('--')) {
   if (args[0] === '--out') { outDir = args[1]; args = args.slice(2); }
   else if (args[0] === '--bundle') { bundle = args[1]; args = args.slice(2); }
+  else if (args[0] === '--compact') { compact = true; args = args.slice(1); }
   else break;
 }
+const activeCss = compact ? COMPACT_CSS : CSS;
 const files = args;
 if (!files.length) {
   console.error('usage: node scripts/md2pdf.mjs [--out <dir>] [--bundle <name>] <file.md> [<file.md> ...]');
@@ -73,7 +95,7 @@ const browser = findBrowser();
 
 function renderToPdf(bodyHtml, name) {
   const html = `<!doctype html><html lang="en"><head><meta charset="utf-8">` +
-    `<title>${name}</title><style>${CSS}</style></head><body>${bodyHtml}</body></html>`;
+    `<title>${name}</title><style>${activeCss}</style></head><body>${bodyHtml}</body></html>`;
   const tmp = resolve(outDir, `${name}.tmp.html`);
   const out = resolve(outDir, `${name.replace(/_/g, '-')}.pdf`);
   writeFileSync(tmp, html);
