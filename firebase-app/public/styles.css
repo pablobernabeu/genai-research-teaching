@@ -105,6 +105,7 @@ label .hint {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="number"],
 select,
 textarea {
   width: 100%;
@@ -142,6 +143,7 @@ button {
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 0.6rem 1rem;
+  min-height: 44px; /* comfortable touch target */
   background: var(--teal);
   color: #fff;
 }
@@ -308,6 +310,7 @@ details.instructions[open] summary { margin-bottom: 0.3rem; }
   right: 0.9rem;
   bottom: 0.9rem;
   z-index: 50;
+  max-width: 50vw; /* never crowd the form's buttons on a phone */
   background: var(--card);
   color: var(--ink);
   border: 1px solid var(--line);

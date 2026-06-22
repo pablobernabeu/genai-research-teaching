@@ -628,7 +628,7 @@ function renderClock(d) {
     if (remaining <= 0) {
       timerChip.hidden = false;
       timerChip.classList.remove("ending");
-      timerChip.textContent = "Time — start wrapping up";
+      timerChip.textContent = "Time's up";
       timerAnnounce.textContent = "Time is up — start wrapping up.";
       if (clockInterval) { clearInterval(clockInterval); clockInterval = null; }
       return;
