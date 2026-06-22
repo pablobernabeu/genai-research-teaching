@@ -212,8 +212,13 @@ section .redbox p { margin: 0.2em 0; }
   font-weight: 700;
 }
 
-/* Invert (dark) section headings. */
+/* Section dividers tagged `invert`. The deck reads on the light ground throughout
+   (the dark-invert background does not take effect here), so a light heading colour
+   would sit low-contrast on white. Pin these slides to the light ground and use the
+   brand teal heading, so the colour is consistent with the rest of the deck and the
+   contrast is strong in both HTML and PDF. */
+section.invert { background: var(--color-background); color: var(--color-foreground); }
 section.invert h1,
 section.invert h2,
-section.invert h3 { color: #7fd6d6; }
-section.invert strong { color: #7fd6d6; }
+section.invert h3 { color: var(--workshop-accent); }
+section.invert strong { color: var(--color-foreground); }

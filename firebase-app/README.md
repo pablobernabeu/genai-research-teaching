@@ -22,9 +22,10 @@ reveal anyone's identity. Nothing else about individuals is collected.
   and sync on reconnect.
 - **Firebase Hosting** — three static pages, no build step (vanilla ES modules +
   the Firebase v10 modular SDK and Chart.js from a CDN). Easy to read and audit.
-- **Auth** — groups sign in **anonymously**; the facilitator signs in with their
-  **Google account** (recognised by its verified email). All trust is enforced in
-  `firestore.rules`, never in the UI.
+- **Auth** — groups **and the public dashboard** sign in **anonymously**; the facilitator
+  signs in with their **Google account** (recognised by its verified email). All trust is
+  enforced in `firestore.rules`, never in the UI. The dashboard then adds a **session name +
+  passcode gate** on top (a privacy gate, not a hard wall — see the security model).
 - **Resilience** — the group app persists its `groupId` locally and silently rejoins after
   a reload or disconnect; an optional facilitator-controlled **countdown** shows as a calm,
   accessible corner chip (advisory only — it never locks the form).
@@ -35,7 +36,7 @@ Pages (in `public/`):
 |---|---|---|
 | `index.html` | groups | claim a unique name (or join with a code) → choose a scenario → do the core three (artefact, caught error, insight) → submit |
 | `facilitator.html` | facilitator only | live list of all groups; approve, reopen or rename each submission; set the passcode and the optional session timer |
-| `dashboard.html` | anyone | approved submissions + live summary stats/plots |
+| `dashboard.html` | anyone with the session name + passcode | approved submissions + live stats and plots (field over/under-use, trust vs steering, tracks, oversight) |
 
 ## Data model (the build contract)
 
@@ -52,6 +53,7 @@ Pages (in `public/`):
 | `scenario` | string | chosen scenario label, or `Own problem` |
 | `track` | string | `A` / `B` / `C` / `D` / `` |
 | `shareConsent` | bool | the group's opt-in consent to include its (non-identifying) submission in the public archive; only consented, approved work is exported/PR'd |
+| `survey` | map | three optional 1–5 scales — `fieldBalance` (field under/over-using AI here), `trust` (trust in the output before checking), `steering` (human steering needed); they power the dashboard plots. `0` or absent means unanswered |
 | `responses` | map | `problem`, `artefact`, `caughtErrors`, `map`, `oversight` (`interwoven`/`staged`/``), `oversightWhy`, `insight`, `fieldUse` (optional field reflection); optional deferred `rubric` map (five 1–5 scores) and `societal` |
 | `facilitatorNote` | string | set by the facilitator when reopening |
 | `createdAt` / `updatedAt` | timestamp | `serverTimestamp()` |
@@ -67,6 +69,13 @@ countdown. **Any signed-in device may read it** (so groups show a calm corner ti
 the facilitator may write, and only those four fields (the rule pins them with `hasOnly`, so
 no secret can ever be smuggled onto a group-readable doc). The absolute `endsAt` is the single
 source of truth, so every screen agrees; the chip shows only while `running` and not expired.
+
+`config/dashboard` → `{ sessionName, passHash }` — the public-dashboard gate. `sessionName`
+is the (non-secret) session label; `passHash` is a SHA-256 hash binding the session name and
+the dashboard passcode — **never the passcode itself**. Any signed-in device may read it (the
+dashboard verifies a typed passcode against the hash, client-side); only the facilitator may
+write, and only those two fields (`hasOnly`). The facilitator sets it from the **Session name
+& passcode** panel; the same passcode value also gates group creation (`config/app`).
 
 Scenarios offered: **A** Methodological Blind-Spot Detector · **B** Executive-Function
 Layer · **C** Rapid Prototyping · **D** Public Engagement · **Own problem** (a real,
@@ -91,9 +100,10 @@ non-confidential problem a member brings — kept, per the current design).
    **`firebase deploy --only firestore:rules,hosting`**.
 7. Open the Hosting URL. Group app is `/`, facilitator `/facilitator.html`, public
    `/dashboard.html`.
-8. **Set the session passcode** in the facilitator dashboard (the **Set passcode**
-   panel) **before groups start**, and read it out to the room. Groups must type it to
-   start a group; until it is set, no group can start.
+8. **Set the session name and passcode** in the facilitator dashboard (the **Session name
+   & passcode** panel) **before groups start**, and read both out to the room. Groups type
+   the passcode to start a group (until it is set, no group can start); the name + passcode
+   together unlock the public dashboard.
 
 Run locally first with the emulators: `firebase emulators:start` (Firestore + Hosting
 + Auth) and exercise the test plan below before deploying.
@@ -120,8 +130,17 @@ Run locally first with the emulators: `firebase emulators:start` (Firestore + Ho
   cannot reassign names.
 - On **approval** the document is **scrubbed**: the rule requires `joinCode` and
   `sessionCode` to be blanked, so the now world-readable document carries **no secrets**.
-- The **public** can read **only `approved`** documents — nothing in `draft`/`submitted`.
+- Only **signed-in** devices can read `approved` documents — nothing in `draft`/`submitted`,
+  and nothing at all without an (anonymous) token. This keeps approved work off the open,
+  unauthenticated, indexable web; the dashboard layers a **session name + passcode gate** on
+  top (verified client-side against a hash in `config/dashboard`). This is a **privacy gate,
+  not a hard wall**: the data is non-identifying by design, and a determined signed-in caller
+  could still read `approved` docs directly — there is no backend on the free plan to enforce
+  a typed secret on a read. Sized to the data, not beyond it.
 - Only the **facilitator** can read or write `config/app` (the session passcode).
+- `config/dashboard` (the dashboard gate) is **readable by any signed-in device but writable
+  only by the facilitator**, pinned by `hasOnly` to `sessionName` + `passHash` (a hash, never
+  the passcode).
 - `config/clock` (the optional countdown) is **readable by any signed-in device but
   writable only by the facilitator**, and the rule pins it to four non-secret fields with
   `hasOnly` — so no secret can ever be smuggled onto a group-readable doc.

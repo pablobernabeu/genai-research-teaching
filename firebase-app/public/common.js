@@ -65,6 +65,43 @@ export const SCENARIOS = [
   { label: "Own problem", scenario: "Own problem", track: "" },
 ];
 
+// The three quick survey scales (each 1–5). Shared so the group form, the dashboard
+// axes and any summaries label them identically. `scale[i]` is the label for value i+1.
+export const SURVEY = {
+  fieldBalance: {
+    label: "Field's use here",
+    question: "Compared with good practice, is your field currently using GenAI for this task…",
+    scale: ["Far too little", "A little too little", "About right", "A little too much", "Far too much"],
+  },
+  trust: {
+    label: "Trust before checking",
+    question: "Before you checked it, how far did you trust the AI's output?",
+    scale: ["Not at all", "Slightly", "Moderately", "Largely", "Completely"],
+  },
+  steering: {
+    label: "Human steering needed",
+    question: "How much human steering did the task need?",
+    scale: ["Minimal", "A little", "A fair amount", "A lot", "Constant"],
+  },
+};
+export const SURVEY_KEYS = Object.keys(SURVEY);
+
+// SHA-256 → lower-case hex, via the browser's Web Crypto (available on HTTPS, which the
+// deployed app always is). Used only for the dashboard gate; nothing security-critical
+// depends on it — the rules remain the trust boundary.
+export async function sha256Hex(text) {
+  const data = new TextEncoder().encode(String(text));
+  const buf = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+// The dashboard gate token binds the session NAME and the passcode together, so neither
+// alone unlocks it. The passcode itself is never stored — only this hash is (in
+// config/dashboard), which the dashboard re-computes from what a viewer types.
+export async function dashboardHash(sessionName, passcode) {
+  return sha256Hex(normaliseName(sessionName) + ":" + String(passcode));
+}
+
 // A friendly message for the most common Firestore failures. We avoid leaking raw
 // error text to participants; the security-relevant denials get a plain explanation.
 export function friendlyError(err) {

@@ -195,6 +195,43 @@
         </label>
         <textarea id="fieldUse" name="fieldUse"></textarea>
 
+        <fieldset id="surveyFields" class="survey">
+          <legend>Three quick reflections <span class="muted small">(optional — these power the live dashboard)</span></legend>
+
+          <div class="survey-q">
+            <p class="survey-label">Compared with good practice, is your field currently using GenAI for this task…</p>
+            <div class="scale" role="radiogroup" aria-label="Is your field using GenAI for this task too little or too much">
+              <label><input type="radio" name="fieldBalance" value="1" /><span>Far too little</span></label>
+              <label><input type="radio" name="fieldBalance" value="2" /><span>A little too little</span></label>
+              <label><input type="radio" name="fieldBalance" value="3" /><span>About right</span></label>
+              <label><input type="radio" name="fieldBalance" value="4" /><span>A little too much</span></label>
+              <label><input type="radio" name="fieldBalance" value="5" /><span>Far too much</span></label>
+            </div>
+          </div>
+
+          <div class="survey-q">
+            <p class="survey-label">Before you checked it, how far did you trust the AI's output?</p>
+            <div class="scale" role="radiogroup" aria-label="Trust in the AI output before checking">
+              <label><input type="radio" name="trust" value="1" /><span>Not at all</span></label>
+              <label><input type="radio" name="trust" value="2" /><span>Slightly</span></label>
+              <label><input type="radio" name="trust" value="3" /><span>Moderately</span></label>
+              <label><input type="radio" name="trust" value="4" /><span>Largely</span></label>
+              <label><input type="radio" name="trust" value="5" /><span>Completely</span></label>
+            </div>
+          </div>
+
+          <div class="survey-q">
+            <p class="survey-label">How much human steering did the task need?</p>
+            <div class="scale" role="radiogroup" aria-label="How much human steering the task needed">
+              <label><input type="radio" name="steering" value="1" /><span>Minimal</span></label>
+              <label><input type="radio" name="steering" value="2" /><span>A little</span></label>
+              <label><input type="radio" name="steering" value="3" /><span>A fair amount</span></label>
+              <label><input type="radio" name="steering" value="4" /><span>A lot</span></label>
+              <label><input type="radio" name="steering" value="5" /><span>Constant</span></label>
+            </div>
+          </div>
+        </fieldset>
+
         <label class="consent" for="shareConsent">
           <input type="checkbox" id="shareConsent" name="shareConsent" />
           <span>We're happy for our group's <strong>non-identifying</strong> submission to be shared in the

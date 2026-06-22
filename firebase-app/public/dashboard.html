@@ -3,46 +3,94 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Groupwork — public dashboard</title>
+  <meta name="robots" content="noindex" />
+  <title>Groupwork — session dashboard</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <main class="wrap wide">
     <header class="page">
       <h1>Groupwork — live dashboard</h1>
-      <p class="sub">Approved submissions and summary stats. Updates live, no sign-in.</p>
+      <p class="sub">Approved submissions and summary stats for this session.</p>
     </header>
 
-    <div id="status" class="notice info">Loading approved submissions…</div>
+    <div id="status" class="notice info">Connecting…</div>
 
-    <!-- Summary stats -->
-    <section id="statsSection" hidden>
-      <div class="stat-row">
-        <div class="stat">
-          <div class="num" id="totalApproved">0</div>
-          <div class="lbl">approved submissions</div>
+    <!-- ================= SESSION GATE ================= -->
+    <section id="gateView" class="card signin-card" hidden>
+      <h2>Enter the session</h2>
+      <p class="muted small">
+        This dashboard is for the current session. Enter the session name and passcode
+        your facilitator read out.
+      </p>
+      <form id="gateForm" autocomplete="off">
+        <label for="gateName">Session name</label>
+        <input type="text" id="gateName" name="gateName" maxlength="60"
+               autocomplete="off" spellcheck="false" />
+        <label for="gatePass">Passcode</label>
+        <input type="text" id="gatePass" name="gatePass" maxlength="40"
+               autocomplete="off" spellcheck="false" />
+        <div class="btn-row">
+          <button type="submit" id="gateBtn">View dashboard</button>
         </div>
-      </div>
-      <div class="charts">
-        <div class="chart-card">
-          <h3>By scenario / track</h3>
-          <canvas id="scenarioChart" height="220" role="img"
-                  aria-label="Bar chart of approved submissions by scenario"></canvas>
-        </div>
-        <div class="chart-card">
-          <h3>Oversight: interwoven vs staged</h3>
-          <canvas id="oversightChart" height="220" role="img"
-                  aria-label="Pie chart of interwoven versus staged oversight"></canvas>
-        </div>
-      </div>
+      </form>
+      <div id="gateError" class="notice error" role="alert" hidden></div>
     </section>
 
-    <!-- Approved group cards -->
-    <section id="cards"></section>
+    <!-- ================= BOARD ================= -->
+    <section id="boardView" hidden>
+      <div id="boardStatus" class="notice info" hidden></div>
+
+      <!-- Summary stats -->
+      <section id="statsSection" hidden>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="num" id="totalApproved">0</div>
+            <div class="lbl">approved submissions</div>
+          </div>
+          <div class="stat">
+            <div class="num" id="avgTrust">–</div>
+            <div class="lbl">avg. trust before checking (1–5)</div>
+          </div>
+          <div class="stat">
+            <div class="num" id="avgSteering">–</div>
+            <div class="lbl">avg. human steering (1–5)</div>
+          </div>
+          <div class="stat">
+            <div class="num" id="pctAboutRight">–</div>
+            <div class="lbl">say their field's use is "about right"</div>
+          </div>
+        </div>
+        <div class="charts">
+          <div class="chart-card">
+            <h3>Is your field over- or under-using AI here?</h3>
+            <canvas id="fieldChart" height="240" role="img"
+                    aria-label="Distribution of how groups rate their field's use of AI for this task"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3>Trust vs human steering</h3>
+            <canvas id="trustSteerChart" height="240" role="img"
+                    aria-label="Scatter of trust before checking against human steering needed"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3>By scenario / track</h3>
+            <canvas id="scenarioChart" height="240" role="img"
+                    aria-label="Bar chart of approved submissions by scenario"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3>Oversight: interwoven vs staged</h3>
+            <canvas id="oversightChart" height="240" role="img"
+                    aria-label="Doughnut chart of interwoven versus staged oversight"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Approved group cards -->
+      <section id="cards"></section>
+    </section>
 
     <p class="experimental">
-      Experimental dashboard. Only approved submissions appear here; the HackMD note
-      remains the official record.
+      Approved submissions only; the HackMD note remains the official record.
     </p>
   </main>
 

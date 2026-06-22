@@ -51,6 +51,20 @@ function decodeFields(fields) {
   return o;
 }
 
+// Approved docs are now readable only by a SIGNED-IN caller (the rule requires
+// request.auth != null). Mint an anonymous ID token from the Identity Toolkit REST API —
+// the same anonymous auth the web app uses — and call Firestore with it. The web API key
+// is the project's public key, not a secret.
+async function anonIdToken(apiKey) {
+  const r = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ returnSecureToken: true }),
+  });
+  if (!r.ok) throw new Error(`Anonymous sign-in failed: ${r.status} ${await r.text()}`);
+  return (await r.json()).idToken;
+}
+
 async function main() {
   // --- config (non-secret) -------------------------------------------------
   const f = configFromFile();
@@ -64,7 +78,18 @@ async function main() {
     );
   }
 
-  // --- Firestore REST: query approved groups (public read), keep consented --
+  // --- authenticate (anonymous) so the approved read is permitted ----------
+  let idToken;
+  try {
+    idToken = await anonIdToken(apiKey);
+  } catch (e) {
+    return fail(
+      e.message + "\n(Ensure Anonymous sign-in is enabled for the project, or export the\n" +
+      "approved submissions from the facilitator dashboard instead.)"
+    );
+  }
+
+  // --- Firestore REST: query approved groups (signed-in read), keep consented --
   const url = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents:runQuery?key=${apiKey}`;
   const query = {
     structuredQuery: {
@@ -74,7 +99,7 @@ async function main() {
   };
   const res = await fetch(url, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
     body: JSON.stringify(query),
   });
   if (!res.ok) return fail(`Firestore query failed: ${res.status} ${await res.text()}`);

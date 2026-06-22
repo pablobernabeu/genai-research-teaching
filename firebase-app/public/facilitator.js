@@ -17,7 +17,7 @@ import {
   signOut, onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-import { db, auth, friendlyError, normaliseName } from "./common.js";
+import { db, auth, friendlyError, normaliseName, dashboardHash, SURVEY, SURVEY_KEYS } from "./common.js";
 
 const $ = (id) => document.getElementById(id);
 const signinView = $("signinView");
@@ -29,6 +29,7 @@ const countLine = $("countLine");
 const groupList = $("groupList");
 const signOutBtn = $("signOutBtn");
 const sessionCodeForm = $("sessionCodeForm");
+const sessionNameInput = $("sessionNameInput");
 const sessionCodeInput = $("sessionCodeInput");
 const setSessionCodeBtn = $("setSessionCodeBtn");
 const currentSessionCode = $("currentSessionCode");
@@ -43,7 +44,9 @@ const exportStatus = $("exportStatus");
 
 let unsubscribe = null;
 let unsubscribeConfig = null; // config/app passcode listener
+let unsubscribeDashCfg = null; // config/dashboard session-name listener
 let unsubscribeClock = null;  // config/clock timer listener
+let dashNamePrefilled = false; // only prefill the session-name input once
 let timerStatusInterval = null;
 let latestGroups = [];        // newest snapshot, for the Markdown export
 
@@ -73,10 +76,12 @@ onAuthStateChanged(auth, (user) => {
     signOutBtn.hidden = false;
     startListening();
     startConfigListening();
+    startDashConfigListening();
     startClockListening();
   } else {
     if (unsubscribe) { unsubscribe(); unsubscribe = null; }
     if (unsubscribeConfig) { unsubscribeConfig(); unsubscribeConfig = null; }
+    if (unsubscribeDashCfg) { unsubscribeDashCfg(); unsubscribeDashCfg = null; }
     if (unsubscribeClock) { unsubscribeClock(); unsubscribeClock = null; }
     if (timerStatusInterval) { clearInterval(timerStatusInterval); timerStatusInterval = null; }
     signinView.hidden = false;
@@ -171,26 +176,54 @@ function startConfigListening() {
   );
 }
 
+// config/dashboard holds the session NAME (non-secret) + a passHash. Prefill the
+// session-name input once from it, so re-setting the passcode keeps the same name.
+function startDashConfigListening() {
+  if (unsubscribeDashCfg) return;
+  unsubscribeDashCfg = onSnapshot(
+    doc(db, "config", "dashboard"),
+    (snap) => {
+      const name = snap.exists() ? (snap.data().sessionName || "") : "";
+      if (name && !dashNamePrefilled && !sessionNameInput.value) {
+        sessionNameInput.value = name;
+        dashNamePrefilled = true;
+      }
+    },
+    () => { /* facilitator-only context; ignore transient errors */ }
+  );
+}
+
 sessionCodeForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   sessionCodeStatus.hidden = true;
+  const name = sessionNameInput.value.trim();
   const value = sessionCodeInput.value.trim();
   setSessionCodeBtn.disabled = true;
   setSessionCodeBtn.textContent = "Saving…";
   try {
-    // config-write rule: only the facilitator may write config/app. merge so we set
-    // just sessionCode and leave any other config untouched.
+    // config/app holds the group-creation passcode (facilitator-only). merge so we set just
+    // sessionCode and leave any other config untouched.
     await setDoc(doc(db, "config", "app"), { sessionCode: value }, { merge: true });
+    // config/dashboard gates the public dashboard with the name + passcode, stored only as a
+    // hash. Written ONLY when both are present; otherwise the dashboard stays locked.
+    let dashMsg;
+    if (name && value) {
+      const passHash = await dashboardHash(name, value);
+      await setDoc(doc(db, "config", "dashboard"), { sessionName: name, passHash });
+      dashMsg = ' The public dashboard now opens with the name "' + name + '" and this passcode.';
+    } else {
+      dashMsg = " Add a session name as well to open the public dashboard.";
+    }
     sessionCodeStatus.hidden = false;
     sessionCodeStatus.className = "notice ok";
-    sessionCodeStatus.textContent = "Passcode set. Read it out to the groups.";
+    sessionCodeStatus.textContent = "Saved. Read the passcode (and session name) out to the room." + dashMsg;
   } catch (err) {
     sessionCodeStatus.hidden = false;
     sessionCodeStatus.className = "notice error";
-    sessionCodeStatus.textContent = "Could not set the passcode. " + friendlyError(err);
+    sessionCodeStatus.textContent = "Could not save. " + friendlyError(err);
   } finally {
     setSessionCodeBtn.disabled = false;
-    setSessionCodeBtn.textContent = "Set passcode";
+    setSessionCodeBtn.textContent = "Set name & passcode";
   }
 });
 
@@ -400,6 +433,19 @@ function card(g) {
     dl.append(dt, dd);
   }
   el.appendChild(dl);
+
+  // Survey scales, if the group answered any of them.
+  const survey = g.survey || {};
+  const parts = SURVEY_KEYS
+    .filter((k) => survey[k] >= 1 && survey[k] <= 5)
+    .map((k) => `${SURVEY[k].label}: ${SURVEY[k].scale[survey[k] - 1]}`);
+  if (parts.length) {
+    const s = document.createElement("p");
+    s.className = "small muted";
+    s.style.margin = "0.2rem 0 0";
+    s.textContent = "Survey — " + parts.join(" · ");
+    el.appendChild(s);
+  }
 
   // Existing facilitator note, if any.
   if (g.facilitatorNote && g.facilitatorNote.trim()) {

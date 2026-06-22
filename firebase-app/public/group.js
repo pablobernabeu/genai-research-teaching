@@ -16,7 +16,7 @@ import {
   signInAnonymously, onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-import { db, auth, normaliseName, generateJoinCode, SCENARIOS, friendlyError } from "./common.js";
+import { db, auth, normaliseName, generateJoinCode, SCENARIOS, SURVEY_KEYS, friendlyError } from "./common.js";
 
 // ---- DOM handles -----------------------------------------------------------
 const $ = (id) => document.getElementById(id);
@@ -43,11 +43,34 @@ const ownProblemNotice = $("ownProblemNotice");
 const timerChip = $("timerChip");
 const timerAnnounce = $("timerAnnounce");
 const shareConsent = $("shareConsent");
+const surveyFields = $("surveyFields");
 
 // The response textareas we autosave. 'fieldUse' is the optional field reflection — not
 // part of the in-build "core three", but stored and restored like the rest.
 const RESPONSE_FIELDS = ["problem", "artefact", "caughtErrors", "map", "oversightWhy", "insight", "fieldUse"];
 // (oversight is a response too, but it is a <select> handled alongside the textareas)
+
+// ---- Survey (three 1–5 scales, stored under `survey`) ----------------------
+// Read the checked radio for each scale (0 = unanswered) and, conversely, restore the
+// radios from a stored survey map. Kept separate from `responses` so the dashboard can
+// aggregate the numbers without parsing prose.
+function readSurvey() {
+  const out = {};
+  for (const key of SURVEY_KEYS) {
+    const checked = surveyFields.querySelector(`input[name="${key}"]:checked`);
+    out[key] = checked ? Number(checked.value) : 0;
+  }
+  return out;
+}
+function applySurvey(survey) {
+  const s = survey || {};
+  for (const key of SURVEY_KEYS) {
+    const want = String(s[key] || "");
+    for (const r of surveyFields.querySelectorAll(`input[name="${key}"]`)) {
+      r.checked = want !== "" && r.value === want;
+    }
+  }
+}
 
 let uid = null;
 let groupId = null;
@@ -249,6 +272,7 @@ async function createGroup(displayName, nameLower, sessionCode) {
         scenario: "",
         track: "",
         shareConsent: false,
+        survey: { fieldBalance: 0, trust: 0, steering: 0 },
         responses: {
           problem: "",
           artefact: "",
@@ -413,6 +437,7 @@ function renderGroup(data) {
     if (el) el.value = (data.responses && data.responses[f]) || "";
   }
   shareConsent.checked = !!data.shareConsent;
+  applySurvey(data.survey);
   applyingRemote = false;
 
   // Lock / unlock every input.
@@ -445,6 +470,7 @@ function setFormEnabled(enabled) {
     const el = $(f);
     if (el) el.disabled = !enabled;
   }
+  for (const r of surveyFields.querySelectorAll('input[type="radio"]')) r.disabled = !enabled;
 }
 
 // ---- Autosave (debounced ~800ms) -------------------------------------------
@@ -489,6 +515,7 @@ async function saveNow() {
       track: trackForScenario(scenario),
       responses,
       shareConsent: shareConsent.checked,
+      survey: readSurvey(),
       status: status === "reopened" ? "reopened" : "draft",
       updatedAt: serverTimestamp(),
     });
@@ -505,6 +532,7 @@ RESPONSE_FIELDS.forEach((f) => {
   const el = $(f);
   if (el) el.addEventListener("input", scheduleSave);
 });
+surveyFields.querySelectorAll('input[type="radio"]').forEach((r) => r.addEventListener("change", scheduleSave));
 
 // Reveal the own-problem red lines the moment that path is chosen (the render path also
 // covers the value arriving from a snapshot).
@@ -548,6 +576,7 @@ submitBtn.addEventListener("click", async () => {
       track: trackForScenario(scenario),
       responses,
       shareConsent: shareConsent.checked,
+      survey: readSurvey(),
       status: "submitted",
       updatedAt: serverTimestamp(),
     });
