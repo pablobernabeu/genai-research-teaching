@@ -30,6 +30,16 @@ here is produced with Git on the day; the facilitator curates it afterwards from
 
 A copy of the empty per-group shape is in [`_TEMPLATE.md`](_TEMPLATE.md).
 
+### Or automate the PR
+
+`npm run archive:pr` (i.e. `node scripts/archive-pr.mjs`) reads the approved, **consented**
+submissions straight from the live project and opens a pull request adding the dated archive
+file — using your own `gh` auth, so no write-token ever lives in the app. Add `--dry-run` to
+write the file and preview it without committing or opening a PR. Set `GENAI_RT_PROJECT` and
+`GENAI_RT_API_KEY` first (the Firebase project id and web API key — not secrets; see
+`firebase-app/public/firebase-config.js` or the console). Only groups that ticked
+**"share publicly"** are included.
+
 ## Naming convention (sortable)
 
 ```

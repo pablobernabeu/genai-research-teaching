@@ -16,6 +16,7 @@
     "build:facilitatorpack": "node scripts/md2pdf.mjs --out dist/handouts --bundle facilitator-pack docs/cue_cards.md docs/facilitator_run_sheet.md docs/morning_checklist.md",
     "watch": "marp --config-file ./marp.config.mjs -w -s .",
     "preview": "marp --config-file ./marp.config.mjs -p ./slides.md",
+    "archive:pr": "node scripts/archive-pr.mjs",
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
   },
   "devDependencies": {
