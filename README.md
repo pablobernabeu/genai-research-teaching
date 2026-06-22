@@ -28,13 +28,13 @@ nothing to install. Sixty minutes of contact time:
 |---|---|---|
 | **Part 1 · Conceptualising the use of AI in research** | 12:00–12:30 | the lens: stance, friction, the tool spectrum, data red lines, ethics, human-in-the-loop |
 | *Networking lunch* | *12:30–13:15* | *a break* |
-| **Part 2 · Practical AI for research & teaching** | 13:15–13:45 | applied session: build, interrogate, share one insight |
+| **Part 2 · Practical AI for research & teaching** | 13:15–13:45 | applied session in the groupwork app: build, interrogate, share one insight |
 
-In Part 2, **groups of five** choose one of **four tracks**, work a **real problem** from their
-research or teaching, put it on trial against a **five-dimension rubric** and a
-**museum of caught errors**, then give a **45-second** spoken insight: *the most
-significant limitation you found, or the most important human-in-the-loop safeguard
-you built in.*
+In Part 2, **groups of five** choose one of **four tracks** and work a **real problem** from
+their research or teaching, capturing it in the **groupwork app** ([genai-rt.web.app](https://genai-rt.web.app)).
+Each group assesses its work against a **five-dimension rubric** and a **museum of caught
+errors**, then gives a **45-second** spoken insight: the most significant limitation it found,
+or the most important human-in-the-loop safeguard it built in.
 
 **Five aims:** enjoy the session · reflect critically · learn · collaborate ·
 create.
@@ -49,7 +49,11 @@ create.
 ├── workshop_plan.md                ← facilitator guide: framing, objectives, timings, prompts, contingencies
 ├── slides.md                       ← Marp deck (Part 1 conceptual · lunch · Part 2 applied)
 ├── project_tracks.md               ← the four tracks, with tooling, tasks, artefacts and data notes
-├── evaluation_rubric_template.md   ← HackMD setup + the copy-paste rubric template
+├── evaluation_rubric_template.md   ← the copy-paste rubric template groups fill in the app (HackMD on the fallback)
+│
+├── firebase-app/                   ← the Part 2 groupwork app (default capture surface): Firestore + Hosting, security rules, three pages
+│   └── README.md                   ← app architecture, data model, security model and setup
+├── handouts/                       ← ready-to-print PDFs (slides, the two packs, the two one-pagers); refresh with `npm run build:publish`
 │
 ├── themes/
 │   └── workshop.css                ← custom Marp theme (extends `gaia`; logo + disclaimer footer)
@@ -64,6 +68,7 @@ create.
 │   ├── morning_checklist.md        ← what to do before the room fills
 │   ├── facilitator_day_of_reset.md ← one-page app reset checklist (passcode, timer, cleanup, export)
 │   ├── group_one_pager.md          ← one-page group quick-start (print 1–2 per table)
+│   ├── group_pack_cover.md         ← cover/orientation sheet for the printed group-pack booklet
 │   ├── role_cards.md               ← optional prompt cards for the five group roles
 │   ├── cue_cards.md                ← print-ready facilitator cue cards
 │   ├── icebreaker.md               ← a senior-appropriate opener
@@ -109,6 +114,7 @@ npm run build:preview  # organiser preview pack → slides + group pack + facili
 npm run build:handouts # print-ready handout PDFs → dist/handouts/ (role cards, data aid, rubric, cue cards, …)
 npm run build:grouppack       # one combined per-table booklet → dist/handouts/group-pack.pdf
 npm run build:facilitatorpack # one combined facilitator booklet → dist/handouts/facilitator-pack.pdf
+npm run build:publish  # refresh the committed ready-to-print PDFs in handouts/
 npm run watch          # live-reloading preview in the browser
 npm run clean          # remove dist/
 ```
@@ -125,17 +131,30 @@ A `Makefile` mirrors these for Unix users: `make`, `make html`, `make pdf`,
 
 The output in `dist/` is generated and git-ignored; rebuild it any time.
 
+### Ready-to-use PDFs (no build needed)
+
+Print-ready PDFs are committed under [`handouts/`](handouts/), so you can download and print
+them without building anything:
+
+- [`handouts/slides.pdf`](handouts/slides.pdf) — the full deck.
+- [`handouts/group-pack.pdf`](handouts/group-pack.pdf) — the combined per-table booklet (cover, role cards, data aid, rubric, worked examples, starter prompts).
+- [`handouts/facilitator-pack.pdf`](handouts/facilitator-pack.pdf) — the combined facilitator booklet (cue cards, run sheet, morning checklist).
+- [`handouts/group-one-pager.pdf`](handouts/group-one-pager.pdf) — the one-page group quick-start.
+- [`handouts/facilitator-day-of-reset.pdf`](handouts/facilitator-day-of-reset.pdf) — the one-page app reset checklist.
+
+They are generated from the Markdown sources and may lag them, so run `npm run build:publish` to refresh.
+
 ## Sharing a preview
 
 To show the draft slides and core materials to organisers or colleagues before the
 day, pick the option that fits how private the draft should stay:
 
 - **Email the PDFs — simplest, private (recommended for a draft).** `npm run build:preview`
-  produces a tidy attachment pack in `dist/`: `slides.pdf` and `preview-tracks-and-rubric.pdf`
-  — a friendly one-page overview of the four tracks and the rubric
-  ([`docs/preview_tracks_and_rubric.md`](docs/preview_tracks_and_rubric.md), rendered via
-  `scripts/md2pdf.mjs`, which needs a Chromium browser). The full working-doc PDFs are
-  available via `npm run build:docs`. A ready covering note is in
+  produces a tidy attachment pack: the slides PDF (`dist/slides.pdf`) plus the combined group
+  pack and facilitator pack (in `dist/handouts/`). For a friendly one-page overview of the
+  four tracks and the rubric, render [`docs/preview_tracks_and_rubric.md`](docs/preview_tracks_and_rubric.md)
+  with `node scripts/md2pdf.mjs docs/preview_tracks_and_rubric.md` (needs a Chromium browser);
+  the full working-doc PDFs are available via `npm run build:docs`. A ready covering note is in
   [`docs/organiser_preview_email.md`](docs/organiser_preview_email.md).
 - **OneDrive / SharePoint link — private, no setup.** This repo already lives in
   OneDrive: drop `dist/slides.pdf` (and a copy of the materials) in a folder and
@@ -152,17 +171,18 @@ day, pick the option that fits how private the draft should stay:
 
 Participants never touch Git or GitHub. The flow is deliberately simple:
 
-1. Each group's **Reporter** keeps notes in **HackMD** (free, no install), inside
-   the [rubric template](evaluation_rubric_template.md).
-2. During Part 2 (by **13:45**) each group shares its note link with the
-   **facilitator**, who records it in a single pinned GitHub issue — one entry per
-   group (group number, track, link). **No participant needs a GitHub account.**
-3. **After the session**, the facilitator exports each HackMD note to Markdown and
-   commits it under [`submissions/`](submissions/) using the sortable naming
-   convention `YYYY-MM-DD_groupNN_track-X_short-slug.md`.
+1. Each group fills its shared note in the **groupwork app** ([genai-rt.web.app](https://genai-rt.web.app)),
+   following the structure of the [rubric template](evaluation_rubric_template.md). No
+   participant needs a GitHub account, and there is nothing to install. A group that cannot
+   use the app falls back to **HackMD** and shares its note link with the facilitator.
+2. The **facilitator approves** each group from the private dashboard. Approved work becomes
+   the curated, world-readable record on the public dashboard.
+3. **After the session**, the facilitator exports the approved, consented work and commits it
+   under [`submissions/`](submissions/) using the sortable naming convention
+   `YYYY-MM-DD_groupNN_track-X_short-slug.md`.
 
-Full details, including the export step and the issue template, are in
-[`submissions/README.md`](submissions/README.md).
+Full details, including the app, the export step and the fallback issue template, are in
+[`submissions/README.md`](submissions/README.md) and [`firebase-app/README.md`](firebase-app/README.md).
 
 **Questions and discussion** are directed to the repository's **Discussions** tab —
 the closing slide and the follow-up email point there, so answers are shared with

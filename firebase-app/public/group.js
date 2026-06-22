@@ -1,7 +1,7 @@
 // group.js — the GROUP app.
 //
 // Flow: sign in anonymously → create a new group (transaction that also claims the
-// name) OR join an existing one by code → live-edit the core five with autosave →
+// name) OR join an existing one by code → live-edit the core three with autosave →
 // submit for review → see approve/reopen outcomes.
 //
 // Every Firestore call here is shaped to match exactly one of the allow-rules in

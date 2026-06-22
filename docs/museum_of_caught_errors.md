@@ -19,7 +19,7 @@ with the truth, and a human noticed. Collecting these does three things:
 
 ## How a group keeps it
 
-Use the table already in your HackMD note (from the
+Use the table already in your note in the app, or in HackMD on the fallback (from the
 [rubric template](../evaluation_rubric_template.md)):
 
 | What happened | How we caught it | What it signals about where humans must stay |

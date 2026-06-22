@@ -10,25 +10,26 @@ the first ten minutes.
       `dist/slides.pdf` as a fallback. (Rebuild with `npm run build` if needed.)
 - [ ] Wi-Fi confirmed on a guest device — the network participants will actually use.
 - [ ] Power: enough sockets / extension leads for tables of five.
-- [ ] **hackmd.io** reachable on the guest network; sign-in works.
+- [ ] **genai-rt.web.app** (the groupwork app) reachable on the guest network; facilitator Google sign-in to the dashboard works.
 - [ ] A chat tool (ChatGPT / Claude / Gemini / Copilot) reachable on the guest
       network.
 - [ ] A visible **timer** (phone, slide timer or kitchen timer) for the segment
       timings and the 45-second lightning round.
 
-## Submission collection (facilitator)
+## App reset (facilitator)
 
-- [ ] The **single submission issue** created and **pinned** in the repo — your own
-      link-collection record.
-- [ ] You can add a comment yourself — you will be recording each group's link here
-      (post a quick test comment, then delete it).
+- [ ] The groupwork app reset for this session: set the session passcode, arm the
+      timer and sign in to the private dashboard. See
+      [Facilitator day-of reset](facilitator_day_of_reset.md) for the full app reset.
+- [ ] Dashboard reachable and clear of any previous session's submissions, ready to
+      approve groups as they submit.
 
 ## Printed materials (per table of five)
 
 - [ ] [Role cards](role_cards.md) — one set.
 - [ ] [Data decision aid](data_decision_aid.md) — one copy.
 - [ ] [Worked examples](worked_examples.md) — one copy (offline fallback).
-- [ ] Spare pens and paper (paper fallback if HackMD fails).
+- [ ] Spare pens and paper (HackMD or paper is the fallback if a group cannot use the app).
 
 ## Facilitator kit
 

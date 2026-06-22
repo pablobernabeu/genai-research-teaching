@@ -17,7 +17,7 @@ The mapping (canonical):
 | **Convenor** | Project Definition | Keeps the real problem and the clock in focus |
 | **Driver** | Technology Stack | Operates the tools, owns the tool choices |
 | **Steward** | Data Security & Ethics | Guards the red lines |
-| **Reporter** | Financial & Scalability | Owns the record, the link and the 45-second insight |
+| **Reporter** | Financial & Scalability | Owns the record, the submission and the 45-second insight |
 | **Sceptic** | Human-in-the-Loop Protocol | Tries to break the output, curates caught errors |
 
 ---
@@ -64,8 +64,8 @@ The mapping (canonical):
 
 **Your angle:** the record and the insight.
 
-- **Do:** keep the HackMD note in the rubric template; judge whether the approach
-  survives the free tier and scale; share the link with the facilitator during Part 2
+- **Do:** keep the group's note in the app, in the rubric template; judge whether the
+  approach survives the free tier and scale; submit the note for review during Part 2
   (by **13:45**); give the **45-second** insight at 13:33 (no slides).
 - **At the pivot (~13:26):** make sure the rubric is being filled in, not left to the end.
 - **Ask often:** "Does this still work next month, for fifty people, for free?"

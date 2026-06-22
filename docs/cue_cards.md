@@ -87,8 +87,8 @@ wall-clock — the workshop is two 30-minute parts split by lunch.
 ## 13:15 · SETTLE IN (Part 2)
 
 - **Say:** "Re-find your group. Quickly agree your **one** problem — the seed, or a real
-  one someone brought. Open your HackMD note. Red lines on."
-- **Do:** about three minutes in all — regroup, agree the one problem in roughly a minute, then open the compact HackMD note. Keep it tight so it does not eat into the fifteen-minute applied session.
+  one someone brought. Open the app (genai-rt.web.app); read out the passcode. Red lines on."
+- **Do:** about three minutes in all — regroup, agree the one problem in roughly a minute, then open the app and read out the passcode. Keep it tight so it does not eat into the fifteen-minute applied session.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
@@ -113,7 +113,7 @@ wall-clock — the workshop is two 30-minute parts split by lunch.
 - **Say:** "45 seconds, one insight, no slides: the biggest limitation, or the best
   safeguard."
 - **Do:** visible timer; 45 s each for as many as fit, then a one-line harvest from
-  the rest. Jot each group's thread; collect their HackMD link into the issue.
+  the rest. Jot each group's thread; approve their note on the dashboard as it lands.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 

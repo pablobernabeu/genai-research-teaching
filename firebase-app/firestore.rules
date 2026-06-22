@@ -99,7 +99,7 @@ service cloud.firestore {
       // approved (that last clause powers the PUBLIC dashboard — and only that). Requiring
       // request.auth != null on the approved clause keeps approved work off the open,
       // unauthenticated, indexable web: a viewer must at least hold an (anonymous) token,
-      // and the dashboard adds a session name + passcode gate on top.
+      // and the dashboard adds a passcode gate on top.
       allow read: if isOwner(resource.data)
                   || isFacilitator()
                   || (request.auth != null && resource.data.status == 'approved');

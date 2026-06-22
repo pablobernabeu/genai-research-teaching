@@ -16,6 +16,7 @@
     "build:onepagers": "node scripts/md2pdf.mjs --compact --fontpt 10.2 --out dist/handouts docs/group_one_pager.md && node scripts/md2pdf.mjs --compact --out dist/handouts docs/facilitator_day_of_reset.md",
     "build:grouppack": "node scripts/md2pdf.mjs --out dist/handouts --bundle group-pack docs/group_pack_cover.md docs/role_cards.md docs/data_decision_aid.md evaluation_rubric_template.md docs/worked_examples.md docs/starter_prompts.md",
     "build:facilitatorpack": "node scripts/md2pdf.mjs --out dist/handouts --bundle facilitator-pack docs/cue_cards.md docs/facilitator_run_sheet.md docs/morning_checklist.md",
+    "build:publish": "node -e \"require('fs').mkdirSync('handouts',{recursive:true})\" && marp --config-file ./marp.config.mjs ./slides.md -o ./handouts/slides.pdf && node scripts/md2pdf.mjs --compact --fontpt 10.2 --out handouts docs/group_one_pager.md && node scripts/md2pdf.mjs --compact --out handouts docs/facilitator_day_of_reset.md && node scripts/md2pdf.mjs --out handouts --bundle group-pack docs/group_pack_cover.md docs/role_cards.md docs/data_decision_aid.md evaluation_rubric_template.md docs/worked_examples.md docs/starter_prompts.md && node scripts/md2pdf.mjs --out handouts --bundle facilitator-pack docs/cue_cards.md docs/facilitator_run_sheet.md docs/morning_checklist.md",
     "watch": "marp --config-file ./marp.config.mjs -w -s .",
     "preview": "marp --config-file ./marp.config.mjs -p ./slides.md",
     "archive:pr": "node scripts/archive-pr.mjs",

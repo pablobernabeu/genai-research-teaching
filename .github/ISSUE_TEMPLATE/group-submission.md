@@ -1,13 +1,17 @@
 ---
-name: Workshop submissions (pinned issue)
-about: The facilitator opens ONE of these before the session, pins it, and records each group's HackMD link here as the links come in.
-title: "[Submissions] Workshop group HackMD links — 24 June 2026"
+name: Workshop submissions (pinned issue, fallback only)
+about: Fallback only. The default is the app and dashboard; if a group cannot use the app and works in HackMD instead, the facilitator records its note link here.
+title: "[Submissions] HackMD fallback links — 24 June 2026"
 labels: ["submissions"]
 ---
 
-## Group HackMD links — the facilitator records them here
+## HackMD fallback links
 
-As each group shares its note link during Part 2 (by **13:45**), the **facilitator**
+The default capture surface is the app at genai-rt.web.app, where the facilitator approves
+each group's submission on the dashboard. This issue is the **fallback** record: when a group
+cannot use the app and works in HackMD instead, the facilitator records its note link here.
+
+As each fallback group shares its note link during Part 2 (by **13:45**), the **facilitator**
 adds one entry below, in this format:
 
 ```

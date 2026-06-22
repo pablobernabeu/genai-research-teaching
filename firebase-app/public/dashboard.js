@@ -3,10 +3,9 @@
 // Two layers guard this board, neither of which is the trust boundary (the rules are):
 //   1. The read rule now requires request.auth != null even for approved docs, so we sign
 //      in ANONYMOUSLY before reading. That keeps approved work off the open, indexable web.
-//   2. A session gate: config/dashboard holds the session name and a SHA-256 hash binding
-//      the name + passcode. We verify what a viewer types against the hash, client-side,
-//      before revealing anything. It is a privacy gate, not a hard wall — approved data is
-//      non-identifying by design.
+//   2. A passcode gate: config/dashboard holds a SHA-256 hash of the session passcode. We
+//      verify what a viewer types against the hash, client-side, before revealing anything.
+//      It is a privacy gate, not a hard wall — approved data is non-identifying by design.
 //
 // We only ever query groups WHERE status == 'approved': that exact filter keeps every
 // document within the read rule, so the listener is accepted while drafts stay invisible.
@@ -41,7 +40,7 @@ const GREY = "#9bb3b3";
 
 const GATE_KEY = "genai-rt.dashboard.unlock"; // sessionStorage: the unlocked passHash
 
-let gateConfig = null;    // {sessionName, passHash} or null
+let gateConfig = null;    // { passHash } or null
 let approvedUnsub = null;
 const charts = {};
 

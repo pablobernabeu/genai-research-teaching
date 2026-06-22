@@ -167,7 +167,7 @@ Run locally first with the emulators: `firebase emulators:start` (Firestore + Ho
    `draft`. Creating with a **wrong passcode** (or none set) → denied with a clear hint;
    no document is written.
 3. Second browser: join "Otters" with the code → can edit; with a wrong code → denied.
-4. Fill the core five → submit → status `submitted`; the group view goes read-only.
+4. Fill the core three → submit → status `submitted`; the group view goes read-only.
    A second device can no longer join once `submitted`.
 5. Facilitator → sees "Otters" → reopen with a note → group can edit again → resubmit →
    approve. Inspect the approved doc: `joinCode` and `sessionCode` are now **empty**.

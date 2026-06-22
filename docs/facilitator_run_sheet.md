@@ -12,7 +12,7 @@ A featured workshop in **two 30-minute parts**, split by a networking lunch.
 |---|---|
 | 11:45 | Projector on, deck open in presenter mode, Wi-Fi and power confirmed. |
 | 11:50 | Create and **pin the submission issue** — your link-collection record (participants don't post to it). |
-| 11:52 | Open **8–10 pre-named HackMD notes** (Group 01–10), each with the rubric template pasted and set link-shareable; have the short URLs ready to hand each Reporter. |
+| 11:52 | **Reset the app** (genai-rt.web.app): set the session passcode, arm the timer and confirm the private dashboard is ready (see [day-of reset](facilitator_day_of_reset.md)). No pre-named notes needed. |
 | 11:55 | Lay out printed role cards, the data decision aid and worked examples on tables of five. |
 | 11:58 | Visible timer ready, title slide up (slide 1). Start at 12:00. |
 
@@ -40,10 +40,10 @@ A featured workshop in **two 30-minute parts**, split by a networking lunch.
 
 | Clock | Segment | Slides | Facilitator does |
 |---|---|---|---|
-| 13:15 | **Settle in** | 18–20 | Re-find groups; agree the one problem (60 s); HackMD open; red lines on. |
+| 13:15 | **Settle in** | 18–20 | Re-find groups; agree the one problem (60 s); App open (genai-rt.web.app); read out the passcode; red lines on. |
 | 13:18 | **Apply it** | 21–26 | Circulate. Stop sensitive data; unstick stalls; one provocation each. Make groups sketch the map (interwoven/staged). |
 | ~13:26 | **Pivot** | 27 | 30 s, keyboards down. Stop building, start interrogating. |
-| 13:33 | **Lightning round** | 28 | Visible timer. 45 s each — every group fits in ~7 min. Jot threads; collect each group's HackMD link into the issue. |
+| 13:33 | **Lightning round** | 28 | Visible timer. 45 s each — every group fits in ~7 min. Jot threads; approve each group's submission on the dashboard as it presents (collect a HackMD link only for any fallback group). |
 | 13:40 | **Close** | 29–35 | Synthesise 2–3 threads. Take-home actions. Reading. Follow-up. Close at 13:45. |
 
 ## After
@@ -51,7 +51,7 @@ A featured workshop in **two 30-minute parts**, split by a networking lunch.
 | When | Action |
 |---|---|
 | Same day | Check every group's link is in the issue; nudge any missing. |
-| +1–2 days | Export each HackMD note to Markdown; archive under `submissions/` (see [submissions/README.md](../submissions/README.md)). |
+| +1–2 days | Export the approved work from the dashboard (**Export approved (Markdown)**); export any HackMD-fallback note too; archive under `submissions/` (see [submissions/README.md](../submissions/README.md)). |
 | +3–5 days | Send the [follow-up email](post_workshop_followup.md) with the responsible-use commitment and the archive link. |
 
 ---

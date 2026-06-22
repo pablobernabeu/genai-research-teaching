@@ -54,8 +54,9 @@ Part 2 — this seed, or a real one a member brings.
   phases you will automate and where a human steers — then decide whether that
   oversight is **interwoven** through the whole project or **staged** at distinct
   checkpoints, and why.
-- **Write as you go** in HackMD, inside the [rubric template](evaluation_rubric_template.md).
-  The Reporter shares the link with the facilitator during Part 2 (by **13:45**) — no GitHub account needed.
+- **Write as you go** in the app, inside the [rubric template](evaluation_rubric_template.md),
+  and submit for review during Part 2 (by **13:45**); HackMD is the fallback for a group that
+  cannot use the app — no GitHub account needed.
 
 **A note on free tools and your data.** Free consumer tiers commonly reuse inputs
 to improve models, and settings change without notice. Treat anything you paste as
@@ -110,7 +111,7 @@ participant data, no confidential grant or peer-review content.** Free tiers may
 retain inputs. If your design is sensitive, paraphrase it into a generic version
 first — the critique still works on the structure.
 
-### HackMD headings (tailored)
+### Note headings (tailored)
 - **Project Definition** — the design under review and what a useful critique would
   change.
 - **Technology Stack** — tool(s) chosen and why off-the-shelf suffices here.
@@ -170,7 +171,7 @@ names, pastoral or HR content — into free tools. Redact to roles and topics
 ("a PhD student asks about an extension") rather than identities. Calendar and
 inbox content is personal data.
 
-### HackMD headings (tailored)
+### Note headings (tailored)
 - **Project Definition** — the burden you are reducing and what "better" means.
 - **Technology Stack** — why a template/prompt rather than ad-hoc chat.
 - **Data Security & Ethics** — how you redacted; equity and accessibility effects.
@@ -233,7 +234,7 @@ Read generated code before trusting it — models invent functions, mishandle ed
 cases and import libraries with licences you have not checked. "It ran" is not
 "it is correct".
 
-### HackMD headings (tailored)
+### Note headings (tailored)
 - **Project Definition** — the finding and the audience the artefact serves.
 - **Technology Stack** — where on the spectrum you worked, and the trade-off you
   accepted.
@@ -288,7 +289,7 @@ Use findings that are **already public or cleared for release**; mind **embargoe
 and **co-author consent**. Translating someone else's unpublished work into a public
 post can breach both ethics and trust.
 
-### HackMD headings (tailored)
+### Note headings (tailored)
 - **Project Definition** — the finding and the audiences you are translating for.
 - **Technology Stack** — drafting and readability/translation tools used.
 - **Data Security & Ethics** — publication status, embargo and consent; the ethics

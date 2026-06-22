@@ -45,7 +45,7 @@ With about five minutes to spare, go further.
 ## 5. Share and submit
 
 - **Share, optional.** Tick the consent box if your group is happy for its non-identifying note to appear in the public workshop archive. Leave it unticked to keep the note private to the facilitator.
-- **Submit.** Choose a scenario first, then submit when you are done. Aim to finish by the time we stop building, around 13:30.
+- **Submit.** Choose a scenario first, then submit when you are done. Aim to finish before the lightning round at 13:33.
 - **After submitting.** The form becomes read-only while the facilitator reviews it. If they reopen it with a note, you can edit and resubmit. Nothing is lost.
 
 ## Good to know
