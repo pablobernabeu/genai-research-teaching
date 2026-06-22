@@ -1,9 +1,12 @@
-# Evaluation rubric & HackMD template
+# Evaluation rubric & note template
 
-This is the group's workbench for the day. It does two jobs:
+This is the group's workbench for the day. By default you fill it in the **workshop app**
+(genai-rt.web.app) — it has these fields built in, so there is nothing to set up beyond the
+passcode. The **HackMD** steps below are the **fallback** if you cannot use the app. Either
+way it does two jobs:
 
-1. **Set up your shared note** in HackMD (beginner steps below — no prior
-   experience needed, nothing to install).
+1. **Hold your shared note** — in the app (default) or HackMD (fallback); no prior experience
+   needed, nothing to install.
 2. **Structure your thinking** around five dimensions, each scored **1–5**
    (**1 = Nascent · 3 = Developing · 5 = Robust**), plus a deliverable link, a
    museum of caught errors and your lightning-round insight.
@@ -18,7 +21,7 @@ once archived, part of the open account of what this cohort learned.
 
 ---
 
-## A. Set up HackMD (≈ 2 minutes, Reporter drives)
+## A. The HackMD fallback (≈ 2 minutes, Reporter drives — only if you cannot use the app)
 
 1. Go to **hackmd.io** and sign in — it is **free**, and you can use a Google,
    GitHub or email login. There is **nothing to install**.
@@ -43,7 +46,7 @@ under `submissions/`, so your work is preserved exactly.
 
 ---
 
-## B. The template — copy everything in this box into HackMD
+## B. The note template — the app has these fields built in; paste this box into HackMD on the fallback
 
 ```markdown
 # [Group NN] · Track [A / B / C / D] · 24 June 2026

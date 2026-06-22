@@ -8,7 +8,7 @@ manage, you have done the task:
 
 1. **One artefact move** — run your tool on your problem and make something: a critique, a template, a small artefact, a translation.
 2. **One or two caught errors** — moments it was fluent and wrong. Keep them.
-3. **One insight** — the limitation, or the safeguard, you will give in the 45-second round.
+3. **One insight** — the limitation, the safeguard, or one honest thing this exposed about how your field is over- or under-using AI, that you will give in the 45-second round.
 
 **If you have about five minutes left, go deeper:**
 
@@ -29,13 +29,13 @@ data decision aid in this pack walks you through it.
 
 ## Your shared note
 
-Keep it in **HackMD** — your Reporter has the link from the facilitator. Fill the
-essentials as you go, and **share the link back to the facilitator by 13:45**. You do
-not touch GitHub and need no account.
+Your group's note lives in the **workshop app** — scan the QR or go to
+**genai-rt.web.app**, and your facilitator reads out the **session passcode**. One device
+starts the group; the others join with the code it shows. Fill the essentials as you go and
+**submit by 13:45**. No account, nothing to install.
 
-> **One note, one surface.** Use **either** HackMD **or** the optional groupwork app the
-> facilitator may share — not both. HackMD is the default; the app is an experiment, and the
-> fallback if HackMD sign-up is blocked.
+> **One note, one surface.** Use the **app** (the default). If you have no device or it will
+> not connect, **HackMD** (hackmd.io) is the fallback — same headings. Not both.
 
 ## One reflection for the wrap-up
 

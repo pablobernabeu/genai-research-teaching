@@ -38,11 +38,14 @@ const startTimerBtn = $("startTimerBtn");
 const resetTimerBtn = $("resetTimerBtn");
 const timerStatus = $("timerStatus");
 const timerError = $("timerError");
+const exportBtn = $("exportBtn");
+const exportStatus = $("exportStatus");
 
 let unsubscribe = null;
 let unsubscribeConfig = null; // config/app passcode listener
 let unsubscribeClock = null;  // config/clock timer listener
 let timerStatusInterval = null;
+let latestGroups = [];        // newest snapshot, for the Markdown export
 
 // Human labels for the response fields, in display order.
 const RESPONSE_LABELS = [
@@ -263,6 +266,51 @@ resetTimerBtn.addEventListener("click", async () => {
   }
 });
 
+// ---- Export approved submissions (Markdown) -------------------------------
+// The app is the default record; this builds the archive the facilitator commits under
+// submissions/. Approved only — the curated, world-readable work.
+function buildSubmissionsMarkdown(groups) {
+  const approved = groups.filter((g) => g.status === "approved");
+  const date = new Date().toISOString().slice(0, 10);
+  const val = (s) => (s && String(s).trim()) || "—";
+  let md = `# Approved submissions — ${date}\n\n${approved.length} approved group${approved.length === 1 ? "" : "s"}.\n`;
+  approved.forEach((g, i) => {
+    const r = g.responses || {};
+    md += `\n---\n\n## ${i + 1}. ${g.name || "(unnamed)"}${g.track ? " · Track " + g.track : ""}\n\n`;
+    md += `**Scenario:** ${val(g.scenario)}\n\n`;
+    md += `### The problem\n${val(r.problem)}\n\n`;
+    md += `### The artefact\n${val(r.artefact)}\n\n`;
+    md += `### Errors caught\n${val(r.caughtErrors)}\n\n`;
+    md += `### Automation–steering map\n${val(r.map)}\n\n`;
+    md += `### Oversight model\n${val(r.oversight)}${r.oversightWhy && r.oversightWhy.trim() ? " — " + r.oversightWhy.trim() : ""}\n\n`;
+    md += `### Key insight\n${val(r.insight)}\n\n`;
+    md += `### Field reflection\n${val(r.fieldUse)}\n`;
+  });
+  return md;
+}
+
+exportBtn.addEventListener("click", () => {
+  exportStatus.textContent = "";
+  const approvedCount = latestGroups.filter((g) => g.status === "approved").length;
+  if (approvedCount === 0) {
+    exportStatus.textContent = "No approved submissions yet — approve some first.";
+    return;
+  }
+  const md = buildSubmissionsMarkdown(latestGroups);
+  const date = new Date().toISOString().slice(0, 10);
+  const blob = new Blob([md], { type: "text/markdown;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `${date}_genai-rt-submissions.md`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+  exportStatus.textContent =
+    `Downloaded ${approvedCount} approved submission${approvedCount === 1 ? "" : "s"} as Markdown. Commit it under submissions/.`;
+});
+
 // Sort: submitted first (they need attention), then by updatedAt descending.
 function sortGroups(groups) {
   const rank = { submitted: 0, reopened: 1, draft: 2, approved: 3 };
@@ -280,6 +328,7 @@ function tsMillis(ts) {
 }
 
 function render(groups) {
+  latestGroups = groups;
   dashStatus.hidden = true;
   const sorted = sortGroups(groups);
 

@@ -282,7 +282,7 @@ Take a **real task**, use a tool on it, then **put it on trial**. Part 1 gave yo
 
 Your facilitator will read out the **session passcode** you need to start a group.
 
-<span class="small muted">Prefer HackMD? That works too — use **either** the app **or** HackMD, not both.</span>
+<span class="small muted">No device, or trouble connecting? **HackMD** (hackmd.io) is the fallback — your facilitator will point you there.</span>
 
 </div>
 
@@ -296,7 +296,7 @@ Your facilitator will read out the **session passcode** you need to start a grou
 
 | When | Phase | Mins |
 |---|---|---|
-| <span class="clock">13:15</span> | **Settle in** — re-find your group, agree your **one** problem (60 s), open your group note (app or HackMD); red lines on | 3 |
+| <span class="clock">13:15</span> | **Settle in** — re-find your group, agree your **one** problem (60 s), open the **app** (HackMD as fallback); red lines on | 3 |
 | <span class="clock">13:18</span> | **Apply it** — run the tool on your problem; capture one caught error and one insight (the automation–steering map if time is left) | 15 |
 | <span class="clock">13:33</span> | **Lightning round** — 45 seconds per group: the limitation, the safeguard, or how your field over/under-uses AI here | 7 |
 | <span class="clock">13:40</span> | **Synthesis** — drawing the threads from the round; take-aways for research and teaching | 5 |
@@ -333,15 +333,15 @@ Use your group's one problem — the seed, a member's real one, or a worked exam
 
 ---
 
-## Capture it: your shared note (compact)
+## Capture it: the workshop app
 
 You do **not** touch GitHub. Keep it light — this is 15 minutes, not a report:
 
-1. The **Reporter** opens your group note — **either** the optional workshop app the facilitator may share (genai-rt.web.app) **or** **HackMD** (hackmd.io) — **not both**. HackMD is the default.
-2. Fill the essentials: the problem · the tool · one caught error · your insight (the **map**, interwoven/staged, if time is left).
-3. Set it **link-shareable** and **share the link with the facilitator** — no account, nothing to install.
+1. The **Reporter** opens the **workshop app** (genai-rt.web.app), names your group and enters the **session passcode** — no account, nothing to install. One device creates; the others **join with the code** it shows.
+2. Fill the essentials: the problem · the tool · one caught error · your insight (the **map**, interwoven/staged, if time is left). It **autosaves**.
+3. **Submit for review** — the facilitator sees it live and approves it. That is all.
 
-<span class="small muted">A facilitator countdown on screen shows the time left — watch it for the building-to-interrogating switch. The facilitator archives every note under `submissions/` afterwards.</span>
+<span class="small muted">No device, or the app misbehaves? **HackMD** (hackmd.io) is the fallback — same headings, paste the template. A facilitator countdown shows the time left; the facilitator archives approved work under `submissions/` afterwards.</span>
 
 ---
 

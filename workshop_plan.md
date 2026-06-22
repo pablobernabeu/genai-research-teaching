@@ -130,7 +130,7 @@ content previews the rubric and forms the groups, so Part 2 starts fast.
 
 | Clock | Segment | Mins |
 |---|---|---|
-| 13:15 | Settle in — re-find your group after lunch, open HackMD; red lines on | 3 |
+| 13:15 | Settle in — re-find your group after lunch, open the app (HackMD fallback); red lines on | 3 |
 | 13:18 | Apply it — run the tool; capture one caught error and one insight (the map and oversight model if time is left) | 15 |
 | *~13:26* | *Pivot (woven in): stop building, start interrogating* | — |
 | 13:33 | Lightning round — 45 seconds per group: the limitation, the safeguard, or how your field over/under-uses AI here | 7 |
@@ -192,10 +192,10 @@ straight away.
 Your job is to **circulate**, not present. Keep the "Go" slide (26) or the Part 2
 timeline (slide 19) displayed and use the prompt bank in §6.
 
-- **13:15–13:18 Settle in.** Groups re-find each other after lunch, open a HackMD
-  note with the compact template, and **agree their one problem in about 60 seconds —
-  the seed they formed around, or a real one a member brought**. Re-state the red
-  lines.
+- **13:15–13:18 Settle in.** Groups re-find each other after lunch, open the **app**
+  (genai-rt.web.app — read out the session passcode; HackMD is the fallback), and
+  **agree their one problem in about 60 seconds — the seed they formed around, or a real
+  one a member brought**. Re-state the red lines.
 - **13:18–13:33 Apply it.** Let them work. Intervene only to (a) stop sensitive data
   going into a tool, (b) unstick a group that cannot start, or (c) drop a single
   provocation. Around **13:26**, run the brief pivot (§5.4). Note good caught errors
@@ -288,7 +288,7 @@ Ask one, listen, move on.
 |---|---|
 | **Wi-Fi fails** | Switch the affected groups to the offline path: critique a printed worked example (`docs/worked_examples.md`) against the rubric. The thinking, not the tool, is the deliverable. |
 | **A chosen tool demands payment or a login wall** | Move down the spectrum to a free off-the-shelf chat tool; treat the paywall itself as a finding under Financial & Scalability. |
-| **HackMD is blocked or refuses sign-up** | Groups draft in a shared document or on paper; the facilitator transcribes one note into the archive afterwards. The rubric template is plain Markdown and portable. |
+| **The app will not load for a group** | Fall back to **HackMD** (hackmd.io) or paper for that group — the rubric template is plain Markdown and portable; the facilitator transcribes it into the archive afterwards. (A brief Wi-Fi blip needs no action: the app caches offline and re-syncs.) |
 | **A group finishes early** | Send them to the next rubric dimension they scored lowest on, or set them to red-team a neighbouring group's output — to probe it adversarially for weaknesses the other group missed. |
 | **A group stalls** | Shrink the task. "Forget the grand version — what is the smallest real thing the tool could help with in ten minutes?" |
 | **Uneven groups (4 or 6)** | At four, the Convenor doubles as Steward. At six, split Driver and Sceptic across two people, or add a second Sceptic — more red-teaming is no bad thing. |

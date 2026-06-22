@@ -1,15 +1,15 @@
-# Groupwork hub — optional Firebase app (experimental)
+# Groupwork hub — the Part 2 groupwork app
 
 A small, self-contained web app that centralises the Part 2 groupwork: each group
-logs in under a unique, self-chosen **group name**, works through the **core five**,
+logs in under a unique, self-chosen **group name**, works through the **core three**,
 and submits. The facilitator vets each submission from a **private dashboard** and
 approves it (or reopens it for edits); approved work appears on a **public
 dashboard** with live summary stats.
 
-> **This runs in parallel — it does not replace anything.** The HackMD note + pinned
-> issue flow remains the default and the fallback. Treat this app as optional, and
-> **test it end to end before the day** (devices, conference Wi-Fi, the approve/reopen
-> loop). If anything wobbles on the day, fall back to HackMD/paper without losing work.
+> **This is the default capture surface for Part 2; HackMD/paper is the fallback.**
+> **Test it end to end before the day** (real devices, the conference Wi-Fi, the
+> create → submit → approve/reopen loop, the timer). If anything wobbles on the day,
+> groups fall back to HackMD or paper without losing work.
 
 **No personal data.** The only identifier is a group-chosen name, which must not
 reveal anyone's identity. Nothing else about individuals is collected.
@@ -156,6 +156,6 @@ Run locally first with the emulators: `firebase emulators:start` (Firestore + Ho
 7. From the browser console as an anonymous user, try to read all `groups` → denied.
 
 ## Licence & status
-Part of the workshop kit (MIT for tooling). Experimental and intentionally minimal;
-the goal is a readable, auditable app — fittingly, a good object to critique against
-the workshop's own rubric.
+Part of the workshop kit (MIT for tooling). Intentionally minimal; the goal is a
+readable, auditable app — fittingly, a good object to critique against the workshop's
+own rubric.

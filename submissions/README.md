@@ -2,33 +2,33 @@
 
 This folder is the **reproducible archive** of participants' group work. Nothing
 here is produced with Git on the day; the facilitator curates it afterwards from the
-groups' HackMD notes.
+**approved submissions in the groupwork app** (HackMD notes are the fallback).
 
 ## How collection works
 
-1. During the session each group keeps a shared **HackMD** note, structured by the
-   [rubric template](../evaluation_rubric_template.md).
-2. During Part 2 (by **13:45**) each group shares its note link with the **facilitator**,
-   who records the links in the **single pinned submission issue** (created from the
-   [issue template](../.github/ISSUE_TEMPLATE/group-submission.md)). No participant needs a
-   GitHub account.
-3. After the session the facilitator exports each note and commits it here.
+1. During the session each group fills its shared note in the **workshop app**
+   (genai-rt.web.app), structured by the [rubric template](../evaluation_rubric_template.md).
+   No participant needs a GitHub account. (A group that cannot use the app falls back to
+   **HackMD** and shares the link with the facilitator — optionally via the
+   [issue template](../.github/ISSUE_TEMPLATE/group-submission.md).)
+2. The facilitator **approves** each group from the private dashboard. Approved work is the
+   curated, world-readable record.
+3. After the session the facilitator **exports** the approved submissions and commits them here.
 
 ## The archive workflow (facilitator, after the session)
 
-For each linked note:
+1. On the **facilitator dashboard**, click **Export approved (Markdown)**. It downloads a
+   dated file (`YYYY-MM-DD_genai-rt-submissions.md`) holding every approved group's note.
+2. **Check it before committing.** Remove anything that should not be public — personal
+   data, anything a group pasted in error, real identifiers. When in doubt, redact. This
+   archive is public.
+3. **Commit** it as a dated cohort file, or split it into one file per group using the
+   naming convention below — a clear message, e.g. `Archive workshop submissions — 24 June 2026`.
+4. **HackMD-fallback groups:** open the note, **Export to Markdown** (HackMD's **···** menu →
+   **Download → Markdown**, or append `/download` to a published note's URL), check, and add
+   it alongside the rest.
 
-1. **Open the HackMD note** from its link in the issue.
-2. **Export to Markdown.** In HackMD use the **···** menu → **Download → Markdown**,
-   or append `/download` to a published note's URL. You now have a `.md` file.
-3. **Check it before committing.** Remove anything that should not be public —
-   personal data, anything a group pasted in error, real identifiers. When in doubt,
-   redact. This archive is public.
-4. **Rename** it to the convention below and place it in this folder.
-5. **Commit** in one batch with a clear message, e.g.
-   `Archive workshop submissions — 24 June 2026`.
-
-A copy of the empty shape is in [`_TEMPLATE.md`](_TEMPLATE.md).
+A copy of the empty per-group shape is in [`_TEMPLATE.md`](_TEMPLATE.md).
 
 ## Naming convention (sortable)
 
