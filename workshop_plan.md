@@ -366,7 +366,7 @@ abstraction, with the human leading the ideation and steering at the critical po
 ## Disclaimer
 
 These materials and the tools they reference are the facilitator's own choices,
-made in a personal capacity. They do not represent the views or official position of the University of Oxford — the facilitator's employer — or of the host, the University of Westminster. The University of Oxford accepts no liability for the selection, use or outcomes of any third-party tool. Participants
+made in a personal capacity. They do not represent the views or official position of the University of Oxford, the facilitator's employer, or of the host, the University of Westminster. The University of Oxford accepts no liability for the selection, use or outcomes of any third-party tool. Participants
 remain solely responsible for compliance with their own institutional policy, the UK GDPR
 and research ethics.
 

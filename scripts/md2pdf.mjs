@@ -54,8 +54,9 @@ a { color: #0f6e6e; text-decoration: none; }
 strong { color: #0f6e6e; }
 em { color: #5b6470; }
 code { background: #eef2f2; border-radius: 3px; padding: .03em .25em; font-size: .9em; }
-ul, ol { padding-left: 1.1em; margin: .16em 0; }
-li { margin: .02em 0; }
+ul, ol { padding-left: 1.5em; margin: .16em 0; }
+li { margin: .02em 0; padding-left: 0.2em; }
+li::marker { color: #5b6470; }
 hr { border: none; border-top: 1px solid #d6dbe0; margin: .38em 0; }
 `;
 

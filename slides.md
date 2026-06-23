@@ -10,7 +10,7 @@ keywords: "generative AI, research, teaching, responsible use, human-in-the-loop
 
 <!-- _class: lead brand -->
 <!-- _paginate: false -->
-<!-- _footer: "Personal selection in a personal capacity; not the position of the University of Oxford (employer) or the host; not legal advice." -->
+<!-- _footer: "A personal selection in the facilitator's own capacity. Not the position of Oxford or the host, and not legal advice." -->
 
 # Generative AI in research and teaching
 
@@ -84,15 +84,20 @@ Thirty seconds each. There is no need to perform. "I have not really used one" i
 Humans have always extended themselves with tools, and a labour economy that rewards productivity keeps moving us on to the next one.
 
 <div class="columns">
+<div>
 
 - mental arithmetic → the calculator
 - pen and paper → the computer
 - the calculator → Excel
 
-* C → Python
-* Internet Explorer → Chrome
-* deterministic AI → generative AI
+</div>
+<div>
 
+- C → Python
+- Internet Explorer → Chrome
+- deterministic AI → generative AI
+
+</div>
 </div>
 
 > For better or worse, our institutions demand output, and we are adept at tooling up to supply it. Generative AI is the newest entry on that list, which is exactly why it deserves careful thought rather than automatic adoption.
@@ -166,17 +171,22 @@ Without a lawful basis and a cleared tool, never paste:
 These are not one risk but several, pulling in different directions.
 
 <div class="columns">
+<div>
 
 - **Accuracy**, fluent and confident yet wrong
 - **Bias**, inherited from training data
 - **Transparency**, when must use be disclosed?
 - **Attribution and IP**, whose words and whose licence?
 
-* **Equity**, who benefits and who is left out?
-* **Environment**, a real energy cost
-* **Over-reliance**, a quiet de-skilling
-* **Accountability**, which never transfers
+</div>
+<div>
 
+- **Equity**, who benefits and who is left out?
+- **Environment**, a real energy cost
+- **Over-reliance**, a quiet de-skilling
+- **Accountability**, which never transfers
+
+</div>
 </div>
 
 <span class="small muted">In teaching, add assessment integrity, disclosure to students and equitable access. Frameworks (Russell Group, EC, UNESCO, ICO) in the close.</span>
@@ -231,17 +241,22 @@ Take a real task, use a tool on it, then examine the result closely. Part 1 prov
 Groups of five. Move to the idea you would most like to try. The letter beside it is your track.
 
 <div class="columns">
+<div>
 
 - Stress-test a study design (A)
 - Critique an assessment or rubric (A)
 - Turn messy notes into clear actions (B)
 - Triage an email or admin backlog (B)
 
-* A one-page explainer of a finding (C)
-* A quick visualisation or teaching aid (C)
-* A lay summary or press angle (D)
-* Explain a concept for students (D)
+</div>
+<div>
 
+- A one-page explainer of a finding (C)
+- A quick visualisation or teaching aid (C)
+- A lay summary or press angle (D)
+- Explain a concept for students (D)
+
+</div>
 </div>
 
 <span class="small muted">Note who is in your group and which track you chose. You regroup straight after lunch, without re-forming.</span>
@@ -440,6 +455,7 @@ Choose one to try this week, in research or in teaching.
 ## Further reading
 
 <div class="columns">
+<div>
 
 - **Russell Group (2023).** Principles on generative AI in education. russellgroup.ac.uk
 - **EC / ERA Forum (2024).** Living guidelines on responsible generative AI in research.
@@ -447,12 +463,16 @@ Choose one to try this week, in research or in teaching.
 - **ICO.** Guidance on AI and data protection (UK GDPR). ico.org.uk
 - **Lee et al. (2025, CHI).** The impact of generative AI on critical thinking, a survey of knowledge workers.
 
-* **Drosos et al. (2025).** "It makes you think": provocations help restore thinking. arXiv:2501.17247
-* **Buçinca et al. (2021, CSCW).** Cognitive forcing functions reduce over-reliance on AI. doi:10.1145/3449287
-* **Bender et al. (2021, FAccT).** On the dangers of stochastic parrots, fluent remixing without understanding.
-* **Karpathy (2025).** *Software is changing (again)*, the human on the "autonomy slider" [talk].
-* **Mollick (2023).** *Centaurs and cyborgs*, the human stays the architect [essay].
+</div>
+<div>
 
+- **Drosos et al. (2025).** "It makes you think": provocations help restore thinking. arXiv:2501.17247
+- **Buçinca et al. (2021, CSCW).** Cognitive forcing functions reduce over-reliance on AI. doi:10.1145/3449287
+- **Bender et al. (2021, FAccT).** On the dangers of stochastic parrots, fluent remixing without understanding.
+- **Karpathy (2025).** *Software is changing (again)*, the human on the "autonomy slider" [talk].
+- **Mollick (2023).** *Centaurs and cyborgs*, the human stays the architect [essay].
+
+</div>
 </div>
 
 <span class="small muted">Full citations, with links, are in the repository (github.com/pablobernabeu/genai-research-teaching).</span>

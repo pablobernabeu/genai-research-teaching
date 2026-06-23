@@ -54,4 +54,4 @@ redress it over the next two years?
 
 ---
 
-*Disclaimer: a personal selection in the facilitator's own capacity; not the position of the University of Oxford (the employer) or the host; not legal advice.*
+*A personal selection, made in the facilitator's own capacity. It is not the position of the University of Oxford (the facilitator's employer) or of the host, and it is not legal advice.*

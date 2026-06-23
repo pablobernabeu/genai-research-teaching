@@ -109,7 +109,7 @@ no causal language" — is the artefact.
 ---
 
 *Disclaimer: these materials and the tools they reference are the facilitator's own
-choices, made in a personal capacity, and do not represent the views or official position of the University of Oxford — the facilitator's employer — or of the host, the University of Westminster. The University of Oxford accepts no liability for the
+choices, made in a personal capacity, and do not represent the views or official position of the University of Oxford, the facilitator's employer, or of the host, the University of Westminster. The University of Oxford accepts no liability for the
 selection, use or outcomes of any third-party tool. Participants remain solely
 responsible for compliance with their own institutional policy, the UK GDPR and research
 ethics. This wording is a template and is not legal advice.*

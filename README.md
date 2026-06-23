@@ -58,7 +58,7 @@ create.
 ├── themes/
 │   └── workshop.css                ← custom Marp theme (extends `gaia`; logo + disclaimer footer)
 ├── assets/
-│   └── logo.svg                    ← placeholder logo (swap for your own)
+│   └── logo.svg                    ← University of Oxford crest (shown on the cover and closing slides)
 │
 ├── docs/                           ← the rest of the facilitator kit
 │   ├── pre_workshop_email.md       ← briefing email to send in advance
@@ -207,7 +207,7 @@ bracketed placeholders with your own details.
 ## Disclaimer
 
 These materials and the tools they reference are the facilitator's own choices,
-made in a personal capacity. They do not represent the views or official position of the University of Oxford — the facilitator's employer — or of the host, the University of Westminster. The University of Oxford accepts no liability for the selection, use or outcomes of any third-party tool. Participants
+made in a personal capacity. They do not represent the views or official position of the University of Oxford, the facilitator's employer, or of the host, the University of Westminster. The University of Oxford accepts no liability for the selection, use or outcomes of any third-party tool. Participants
 remain solely responsible for compliance with their own institutional policy, the UK GDPR
 and research ethics.
 

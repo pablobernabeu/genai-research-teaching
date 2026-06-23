@@ -35,4 +35,4 @@ link with the facilitator (on screen, or written down).
 (Issue → ··· → Pin issue). It is your own collection record — participants do not need
 its URL, so there is no need to put it on the board or in the slides.*
 
-*Disclaimer: a personal selection in the facilitator's own capacity; not the position of the University of Oxford (the employer) or the host; not legal advice.*
+*A personal selection, made in the facilitator's own capacity. It is not the position of the University of Oxford (the facilitator's employer) or of the host, and it is not legal advice.*
