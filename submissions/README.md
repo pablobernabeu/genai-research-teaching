@@ -18,7 +18,9 @@ here is produced with Git on the day; the facilitator curates it afterwards from
 ## The archive workflow (facilitator, after the session)
 
 1. On the **facilitator dashboard**, click **Export approved (Markdown)**. It downloads a
-   dated file (`YYYY-MM-DD_genai-rt-submissions.md`) holding every approved group's note.
+   dated file (`YYYY-MM-DD_genai-rt-submissions.md`) holding every approved group that
+   consented to public sharing. (Only consented work is exported; if no approved group has
+   consented yet, the button does nothing and says so.)
 2. **Check it before committing.** Remove anything that should not be public — personal
    data, anything a group pasted in error, real identifiers. When in doubt, redact. This
    archive is public.
@@ -37,8 +39,9 @@ submissions straight from the live project and opens a pull request adding the d
 file — using your own `gh` auth, so no write-token ever lives in the app. Add `--dry-run` to
 write the file and preview it without committing or opening a PR. Set `GENAI_RT_PROJECT` and
 `GENAI_RT_API_KEY` first (the Firebase project id and web API key — not secrets; see
-`firebase-app/public/firebase-config.js` or the console). Only groups that ticked
-**"share publicly"** are included.
+`firebase-app/public/firebase-config.js` or the console). Only groups that ticked the
+optional consent box, to share their non-identifying submission in the public archive, are
+included.
 
 ## Naming convention (sortable)
 

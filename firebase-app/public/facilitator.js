@@ -67,13 +67,19 @@ onAuthStateChanged(auth, (user) => {
   // denied. The rules — not this check — remain the real boundary; this is only UX.
   if (user && !user.isAnonymous) {
     // Signed in with a real account. The rules decide whether reads succeed; a
-    // non-facilitator will simply get permission-denied on the collection listener.
+    // non-facilitator will simply get permission-denied on the listeners.
     signinView.hidden = true;
     dashView.hidden = false;
     signOutBtn.hidden = false;
-    startListening();
-    startConfigListening();
-    startClockListening();
+    // Wait for the ID token before attaching: a freshly minted token can lag the first
+    // onSnapshot call, which would otherwise fail permission-denied and not recover. The
+    // listeners also retry on that race, as a backstop.
+    user.getIdToken().catch(() => {}).then(() => {
+      if (auth.currentUser !== user) return;
+      startListening();
+      startConfigListening();
+      startClockListening();
+    });
   } else {
     if (unsubscribe) { unsubscribe(); unsubscribe = null; }
     if (unsubscribeConfig) { unsubscribeConfig(); unsubscribeConfig = null; }
@@ -129,12 +135,42 @@ signOutBtn.addEventListener("click", async () => {
   await signOut(auth);
 });
 
+// Attach an onSnapshot that retries on a permission-denied at ATTACH time. A freshly
+// signed-in facilitator token can lag the listener's first call by a tick, yielding a
+// spurious denial that onSnapshot does not itself retry. Re-subscribe a few times before
+// surfacing the error; a genuine non-facilitator account still fails after the retries.
+// Returns a stop function.
+function listen(ref, onData, onError, { retries = 4, delayMs = 600 } = {}) {
+  let unsub = null;
+  let attempt = 0;
+  let stopped = false;
+  const attach = () => {
+    if (stopped) return;
+    unsub = onSnapshot(
+      ref,
+      (snap) => { attempt = 0; onData(snap); },
+      (err) => {
+        if (unsub) { unsub(); unsub = null; }
+        if (stopped) return;
+        if (err.code === "permission-denied" && attempt < retries) {
+          attempt += 1;
+          setTimeout(attach, delayMs);
+        } else {
+          onError(err);
+        }
+      }
+    );
+  };
+  attach();
+  return () => { stopped = true; if (unsub) { unsub(); unsub = null; } };
+}
+
 // ---- Live list of ALL groups ----------------------------------------------
 function startListening() {
   if (unsubscribe) return;
   // READ rule: isFacilitator() permits reading every group. We listen to the whole
   // collection and sort client-side (no index needed).
-  unsubscribe = onSnapshot(
+  unsubscribe = listen(
     collection(db, "groups"),
     (snap) => {
       const groups = [];
@@ -145,7 +181,7 @@ function startListening() {
       dashStatus.hidden = false;
       dashStatus.className = "notice error";
       dashStatus.textContent =
-        "Could not load groups. If you are not the facilitator account this is expected. " +
+        "Could not load groups. If you signed in with a different Google account, sign out and use the facilitator account. " +
         friendlyError(err);
     }
   );
@@ -156,7 +192,7 @@ function startListening() {
 // current passcode and let the facilitator set it; groups must type it to start.
 function startConfigListening() {
   if (unsubscribeConfig) return;
-  unsubscribeConfig = onSnapshot(
+  unsubscribeConfig = listen(
     doc(db, "config", "app"),
     (snap) => {
       const code = snap.exists() ? (snap.data().sessionCode || "") : "";
@@ -166,7 +202,7 @@ function startConfigListening() {
     },
     (err) => {
       // A non-facilitator would be denied here; the rules, not this page, decide.
-      currentSessionCode.textContent = "Could not read the current passcode. " + friendlyError(err);
+      currentSessionCode.textContent = "Could not read the current passcode (are you on the facilitator account?). " + friendlyError(err);
     }
   );
 }
@@ -210,7 +246,7 @@ sessionCodeForm.addEventListener("submit", async (e) => {
 // single source of truth, so every device computes the same remaining time.
 function startClockListening() {
   if (unsubscribeClock) return;
-  unsubscribeClock = onSnapshot(
+  unsubscribeClock = listen(
     doc(db, "config", "clock"),
     (snap) => renderTimerStatus(snap.exists() ? snap.data() : null),
     (err) => { timerStatus.textContent = "Could not read the timer. " + friendlyError(err); }
@@ -279,25 +315,29 @@ resetTimerBtn.addEventListener("click", async () => {
 // ---- Export approved submissions (Markdown) -------------------------------
 // The app is the default record; this builds the archive the facilitator commits under
 // submissions/. Approved only — the curated, world-readable work.
+// One group's submission as compact Markdown (group as h3, field labels as bold leads).
+// `heading` is the text after "### " — e.g. "1. " for the export, "" for a single copy.
+function groupBlock(g, heading) {
+  const r = g.responses || {};
+  const val = (s) => (s && String(s).trim()) || "—";
+  let md = `### ${heading}${g.name || "(unnamed)"}${g.track ? " · Track " + g.track : ""}\n\n`;
+  md += `*Scenario: ${val(g.scenario)}*\n\n`;
+  md += `**The problem.** ${val(r.problem)}\n\n`;
+  md += `**The artefact.** ${val(r.artefact)}\n\n`;
+  md += `**Errors caught.** ${val(r.caughtErrors)}\n\n`;
+  md += `**Automation–steering map.** ${val(r.map)}\n\n`;
+  md += `**Oversight model.** ${val(r.oversight)}${r.oversightWhy && r.oversightWhy.trim() ? " — " + r.oversightWhy.trim() : ""}\n\n`;
+  md += `**Key insight.** ${val(r.insight)}\n\n`;
+  md += `**Field reflection.** ${val(r.fieldUse)}\n`;
+  return md;
+}
+
 function buildSubmissionsMarkdown(groups) {
   // The public archive is approved AND the group consented to sharing.
   const shared = groups.filter((g) => g.status === "approved" && g.shareConsent);
   const date = new Date().toISOString().slice(0, 10);
-  const val = (s) => (s && String(s).trim()) || "—";
   let md = `# Approved submissions — ${date}\n\n${shared.length} approved, consented group${shared.length === 1 ? "" : "s"}.\n`;
-  shared.forEach((g, i) => {
-    const r = g.responses || {};
-    // Compact headings: group as h3, field labels as bold leads (not headings).
-    md += `\n---\n\n### ${i + 1}. ${g.name || "(unnamed)"}${g.track ? " · Track " + g.track : ""}\n\n`;
-    md += `*Scenario: ${val(g.scenario)}*\n\n`;
-    md += `**The problem.** ${val(r.problem)}\n\n`;
-    md += `**The artefact.** ${val(r.artefact)}\n\n`;
-    md += `**Errors caught.** ${val(r.caughtErrors)}\n\n`;
-    md += `**Automation–steering map.** ${val(r.map)}\n\n`;
-    md += `**Oversight model.** ${val(r.oversight)}${r.oversightWhy && r.oversightWhy.trim() ? " — " + r.oversightWhy.trim() : ""}\n\n`;
-    md += `**Key insight.** ${val(r.insight)}\n\n`;
-    md += `**Field reflection.** ${val(r.fieldUse)}\n`;
-  });
+  shared.forEach((g, i) => { md += `\n---\n\n${groupBlock(g, (i + 1) + ". ")}`; });
   return md;
 }
 
@@ -383,13 +423,12 @@ function card(g) {
   }
   el.appendChild(meta);
 
-  // Sharing consent — only consented work goes to the public archive / PR.
+  // Sharing consent — only consented work goes to the public archive. Shown as a pill.
   const consent = document.createElement("p");
-  consent.className = "small";
-  consent.style.margin = "0 0 0.3rem";
+  consent.style.margin = "0 0 0.4rem";
   consent.innerHTML = g.shareConsent
-    ? '<strong style="color:var(--green)">✓ Consented to public sharing</strong>'
-    : '<span class="muted">Not consented to public sharing</span>';
+    ? '<span class="pill pill-yes">✓ Consented to public sharing</span>'
+    : '<span class="pill pill-no">Not consented to public sharing</span>';
   el.appendChild(consent);
 
   // Responses.
@@ -432,11 +471,14 @@ function card(g) {
     el.appendChild(note);
   }
 
-  // Controls.
+  // Controls. The Approve button reflects state: a green "Approved ✓" once approved, the
+  // primary teal "Approve" while a submission still needs a decision.
   const row = document.createElement("div");
   row.className = "btn-row";
+  const approved = (g.status || "draft") === "approved";
   const approveBtn = document.createElement("button");
-  approveBtn.textContent = "Approve";
+  approveBtn.className = "approve" + (approved ? " is-approved" : "");
+  approveBtn.textContent = approved ? "Approved ✓" : "Approve";
   approveBtn.addEventListener("click", () => approve(g.id, approveBtn));
   const reopenBtn = document.createElement("button");
   reopenBtn.className = "secondary";
@@ -447,6 +489,15 @@ function card(g) {
   renameBtn.textContent = "Rename…";
   renameBtn.addEventListener("click", () => rename(g.id, g.name, renameBtn));
   row.append(approveBtn, reopenBtn, renameBtn);
+  // Copy submission — offered only for approved AND consented work (what the public
+  // archive holds), so it pastes straight into submissions/.
+  if (approved && g.shareConsent) {
+    const copyBtn = document.createElement("button");
+    copyBtn.className = "ghost";
+    copyBtn.textContent = "Copy submission";
+    copyBtn.addEventListener("click", () => copyGroup(g, copyBtn));
+    row.append(copyBtn);
+  }
   el.appendChild(row);
 
   const errBox = document.createElement("div");
@@ -463,6 +514,19 @@ function showCardError(btn, msg) {
   const box = cardEl.querySelector('[data-role="err"]');
   box.hidden = false;
   box.textContent = msg;
+}
+
+// Copy one approved + consented group's submission to the clipboard, in the same compact
+// Markdown the export uses, so it can be pasted straight into the archive.
+async function copyGroup(g, btn) {
+  try {
+    await navigator.clipboard.writeText(groupBlock(g, ""));
+    const original = btn.textContent;
+    btn.textContent = "Copied ✓";
+    setTimeout(() => { btn.textContent = original; }, 1500);
+  } catch (err) {
+    showCardError(btn, "Could not copy to the clipboard. " + friendlyError(err));
+  }
 }
 
 // APPROVE — facilitator-update rule: when status becomes 'approved' the rule REQUIRES

@@ -420,3 +420,18 @@ fieldset.survey legend {
 }
 .scale label:has(input:disabled) { cursor: not-allowed; opacity: 0.65; }
 .scale input:focus-visible { outline: 3px solid rgba(15, 110, 110, 0.4); outline-offset: 2px; }
+
+/* Facilitator card — consent pill and a state-coloured Approve button. */
+.pill {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.pill-yes { background: var(--green-tint); color: var(--green); border-color: #bfe2cd; }
+.pill-no { background: var(--grey-tint); color: var(--muted); }
+button.approve.is-approved { background: var(--green); border-color: var(--green); }
+button.approve.is-approved:hover { background: #155c36; }

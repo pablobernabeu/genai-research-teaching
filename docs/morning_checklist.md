@@ -42,8 +42,8 @@ the first ten minutes.
 - [ ] Name, date, venue, time and repository URL filled in (the
       affiliation, disclaimer and logo are already set to the facilitator's own —
       Department of Education, University of Oxford).
-- [ ] Official University of Oxford logo dropped into `themes/workshop.css`
-      (replacing the placeholder), and the deck rebuilt.
+- [ ] Confirm the University of Oxford crest is in place at `assets/logo.svg`
+      (swap that file to change it), and the deck rebuilt.
 
 ---
 

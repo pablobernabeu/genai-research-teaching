@@ -2,6 +2,7 @@
 marp: true
 theme: workshop
 paginate: true
+transition: fade
 title: "Generative AI in research and teaching — a practical, critical workshop"
 author: "Pablo Bernabeu"
 description: "A two-part featured workshop (30 + 30 minutes, split by lunch) on the responsible and effective use of generative AI in research and teaching."
@@ -461,14 +462,14 @@ Choose one to try this week, in research or in teaching.
 - **EC / ERA Forum (2024).** Living guidelines on responsible generative AI in research.
 - **UNESCO (2023).** Guidance for generative AI in education and research (Miao & Holmes).
 - **ICO.** Guidance on AI and data protection (UK GDPR). ico.org.uk
-- **Lee et al. (2025, CHI).** The impact of generative AI on critical thinking, a survey of knowledge workers.
+- **Lee et al. (2025, CHI).** The impact of generative AI on critical thinking, a survey of knowledge workers. <span class="doi">[doi.org/10.1145/3706598.3713778](https://doi.org/10.1145/3706598.3713778)</span>
 
 </div>
 <div>
 
-- **Drosos et al. (2025).** "It makes you think": provocations help restore thinking. arXiv:2501.17247
-- **Buçinca et al. (2021, CSCW).** Cognitive forcing functions reduce over-reliance on AI. doi:10.1145/3449287
-- **Bender et al. (2021, FAccT).** On the dangers of stochastic parrots, fluent remixing without understanding.
+- **Drosos et al. (2025).** "It makes you think": provocations help restore thinking. <span class="doi">[arXiv:2501.17247](https://arxiv.org/abs/2501.17247)</span>
+- **Buçinca et al. (2021, CSCW).** Cognitive forcing functions reduce over-reliance on AI. <span class="doi">[doi.org/10.1145/3449287](https://doi.org/10.1145/3449287)</span>
+- **Bender et al. (2021, FAccT).** On the dangers of stochastic parrots, fluent remixing without understanding. <span class="doi">[doi.org/10.1145/3442188.3445922](https://doi.org/10.1145/3442188.3445922)</span>
 - **Karpathy (2025).** *Software is changing (again)*, the human on the "autonomy slider" [talk].
 - **Mollick (2023).** *Centaurs and cyborgs*, the human stays the architect [essay].
 

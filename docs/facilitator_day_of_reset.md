@@ -10,7 +10,7 @@ A short reset, in the minutes before Part 2, that gets the live app into a clean
 - [ ] Confirm sign-in actually completes — you are on the dashboard, not the sign-in card. If it bounces, the project's Google sign-in needs checking in the Firebase console (a pre-deploy concern; fix before the room fills).
 - [ ] **Clear the rehearsal / test groups** — deletion is console-only, not on the dashboard. In the Firestore console (Firebase console), delete stray test docs from the `groups` collection and the matching `groupNames` index entry, or the name stays reserved.
 - [ ] Confirm the facilitator group list is clear of rehearsal entries (that is where draft/submitted test groups show); the public board at genai-rt.web.app/dashboard.html should also be empty.
-- [ ] **Set today's passcode** in the Session passcode panel and write it where the room can see it (it overwrites any rehearsal value). Status should then read 'Passcode set. Read it out to the groups.' Until set, no group can start.
+- [ ] **Set today's passcode** in the Session passcode panel and write it where the room can see it (it overwrites any rehearsal value). Status should then read 'Passcode set. Read it out to the room.', and confirm the public dashboard opens with this passcode too. Until set, no group can start.
 - [ ] In the Session timer panel, set **Minutes** (default 15 — the build window) but **do not start it yet**. You change the length only before starting.
 - [ ] Have the 'Open the workshop app' slide ready — big URL **genai-rt.web.app** and the scannable QR.
 

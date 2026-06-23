@@ -88,7 +88,7 @@ code {
 }
 
 table {
-  font-size: 0.8em;
+  font-size: 0.85em;
   border-collapse: collapse;
 }
 table th {
@@ -158,6 +158,10 @@ section.lead .subtitle {
 .muted { color: var(--color-dimmed); }
 .center { text-align: center; }
 
+/* Small DOI / source links in the reference list. */
+.doi { font-size: 0.7em; }
+.doi a { color: var(--color-dimmed); word-break: break-all; }
+
 /* Data-security red line callout. */
 .redline {
   color: var(--workshop-redline);
@@ -188,7 +192,7 @@ section .redbox p { margin: 0.2em 0; }
   margin-top: 0.7em;
 }
 .qr-row .qr {
-  width: 330px;
+  width: 420px;
   flex: 0 0 auto;
   background: #fff;
   border: 1px solid var(--workshop-rule);
