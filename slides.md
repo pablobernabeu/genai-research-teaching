@@ -2,7 +2,7 @@
 marp: true
 theme: workshop
 paginate: true
-transition: fade
+transition: slide
 title: "Generative AI in research and teaching — a practical, critical workshop"
 author: "Pablo Bernabeu"
 description: "A two-part featured workshop (30 + 30 minutes, split by lunch) on the responsible and effective use of generative AI in research and teaching."
@@ -19,8 +19,6 @@ keywords: "generative AI, research, teaching, responsible use, human-in-the-loop
 
 <span class="subtitle">Part 1 · Conceptualising the use of AI in research (12:00)<br/>Part 2 · Practical AI for research and teaching (13:15)<br/><br/>Hosted at the University of Westminster · 24 June 2026<br/><br/>Dr Pablo Bernabeu<br/>Postdoctoral Researcher, Department of Education, and AI Ambassador, University of Oxford<br/>Fellow of the Software Sustainability Institute</span>
 
-<!-- Welcome people as they settle. Start Part 1 on time at 12:00. -->
-
 ---
 
 ## Before we begin
@@ -30,8 +28,6 @@ These materials and the tools they reference are the facilitator's own choices, 
 The University of Oxford accepts no liability for the selection, use or outcomes of any third-party tool. You remain solely responsible for compliance with your own institutional policy, the UK GDPR and research ethics.
 
 <span class="small redline">This wording is a template and is not legal advice.</span>
-
-<!-- Read this aloud, briefly. It sets the tone: we are practising discernment, and accountability stays with us. -->
 
 ---
 
@@ -103,8 +99,6 @@ Humans have always extended themselves with tools, and a labour economy that rew
 
 > For better or worse, our institutions demand output, and we are adept at tooling up to supply it. Generative AI is the newest entry on that list, which is exactly why it deserves careful thought rather than automatic adoption.
 
-<!-- Speaker note: the next step up, in code — Karpathy's "Software is changing (again)" (2025): increasingly you instruct the machine in plain language rather than writing the code, sliding between doing it by hand and handing it over, while staying the one who verifies. (In Further reading.) -->
-
 ---
 
 ## Getting started, with no expertise needed
@@ -129,8 +123,6 @@ When a tool resists your intent, by giving a glib answer, missing the point or s
 We treat friction as data to record rather than an obstacle to smooth away, whether marking, writing or analysing.
 
 <span class="small muted">Deliberate friction, the "cognitive forcing functions" that make you pause and decide, measurably cuts over-reliance on AI where explanations alone do not (Buçinca et al., 2021; link in the close).</span>
-
-<!-- This is the spine of the whole session. Return to it in Part 2 and in the close. Note: Lee et al. is a self-report survey — an association, not proof that AI use causes weaker thinking. -->
 
 ---
 
@@ -219,8 +211,6 @@ Before you start a task, decide the following in advance.
 
 > A good workflow names its checkpoints before it trusts the output, not after something has broken.
 
-<!-- Speaker note: two nicknames — Mollick's "centaur" (a clean split of the work, loosely our staged pattern) and "cyborg" (weaving turn by turn, loosely interwoven) (2023; in Further reading). He did not coin the staged/interwoven framing — that is our synthesis. -->
-
 ---
 
 ## What Part 2 asks of you
@@ -304,8 +294,6 @@ Your facilitator will read out the session passcode you need to start a group.
 
 </div>
 
-<!-- Display this while groups settle (13:15); read out the session passcode. One device per group creates; the others join with the 6-character code it shows. -->
-
 ---
 
 ## How Part 2 runs (30 minutes)
@@ -316,8 +304,6 @@ Your facilitator will read out the session passcode you need to start a group.
 | <span class="clock">13:18</span> | **Apply it.** Run the tool on your problem and capture one caught error and one insight (the automation–steering map if time allows) | 15 |
 | <span class="clock">13:33</span> | **Lightning round.** 45 seconds per group, on the limitation, the safeguard, or how your field over- or under-uses AI | 7 |
 | <span class="clock">13:40</span> | **Synthesis.** Drawing the threads together, with take-aways for research and teaching | 5 |
-
-<!-- Speaker note: around 13:26 call a 30-second pause — keyboards down — to switch the room from building to interrogating. In the lightning round, 45 seconds is a hard stop: with ten groups, some give a one-line written harvest rather than a full spoken turn; collect the app submissions during the apply block. -->
 
 ---
 
@@ -380,8 +366,6 @@ Keep a short, honest log of the moments the tool went wrong, and what each one t
 
 Hold the red lines, record the friction, keep a human in the loop.
 
-<!-- Leave this slide displayed during the applied session. Circulate with the prompts from the facilitator guide. -->
-
 ---
 
 <!-- _class: invert -->
@@ -405,8 +389,6 @@ Thirty seconds, keyboards down, as a group.
 
 What was the most significant limitation, the most important human-in-the-loop safeguard, or one honest thing this exposed about how your field over- or under-uses AI?
 
-<!-- Facilitator times strictly: 45 s each, as many groups as time allows, then a quick harvest of the rest. Jot a recurring thread from each for the synthesis. -->
-
 ---
 
 <!-- _class: lead invert -->
@@ -417,14 +399,14 @@ What was the most significant limitation, the most important human-in-the-loop s
 
 ---
 
-## What we saw, across the room
+## What we saw across the room
 
-<span class="small muted">Facilitator: fill each line live, from the two or three threads you noted during the lightning round. These four are what to listen for, not findings decided in advance.</span>
+Four threads worth drawing out from the lightning round:
 
-- **Context decided.** A tool that helped on one task but became a hazard on the next: ______
-- **Friction as signal.** Where a group's recorded friction marked where judgement lives: ______
-- **A checkpoint named in advance.** The strongest safeguard a group built in: ______
-- **Where a free tier drew a hard line.** On data, scale or accountability: ______
+- **Context decided.** A tool that helped on one task and was a hazard on the next.
+- **Friction as a signal.** Where the friction a group recorded marked where judgement lives.
+- **A checkpoint named in advance.** The strongest safeguard a group built in.
+- **Where a free tier drew a hard line.** On data, scale or accountability.
 
 ---
 
@@ -452,6 +434,8 @@ Choose one to try this week, in research or in teaching.
 <span class="small muted">A short follow-up, with a responsible-use commitment, will reach you by email.</span>
 
 ---
+
+<!-- _class: refs -->
 
 ## Further reading
 
