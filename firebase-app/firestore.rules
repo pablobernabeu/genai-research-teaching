@@ -116,6 +116,7 @@ service cloud.firestore {
         && request.resource.data.joinCode.size() >= 4
         // Per-session passcode gate: the group must type the facilitator's passcode.
         && request.resource.data.sessionCode is string
+        && request.resource.data.sessionCode.size() > 0
         && request.resource.data.sessionCode == sessionCode();
 
       // UPDATE (owner editing): only while the doc is editable, and the owner

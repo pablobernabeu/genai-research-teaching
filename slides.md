@@ -11,7 +11,7 @@ keywords: "generative AI, research, teaching, responsible use, human-in-the-loop
 
 <!-- _class: lead brand -->
 <!-- _paginate: false -->
-<!-- _footer: "A personal selection in the facilitator's own capacity. Not the position of Oxford or the host, and not legal advice." -->
+<!-- _footer: "A personal selection in the facilitator's own capacity, which is not the position of Oxford or the host and is not legal advice." -->
 
 # Generative AI in research and teaching
 
@@ -39,7 +39,7 @@ The University of Oxford accepts no liability for the selection, use or outcomes
 | *12:30–13:15* | *Networking lunch* | *a break* |
 | **13:15–13:45** | **Part 2 · Practical** AI for research and teaching | applied session |
 
-Part 1 sets up a way of thinking. The lunch is a genuine break. Part 2 puts the thinking into practice.
+Part 1 sets up a way of thinking, the lunch is a real break and Part 2 puts the thinking into practice.
 
 ---
 
@@ -54,9 +54,9 @@ Part 1 sets up a way of thinking. The lunch is a genuine break. Part 2 puts the 
 ## Our stance is discernment, not enthusiasm
 
 - Whatever your level of confidence, whether you have never tried one or use them daily, you are in the right room.
-- The aim is not technical instruction on any one tool, but a deeper understanding of the technology.
-- This is neither a sales pitch nor a sceptics' meeting. The aim is judgement. We use these tools and we interrogate them, in research and in teaching.
-- Success is not a polished demo but a clear-eyed account of what helped, what failed and where a human must stay in charge.
+- The aim is a deeper understanding of the technology, with no technical instruction on any one tool.
+- This is a session about judgement. We use these tools and we interrogate them, in research and in teaching.
+- Success means a clear account of what helped, what failed and where a human must stay in charge.
 
 > You bring the expertise. The tool is a fast and confident assistant that is often wrong. The aim is to leave knowing when not to reach for it.
 
@@ -66,11 +66,11 @@ Part 1 sets up a way of thinking. The lunch is a genuine break. Part 2 puts the 
 
 <div class="redbox center">
 
-In one sentence each, recall the last time an AI tool either<br/>**helped you** or **let you down**, and which it was.
+In one sentence each, recall the last time an AI tool either<br/>helped you or let you down, and which it was.
 
 </div>
 
-Thirty seconds each. There is no need to perform. "I have not really used one" is a perfectly good answer.
+Thirty seconds each. There is no need to perform. 'I have not really used one' is a perfectly good answer.
 
 <span class="small muted">This primes the day. Most of us already have a story, and it usually turns on a moment of friction.</span>
 
@@ -85,19 +85,19 @@ Humans have always extended themselves with tools, and a labour economy that rew
 
 - mental arithmetic → the calculator
 - pen and paper → the computer
-- the calculator → Excel
+- the ledger → the spreadsheet
 
 </div>
 <div>
 
-- C → Python
-- Internet Explorer → Chrome
-- deterministic AI → generative AI
+- the typewriter → the word processor
+- the library catalogue → the search engine
+- deterministic software → generative AI
 
 </div>
 </div>
 
-> For better or worse, our institutions demand output, and we are adept at tooling up to supply it. Generative AI is the newest entry on that list, which is exactly why it deserves careful thought rather than automatic adoption.
+> For better or worse, our institutions demand output, and we are adept at tooling up to supply it. Generative AI is the newest entry on that list, which is why it deserves careful thought before any automatic adoption.
 
 ---
 
@@ -120,9 +120,9 @@ When a tool resists your intent, by giving a glib answer, missing the point or s
 - In a survey of knowledge workers, higher confidence in the AI went with less critical thinking, while higher confidence in one's own expertise went with more (Lee et al., 2025).
 - Deliberately reintroducing friction, through prompts that question the output, can restore critical and metacognitive engagement (Drosos et al., 2025).
 
-We treat friction as data to record rather than an obstacle to smooth away, whether marking, writing or analysing.
+We treat friction as data to record, whether we are marking, writing or analysing.
 
-<span class="small muted">Deliberate friction, the "cognitive forcing functions" that make you pause and decide, measurably cuts over-reliance on AI where explanations alone do not (Buçinca et al., 2021; link in the close).</span>
+<span class="small muted">Deliberate friction, the 'cognitive forcing functions' that make you pause and decide, measurably cuts over-reliance on AI where explanations alone do not (Buçinca et al., 2021; link in the close).</span>
 
 ---
 
@@ -131,7 +131,7 @@ We treat friction as data to record rather than an obstacle to smooth away, whet
 | Level | Examples (free tiers) | You trade… |
 |---|---|---|
 | Off-the-shelf chat | ChatGPT, Claude, Gemini, Copilot | convenient · least control · data leaves your hands |
-| No-code / low-code | Claude Projects, custom GPTs, Gradio/Streamlit, Colab | some setup · repeatable · clearer guardrails |
+| No-code / low-code | Claude Projects, Gemini Gems, Gradio/Streamlit, Colab | some setup · repeatable · clearer guardrails |
 | IDE / API level | VS Code + assistant, AI Studio API key, scripts | steepest · most control · most responsibility |
 
 Friction rises as you move down the table, and so does your ability to keep a human in the loop.
@@ -309,15 +309,15 @@ Your facilitator will read out the session passcode you need to start a group.
 
 ## The five angles
 
-The note rates your work on five dimensions, from 1 (Nascent) through Developing to Robust. Split them across the group and share the keyboard freely. Place yourselves on 1, 3 and 5 during the session, and complete the rest when you tidy the note.
+The note rates your work on five dimensions, from 1 (Nascent) through 3 (Developing) to 5 (Robust). Share the five angles across the group and pass the keyboard freely. The scoring comes later, when you tidy the note.
 
 1. Project Definition (Convenor). Your group's one real problem, kept in focus.
 2. Technology Stack (Driver). The right tool on the spectrum, and why.
 3. Data Security and Ethics (Steward). The red lines you hold.
 4. Financial and Scalability (Reporter). Whether the free tier holds. This role also owns the note and the spoken insight.
-5. Human-in-the-Loop (Sceptic). Checkpoints and accountability. Add the automation–steering map when you tidy the note.
+5. Human-in-the-Loop (Sceptic). Checkpoints and accountability, plus the automation–steering map if time allows.
 
-<span class="small muted">The five dimensions are for the note you tidy later, not five things to do live. During the session, focus on the three. An experienced group can ignore the labels.</span>
+<span class="small muted">The five dimensions shape the note you tidy later. During the session, focus on the core three. An experienced group can ignore the labels.</span>
 
 ---
 
@@ -354,7 +354,7 @@ Keep a short, honest log of the moments the tool went wrong, and what each one t
 - A confident but fake citation · a flattened nuance · a plausible but invalid method · a biased rewrite · a misgraded answer.
 - For each, note what happened, how you caught it, and what it signals about where humans must stay in charge.
 
-> These are not failures of your group. They are the point.
+> These entries are the most valuable thing your group produces.
 
 ---
 
@@ -414,7 +414,7 @@ Four threads worth drawing out from the lightning round:
 
 > Use the tool where it earns its place. Keep the human where judgement is owed.
 
-- Treat fluency as a prompt to check, not a proxy for truth.
+- Treat fluency as a reason to check.
 - Build the checkpoint before you trust the output.
 - Record the friction. It maps where you matter.
 - Disclose use, respect data, and keep accountability with a named person.
@@ -443,7 +443,7 @@ Choose one to try this week, in research or in teaching.
 <div>
 
 - **Russell Group (2023).** Principles on generative AI in education. russellgroup.ac.uk
-- **EC / ERA Forum (2024).** Living guidelines on responsible generative AI in research.
+- **EC / ERA Forum (2026, third version).** Living guidelines on the responsible use of generative AI in research.
 - **UNESCO (2023).** Guidance for generative AI in education and research (Miao & Holmes).
 - **ICO.** Guidance on AI and data protection (UK GDPR). ico.org.uk
 - **Lee et al. (2025, CHI).** The impact of generative AI on critical thinking, a survey of knowledge workers. <span class="doi">[doi.org/10.1145/3706598.3713778](https://doi.org/10.1145/3706598.3713778)</span>
@@ -451,10 +451,10 @@ Choose one to try this week, in research or in teaching.
 </div>
 <div>
 
-- **Drosos et al. (2025).** "It makes you think": provocations help restore thinking. <span class="doi">[arXiv:2501.17247](https://arxiv.org/abs/2501.17247)</span>
+- **Drosos et al. (2025).** 'It makes you think': provocations help restore thinking. <span class="doi">[arXiv:2501.17247](https://arxiv.org/abs/2501.17247)</span>
 - **Buçinca et al. (2021, CSCW).** Cognitive forcing functions reduce over-reliance on AI. <span class="doi">[doi.org/10.1145/3449287](https://doi.org/10.1145/3449287)</span>
 - **Bender et al. (2021, FAccT).** On the dangers of stochastic parrots, fluent remixing without understanding. <span class="doi">[doi.org/10.1145/3442188.3445922](https://doi.org/10.1145/3442188.3445922)</span>
-- **Karpathy (2025).** *Software is changing (again)*, the human on the "autonomy slider" [talk].
+- **Karpathy (2025).** *Software is changing (again)*, the human on the 'autonomy slider' [talk].
 - **Mollick (2023).** *Centaurs and cyborgs*, the human stays the architect [essay].
 
 </div>

@@ -2,9 +2,10 @@ MIT License
 
 Copyright (c) 2026 Pablo Bernabeu
 
-This MIT Licence applies ONLY to the build tooling and configuration in this
-repository — namely package.json, marp.config.mjs, themes/workshop.css, Makefile,
-the GitHub Actions workflow under .github/, and similar scaffolding. All workshop
+This MIT Licence applies ONLY to the build tooling, scripts and configuration in
+this repository, namely package.json, marp.config.mjs, themes/workshop.css, Makefile,
+the scripts under scripts/, the groupwork app under firebase-app/, the GitHub Actions
+workflows under .github/, and similar scaffolding. All workshop
 teaching materials (Markdown documents, slides, the rubric and other prose) are
 licensed separately under Creative Commons Attribution 4.0 International; see
 LICENSE.

@@ -5,8 +5,9 @@
 // Why a local script and not a dashboard button: opening a PR needs write access to the
 // repo, and a static web app has nowhere safe to hold a write-token. This runs on your
 // machine with your own `gh` auth, so no credential ever lives in the app. It reads the
-// LIVE Firestore — approved group docs are world-readable by the security rules, so no
-// sign-in is needed for the read — and includes ONLY groups that ticked "share publicly".
+// LIVE Firestore: approved group docs are readable by any signed-in caller, so the script
+// signs in anonymously (the same auth the web app uses) and includes ONLY groups that
+// ticked "share publicly".
 //
 // Usage (from your clone of the workshop repo, on a clean default branch):
 //   GENAI_RT_PROJECT=<projectId> GENAI_RT_API_KEY=<webApiKey> node scripts/archive-pr.mjs
