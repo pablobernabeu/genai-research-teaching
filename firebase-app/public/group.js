@@ -434,6 +434,17 @@ function renderGroup(data) {
     approvedNotice.hidden = false;
   }
 
+  // A locked note (submitted or approved) must show exactly what the server holds. Any
+  // edit typed on this device after another device submitted was never part of the
+  // submission, so drop it here: keeping it would display it as though it had been
+  // submitted, and the next save after a reopen would write it over the other device's
+  // newer text.
+  if (!editable && dirtyFields.size) {
+    if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
+    dirtyFields.clear();
+    saveState.textContent = "Locked while the facilitator reviews it. Anything typed since the last save was not submitted.";
+  }
+
   // Push values into the fields without triggering autosave. A field with unsaved local
   // edits keeps its local value: the pending autosave will write it, and applying the
   // (older) remote value now would drop the keystrokes typed since the last save.
@@ -532,7 +543,10 @@ function scheduleSave(e) {
 async function saveNow() {
   if (!groupId || !currentDoc) return;
   const status = currentDoc.status;
-  if (status !== "draft" && status !== "reopened") return;
+  if (status !== "draft" && status !== "reopened") {
+    dirtyFields.clear();   // the note locked under us; renderGroup has restored the server state
+    return;
+  }
 
   // Take the fields edited since the last save; anything typed while this write is in
   // flight lands in a fresh set and is written by the next autosave.

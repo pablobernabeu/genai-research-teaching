@@ -99,8 +99,10 @@ problem a member brings).
 
 `draft`, then (group submits) `submitted`, then (facilitator) `approved` or `reopened`,
 then (group edits and resubmits) `submitted`, and so on. The public dashboard shows
-`approved` only. Reopen is offered for submitted work; an approved group cannot be
-reopened, because approval wipes its join code and signs its devices out of the record.
+`approved` only. The dashboard does not offer Reopen on an approved card, because
+approval blanks the join code and each device discards its stored session, so a reopened
+group could not get back in. The rules themselves do not forbid it, so avoid moving an
+approved document back from the Firestore console.
 
 ## Setup (about 15 minutes; the Spark free plan is enough, with no Cloud Functions)
 
