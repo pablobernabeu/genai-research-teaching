@@ -70,7 +70,7 @@ export const SCENARIOS = [
 export const SURVEY = {
   fieldBalance: {
     label: "Field's use here",
-    question: "Compared with good practice, is your field currently using GenAI for this task…",
+    question: "Compared with good practice, is your field currently using generative AI for this task…",
     scale: ["Far too little", "A little too little", "About right", "A little too much", "Far too much"],
   },
   trust: {

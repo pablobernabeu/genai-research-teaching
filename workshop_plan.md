@@ -130,7 +130,7 @@ Inside Part 2 (13:15–13:45):
 | 13:18 | Apply it: run the tool, capture one caught error and one insight, then the map and oversight model if time is left | 15 |
 | *about 13:26* | *Pivot (woven in): stop building, start interrogating* | |
 | 13:33 | Lightning round: 45 seconds per group on the limitation, the safeguard or how the field over- or under-uses AI here | 7 |
-| 13:40 | Synthesis: what we found, and take-aways for research and teaching | 5 |
+| 13:40 | Synthesis: what we found, and takeaways for research and teaching | 5 |
 
 The segments sum to 30 minutes (3 + 15 + 7 + 5). The pivot near 13:26 is an
 announcement woven into circulation, and it takes no extra time.
@@ -172,10 +172,10 @@ Part 2. Keep it brisk and a little interactive.
 - What Part 2 asks, then form groups (slides 15–16). Show that the concepts just
   covered are the rubric and the societal reflection they will complete (slide 15),
   then have people form groups of five by gathering at a seed idea (slide 16). This is
-  the one piece of set-up in Part 1. Each group settles on its one problem, either that
+  the one piece of setup in Part 1. Each group settles on its one problem, either that
   seed or a real one a member brought, in the first minute of Part 2.
 
-Resist over-running, because the conceptual content is the foundation for the applied
+Resist overrunning, because the conceptual content is the foundation for the applied
 session and every concept should arrive as something participants will use in Part 2.
 
 ### 5.2 The lunch · 12:30–13:15
@@ -260,7 +260,7 @@ Technology Stack
 
 Data Security & Ethics
 - 'What exactly are you about to paste in? Whose data is it?'
-- 'If this note were public tomorrow, and it will be, is anything in the tool you would regret?'
+- 'If this note were public tomorrow, and it will be, is there anything in the tool that you would regret?'
 - 'Where would you need to disclose that you used AI for this?'
 
 Financial & Scalability Constraints

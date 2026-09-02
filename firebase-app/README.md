@@ -58,10 +58,10 @@ Pages (in `public/`):
 | `ownerUids` | array&lt;string&gt; | anonymous uids; create sets `[creatorUid]`, and joining appends via `arrayUnion` |
 | `status` | string | `draft`, then `submitted`, then `approved`, or `reopened` (back to the group) |
 | `scenario` | string | the chosen scenario label, or `Own problem` |
-| `track` | string | `A`, `B`, `C`, `D` or `` |
+| `track` | string | `A`, `B`, `C`, `D` or empty |
 | `shareConsent` | bool | the group's opt-in consent to include its non-identifying submission in the public archive; only consented, approved work is exported or sent as a pull request |
 | `survey` | map | three optional 1–5 scales: `fieldBalance` (the field under- or over-using AI here), `trust` (trust in the output before checking) and `steering` (human steering needed); they power the dashboard plots, and `0` or absent means unanswered |
-| `responses` | map | `problem`, `artefact`, `caughtErrors`, `map`, `oversight` (`interwoven`, `staged` or ``), `oversightWhy`, `insight` and `fieldUse` (an optional field reflection) |
+| `responses` | map | `problem`, `artefact`, `caughtErrors`, `map`, `oversight` (`interwoven`, `staged` or empty), `oversightWhy`, `insight` and `fieldUse` (an optional field reflection) |
 | `facilitatorNote` | string | set by the facilitator when reopening |
 | `createdAt` / `updatedAt` | timestamp | `serverTimestamp()` |
 

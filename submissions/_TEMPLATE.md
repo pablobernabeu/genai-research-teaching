@@ -35,7 +35,7 @@ headings, and the facilitator keeps them as they are.
 
 **Automation–steering map.** …
 
-**Oversight model.** interwoven or staged, with the group's reason.
+**Oversight model.** Interwoven or staged, with the group's reason.
 
 **Key insight.** …
 
@@ -46,6 +46,7 @@ headings, and the facilitator keeps them as they are.
 ## Shape 2: the fallback note (from the rubric template)
 
 **Members and roles:** Convenor … · Reporter … · Driver … · Sceptic … · Steward …
+
 **The real problem we brought:** …
 
 ### 1. Project Definition

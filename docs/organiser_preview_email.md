@@ -8,7 +8,7 @@ Subject: Preview of the draft materials for my AI workshop
 
 Dear colleagues at Westminster Business School,
 
-Ahead of the Westminster Business School Internal Research and Scholarship Conference on 24 June 2026, here are the draft materials for my session, Generative AI in research and teaching, for your preview. To keep it light, I have attached three PDFs, which between them show the whole session: the content, what participants work with, and how it is run.
+Ahead of the Westminster Business School Internal Research and Scholarship Conference on 24 June 2026, here are the draft materials for my session, Generative AI in research and teaching, for your preview. To keep it light, I have attached three PDFs, which between them show the whole session: the content, what participants work with and how it is run.
 
 - The slides: the full deck across both parts, namely a 30-minute conceptual session (Conceptualising the use of AI in research, 12:00–12:30), a networking lunch, then a 30-minute applied session (Practical AI for research and teaching, 13:15–13:45).
 - The group pack: the single booklet each table receives in Part 2, with an orienting cover, the five role cards, the one-page data decision aid, the evaluation rubric, a worked example for each track and a library of starter prompts.

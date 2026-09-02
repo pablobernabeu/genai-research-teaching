@@ -3,7 +3,7 @@ marp: true
 theme: workshop
 paginate: true
 transition: slide
-title: "Generative AI in research and teaching — a practical, critical workshop"
+title: "Generative AI in research and teaching: a practical, critical workshop"
 author: "Pablo Bernabeu"
 description: "A two-part featured workshop (30 + 30 minutes, split by lunch) on the responsible and effective use of generative AI in research and teaching."
 keywords: "generative AI, research, teaching, responsible use, human-in-the-loop, data protection"
@@ -305,7 +305,7 @@ Your facilitator will read out the session passcode you need to start a group.
 | <span class="clock">13:15</span> | **Settle in.** Re-find your group, agree your one problem (60 s), open the app (HackMD as fallback), red lines on | 3 |
 | <span class="clock">13:18</span> | **Apply it.** Run the tool on your problem and capture one caught error and one insight (the automation–steering map if time allows) | 15 |
 | <span class="clock">13:33</span> | **Lightning round.** 45 seconds per group, on the limitation, the safeguard or how your field over- or under-uses AI | 7 |
-| <span class="clock">13:40</span> | **Synthesis.** Drawing the threads together, with take-aways for research and teaching | 5 |
+| <span class="clock">13:40</span> | **Synthesis.** Drawing the threads together, with takeaways for research and teaching | 5 |
 
 ---
 
@@ -354,7 +354,7 @@ There is no GitHub to touch and no report to write. This is fifteen minutes of c
 Keep a short, honest log of the moments the tool went wrong, and what each one taught you.
 
 - A confident but fake citation · a flattened nuance · a plausible but invalid method · a biased rewrite · a misgraded answer.
-- For each, note what happened, how you caught it, and what it signals about where humans must stay in charge.
+- For each, note what happened, how you caught it and what it signals about where humans must stay in charge.
 
 > These entries are the most valuable thing your group produces.
 
@@ -364,7 +364,7 @@ Keep a short, honest log of the moments the tool went wrong, and what each one t
 
 ## Fifteen minutes, starting now (13:18)
 
-<span class="subtitle">Tracks are in your pack and in the app, the rubric is in your pack · help is circulating</span>
+<span class="subtitle">Tracks are in your pack and in the app · the rubric is in your pack · help is circulating</span>
 
 Hold the red lines, record the friction, keep a human in the loop.
 
@@ -420,7 +420,7 @@ Four threads worth drawing out from the lightning round:
 - Build the checkpoint before you trust the output.
 - Record the friction. It maps where you matter.
 - Disclose use, respect data and keep accountability with a named person.
-- Ask the bigger questions of who is helped, who is left out, and what we owe to disclose.
+- Ask the bigger questions of who is helped, who is left out and what we owe to disclose.
 
 ---
 
@@ -428,7 +428,7 @@ Four threads worth drawing out from the lightning round:
 
 Choose one to try this week, in research or in teaching.
 
-1. Write a two-line note on your AI use for one task, recording what you used, what you checked, and what you did not delegate.
+1. Write a two-line note on your AI use for one task, recording what you used, what you checked and what you did not delegate.
 2. Add one human checkpoint to a workflow you already assist with AI.
 3. Before pasting anything sensitive, work through the one-page data decision aid from your pack.
 4. Keep your own museum of caught errors for a fortnight.

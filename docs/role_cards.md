@@ -64,7 +64,7 @@ The mapping (canonical):
 
 **Your angle:** the record and the insight.
 
-- **Do:** keep the group's note in the app, in the rubric template; judge whether the
+- **Do:** keep the group's note in the app (or in the rubric template on the fallback); judge whether the
   approach survives the free tier and scale; submit the note for review before the
   lightning round at 13:33 where you can, and by 13:45 at the latest; give the
   45-second insight at 13:33 (no slides).

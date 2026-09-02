@@ -119,7 +119,7 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 ## 13:33 · LIGHTNING ROUND (7 min)
 
 - **Say:** '45 seconds, one insight, no slides: the biggest limitation, the best
-  safeguard, or how your field over- or under-uses AI here.'
+  safeguard or how your field over- or under-uses AI here.'
 - **Do:** visible timer. Nine groups fit at 45 seconds each; with ten, hold each to
   40 seconds or take a one-line contribution from the last. Jot each group's thread,
   and approve their note on the dashboard as it lands.

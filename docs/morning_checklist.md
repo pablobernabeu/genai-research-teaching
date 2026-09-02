@@ -19,7 +19,7 @@ risk sits in the first ten minutes.
 ## App reset (facilitator)
 
 - [ ] The workshop app reset for this session: sign in to the private dashboard, clear
-      any rehearsal groups, set the session passcode, and set the timer's minutes
+      any rehearsal groups, set the session passcode and set the timer's minutes
       without starting it. See the [day-of reset](facilitator_day_of_reset.md) for
       the full list.
 - [ ] Dashboard reachable and clear of any previous session's submissions, ready to
