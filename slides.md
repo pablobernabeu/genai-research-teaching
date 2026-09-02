@@ -339,7 +339,7 @@ Use your group's one problem: the seed, a member's real one or a worked example 
 
 ## Capturing your work in the app
 
-There is no GitHub to touch and no report to write. This is fifteen minutes of capture, kept deliberately light.
+There is no GitHub to touch and no report to write. This is fifteen minutes of capture, kept light.
 
 1. The Reporter opens the app (genai-rt.web.app), names the group and enters the session passcode. There is no account and nothing to install. One device creates the group, and the others join with the code it shows.
 2. Fill in the essentials: the problem, the artefact (and which tool made it), one caught error and your insight, adding the map and the oversight model if time allows. The app saves as you go.
