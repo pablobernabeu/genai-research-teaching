@@ -1,6 +1,6 @@
 # Organiser preview email
 
-> A short note to the conference organisers sharing the draft materials for preview. Replace the bracketed placeholders. Attach the three PDFs from `npm run build:preview`: `dist/slides.pdf`, `dist/handouts/group-pack.pdf` and `dist/handouts/facilitator-pack.pdf`. The paragraphs are continuous single lines, so the body pastes cleanly into an email client.
+> A short note to the conference organisers sharing the draft materials for preview. Check the date and the organisers' names before sending. Attach the three PDFs from `npm run build:preview`: `dist/slides.pdf`, `dist/handouts/group-pack.pdf` and `dist/handouts/facilitator-pack.pdf`. The paragraphs are continuous single lines, so the body pastes cleanly into an email client.
 
 ---
 

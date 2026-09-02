@@ -47,16 +47,16 @@ and to create.
 ├── workshop_plan.md                ← facilitator guide: framing, objectives, timings, prompts, contingencies
 ├── slides.md                       ← Marp deck (Part 1 conceptual · lunch · Part 2 applied)
 ├── project_tracks.md               ← the four tracks, with tooling, tasks, artefacts and data notes
-├── evaluation_rubric_template.md   ← the rubric and note template groups fill in the app (HackMD on the fallback)
+├── evaluation_rubric_template.md   ← the rubric and the full note template (the app has its own shorter form; HackMD or paper on the fallback)
 │
 ├── firebase-app/                   ← the Part 2 workshop app: Firestore + Hosting, security rules, three pages
 │   └── README.md                   ← app architecture, data model, security model and setup
 ├── handouts/                       ← ready-to-print PDFs (slides, the two packs, the two one-pagers); refresh with `npm run build:publish`
 │
 ├── themes/
-│   └── workshop.css                ← custom Marp theme (extends `gaia`; logo and disclaimer footer)
+│   └── workshop.css                ← custom Marp theme (extends `gaia`; logo and the title-slide disclaimer footer)
 ├── assets/
-│   └── logo.svg                    ← University of Oxford crest (shown on the cover and closing slides)
+│   └── logo.svg                    ← University of Oxford crest (source of the data URI embedded in the theme)
 │
 ├── docs/                           ← the rest of the facilitator kit
 │   ├── pre_workshop_email.md       ← briefing email to send in advance
@@ -109,12 +109,15 @@ npm run build          # → dist/slides.html and dist/slides.pdf
 npm run build:html     # HTML only
 npm run build:pdf      # PDF only (needs a Chromium or Edge browser present)
 npm run build:pptx     # PowerPoint
+npm run build:docs     # PDFs of project_tracks.md and the rubric → dist/
 npm run build:preview  # organiser preview pack → slides + group pack + facilitator pack (needs a Chromium browser)
 npm run build:handouts # print-ready handout PDFs → dist/handouts/ (role cards, data aid, rubric, cue cards, and so on)
 npm run build:grouppack       # one combined per-table booklet → dist/handouts/group-pack.pdf
 npm run build:facilitatorpack # one combined facilitator booklet → dist/handouts/facilitator-pack.pdf
 npm run build:publish  # refresh the committed ready-to-print PDFs in handouts/
 npm run watch          # live-reloading preview in the browser
+npm run preview        # open the deck in the browser
+npm run archive:pr     # open a PR with the approved, consented submissions (see submissions/README.md)
 npm run clean          # remove dist/
 ```
 
@@ -176,13 +179,14 @@ day, pick the option that fits how private the draft should stay.
 
 Participants never touch Git or GitHub. The flow is deliberately simple.
 
-1. Each group fills its shared note in the workshop app
-   ([genai-rt.web.app](https://genai-rt.web.app)), following the structure of the
-   [rubric template](evaluation_rubric_template.md). No participant needs a GitHub
-   account, and there is nothing to install. A group that cannot use the app falls back
-   to HackMD and shares its note link with the facilitator.
+1. Each group captures its work in the workshop app
+   ([genai-rt.web.app](https://genai-rt.web.app)), whose short form covers the
+   essentials. No participant needs a GitHub account, and there is nothing to install.
+   A group that cannot use the app writes the fuller
+   [rubric template](evaluation_rubric_template.md) in HackMD or on paper and shares it
+   with the facilitator.
 2. The facilitator approves each group from the private dashboard. Approved work
-   becomes the curated, world-readable record on the public dashboard.
+   appears on the passcode-gated session dashboard for the room.
 3. After the session, the facilitator exports the approved, consented work and commits
    it under [`submissions/`](submissions/) using the sortable naming convention
    `YYYY-MM-DD_groupNN_track-X_short-slug.md`.

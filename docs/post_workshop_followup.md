@@ -4,13 +4,13 @@
 
 ---
 
-Subject: Thank you, the archive, and a small commitment
+Subject: Thank you, the archive and a small commitment
 
 Dear colleague,
 
 Thank you for the energy you brought to Generative AI in research and teaching. The most striking thing was the quality of the caught errors and the safeguards you designed, which is exactly the discernment the session was for.
 
-Your work is now an open archive. Every group's note has been tidied into a public, reproducible record at [REPOSITORY URL] (see `submissions/`). It stands as a frank, collective map of where these tools help and where a human must stay in charge.
+Your work is now an open archive. The notes of the groups that opted in to sharing have been tidied into a public, reproducible record at https://github.com/pablobernabeu/genai-research-teaching (see `submissions/`). It stands as a frank, collective map of where these tools help and where a human must stay in charge.
 
 The one idea worth keeping is to treat friction, the moment a tool resists you or quietly gets something wrong, as a signal. It marks where your judgement is doing the real work.
 
@@ -26,7 +26,7 @@ One favour. A two-minute, anonymous feedback form would help me improve the next
 
 The further reading from the close is in the repository's facilitator guide (`workshop_plan.md`) if you would like to go deeper, including the Russell Group principles, the ERA living guidelines, the ICO guidance and the studies on AI and critical thinking.
 
-For questions, or to carry the conversation on, please use the Discussions tab in the repository ([REPOSITORY URL]), so that answers help everyone.
+For questions, or to carry the conversation on, please use the Discussions tab in the repository (https://github.com/pablobernabeu/genai-research-teaching/discussions), so that answers help everyone.
 
 With thanks,
 

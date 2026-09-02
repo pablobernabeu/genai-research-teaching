@@ -5,15 +5,16 @@
  *
  * Two things are wired in deliberately:
  *   1. A logo, top-right on the `brand` slides (the cover and the closing page).
- *   2. A persistent disclaimer footer (set via the `footer:` directive in slides.md).
+ *   2. A disclaimer footer on the title slide (the `_footer` directive in slides.md).
  *
- * The logo is the University of Oxford crest in assets/logo.svg, referenced below and
- * embedded at build time (`allowLocalFiles` is enabled in marp.config.mjs, so the asset
- * is inlined into both the HTML and the PDF). Use the Oxford logo only; do not add the
- * host's branding. To change it, replace assets/logo.svg.
+ * The logo is the University of Oxford crest. assets/logo.svg holds the source file,
+ * and the same image is embedded below as a base64 data URI so that a clean build needs
+ * no local file. To change the logo, replace assets/logo.svg AND re-encode it into the
+ * data URI in the `section.brand::before` rule. Use the Oxford logo only; do not add the
+ * host's branding.
  *
- * British English; calm, academic palette intended to read as professional
- * rather than promotional.
+ * British English, with a calm, academic palette intended to read as professional and
+ * not promotional.
  */
 
 @import 'gaia';
@@ -100,8 +101,8 @@ table th, table td {
   padding: 0.32em 0.55em;
 }
 
-/* Logo, top-right — shown only on `brand` slides (the cover and final page).
-   The Oxford crest from assets/logo.svg, inlined at build time (allowLocalFiles). */
+/* Logo, top-right, shown only on `brand` slides (the cover and final page).
+   The Oxford crest, embedded as a data URI (the source is assets/logo.svg). */
 section.brand::before {
   content: "";
   position: absolute;

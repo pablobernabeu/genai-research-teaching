@@ -107,7 +107,7 @@ A generative AI tool works much like a chat assistant. You type a request and it
 
 - Choose one free tool today, such as ChatGPT, Claude, Gemini or Copilot. Any of them will serve.
 - A useful request states who you are, what you want and what a good answer would look like. You then push back on the reply.
-- Starter prompts for each track are in your group pack and in the app, ready to adapt.
+- Starter prompts for each track are in your group pack, ready to adapt.
 
 > Mixed groups are a strength. Newcomers ask the questions that matter, and regular users show what is possible. No one is behind.
 
@@ -219,11 +219,11 @@ Take a real task, use a tool on it, then examine the result closely. Part 1 prov
 
 - Project Definition, your group's one real problem.
 - Technology Stack, which tool on the spectrum, and why (Part 1).
-- Data Security and Ethics, the red lines you hold (Part 1).
-- Financial and Scalability, whether the free tier holds.
+- Data Security & Ethics, the red lines you hold (Part 1).
+- Financial & Scalability, whether the free tier holds.
 - Human-in-the-Loop, where you steer, interwoven or staged (Part 1).
 
-<span class="small muted">Plus the friction you catch (your museum of caught errors), a short societal reflection (fairness, disclosure, thinking versus writing, and whether your field is over- or under-using AI here) and one insight to share. The app walks you through it.</span>
+<span class="small muted">Plus the friction you catch (your museum of caught errors), a short societal reflection (fairness, disclosure, thinking versus writing, and whether your field is over- or under-using AI here) and one insight to share. The app captures the essentials; the rubric and the reflection are in your pack.</span>
 
 ---
 
@@ -238,6 +238,7 @@ Groups of five. Move to the idea you would most like to try. The letter beside i
 - Critique an assessment or rubric (A)
 - Turn messy notes into clear actions (B)
 - Triage an email or admin backlog (B)
+- Plan a module, project or paper (B)
 
 </div>
 <div>
@@ -246,13 +247,14 @@ Groups of five. Move to the idea you would most like to try. The letter beside i
 - A quick visualisation or teaching aid (C)
 - A lay summary or press angle (D)
 - Explain a concept for students (D)
+- A social thread from a paper (D)
 
 </div>
 </div>
 
 <span class="small muted">Note who is in your group and which track you chose. You regroup straight after lunch, without re-forming.</span>
 
-<span class="small muted">A · Blind-Spot Detector, turn the tool on your own design and verify its critiques. B · Executive-Function Layer, build a reusable aid for planning or triage. C · Rapid Prototyping, make a small artefact, then check it. D · Public Engagement, translate a finding, then audit it for fidelity. Fuller briefs are in your group pack and in the app. Your group takes one problem into Part 2, either this seed or a real one a member brings.</span>
+<span class="small muted">A · Methodological Blind-Spot Detector, turn the tool on your own design and verify its critiques. B · Executive-Function Layer, build a reusable aid for planning or triage. C · Rapid Prototyping, make a small artefact, then check it. D · Public Engagement, translate a finding, then audit it for fidelity. Fuller briefs are in your group pack, with one-line summaries in the app. Your group takes one problem into Part 2, either this seed or a real one a member brings.</span>
 
 ---
 
@@ -302,36 +304,36 @@ Your facilitator will read out the session passcode you need to start a group.
 |---|---|---|
 | <span class="clock">13:15</span> | **Settle in.** Re-find your group, agree your one problem (60 s), open the app (HackMD as fallback), red lines on | 3 |
 | <span class="clock">13:18</span> | **Apply it.** Run the tool on your problem and capture one caught error and one insight (the automation–steering map if time allows) | 15 |
-| <span class="clock">13:33</span> | **Lightning round.** 45 seconds per group, on the limitation, the safeguard, or how your field over- or under-uses AI | 7 |
+| <span class="clock">13:33</span> | **Lightning round.** 45 seconds per group, on the limitation, the safeguard or how your field over- or under-uses AI | 7 |
 | <span class="clock">13:40</span> | **Synthesis.** Drawing the threads together, with take-aways for research and teaching | 5 |
 
 ---
 
 ## The five angles
 
-The note rates your work on five dimensions, from 1 (Nascent) through 3 (Developing) to 5 (Robust). Share the five angles across the group and pass the keyboard freely. The scoring comes later, when you tidy the note.
+The note rates your work on five dimensions, from 1 (Nascent) through 3 (Developing) to 5 (Robust). Share the five angles across the group and pass the keyboard freely. The scoring is for your pack and the discussion; the app holds the essentials.
 
 1. Project Definition (Convenor). Your group's one real problem, kept in focus.
 2. Technology Stack (Driver). The right tool on the spectrum, and why.
-3. Data Security and Ethics (Steward). The red lines you hold.
-4. Financial and Scalability (Reporter). Whether the free tier holds. This role also owns the note and the spoken insight.
+3. Data Security & Ethics (Steward). The red lines you hold.
+4. Financial & Scalability (Reporter). Whether the free tier holds. This role also owns the note and the spoken insight.
 5. Human-in-the-Loop (Sceptic). Checkpoints and accountability, plus the automation–steering map if time allows.
 
-<span class="small muted">The five dimensions shape the note you tidy later. During the session, focus on the core three. An experienced group can ignore the labels.</span>
+<span class="small muted">The five dimensions frame your reflection and the fuller fallback note. During the session, focus on the core three. An experienced group can ignore the labels.</span>
 
 ---
 
 ## Working on a real problem
 
-Use your group's one problem: the seed, a member's real one, or a worked example from your pack. In fifteen minutes, complete these three first. If that is all you manage, you have done the task.
+Use your group's one problem: the seed, a member's real one or a worked example from your pack. Complete these three first. If that is all you manage, you have done the task.
 
 1. One artefact. Run your tool and produce something real, such as a critique, a template or a translation.
 2. One or two caught errors. Moments where it was fluent but wrong. Keep them.
-3. One insight. A limitation, a safeguard, or one honest observation about how your field is over- or under-using AI. This is your contribution to the 45-second round.
+3. One insight. A limitation, a safeguard or one honest observation about how your field is over- or under-using AI. This is your line for the 45-second round.
 
 > If about five minutes remain, go further. Add the automation–steering map (which steps the tool ran, and where you steered) and decide whether oversight was interwoven or staged, noting why and what it cost. If you fall behind, drop the map before the insight.
 
-<span class="small muted">Complete the three first. The map and the oversight model are a bonus if time allows. The full rubric scoring and the societal reflection come later, when you tidy the note.</span>
+<span class="small muted">The map and the oversight model are a bonus if time allows. The rubric scores and the societal reflection are for your pack and the discussion.</span>
 
 ---
 
@@ -340,7 +342,7 @@ Use your group's one problem: the seed, a member's real one, or a worked example
 There is no GitHub to touch and no report to write. This is fifteen minutes of capture, kept deliberately light.
 
 1. The Reporter opens the app (genai-rt.web.app), names the group and enters the session passcode. There is no account and nothing to install. One device creates the group, and the others join with the code it shows.
-2. Fill in the essentials: the problem, the tool, one caught error and your insight, adding the map and the oversight model if time allows. The app saves as you go.
+2. Fill in the essentials: the problem, the artefact (and which tool made it), one caught error and your insight, adding the map and the oversight model if time allows. The app saves as you go.
 3. Submit for review. The facilitator sees it live and approves it. That is all.
 
 <span class="small muted">No device, or the app misbehaving? HackMD (hackmd.io) is the fallback, with the same headings. A countdown on screen shows the time left, and the facilitator archives the approved work afterwards.</span>
@@ -362,7 +364,7 @@ Keep a short, honest log of the moments the tool went wrong, and what each one t
 
 ## Fifteen minutes, starting now (13:18)
 
-<span class="subtitle">Tracks and rubric are in your pack and in the app · help is circulating</span>
+<span class="subtitle">Tracks are in your pack and in the app, the rubric is in your pack · help is circulating</span>
 
 Hold the red lines, record the friction, keep a human in the loop.
 
@@ -385,7 +387,7 @@ Thirty seconds, keyboards down, as a group.
 
 # Lightning round · 13:33
 
-<span class="subtitle">45 seconds per group · one insight · no slides · the Reporter delivers, the Convenor keeps time</span>
+<span class="subtitle">45 seconds per group · one insight · no slides · the Reporter delivers, the facilitator keeps time</span>
 
 What was the most significant limitation, the most important human-in-the-loop safeguard, or one honest thing this exposed about how your field over- or under-uses AI?
 
@@ -417,7 +419,7 @@ Four threads worth drawing out from the lightning round:
 - Treat fluency as a reason to check.
 - Build the checkpoint before you trust the output.
 - Record the friction. It maps where you matter.
-- Disclose use, respect data, and keep accountability with a named person.
+- Disclose use, respect data and keep accountability with a named person.
 - Ask the bigger questions of who is helped, who is left out, and what we owe to disclose.
 
 ---

@@ -2,10 +2,9 @@
 // Docs: https://github.com/marp-team/marp-cli#configuration-file
 //
 // The custom theme (themes/workshop.css) extends the built-in `gaia` theme and
-// wires in the logo and the persistent disclaimer footer. `allowLocalFiles` is
-// enabled so a file-based logo or local images render in HTML and PDF; the
-// placeholder logo is embedded in the theme as a data URI, so a clean build
-// needs nothing extra.
+// wires in the logo and the title-slide disclaimer footer. `allowLocalFiles` is
+// enabled so that local images render in HTML and PDF; the logo itself is embedded
+// in the theme as a data URI, so a clean build needs nothing extra.
 
 export default {
   // Register the custom theme so `theme: workshop` in slides.md resolves.

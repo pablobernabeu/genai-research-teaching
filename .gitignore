@@ -1,12 +1,12 @@
 # Node / npm
 node_modules/
 npm-debug.log*
-# package-lock.json is intentionally not committed: marp-cli must currently be
-# installed via a mirror registry (see the README install note), which would
-# otherwise be baked into the lockfile. CI installs with a registry fallback.
+# package-lock.json is intentionally not committed: marp-cli sometimes has to be
+# installed via a mirror registry (see the README install note), and the mirror URL
+# would then be baked into the lockfile. CI installs with a registry fallback.
 package-lock.json
 
-# Build output (rendered slides are generated from slides.md)
+# Build output (the rendered deck and the handout PDFs)
 dist/
 
 # Editor / OS cruft

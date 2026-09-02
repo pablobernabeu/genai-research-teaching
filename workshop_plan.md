@@ -59,9 +59,9 @@ By the end of the session a participant should be able to:
    automated phases against the human-steered ones and deciding whether oversight
    is interwoven through the project or staged at distinct checkpoints.
 
-The five objectives map one-to-one onto the five group roles and the five rubric
-dimensions, so every objective has an owner in each group and a place in the
-written record.
+The objectives are carried by the five group roles and the five rubric dimensions,
+so each has an owner in the group and a place in the written record, and the second
+objective is also served by the museum of caught errors.
 
 ---
 

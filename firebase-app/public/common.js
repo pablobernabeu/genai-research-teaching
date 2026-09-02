@@ -54,7 +54,7 @@ export function generateJoinCode() {
   return code;
 }
 
-// The five scenarios offered, exactly as named in the README. The first four carry
+// The five scenarios offered, in the short forms used by the one-pager and the app README. The first four carry
 // a track letter (A–D); "Own problem" carries no track. Shared so the group picker
 // and the dashboards label things consistently.
 export const SCENARIOS = [

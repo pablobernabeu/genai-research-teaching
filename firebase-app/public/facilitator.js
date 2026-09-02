@@ -1,11 +1,13 @@
 // facilitator.js — the FACILITATOR dashboard.
 //
-// Google sign-in only (NO anonymous). After sign-in we live-list ALL groups
-// and offer the two controls the rules permit: Approve and Reopen-with-note.
+// Google sign-in only (NO anonymous). After sign-in we live-list ALL groups and offer
+// the controls the rules permit: Approve (which also blanks joinCode and sessionCode),
+// Reopen with a note, Rename (name/nameLower plus the groupNames swap), Copy submission
+// and Export. The page also writes the session config: config/app (the passcode),
+// config/dashboard (its hash) and config/clock (the timer).
 //
 // The rules let exactly one account (matched by email) read every group and move
-// status. They forbid the facilitator from editing group content — so the only
-// writes here touch { status, facilitatorNote, updatedAt }. If a non-facilitator
+// status. They forbid the facilitator from editing group content. If a non-facilitator
 // signs in, the collection read is denied and the list simply stays empty.
 
 import {
@@ -271,7 +273,7 @@ function renderTimerStatus(d) {
     }
     const mm = Math.floor(remaining / 60000);
     const ss = Math.floor((remaining % 60000) / 1000);
-    timerStatus.textContent = `Running — ${mm}:${String(ss).padStart(2, "0")} left on every group's screen.`;
+    timerStatus.textContent = `Running: ${mm}:${String(ss).padStart(2, "0")} left on every group's screen.`;
   };
   tick();
   timerStatusInterval = setInterval(tick, 1000);

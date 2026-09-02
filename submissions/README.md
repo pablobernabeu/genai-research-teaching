@@ -1,47 +1,54 @@
-# Submissions — the open archive
+# Submissions: the open archive
 
-This folder is the **reproducible archive** of participants' group work. Nothing
-here is produced with Git on the day; the facilitator curates it afterwards from the
-**approved submissions in the groupwork app** (HackMD notes are the fallback).
+This folder is the reproducible archive of participants' group work. Nothing here is
+produced with Git on the day. The facilitator curates it afterwards from the approved,
+consented submissions in the workshop app, with HackMD or paper notes as the fallback.
 
 ## How collection works
 
-1. During the session each group fills its shared note in the **workshop app**
-   (genai-rt.web.app), structured by the [rubric template](../evaluation_rubric_template.md).
-   No participant needs a GitHub account. (A group that cannot use the app falls back to
-   **HackMD** and shares the link with the facilitator — optionally via the
-   [issue template](../.github/ISSUE_TEMPLATE/group-submission.md).)
-2. The facilitator **approves** each group from the private dashboard. Approved work is the
-   curated, world-readable record.
-3. After the session the facilitator **exports** the approved submissions and commits them here.
+1. During the session, each group captures its work in the workshop app
+   (genai-rt.web.app): the problem, the artefact, the errors caught, the
+   automation–steering map, the oversight model, the key insight and a field
+   reflection. No participant needs a GitHub account. A group that cannot use the app
+   writes the fuller [rubric template](../evaluation_rubric_template.md) in HackMD or
+   on paper and shares it with the facilitator, who may record HackMD links in the
+   pinned [fallback issue](../.github/ISSUE_TEMPLATE/group-submission.md).
+2. The facilitator approves each group from the private dashboard. Approved work
+   appears on the session's passcode-gated dashboard for the room, and it becomes
+   world-readable only once archived here.
+3. After the session, the facilitator exports the approved submissions whose groups
+   opted in to sharing and commits them here.
 
 ## The archive workflow (facilitator, after the session)
 
-1. On the **facilitator dashboard**, click **Export approved (Markdown)**. It downloads a
-   dated file (`YYYY-MM-DD_genai-rt-submissions.md`) holding every approved group that
-   consented to public sharing. (Only consented work is exported; if no approved group has
-   consented yet, the button does nothing and says so.)
-2. **Check it before committing.** Remove anything that should not be public — personal
-   data, anything a group pasted in error, real identifiers. When in doubt, redact. This
-   archive is public.
-3. **Commit** it as a dated cohort file, or split it into one file per group using the
-   naming convention below — a clear message, e.g. `Archive workshop submissions — 24 June 2026`.
-4. **HackMD-fallback groups:** open the note, **Export to Markdown** (HackMD's **···** menu →
-   **Download → Markdown**, or append `/download` to a published note's URL), check, and add
-   it alongside the rest.
+1. On the facilitator dashboard, click Export approved (Markdown). It downloads a
+   file named `YYYY-MM-DD_genai-rt-submissions.md`, dated with the day you export,
+   holding every approved group that consented to public sharing. If no approved group
+   has consented, the button does nothing and says so.
+2. Check it before committing. Remove anything that should not be public: personal
+   data, anything a group pasted in error, real identifiers. When in doubt, redact.
+   This archive is public.
+3. Commit it as a dated cohort file, renamed to the workshop date if you exported
+   later, or split it into one file per group using the naming convention below, with
+   a clear message such as `Archive workshop submissions, 24 June 2026`.
+4. For HackMD-fallback groups, open the note, export it to Markdown (HackMD's ··· menu
+   under Download and Markdown, or append `/download` to a published note's URL),
+   check it and add it alongside the rest. Archive a fallback note only if the group
+   said yes to the 'Share publicly?' line in the template.
 
-A copy of the empty per-group shape is in [`_TEMPLATE.md`](_TEMPLATE.md).
+The shape of an archived note is in [`_TEMPLATE.md`](_TEMPLATE.md): the app's export
+shape first, and the fuller fallback shape after it.
 
-### Or automate the PR
+### Or automate the pull request
 
-`npm run archive:pr` (i.e. `node scripts/archive-pr.mjs`) reads the approved, **consented**
-submissions straight from the live project and opens a pull request adding the dated archive
-file — using your own `gh` auth, so no write-token ever lives in the app. Add `--dry-run` to
-write the file and preview it without committing or opening a PR. Set `GENAI_RT_PROJECT` and
-`GENAI_RT_API_KEY` first (the Firebase project id and web API key — not secrets; see
+`npm run archive:pr` (that is, `node scripts/archive-pr.mjs`) reads the approved,
+consented submissions straight from the live project and opens a pull request adding
+the dated archive file, using your own `gh` authentication, so that no write token ever
+lives in the app. Add `--dry-run` to write the file and preview it without committing or
+opening a pull request. Set `GENAI_RT_PROJECT` and `GENAI_RT_API_KEY` first (the
+Firebase project id and web API key, which are not secrets; see
 `firebase-app/public/firebase-config.js` or the console). Only groups that ticked the
-optional consent box, to share their non-identifying submission in the public archive, are
-included.
+optional consent box are included.
 
 ## Naming convention (sortable)
 
@@ -49,26 +56,29 @@ included.
 YYYY-MM-DD_groupNN_track-X_short-slug.md
 ```
 
-- `YYYY-MM-DD` — the workshop date, so cohorts sort chronologically.
-- `groupNN` — zero-padded group number (`group01` … `group10`), so groups sort in
-  order.
-- `track-X` — the track letter, `A`–`D`.
-- `short-slug` — two or three words on the problem, lower-case and hyphenated.
+- `YYYY-MM-DD` is the workshop date, so that cohorts sort chronologically.
+- `groupNN` is the group's zero-padded number in the export (`group01` … `group10`),
+  so that groups sort in order. The app has no group numbers of its own, since groups
+  name themselves, so number them in export order.
+- `track-X` is the track letter, `A` to `D`, or `own` for a group that worked on its
+  own problem.
+- `short-slug` is two or three words on the problem, lower-case and hyphenated.
 
-**Examples**
+Examples:
 
 ```
-2026-06-10_group01_track-A_survey-method-critique.md
-2026-06-10_group03_track-C_reading-time-explainer.md
-2026-06-10_group07_track-D_lay-summary-fidelity.md
+2026-06-24_group01_track-A_survey-method-critique.md
+2026-06-24_group03_track-C_reading-time-explainer.md
+2026-06-24_group07_track-D_lay-summary-fidelity.md
 ```
 
 ## A note on what is preserved
 
-The point of the archive is the **reasoning**, not a leaderboard: the tracks chosen,
-the rubric self-assessments, the caught errors and the human-in-the-loop safeguards.
-Read across a cohort and you have a candid map of where these tools helped real
-researchers and where a human had to stay in charge.
+The point of the archive is the reasoning: the tracks chosen, the caught errors, the
+automation–steering map and oversight model, the field reflection and the
+human-in-the-loop safeguards, plus rubric scores and the societal reflection where a
+fallback note supplies them. Read across a cohort and you have a frank map of where
+these tools helped real researchers and where a human had to stay in charge.
 
 ---
 

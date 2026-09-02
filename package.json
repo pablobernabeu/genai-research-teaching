@@ -1,9 +1,9 @@
 {
-  "name": "ai-assistance-workshop",
+  "name": "genai-research-teaching",
   "version": "1.0.0",
   "private": true,
   "description": "Teaching kit and open archive for a two-part workshop (30 + 30 minutes, split by a networking lunch) on the responsible and effective use of generative AI in research and teaching.",
-  "license": "CC-BY-4.0",
+  "license": "(MIT AND CC-BY-4.0)",
   "scripts": {
     "build": "npm run build:html && npm run build:pdf",
     "build:html": "marp --config-file ./marp.config.mjs ./slides.md -o ./dist/slides.html",

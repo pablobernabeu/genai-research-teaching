@@ -25,7 +25,8 @@ Use the table already in your note in the app, or in HackMD on the fallback (fro
 | It dropped 'preliminary' and wrote 'proven' | Compared the rewrite to the source | A human must guard every caveat |
 | It invented an owner for a meeting action | Checked the action against the notes | No fact may appear that was not in the input |
 
-Aim for two or three good entries, and avoid an exhaustive list. Depth is worth more
+Aim for one or two good entries in the fifteen minutes, or two or three if you add to
+the note later, and avoid an exhaustive list. Depth is worth more
 than breadth: one error you understand is worth more than ten you merely noticed.
 
 ## Across the room (optional)

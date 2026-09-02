@@ -4,7 +4,7 @@
 // The placeholders here are intentional: this is a template, not a live deployment.
 //
 // The facilitator signs in with their Google account whose email matches
-// FACILITATOR_EMAIL in firestore.rules. Enable Google (and Anonymous) in Firebase
+// facilitatorEmail() in firestore.rules. Enable Google (and Anonymous) in Firebase
 // console → Authentication, and keep Email/Password disabled.
 
 export const firebaseConfig = {

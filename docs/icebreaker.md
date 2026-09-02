@@ -23,7 +23,7 @@ Why it fits the cohort. It assumes expertise and recent first-hand use, invites 
 war story instead of a confession, and needs no preparation or AI knowledge. 'I have
 not really used one' is itself a valid and interesting answer.
 
-## Alternate: 'One hope, one suspicion' (about three minutes)
+## Alternate: 'One hope, one suspicion' (about two minutes)
 
 If the room is quieter or more sceptical:
 

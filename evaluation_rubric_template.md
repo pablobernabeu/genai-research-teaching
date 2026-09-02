@@ -1,20 +1,20 @@
 # Evaluation rubric and note template
 
-This is the group's workbench for the day. By default you fill it in the workshop app
-(genai-rt.web.app), which has these fields built in, so there is nothing to set up
-beyond the passcode. The HackMD steps below are the fallback if you cannot use the
-app. Either way, it does two jobs. First, it holds your shared note, in the app by
-default or in HackMD as the fallback, with no prior experience needed and nothing to
-install. Second, it structures your thinking around five dimensions, each scored from
-1 to 5 (1 Nascent, 3 Developing, 5 Robust), plus a deliverable link, a museum of caught
-errors and your lightning-round insight.
+This is the group's workbench for the day. By default you capture your work in the
+workshop app (genai-rt.web.app), whose short form covers the essentials: the problem,
+the artefact, the errors you caught, the automation–steering map, the oversight model,
+your insight and a field reflection. Nothing needs setting up beyond the passcode. The
+fuller template below adds the five rubric dimensions, each scored from 1 to 5
+(1 Nascent, 3 Developing, 5 Robust), a deliverable link, the museum table and the
+societal reflection. It is the note for the HackMD or paper fallback, and for a group
+that wants to record its scores and reflection after submitting in the app.
 
 You are not graded. The rubric is a thinking tool and a shared record, and, once
 archived, part of the open account of what this cohort learned.
 
-> A note on the short format. Part 2's applied session is about 15 minutes. Get the
-> core three first: the problem and the tool, one caught error and one insight for
-> the lightning round. If you have about five minutes left, add the
+> A note on the short format. The build window in Part 2 is about 15 minutes. Get the
+> core three first: the artefact (your tool run on your problem), one caught error and
+> one insight for the lightning round. If you have about five minutes left, add the
 > automation–steering map (interwoven or staged) and the societal reflection. A
 > thoughtful partial note is worth more than a rushed full one.
 
@@ -41,18 +41,19 @@ archived, part of the open account of what this cohort learned.
 > Write the same template in any shared document or on paper. It is plain Markdown,
 > and the facilitator can transcribe one note into the archive afterwards.
 
-The facilitator exports every note to Markdown after the session and commits it under
-`submissions/`, so your work is preserved exactly.
+The facilitator exports every note whose group opted in to sharing after the session
+and commits it under `submissions/`, so your work is preserved exactly.
 
 ---
 
-## B. The note template (the app has these fields built in; paste this box into HackMD on the fallback)
+## B. The note template (paste this box into HackMD or copy it on paper; the app has its own shorter form)
 
 ```markdown
 # [Group NN] · Track [A / B / C / D] · 24 June 2026
 
 Members and roles: Convenor … · Reporter … · Driver … · Sceptic … · Steward …
 The real problem we brought: …
+Share publicly? yes / no (yes means the group is content for this non-identifying note to enter the public archive)
 
 ## 1. Project Definition
 - The real problem, in one sentence a colleague would recognise: …

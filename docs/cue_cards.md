@@ -95,7 +95,7 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
   on.'
 - **Do:** about three minutes in all: regroup, agree the one problem in roughly a
   minute, then open the app and read out the passcode. Keep it tight so that it does
-  not eat into the fifteen-minute applied session.
+  not eat into the fifteen-minute build window.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 

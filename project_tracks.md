@@ -4,7 +4,7 @@ Four tracks, each a different test of where generative AI helps a researcher and
 where it must not be trusted. Choose one per group, and aim for a spread across the
 room so that neighbours can compare notes in the lightning round.
 
-Each track is sized for the 15-minute applied session of Part 2 (see the
+Each track is sized for the fifteen-minute build window in Part 2 (see the
 [facilitator guide](workshop_plan.md)): work the tool on a real problem, record one
 caught error and one insight, and sketch the automation–steering map if time is left.
 The deliverable is never 'the AI did it'. It is a clear account of what helped, what
@@ -54,10 +54,12 @@ Part 2, either this seed or a real one a member brings.
   phases you will automate and where a human steers, then decide whether that
   oversight is interwoven through the whole project or staged at distinct checkpoints,
   and why.
-- Write as you go in the app, inside the [rubric template](evaluation_rubric_template.md).
-  Submit for review before the lightning round at 13:33 where you can, and by 13:45 at
-  the latest. HackMD is the fallback for a group that cannot use the app, and no GitHub
-  account is needed.
+- Write as you go in the app, whose form covers the problem, the artefact, the caught
+  errors, the map, the oversight model and your insight. Submit for review before the
+  lightning round at 13:33 where you can, and by 13:45 at the latest. The fuller
+  [rubric template](evaluation_rubric_template.md), with the tailored note headings
+  listed under each track, is for the HackMD or paper fallback and for a group that
+  wants to record its scores and reflection. No GitHub account is needed.
 
 A note on free tools and your data. Free consumer tiers commonly reuse inputs to
 improve models, and settings change without notice. Treat anything you paste as
