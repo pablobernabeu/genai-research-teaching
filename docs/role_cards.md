@@ -31,8 +31,8 @@ The mapping (canonical):
 - **Do:** in the first minute, agree your one problem (the seed you formed around, or
   a real one a member brought) and a success criterion; split the five angles; watch
   the clock against the timeline; make sure everyone speaks.
-- **At the pivot (about 13:26):** call the pause, lead the four mid-point questions and
-  move the group from building to interrogating.
+- **At the pivot (about 13:26):** when the facilitator calls the halt, take your group
+  through the four questions on screen and move it from building to interrogating.
 - **Ask often:** 'What is the actual problem, and how will we know it helped?'
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —

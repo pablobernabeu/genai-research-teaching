@@ -15,12 +15,13 @@ archived, part of the open account of what this cohort learned.
 > A note on the short format. The build window in Part 2 is about 15 minutes. Get the
 > core three first: the artefact (your tool run on your problem), one caught error and
 > one insight for the lightning round. If you have about five minutes left, add the
-> automation–steering map (interwoven or staged) and the societal reflection. A
+> automation–steering map and say whether your oversight was interwoven or staged. The
+> rubric scores and the societal reflection come later, when you tidy the note. A
 > thoughtful partial note is worth more than a rushed full one.
 
 ---
 
-## A. The HackMD fallback (about two minutes, Reporter drives, only if you cannot use the app)
+## A. The HackMD fallback (about five minutes, Reporter drives, only if you cannot use the app)
 
 1. Go to hackmd.io and sign in. It is free, and you can use a Google, GitHub or email
    login. There is nothing to install.
@@ -37,12 +38,13 @@ archived, part of the open account of what this cohort learned.
    track. You do not need a GitHub account, because the facilitator gathers every
    group's link.
 
-> If HackMD will not let you sign up (some logins are restricted), do not lose time.
-> Write the same template in any shared document or on paper. It is plain Markdown,
+> If HackMD will not let you sign up (some logins are restricted), do not lose time
+> troubleshooting: switch to paper at once. Write the same template in any shared
+> document or on paper. It is plain Markdown,
 > and the facilitator can transcribe one note into the archive afterwards.
 
-The facilitator exports every note whose group opted in to sharing after the session
-and commits it under `submissions/`, so your work is preserved exactly.
+After the session, the facilitator exports every note whose group opted in to sharing,
+removes anything that should not be public, and commits it under `submissions/`.
 
 ---
 
@@ -51,9 +53,9 @@ and commits it under `submissions/`, so your work is preserved exactly.
 ```markdown
 # [Group NN] · Track [A / B / C / D] · 24 June 2026
 
-Members and roles: Convenor … · Reporter … · Driver … · Sceptic … · Steward …
+Roles taken (no names needed): Convenor · Reporter · Driver · Sceptic · Steward
 The real problem we brought: …
-Share publicly? yes / no (yes means the group is content for this non-identifying note to enter the public archive)
+Share publicly? yes / no (yes means the group is content for this note, which should name no one, to enter the public archive)
 
 ## 1. Project Definition
 - The real problem, in one sentence a colleague would recognise: …
@@ -120,8 +122,10 @@ Share publicly? yes / no (yes means the group is content for this non-identifyin
 ## C. The rubric anchors
 
 Use these to place yourselves honestly. Most groups will sit around 3 on most
-dimensions in a short applied session, and that is exactly as it should be. A
-thoughtful 3 with a sharp caught error is worth more than an unexamined 5.
+dimensions in a short applied session, and that is as it should be. A thoughtful 3
+with a sharp caught error is worth more than an unexamined 5. Use 2 and 4 for work
+that sits between two anchors: 2 is nearer Nascent than Developing, and 4 is nearer
+Robust than Developing.
 
 ### 1 · Project Definition
 *Is the real problem, and its success criterion, clear?*

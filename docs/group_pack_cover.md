@@ -6,18 +6,19 @@ Everything your group needs for the applied session is in this booklet. You have
 fifteen minutes in Part 2. Get the core three done first. If that is all you manage,
 you have done the task.
 
-1. One artefact. Run your tool on your problem and make something: a critique, a template, a small artefact, a translation.
+1. One artefact. Run your tool on your problem and make something real: a critique, a template, a chart, a translation.
 2. One or two caught errors. Moments it was fluent and wrong. Keep them.
-3. One insight. The limitation, the safeguard or one honest thing this exposed about how your field is over- or under-using AI, which you will give in the 45-second round.
+3. One insight. The limitation, the safeguard or one honest thing this exposed about how your field is over- or under-using AI, which you will give in the lightning round, in about 45 seconds.
 
 If you have about five minutes left, go deeper:
 
 4. The automation–steering map: which steps the tool ran, and where you steered.
 5. Interwoven or staged? Was your oversight woven through every step, or staged at checkpoints between phases? Say why, and what it cost.
 
-A rough split that keeps you on time: about five minutes to make, three to break it, two
-for the insight and five for the map and the oversight model if time is left. When you
-fall behind, drop the map before the insight.
+A rough split that keeps you on time: about eight minutes to build, up to the pivot at
+about 13:26, then four to break it and name the insight, and the last three for the map
+and the oversight model if time is left. When you fall behind, drop the map before the
+insight.
 
 The full rubric scoring and the societal reflection are in this pack for your
 reflection and the lightning round, and they are not part of the fifteen minutes. A

@@ -45,7 +45,7 @@ headings, and the facilitator keeps them as they are.
 
 ## Shape 2: the fallback note (from the rubric template)
 
-**Members and roles:** Convenor … · Reporter … · Driver … · Sceptic … · Steward …
+**Roles taken (no names):** Convenor · Reporter · Driver · Sceptic · Steward
 
 **The real problem we brought:** …
 

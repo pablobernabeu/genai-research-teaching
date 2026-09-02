@@ -23,8 +23,8 @@ opened a chatbot to daily users. The kit also places generative AI in context, a
 latest in a long line of tools that a productivity-driven economy keeps pushing us
 towards: mental arithmetic gave way to the calculator, pen and paper to the computer,
 deterministic software to generative AI. For better or worse, our institutions reward
-output. The question is therefore how to use such tools with discernment, since the
-choice of whether to use them at all is rarely ours.
+output. The question is therefore how to use such tools with discernment, including when to
+decline them, in institutions that increasingly assume we will not.
 
 A single thread runs through the session: the friction a researcher feels when a
 tool resists their intent is a useful epistemic signal. When an assistant gives a
@@ -37,8 +37,8 @@ In a survey of knowledge workers, people reported that generative AI reduced the
 effort of critical thinking on their tasks. In the same survey, higher confidence in
 the tool went with less self-reported critical thinking, while higher confidence in
 one's own expertise went with more (Lee et al., 2025). Reintroducing friction on
-purpose, through brief provocations that question an output, restores critical and
-metacognitive engagement (Drosos et al., 2025). The design is thus itself an
+purpose, through brief provocations that question an output, can restore critical and
+metacognitive engagement, on the evidence of a small design study (Drosos et al., 2025). The design is thus itself an
 intervention: we build friction back in and observe what it reveals.
 
 ---
@@ -59,9 +59,10 @@ By the end of the session a participant should be able to:
    automated phases against the human-steered ones and deciding whether oversight
    is interwoven through the project or staged at distinct checkpoints.
 
-The objectives are carried by the five group roles and the five rubric dimensions,
-so each has an owner in the group and a place in the written record, and the second
-objective is also served by the museum of caught errors.
+Four of the five objectives map onto a rubric dimension and a group role, so each has
+an owner and a place in the written record. The second is carried instead by the museum
+of caught errors, which everyone contributes to, and the Financial & Scalability
+dimension supports the first by testing a tool choice against cost and scale.
 
 ---
 
@@ -169,9 +170,12 @@ Part 2. Keep it brisk and a little interactive.
   without settling them now.
 - Human-in-the-loop and the map (slide 14). Accountability stays human. Preview
   interwoven and staged oversight.
-- What Part 2 asks, then form groups (slides 15–16). Show that the concepts just
-  covered are the rubric and the societal reflection they will complete (slide 15),
-  then have people form groups of five by gathering at a seed idea (slide 16). This is
+- What Part 2 asks, then form groups (slides 15–16). Give this segment two minutes and
+  two minutes. Show that the concepts just covered are the rubric and the societal
+  reflection they will complete (slide 15), then have people form groups of five by
+  gathering at a seed idea (slide 16). Post the seed letters around the room beforehand,
+  so that people walk to a sign instead of squinting at a slide, which is what makes
+  formation fit the time. This is
   the one piece of setup in Part 1. Each group settles on its one problem, either that
   seed or a real one a member brought, in the first minute of Part 2.
 
@@ -191,7 +195,10 @@ Part 2 timeline (slide 20) displayed and use the prompt bank in section 6.
 - 13:15–13:18, settle in. Groups re-find each other after lunch, open the app
   (genai-rt.web.app; read out the session passcode, with HackMD as the fallback) and
   agree their one problem in about 60 seconds, either the seed they formed around or a
-  real one a member brought. Re-state the red lines.
+  real one a member brought. Re-state the red lines. Slides 21 to 24 go past at pace as
+  you do this: point at them without presenting them, because every word on them is
+  in the group pack and the one-pager. If the room is slow to settle, skip them and
+  point to the one-pager instead.
 - 13:18–13:33, apply it. Let them work. Intervene only to stop sensitive data going
   into a tool, to unstick a group that cannot start, or to drop a single provocation.
   Around 13:26, run the brief pivot (section 5.4). Note good caught errors for the
@@ -228,17 +235,21 @@ A facilitator-timed round of short spoken contributions, without presentations.
   field-level reflection gets voiced from the work just done. Offer it, and never force
   it.
 - Keep a visible timer. At 45 seconds, thank the group and move on.
-- Timing: seven minutes holds nine groups at 45 seconds each with no gaps between
-  them. With ten groups, hold each to 40 seconds, or take a one-line contribution from
-  the last one or two. Hold the timer firmly so that every group is heard, and remember
-  that every group's written note also enters the archive.
+- Timing, and be honest with yourself about it. Seven minutes is 420 seconds, and a
+  handover between groups costs five to ten seconds even when it runs well. Nine groups
+  at 45 seconds each leaves nothing for those handovers, and ten groups do not fit at
+  all. So with eight groups keep to 45 seconds, with nine or ten announce 35 seconds at
+  the start of the round, and if you are still behind after six groups, take a one-line
+  contribution from the rest. Every group's written note enters the archive either way,
+  so a group that gives one line has still been heard.
 - As each group speaks, jot the recurring thread (over-trust, hallucinated citations,
   data leakage, de-skilling, a clever checkpoint) for the synthesis.
 
 ### 5.6 Close · 13:40–13:45 · slides 28–34
 
 Synthesise the round instead of summarising it. Pull two or three concrete insights from the
-lightning round into the through-line (slide 30) and connect the threads: friction as
+lightning round onto the threads slide (slide 29), then connect them to the through-line
+(slide 30): friction as
 signal, the tool spectrum, the data red lines, the human in the loop and the bigger
 questions. Give the take-home actions (slide 31), point to the further reading (slide
 32) and the follow-up email, and close on time at 13:45.
@@ -260,7 +271,7 @@ Technology Stack
 
 Data Security & Ethics
 - 'What exactly are you about to paste in? Whose data is it?'
-- 'If this note were public tomorrow, and it will be, is there anything in the tool that you would regret?'
+- 'If your group ticks the share box, this note goes into a public archive. Is there anything in it, or anything you have pasted into the tool, that you would regret?'
 - 'Where would you need to disclose that you used AI for this?'
 
 Financial & Scalability Constraints
@@ -290,7 +301,7 @@ Friction (ask everywhere)
 | Wi-Fi fails | Switch the affected groups to the offline path: critique a printed worked example (`docs/worked_examples.md`) against the rubric. The thinking, not the tool, is the deliverable. |
 | A chosen tool demands payment or a login wall | Move down the spectrum to a free off-the-shelf chat tool, and treat the paywall itself as a finding under Financial & Scalability. |
 | The app will not load for a group | Fall back to HackMD (hackmd.io) or paper for that group. The rubric template is plain Markdown and portable, and the facilitator transcribes it into the archive afterwards. A brief Wi-Fi blip needs no action, because the app caches offline and re-syncs. |
-| A group finishes early | Send them to the rubric dimension they scored lowest on, or set them to red-team a neighbouring group's output by probing it adversarially for weaknesses the other group missed. |
+| A group finishes early | Send them to the rubric dimension they have thought about least, which is usually Financial & Scalability or the automation–steering map, or set them to red-team a neighbouring group's output by probing it adversarially for weaknesses the other group missed. |
 | A group stalls | Shrink the task. 'Forget the grand version. What is the smallest real thing the tool could help with in ten minutes?' |
 | Uneven groups (four or six) | At four, the Convenor doubles as Steward. At six, split Driver and Sceptic across two people, or add a second Sceptic, since more red-teaming does no harm. |
 | Fewer or more than ten groups | The lightning round is about seven minutes. Take 45 seconds each for as many groups as fit, then a one-line contribution from the rest, and never overrun the 13:45 finish. |

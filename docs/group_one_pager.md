@@ -34,7 +34,7 @@ This is the heart of the fifteen minutes. If this is all you manage, you have do
 
 1. Make one artefact. Run your tool on your problem and produce something real, such as a critique, a template or a translation.
 2. Catch the errors. Note one or two moments where it was fluent but wrong. Keep them. This is your museum of caught errors.
-3. Name one insight. A limitation, a safeguard or the honest thing this exposed. This is your line for the 45-second lightning round.
+3. Name one insight. A limitation, a safeguard or the honest thing this exposed. This is your line for the lightning round, which is about 45 seconds per group.
 
 With about five minutes to spare, go further.
 

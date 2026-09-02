@@ -58,7 +58,7 @@ Part 1 sets up a way of thinking, the lunch is a real break and Part 2 puts the 
 - This is a session about judgement. We use these tools and we interrogate them, in research and in teaching.
 - Success means a clear account of what helped, what failed and where a human must stay in charge.
 
-> You bring the expertise. The tool is a fast and confident assistant that is often wrong. The aim is to leave knowing when not to reach for it.
+> You bring the expertise. The tool is a fast and confident assistant whose error rate depends on the task, and whose fluency never tells you which case you are in. The aim is to leave knowing when not to reach for it.
 
 ---
 
@@ -117,7 +117,7 @@ A generative AI tool works much like a chat assistant. You type a request and it
 
 When a tool resists your intent, by giving a glib answer, missing the point or smoothing over a hard distinction, that friction is information. It marks where your judgement is doing real work.
 
-- In a survey of knowledge workers, higher confidence in the AI went with less critical thinking, while higher confidence in one's own expertise went with more (Lee et al., 2025).
+- In a survey of knowledge workers, those with more confidence in the AI reported less critical-thinking effort, while those with more confidence in their own expertise reported more (Lee et al., 2025). Self-reported, and correlational.
 - Deliberately reintroducing friction, through prompts that question the output, can restore critical and metacognitive engagement (Drosos et al., 2025).
 
 We treat friction as data to record, whether we are marking, writing or analysing.
@@ -131,10 +131,10 @@ We treat friction as data to record, whether we are marking, writing or analysin
 | Level | Examples (free tiers) | You trade… |
 |---|---|---|
 | Off-the-shelf chat | ChatGPT, Claude, Gemini, Copilot | convenient · least control · data leaves your hands |
-| No-code / low-code | Claude Projects, Gemini Gems, Gradio/Streamlit, Colab | some setup · repeatable · clearer guardrails |
-| IDE / API level | VS Code + assistant, AI Studio API key, scripts | steepest · most control · most responsibility |
+| No-code / low-code | Claude Projects, Gemini Gems, saved reusable prompts | some setup · repeatable · clearer guardrails |
+| IDE / API level | Colab, Gradio/Streamlit, VS Code + assistant, AI Studio API key | steepest · most control · most responsibility |
 
-Friction rises as you move down the table, and so does your ability to keep a human in the loop.
+Effort and setup cost rise as you move down the table, and so does the control you keep over what the tool does with your data.
 
 <span class="small muted">No-code means setting things up by clicking and prompting, without writing code. Working at the IDE or API level means using a code editor or calling the model programmatically, with more control and more responsibility.</span>
 
@@ -148,10 +148,10 @@ Red line. If you would not pin it to a public noticeboard, do not paste it into 
 
 </div>
 
-Without a lawful basis and a cleared tool, never paste:
+Personal data needs a lawful basis and a cleared tool. Confidential material is not yours to release at all. So never paste:
 
 - Personal data of identifiable people, such as students, applicants, participants or staff (UK GDPR).
-- Special-category data, such as health, ethnicity, beliefs, sexuality or biometrics.
+- Special category data, such as health, ethnicity, beliefs, sexuality or biometrics.
 - Confidential or unpublished material, such as grant drafts, peer-review files or data under an NDA.
 - In teaching, also marks, references, pastoral notes, SpLD records, exam scripts and admissions data.
 
@@ -192,7 +192,7 @@ Beyond any single task, three larger shifts are worth carrying into Part 2.
 
 - Thinking and writing, decoupled. We have long thought by writing. If the tool drafts, where does the thinking go, and what is lost if we let it?
 - Fairness, as leveller or amplifier. AI might narrow gaps (a second language, thin support, an early career) or widen them. Which, and for whom?
-- Disclosure. We ask people to disclose their use of AI. Should we also disclose the conditions it offsets, or would that expose the very inequities it eased?
+- Disclosure. We ask people to disclose their use of AI. Should we also disclose what it offset for us, such as writing in a second language or having little support, or would that expose the very inequities it eased?
 
 > There are no settled answers here. These are policy questions in the making. Notice them in your own task.
 
@@ -215,7 +215,7 @@ Before you start a task, decide the following in advance.
 
 ## What Part 2 asks of you
 
-Take a real task, use a tool on it, then examine the result closely. Part 1 provided the way of thinking. Part 2 puts it into practice. You will rate your work on five dimensions, from 1 to 5.
+Take a real task, use a tool on it, then examine the result closely. Part 1 provided the way of thinking. Part 2 puts it into practice. You will look at your work through five dimensions, and score them in your pack afterwards if you wish.
 
 - Project Definition, your group's one real problem.
 - Technology Stack, which tool on the spectrum, and why (Part 1).
@@ -311,7 +311,7 @@ Your facilitator will read out the session passcode you need to start a group.
 
 ## The five angles
 
-The note rates your work on five dimensions, from 1 (Nascent) through 3 (Developing) to 5 (Robust). Share the five angles across the group and pass the keyboard freely. The scoring is for your pack and the discussion; the app holds the essentials.
+Your pack rates your work on five dimensions, from 1 (Nascent) through 3 (Developing) to 5 (Robust). Share the five angles across the group and pass the keyboard freely. The scoring is for your pack and the discussion; the app holds the essentials.
 
 1. Project Definition (Convenor). Your group's one real problem, kept in focus.
 2. Technology Stack (Driver). The right tool on the spectrum, and why.

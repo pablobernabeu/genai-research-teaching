@@ -20,12 +20,18 @@ notice. Treat anything you type as potentially non-private and non-retractable.
 
 1. Is it personal data? Does it relate to an identifiable living person (names,
    emails, student or participant records, anything that could single someone out,
-   even indirectly)? If yes, do not paste it as it is. Anonymise it first, and check
-   your lawful basis.
-2. Is it special-category or especially sensitive data? This covers health,
-   ethnicity, religion, politics, sexuality and biometrics, as well as children's data
-   and commercially sensitive material. If yes, stop. A free consumer tool is the
-   wrong place. Anonymise beyond recognition, synthesise or abstain.
+   even indirectly)? If yes, do not paste it as it is. Anonymise or synthesise it, and
+   it is then no longer personal data. If it has to stay identifiable, a lawful basis
+   is necessary but nowhere near sufficient: you also need a tool your institution has
+   cleared, with a processor contract behind it, which a free consumer tool is not.
+2. Is it special category data under Article 9 of the UK GDPR? That means racial or
+   ethnic origin, political opinions, religious or philosophical beliefs, trade union
+   membership, genetic data, biometric data used to identify someone, health, sex life
+   or sexual orientation. Criminal offence data, under Article 10, carries similar
+   weight. If yes, stop. A free consumer tool is the wrong place. Anonymise beyond
+   recognition, synthesise or abstain. Children's data and commercially sensitive
+   material are not special category, but both carry extra duties, so treat them the
+   same way here.
 3. Is it confidential, unpublished or restricted? This covers unpublished data or
    manuscripts, grant drafts, peer-review files, material covered by a non-disclosure
    agreement, anything under embargo and anything shared without co-author or
@@ -44,7 +50,7 @@ the signal, so act on it.
 | 🟢 Generally fine | 🟠 Pause and treat with care | 🔴 Do not paste into a free tool |
 |---|---|---|
 | Already-public text (your published abstract) | Lightly disguised real material | Personal data of identifiable people |
-| Fully synthetic or fabricated examples | Aggregated or partially de-identified data | Special-category or children's data |
+| Fully synthetic or fabricated examples | Aggregated or partially de-identified data | Special category, criminal offence or children's data |
 | Generic, non-identifying questions | Draft prose with no sensitive content | Unpublished data, grants, peer review |
 | Your own writing, where you hold the rights | Anything you would hesitate to email widely | Confidential, embargoed or NDA-covered material |
 

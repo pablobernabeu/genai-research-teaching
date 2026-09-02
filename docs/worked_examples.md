@@ -1,12 +1,16 @@
 # Worked examples: one per track
 
-A worked example is the default for every group. Use it unless a member actively
-brings a real, non-confidential problem they would rather work on. The material below
-is fully synthetic and safe to paste (no real people, data or unpublished work), which
-removes the de-identification deliberation that would otherwise eat into the fifteen
-minutes. Each example is sized for the short Part 2 applied session and leads
-naturally to a caught error. It is also the fallback when the Wi-Fi fails and you
-switch to critiquing on paper.
+A worked example is the fallback, and not the default. Use your group's seed, or a
+real, non-confidential problem a member brings, and turn to the example below only if
+neither is to hand. It is also what you use when the Wi-Fi fails and you switch to
+critiquing on paper.
+
+The material below is fully synthetic and safe to paste, with no real people, data or
+unpublished work, so a group with nothing to hand can start at once. If you are using
+it, still spend a minute on the data decision aid: say what you would have had to strip
+out had this been your own material, and record that under Data Security & Ethics.
+Each example is sized for the short build window and leads naturally to a caught
+error.
 
 ---
 
@@ -78,9 +82,10 @@ log.
 
 What to watch for. Do the plotted numbers match the data exactly? Is the takeaway
 honest about the U-shape (fastest reading around 14 pt), or does it over-simplify to
-'bigger is better'? Check colour contrast and that the axes are labelled. Try a silly
-input (a negative font size) and see what breaks. The fact that it rendered does not
-mean that it is correct, so log every gap.
+'bigger is better'? Check colour contrast and that the axes are labelled. Then add a sixth point of your own, 20 pt, and
+see whether the axis, the scale and the takeaway update correctly or whether the tool
+hard-coded them. The fact that it rendered does not mean that it is correct, so log
+every gap.
 
 ---
 

@@ -1,12 +1,16 @@
 # Project tracks
 
 Four tracks, each a different test of where generative AI helps a researcher and
-where it must not be trusted. Choose one per group, and aim for a spread across the
-room so that neighbours can compare notes in the lightning round.
+where it must not be trusted. Choose one per group. A spread across the room makes the
+lightning round richer, so if one seed draws a crowd and another none, the facilitator
+will say so as people move.
 
-Each track is sized for the fifteen-minute build window in Part 2 (see the
-[facilitator guide](workshop_plan.md)): work the tool on a real problem, record one
-caught error and one insight, and sketch the automation–steering map if time is left.
+Each track can be entered in the fifteen-minute build window of Part 2 (see the
+[facilitator guide](workshop_plan.md)), and none can be finished in it, which is
+expected. Work the tool on a real problem, record one caught error and one insight, and
+sketch the automation–steering map if time is left. Bound the work as you go: in Track
+A, verify the three objections you find most consequential instead of all of them, and
+in Track D, produce two audience versions and audit one of them in full.
 The deliverable is never 'the AI did it'. It is a clear account of what helped, what
 failed and where a human stayed in charge.
 
@@ -39,8 +43,11 @@ Part 2, either this seed or a real one a member brings.
 - Research or teaching. Every track works for a teaching task too: a lesson plan or
   assessment to stress-test (A), teaching admin to triage (B), a student-facing
   explainer to build (C), a concept to translate for students (D).
-- Free tiers only. No paid plans, no installs and no prior experience assumed.
-  Everything runs in a browser.
+- Free tiers only. No paid plans, no installs and no prior experience assumed, and
+  everything runs in a browser. One person in the group does need a device already
+  signed in to a free chat assistant. If nobody is, do not spend the window creating an
+  account: use a tool that works without signing in, or share a neighbouring group's
+  screen for one run, and spend your own time on the verification.
 - Mind the red lines before you paste anything. Use the one-page
   [data decision aid](docs/data_decision_aid.md). When in doubt, anonymise,
   synthesise or abstain.
