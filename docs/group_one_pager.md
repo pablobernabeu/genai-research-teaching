@@ -13,7 +13,7 @@ Type that into any browser, or scan the QR code on screen. No account and nothin
 One person sets it up. The same form starts a new group or joins an existing one.
 
 - New group. Leave the join code blank, choose a group name that does not identify anyone (such as 'Otters' or 'Team Kelp'), type the passcode the facilitator reads out and press Continue.
-- The join code. The app shows a six-character code. Read it out so that others can join on their own devices. One shared device is fine too.
+- The join code. The app shows a six-character code. Read out the group name and the code, since anyone joining needs both, and they leave the passcode blank. One shared device is fine too.
 - Joining. Open the same address, type the same group name and enter the code. No passcode is needed to join.
 
 If the passcode is refused, check it with the facilitator. If the name is taken, pick another.
