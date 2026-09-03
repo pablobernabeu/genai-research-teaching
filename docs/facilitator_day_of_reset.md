@@ -33,7 +33,7 @@ A short reset that gets the live app into a clean, ready state for Westminster o
 
 - [ ] Export approved (Markdown) from the dashboard is the default path. It exports only approved and consented groups and downloads `YYYY-MM-DD_genai-rt-submissions.md`, dated with the day you export.
 - [ ] Check it before committing (names and content), rename it to the workshop date if you exported later, then commit under `submissions/`.
-- [ ] Alternatively, from your own machine if pre-configured, run `npm run archive:pr` (it needs `GENAI_RT_PROJECT` and `GENAI_RT_API_KEY` set and `gh` already logged in; add `--dry-run` to preview). If either is not ready, use the Markdown export above.
+- [ ] Alternatively, from your own machine if pre-configured, run `npm run archive:pr` (it needs `GENAI_RT_PROJECT` and `GENAI_RT_API_KEY` set and `gh` already logged in; run `npm run archive:pr -- --dry-run` to preview). If either is not ready, use the Markdown export above.
 
 ## Troubleshooting
 

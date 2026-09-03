@@ -495,8 +495,10 @@ function setFormEnabled(enabled) {
 }
 
 // ---- Autosave (debounced ~800ms) -------------------------------------------
-// Every input change schedules a save. We collect the whole responses map plus the
-// scenario/track and write them, keeping status as-is ('draft' or 'reopened').
+// Every input change marks its field dirty and schedules a save. A save writes only the
+// dirty fields, as dot paths, and keeps status as-is ('draft' or 'reopened'), so a write
+// from one device leaves another device's edits to other fields untouched.
+
 // Which document field an input element belongs to (see buildUpdate).
 function fieldKeyFor(el) {
   if (el === scenarioSel) return "scenario";

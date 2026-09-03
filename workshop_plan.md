@@ -304,7 +304,7 @@ Friction (ask everywhere)
 | A group finishes early | Send them to the rubric dimension they have thought about least, which is usually Financial & Scalability or the automation–steering map, or set them to red-team a neighbouring group's output by probing it adversarially for weaknesses the other group missed. |
 | A group stalls | Shrink the task. 'Forget the grand version. What is the smallest real thing the tool could help with in ten minutes?' |
 | Uneven groups (four or six) | At four, the Convenor doubles as Steward. At six, split Driver and Sceptic across two people, or add a second Sceptic, since more red-teaming does no harm. |
-| Fewer or more than ten groups | The lightning round is about seven minutes. Take 45 seconds each for as many groups as fit, then a one-line contribution from the rest, and never overrun the 13:45 finish. |
+| Fewer or more than ten groups | The lightning round is about seven minutes, which fits eight groups at 45 seconds. With nine or ten, announce 35 seconds at the start of the round, and if you are still behind after six groups take a one-line contribution from the rest. Never overrun the 13:45 finish. |
 | Someone pastes sensitive data | Stop it gently and immediately, note it as a live example of why the red lines exist and have them anonymise or synthesise before continuing. |
 | A dominant voice | Lean on roles: 'Steward, what is your read?' Give quieter roles explicit air. |
 | A sceptical or hostile participant | Welcome it, because scepticism is the point. Channel it into the Sceptic role and the museum. |

@@ -44,8 +44,8 @@ shape first, and the fuller fallback shape after it.
 `npm run archive:pr` (that is, `node scripts/archive-pr.mjs`) reads the approved,
 consented submissions straight from the live project and opens a pull request adding
 the dated archive file, using your own `gh` authentication, so that no write token ever
-lives in the app. Add `--dry-run` to write the file and preview it without committing or
-opening a pull request. Set `GENAI_RT_PROJECT` and `GENAI_RT_API_KEY` first (the
+lives in the app. Run `npm run archive:pr -- --dry-run` to write the file and preview it
+without committing or opening a pull request. Set `GENAI_RT_PROJECT` and `GENAI_RT_API_KEY` first (the
 Firebase project id and web API key, which are not secrets; see
 `firebase-app/public/firebase-config.js` or the console). Only groups that ticked the
 optional consent box are included.

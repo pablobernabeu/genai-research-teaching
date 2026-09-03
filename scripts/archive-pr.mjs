@@ -11,7 +11,8 @@
 //
 // Usage (from your clone of the workshop repo, on a clean default branch):
 //   GENAI_RT_PROJECT=<projectId> GENAI_RT_API_KEY=<webApiKey> node scripts/archive-pr.mjs
-//   (or `npm run archive:pr`). Add --dry-run to write the file but skip git/PR.
+//   (or `npm run archive:pr`). Add --dry-run to write the file but skip git/PR; through
+//   npm the flag needs the bare separator, as `npm run archive:pr -- --dry-run`.
 //
 // The project id and web API key are NOT secrets (they ship in the web app). Find them in
 // firebase-app/public/firebase-config.js or the Firebase console. If that file already
