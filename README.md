@@ -29,7 +29,8 @@ and with nothing to install. There are 60 minutes of contact time:
 In Part 2, groups of five choose one of four tracks and work a real problem from their
 research or teaching, capturing it in the workshop app
 ([genai-rt.web.app](https://genai-rt.web.app)). Each group assesses its work against a
-five-dimension rubric and a museum of caught errors. It then gives a 45-second spoken
+five-dimension rubric, which it scores when it tidies the note afterwards, and a museum
+of caught errors. It then gives a 45-second spoken
 insight, choosing one of three: the most significant limitation it found, the most
 important human-in-the-loop safeguard it built in, or one honest observation about how
 its field is over- or under-using AI for the task.
@@ -122,7 +123,10 @@ npm run clean          # remove dist/
 ```
 
 A `Makefile` mirrors these for Unix users: `make`, `make html`, `make pdf`,
-`make watch`, `make clean`.
+`make pptx`, `make docs`, `make pack`, `make handouts`, `make grouppack`,
+`make facilitatorpack`, `make publish`, `make watch` and `make clean`. The npm
+scripts remain the primary, cross-platform interface, and `archive:pr` is theirs
+alone.
 
 > Install note. marp-cli pulls in `speech-rule-engine` (via MathJax), whose npm
 > registry metadata intermittently fails to parse on the default registry. If
@@ -130,8 +134,11 @@ A `Makefile` mirrors these for Unix users: `make`, `make html`, `make pdf`,
 > install once via a mirror (`npm install --registry=https://registry.npmmirror.com`)
 > or retry later. CI installs with the same mirror as a fallback.
 
-The PDF steps find a browser through `CHROME_PATH` when Chrome or Edge is not at a
-standard location. When the handout build runs as root in a container, pass any
+Every script that produces a PDF needs a Chromium or Edge browser on the machine:
+`build:pdf`, `build:docs`, `build:preview`, `build:handouts`, `build:grouppack`,
+`build:facilitatorpack` and `build:publish`. Only `build:html`, `watch` and `clean` do
+not. They find the browser through `CHROME_PATH` when it is not at a standard
+location. When the handout build runs as root in a container, pass any
 extra launch flags through `CHROME_FLAGS` (for example `--no-sandbox`).
 
 The output in `dist/` is generated and git-ignored, so rebuild it at any time.

@@ -14,7 +14,7 @@ Your work is now an open archive. The notes of the groups that opted in to shari
 
 The one idea worth keeping is to treat friction, the moment a tool resists you or quietly gets something wrong, as a signal. It marks where your judgement is doing the real work.
 
-A small, voluntary responsible-use commitment. If it is useful, adopt one or two of these for the next month:
+Here is a small, voluntary responsible-use commitment, and if it is useful, adopt one or two of these for the next month:
 
 - I will disclose AI assistance where it matters, in line with policy and publisher rules.
 - I will never paste personal, special-category, confidential or embargoed material into a free consumer tool.
@@ -22,9 +22,9 @@ A small, voluntary responsible-use commitment. If it is useful, adopt one or two
 - I will record the friction I notice, and let it tell me where I am needed.
 - I will stay accountable for the output: the tool proposes, and I dispose.
 
-One favour. A two-minute, anonymous feedback form would help me improve the next run: [FEEDBACK URL].
+One favour, if you have a moment: a two-minute, anonymous feedback form would help me improve the next run: [FEEDBACK URL].
 
-The further reading from the close is in the repository's facilitator guide (`workshop_plan.md`) if you would like to go deeper, including the Russell Group principles, the ERA living guidelines, the ICO guidance and the studies on AI and critical thinking.
+The further reading from the close is in the repository's facilitator guide (`workshop_plan.md`) if you would like to go deeper. It includes the Russell Group principles, the ERA living guidelines, the ICO guidance and the studies on AI and critical thinking.
 
 For questions, or to carry the conversation on, please use the Discussions tab in the repository (https://github.com/pablobernabeu/genai-research-teaching/discussions), so that answers help everyone.
 

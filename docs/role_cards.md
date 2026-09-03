@@ -66,7 +66,7 @@ The mapping (canonical):
 
 - **Do:** keep the group's note in the app (or in the rubric template on the fallback); judge whether the
   approach survives the free tier and scale; submit the note for review before the
-  lightning round at 13:33 where you can, and by 13:45 at the latest; give the
+  lightning round at 13:33 where you can, and during it at the latest; give the
   45-second insight at 13:33 (no slides).
 - **At the pivot (about 13:26):** make sure the note is being filled in as you go, and
   not left to the end.

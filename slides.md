@@ -72,7 +72,7 @@ In one sentence each, recall the last time an AI tool either<br/>helped you or l
 
 Thirty seconds each. There is no need to perform. 'I have not really used one' is a perfectly good answer.
 
-<span class="small muted">This primes the day. Most of us already have a story, and it usually turns on a moment of friction.</span>
+<span class="small muted">Most of us already have a story, and it usually turns on a moment of friction.</span>
 
 ---
 
@@ -223,7 +223,7 @@ Take a real task, use a tool on it, then examine the result closely. Part 1 prov
 - Financial & Scalability, whether the free tier holds.
 - Human-in-the-Loop, where you steer, interwoven or staged (Part 1).
 
-<span class="small muted">Plus the friction you catch (your museum of caught errors), a short societal reflection (fairness, disclosure, thinking versus writing, and whether your field is over- or under-using AI here) and one insight to share. The app captures the essentials; the rubric and the reflection are in your pack.</span>
+<span class="small muted">Plus the friction you catch (your museum of caught errors), a short societal reflection (fairness, disclosure, thinking versus writing and whether your field is over- or under-using AI here) and one insight to share. The app captures the essentials, and the rubric and the reflection are in your pack.</span>
 
 ---
 
@@ -311,7 +311,7 @@ Your facilitator will read out the session passcode you need to start a group.
 
 ## The five angles
 
-Your pack rates your work on five dimensions, from 1 (Nascent) through 3 (Developing) to 5 (Robust). Share the five angles across the group and pass the keyboard freely. The scoring is for your pack and the discussion; the app holds the essentials.
+Your pack rates your work on five dimensions, from 1 (Nascent) through 3 (Developing) to 5 (Robust). Share the five angles across the group and pass the keyboard freely. The scoring is for your pack and the discussion. The app holds the essentials.
 
 1. Project Definition (Convenor). Your group's one real problem, kept in focus.
 2. Technology Stack (Driver). The right tool on the spectrum, and why.

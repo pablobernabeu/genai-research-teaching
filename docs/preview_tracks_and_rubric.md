@@ -35,7 +35,7 @@ must not be trusted. A group picks one.
 ## The rubric: five dimensions
 
 Groups self-assess against five dimensions, each rated from 1 to 5 (1 Nascent,
-3 Developing, 5 Robust). It is a reflection scaffold and not a competition. A
+3 Developing, 5 Robust). It is a reflection scaffold, so a
 thoughtful 3 with a sharp caught error is worth more than an unexamined 5.
 
 1. Project Definition: is the real problem, and its success criterion, clear?
@@ -62,10 +62,10 @@ Alongside the rating, each group reflects on the bigger picture.
 
 ## And one spoken insight
 
-Each group closes with a 45-second spoken insight, with no slides: the single most
-significant limitation it found, the most important human-in-the-loop safeguard it
-built in, or one honest observation about how its field is over- or under-using AI for
-the task.
+Each group closes with a 45-second spoken insight, given without slides. It picks one
+of three: the single most significant limitation it found, the most important
+human-in-the-loop safeguard it built in or one honest observation about how its field
+is over- or under-using AI for the task.
 
 ---
 

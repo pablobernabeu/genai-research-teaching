@@ -20,7 +20,7 @@ parallel, then pull the room back. A couple of volunteered lines make a good bri
 into 'friction is a signal'.
 
 It fits the cohort because it assumes expertise and recent first-hand use, invites a
-wry story instead of a confession, and needs no preparation or knowledge of AI. 'I
+wry story instead of a confession and needs no preparation or knowledge of AI. 'I
 have not really used one' is itself a valid and interesting answer.
 
 ## Alternative: 'One hope, one suspicion' (about two minutes)

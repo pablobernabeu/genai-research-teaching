@@ -11,7 +11,7 @@ A featured workshop in two 30-minute parts, split by a networking lunch.
 | When | Action |
 |---|---|
 | 11:45 | Projector on, deck open in presenter mode, Wi-Fi and power confirmed. |
-| 11:50 | If any group may need the HackMD fallback, create and pin the fallback-links issue (participants do not post to it). |
+| 11:50 | Create and pin the fallback-links issue, so that it is there if a group fails over to HackMD later (participants do not post to it). |
 | 11:52 | Reset the app (genai-rt.web.app): sign in to the private dashboard, clear rehearsal groups, set the session passcode and set the timer's minutes without starting it (see the [day-of reset](facilitator_day_of_reset.md)). No pre-named notes are needed. |
 | 11:55 | Lay out one group pack booklet and one or two group one-pagers on each table of five, with spare pens and paper. Post the ten seed ideas around the room, each with its track letter, ready for the 12:26 formation. |
 | 11:58 | Visible timer ready, title slide up (slide 1). Start at 12:00. |

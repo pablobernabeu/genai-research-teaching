@@ -30,8 +30,8 @@ and audit.
 Authentication is minimal. Groups and the public dashboard sign in anonymously, and the
 facilitator signs in with a Google account recognised by its verified email. All trust
 is enforced in `firestore.rules`, never in the interface. The dashboard adds a passcode
-gate on top, using the same passcode groups use, as a privacy gate and not a hard wall
-(see the security model).
+gate on top, using the same passcode groups use, which is a privacy gate rather than a
+hard wall (see the security model).
 
 For resilience, the group app persists its `groupId` locally and silently rejoins after
 a reload or disconnect. An optional facilitator-controlled countdown shows as a calm,
@@ -158,9 +158,9 @@ substitute.
   (anonymous) token. This keeps approved work off the open, unauthenticated, indexable
   web, and the dashboard layers a passcode gate on top, using the same passcode groups
   use (verified client-side against a hash in `config/dashboard`). This is a privacy gate
-  and not a hard wall: the data is non-identifying by design, and a determined signed-in
-  caller could still read `approved` documents directly, since there is no backend on
-  the free plan to enforce a typed secret on a read. The protection is sized to the data.
+  rather than a hard wall. The data is non-identifying by design, and a determined
+  signed-in caller could still read `approved` documents directly, since there is no
+  backend on the free plan to enforce a typed secret on a read. The protection is sized to the data.
 - Only the facilitator can read or write `config/app` (the session passcode).
 - `config/dashboard` (the dashboard gate) is readable by any signed-in device but
   writable only by the facilitator, pinned by `hasOnly` to `passHash` (a hash of the
@@ -194,7 +194,7 @@ substitute.
 
 1. The facilitator signs in and sets the passcode (for example `kelp`), which then shows
    as the current passcode. Setting an empty passcode is refused.
-2. Create the group 'Otters' with the session passcode, note the join code, and see it
+2. Create the group 'Otters' with the session passcode, note the join code and see it
    appear in `draft`. Creating with a wrong passcode, or with none set, is denied with a
    clear hint and no document is written.
 3. In a second browser, join 'Otters' with the code and edit. Type in one field on each

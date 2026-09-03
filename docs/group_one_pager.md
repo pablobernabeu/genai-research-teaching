@@ -40,12 +40,12 @@ With about five minutes to spare, go further.
 
 - Automation–steering map. Which steps the tool ran, and where you steered by deciding, verifying or overriding.
 - Oversight model. Interwoven means checking throughout. Staged means checking at set points. Say which you chose and what it cost.
-- Field reflection. Is your field over- or under-using generative AI here, with what consequences, and how would you redress it?
+- Field reflection. Is your field over- or under-using generative AI here, with what consequences and how would you redress it?
 
 ## 5. Share and submit
 
 - Share, optional. Tick the consent box if your group is happy for its non-identifying note to enter the public archive on GitHub. Unticked, it stays out of the archive, although approved work still shows on the session's passcode-gated dashboard.
-- Submit. Choose a scenario first, then submit when you are done: before the lightning round at 13:33 where you can, and by 13:45 at the latest.
+- Submit. Choose a scenario first, then submit when you are done: before the lightning round at 13:33 where you can, and during it at the latest.
 - After submitting. The form becomes read-only while the facilitator reviews it. If they reopen it with a note, you can edit and resubmit.
 
 ## Good to know

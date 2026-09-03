@@ -121,8 +121,9 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 - **Say:** '45 seconds, one insight, no slides: the biggest limitation, the best
   safeguard or how your field over- or under-uses AI here.'
 - **Do:** visible timer. 45 seconds each with eight groups, or announce 35 seconds if
-  there are nine or ten, since each handover costs five to ten seconds. Jot each
-  group's thread. Approve the notes during the close, not while timing.
+  there are nine or ten, since each handover costs five to ten seconds. Still behind
+  after six? Take one line from the rest. Jot each group's thread. Approve the notes
+  during the close, not while timing.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 

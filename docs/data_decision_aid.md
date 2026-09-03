@@ -41,7 +41,7 @@ notice. Treat anything you type as potentially non-private and non-retractable.
    else's intellectual property? If unsure, treat it as restricted.
 
 If you cleared all four, you are probably fine. If any gave you pause, that pause is
-the signal, so act on it.
+the signal, so take one of the routes below before you paste anything.
 
 ---
 

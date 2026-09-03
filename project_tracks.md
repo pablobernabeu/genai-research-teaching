@@ -10,9 +10,9 @@ Each track can be entered in the fifteen-minute build window of Part 2 (see the
 expected. Work the tool on a real problem, record one caught error and one insight, and
 sketch the automation–steering map if time is left. Bound the work as you go: in Track
 A, verify the three objections you find most consequential instead of all of them, and
-in Track D, produce two audience versions and audit one of them in full.
-The deliverable is never 'the AI did it'. It is a clear account of what helped, what
-failed and where a human stayed in charge.
+in Track D, audit one of your audience versions in full rather than all of them.
+The deliverable is a clear account of what helped, what failed and where a human
+stayed in charge.
 
 > A note on time. Keep the artefact small. Track C (rapid prototyping) is a deliberate
 > stretch: in fifteen minutes you will not finish and fully verify a working artefact,
@@ -62,8 +62,8 @@ Part 2, either this seed or a real one a member brings.
   oversight is interwoven through the whole project or staged at distinct checkpoints,
   and why.
 - Write as you go in the app, whose form covers the problem, the artefact, the caught
-  errors, the map, the oversight model and your insight. Submit for review before the
-  lightning round at 13:33 where you can, and by 13:45 at the latest. The fuller
+  errors, the map, the oversight model, your insight and the field reflection. Submit for review before the
+  lightning round at 13:33 where you can, and during it at the latest. The fuller
   [rubric template](evaluation_rubric_template.md), with the tailored note headings
   listed under each track, is for the HackMD or paper fallback and for a group that
   wants to record its scores and reflection. No GitHub account is needed.
@@ -128,7 +128,7 @@ first, because the critique still works on the structure.
 - Financial & Scalability Constraints: whether the free tier sustains this as a
   routine pre-submission check.
 - Human-in-the-Loop Protocol: your rule for accepting, parking or rejecting a machine
-  critique, who signs off, and whether oversight is interwoven or staged.
+  critique, who signs off and whether oversight is interwoven or staged.
 - Deliverable: a link to the protocol and the classified blind-spot list.
 - Museum of caught errors: the most confidently wrong or emptily generic critique, and
   what it taught you.
@@ -210,8 +210,8 @@ publication would demand.
 ### Free-tier tooling
 Browser-based, with nothing to install:
 - Claude (free): artifacts can generate and preview small self-contained HTML and
-  JavaScript pages. (ChatGPT's free tier writes code in a chat block without a live
-  preview, since its canvas was withdrawn in May 2026.)
+  JavaScript pages. (ChatGPT works too: its canvas was withdrawn in May 2026, and the
+  code blocks that replaced it preview HTML inline.)
 - Gemini (free): Canvas, for iterating on code and copy with a live preview.
 - Google AI Studio (free): a free Gemini API key and an in-browser prompt workbench,
   for those who want to touch the API level without installing anything.

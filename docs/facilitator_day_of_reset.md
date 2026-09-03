@@ -19,7 +19,7 @@ A short reset that gets the live app into a clean, ready state for Westminster o
 
 - [ ] Read out the passcode and the URL (genai-rt.web.app), and show the QR slide. 'One device per group creates, then reads out its group name and the six-character code; everyone else types both and leaves the passcode blank.'
 - [ ] Remind groups to choose a group name that does not identify anyone (for example 'Otters' or 'Team Kelp'), which is the one name they type on the login form.
-- [ ] Press Start countdown at 13:18, when the 'Fifteen minutes, starting now' slide goes up, and not at the 13:15 settle-in. The corner chip is advisory: a calm countdown that never locks their form. Once it expires it reads 'Time's up' until you reset it.
+- [ ] Press Start countdown at 13:18, when the 'Fifteen minutes, starting now' slide goes up, and not at the 13:15 settle-in. The corner chip is advisory: a calm countdown that never locks their form. Once it expires, it reads 'Time's up' until you reset it.
 
 ## During
 

@@ -13,7 +13,7 @@ when a group cannot use the app and works in HackMD instead, the facilitator rec
 its note link here.
 
 As each fallback group shares its note link during Part 2 (before the lightning round
-at 13:33 where it can, and by 13:45 at the latest), the facilitator adds one entry
+at 13:33 where it can, and during it at the latest), the facilitator adds one entry
 below, in this format:
 
 ```

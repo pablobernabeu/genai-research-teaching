@@ -25,7 +25,9 @@ difference is your finding.
 
 ## Track A · Methodological Blind-Spot Detector
 
-First pass, unguarded. Naming the flaws for it would tell you only that it can follow
+#### First pass, unguarded
+
+Naming the flaws for it would tell you only that it can follow
 a list, so do not.
 
 > 'Act as a sceptical peer reviewer. Here is a study design: [PASTE ANONYMISED
@@ -45,7 +47,9 @@ give a colleague.
 
 ## Track B · Accessible Executive-Function Layer
 
-First pass, unguarded. Watch what it does with the items that have no owner and no
+#### First pass, unguarded
+
+Watch what it does with the items that have no owner and no
 date.
 
 > 'Turn these meeting notes into a structured action list with columns for action,
@@ -73,7 +77,9 @@ deliverable for this track.
 
 ## Track D · Public Engagement Translator
 
-First pass, unguarded. Telling it to keep the caveats would hide the drift you are
+#### First pass, unguarded
+
+Telling it to keep the caveats would hide the drift you are
 looking for.
 
 > 'Rewrite this abstract for three audiences, an interested general reader, a policy

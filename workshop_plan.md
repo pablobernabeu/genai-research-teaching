@@ -157,7 +157,7 @@ Part 2. Keep it brisk and a little interactive.
   that rewards output. This frames the day: the question is how to use it with
   discernment.
 - Getting started (slide 8). The inclusive floor: what a chat assistant is, pick one
-  free tool, the shape of a useful request, and the strength of mixed-ability groups.
+  free tool, the shape of a useful request and the strength of mixed-ability groups.
   Newcomers need this to get the most from Part 2, so say it plainly and move on.
 - Friction as signal (slide 9). This is the central idea. Cite Lee et al. and Drosos
   et al. in a sentence each, and note that it bears on marking and writing as much as
@@ -297,7 +297,7 @@ Friction (ask everywhere)
 
 | If… | Then… |
 |---|---|
-| Wi-Fi fails | Switch the affected groups to the offline path: critique a printed worked example (`docs/worked_examples.md`) against the rubric. The thinking, not the tool, is the deliverable. |
+| Wi-Fi fails | Switch the affected groups to the offline path: critique a printed worked example (`docs/worked_examples.md`) against the rubric. The thinking is the deliverable, and the tool is only the occasion for it. |
 | A chosen tool demands payment or a login wall | Move down the spectrum to a free off-the-shelf chat tool, and treat the paywall itself as a finding under Financial & Scalability. |
 | The app will not load for a group | Fall back to HackMD (hackmd.io) or paper for that group. The rubric template is plain Markdown and portable, and the facilitator transcribes it into the archive afterwards. A brief Wi-Fi blip needs no action, because the app caches offline and re-syncs. |
 | A group finishes early | Send them to the rubric dimension they have thought about least, which is usually Financial & Scalability or the automation–steering map, or set them to red-team a neighbouring group's output by probing it adversarially for weaknesses the other group missed. |

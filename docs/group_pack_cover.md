@@ -15,15 +15,14 @@ If you have about five minutes left, go deeper:
 4. The automation–steering map: which steps the tool ran, and where you steered.
 5. Interwoven or staged? Was your oversight woven through every step, or staged at checkpoints between phases? Say why, and what it cost.
 
-A rough split that keeps you on time: about eight minutes to build, up to the pivot at
-about 13:26, then four to break it and name the insight, and the last three for the map
-and the oversight model if time is left. When you fall behind, drop the map before the
+A rough split keeps you on time. Give about eight minutes to building, up to the pivot
+at about 13:26, then four to breaking it and naming the insight. The last three are for
+the map and the oversight model if time is left. When you fall behind, drop the map and never the
 insight.
 
-The full rubric scoring and the societal reflection are in this pack for your
-reflection and the lightning round, and they are not part of the fifteen minutes. A
-group that wants to record them can write a HackMD or paper note, which the facilitator
-archives alongside the app export.
+The app has a box for the field reflection, so record it there if you get to it. The
+five rubric scores are in this pack alone, and they belong to the tidy-up afterwards
+rather than the fifteen minutes.
 
 ## Before you paste anything: the red lines
 
@@ -37,7 +36,7 @@ this pack walks you through it.
 Your group's note lives in the workshop app. Scan the QR code or go to genai-rt.web.app,
 and your facilitator reads out the session passcode. One device starts the group, and
 the others join with the code it shows. Fill in the essentials as you go, and submit
-before the lightning round at 13:33 where you can, and by 13:45 at the latest. There is
+before the lightning round at 13:33 where you can, and during it at the latest. There is
 no account and nothing to install.
 
 > One note, one surface. Use the app by default. If you have no device or it will not
@@ -45,10 +44,10 @@ no account and nothing to install.
 
 ## One reflection for the wrap-up
 
-This is for the tidy-up or the lightning round, and not for the fifteen minutes. Use it
+This belongs in the tidy-up or the lightning round rather than the fifteen minutes. Use it
 as your lightning-round line if it is the stronger one: is your field generally under-
-or over-using generative AI for this kind of task? Why, with what consequences, and how
-would you redress it over the next two years?
+or over-using generative AI for this kind of task? Why, with what consequences and how would
+you redress it over the next two years?
 
 ## What is in this pack
 
