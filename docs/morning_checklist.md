@@ -1,49 +1,55 @@
 # Morning checklist
 
-Tick before the room fills. The session is low-tech by design, so most risk is in
-the first ten minutes.
+Tick these before the room fills. The session is low-tech by design, so most of the
+risk sits in the first ten minutes.
 
 ## Technology
 
-- [ ] Projector / screen working; laptop output tested at the room's resolution.
+- [ ] Projector or screen working, with the laptop output tested at the room's resolution.
 - [ ] Deck open: either `dist/slides.html` in a browser (presenter view) or
       `dist/slides.pdf` as a fallback. (Rebuild with `npm run build` if needed.)
-- [ ] Wi-Fi confirmed on a guest device — the network participants will actually use.
-- [ ] Power: enough sockets / extension leads for tables of five.
-- [ ] **genai-rt.web.app** (the groupwork app) reachable on the guest network; facilitator Google sign-in to the dashboard works.
-- [ ] A chat tool (ChatGPT / Claude / Gemini / Copilot) reachable on the guest
-      network.
-- [ ] A visible **timer** (phone, slide timer or kitchen timer) for the segment
-      timings and the 45-second lightning round.
+- [ ] Wi-Fi confirmed on a guest device, on the network participants will actually use.
+- [ ] Power: enough sockets and extension leads for tables of five.
+- [ ] genai-rt.web.app (the workshop app) reachable on the guest network, and the
+      facilitator's Google sign-in to the dashboard works.
+- [ ] A chat tool (ChatGPT, Claude, Gemini or Copilot) reachable on the guest network.
+- [ ] A visible timer (phone, slide timer or kitchen timer) for the segment timings and
+      the 45-second lightning round.
 
 ## App reset (facilitator)
 
-- [ ] The groupwork app reset for this session: set the session passcode, arm the
-      timer and sign in to the private dashboard. See
-      [Facilitator day-of reset](facilitator_day_of_reset.md) for the full app reset.
+- [ ] The workshop app reset for this session: sign in to the private dashboard, clear
+      any rehearsal groups, set the session passcode and set the timer's minutes
+      without starting it. See the [day-of reset](facilitator_day_of_reset.md) for
+      the full list.
 - [ ] Dashboard reachable and clear of any previous session's submissions, ready to
       approve groups as they submit.
 
 ## Printed materials (per table of five)
 
-- [ ] [Role cards](role_cards.md) — one set.
-- [ ] [Data decision aid](data_decision_aid.md) — one copy.
-- [ ] [Worked examples](worked_examples.md) — one copy (offline fallback).
+- [ ] [Group pack booklet](../handouts/group-pack.pdf), one per table: cover, role
+      cards, data decision aid, rubric, worked examples and starter prompts.
+- [ ] [Group one-pager](../handouts/group-one-pager.pdf), one or two per table.
+- [ ] Ten seed-idea signs, each with its track letter (`project_tracks.md`, the quick
+      group seeds), printed large and posted around the room before 12:00.
 - [ ] Spare pens and paper (HackMD or paper is the fallback if a group cannot use the app).
 
 ## Facilitator kit
 
 - [ ] [Cue cards](cue_cards.md) printed and in order.
 - [ ] [Run sheet](facilitator_run_sheet.md) ready.
-- [ ] Water. A clock you can see. A way to get the room's attention.
+- [ ] Water, a clock you can see and a way to get the room's attention.
 
-## Placeholders filled
+## Details to confirm
 
-- [ ] Name, date, venue, time and repository URL filled in (the
-      affiliation, disclaimer and logo are already set to the facilitator's own —
-      Department of Education, University of Oxford).
-- [ ] Confirm the University of Oxford crest is in place at `assets/logo.svg`
-      (swap that file to change it), and the deck rebuilt.
+- [ ] The name, date, venue, times and affiliation in the deck and the emails are yours
+      (they are set to the facilitator's own: Department of Education, University of
+      Oxford, and the University of Westminster on 24 June 2026).
+- [ ] The placeholders that remain were filled before sending: `[VENUE]` and
+      `[POLL URL]` in the pre-workshop email, and `[FEEDBACK URL]` in the follow-up
+      email.
+- [ ] The University of Oxford crest is embedded in `themes/workshop.css` (its source
+      is `assets/logo.svg`), and the deck was rebuilt after any change.
 
 ---
 

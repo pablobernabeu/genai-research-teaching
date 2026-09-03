@@ -13,7 +13,7 @@ rules_version = '2';
 //   - Groups sign in ANONYMOUSLY. The creating device's uid is recorded in
 //     ownerUids; other devices join by entering the group's joinCode.
 //   - The facilitator signs in with their GOOGLE account; rules recognise that one
-//     account by its verified email. Set FACILITATOR_EMAIL below to your account.
+//     account by its verified email. Set facilitatorEmail() below to your account.
 //
 // No personal data is expected: only a group-chosen, non-identifying name.
 // ---------------------------------------------------------------------------
@@ -116,6 +116,7 @@ service cloud.firestore {
         && request.resource.data.joinCode.size() >= 4
         // Per-session passcode gate: the group must type the facilitator's passcode.
         && request.resource.data.sessionCode is string
+        && request.resource.data.sessionCode.size() > 0
         && request.resource.data.sessionCode == sessionCode();
 
       // UPDATE (owner editing): only while the doc is editable, and the owner

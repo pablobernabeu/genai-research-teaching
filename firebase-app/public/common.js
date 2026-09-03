@@ -4,12 +4,12 @@
 // All real guarantees live in firestore.rules. The helpers here are conveniences
 // for the UI only; they never enforce anything by themselves.
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
 import {
   initializeFirestore, getFirestore,
   persistentLocalCache, persistentMultipleTabManager,
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 import { firebaseConfig } from "./firebase-config.js";
 
 const app = initializeApp(firebaseConfig);
@@ -54,7 +54,7 @@ export function generateJoinCode() {
   return code;
 }
 
-// The five scenarios offered, exactly as named in the README. The first four carry
+// The five scenarios offered, in the short forms used by the one-pager and the app README. The first four carry
 // a track letter (A–D); "Own problem" carries no track. Shared so the group picker
 // and the dashboards label things consistently.
 export const SCENARIOS = [
@@ -70,7 +70,7 @@ export const SCENARIOS = [
 export const SURVEY = {
   fieldBalance: {
     label: "Field's use here",
-    question: "Compared with good practice, is your field currently using GenAI for this task…",
+    question: "Compared with good practice, is your field currently using generative AI for this task…",
     scale: ["Far too little", "A little too little", "About right", "A little too much", "Far too much"],
   },
   trust: {

@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex" />
-  <title>Groupwork hub — your group</title>
+  <title>Workshop app: your group</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <main class="wrap">
     <header class="page">
-      <h1>Groupwork hub</h1>
+      <h1>Workshop app</h1>
       <p class="sub">Claim a name, do the core three, submit for review.</p>
       <p class="small muted" style="margin:0.35rem 0 0">
         This is your group's shared note for the session. No device, or trouble here?
@@ -25,14 +25,14 @@
     <section id="loginView" class="card" hidden>
       <h2>Start or join a group</h2>
       <p class="muted small">
-        Groups sign in anonymously — no account, no personal data. Leave the join
-        code blank to create a brand-new group; you'll get a code to share with a
+        Groups sign in anonymously, with no account and no personal data. Leave the join
+        code blank to create a new group, and you will get a code to share with a
         second device.
       </p>
 
       <form id="loginForm" autocomplete="off">
         <label for="groupName">Group name
-          <span class="hint">Choose a name that does not identify anyone (e.g. "Otters", "Team Kelp").</span>
+          <span class="hint">Choose a name that does not identify anyone (for example Otters or Team Kelp).</span>
         </label>
         <input type="text" id="groupName" name="groupName" required maxlength="40"
                placeholder="e.g. Otters" />
@@ -45,7 +45,7 @@
                placeholder="(blank = create)" style="text-transform:uppercase" />
 
         <label for="sessionCode">Session passcode
-          <span class="hint">Given by the facilitator — needed to start a new group.</span>
+          <span class="hint">Given by the facilitator, and needed to start a new group.</span>
         </label>
         <input type="text" id="sessionCode" name="sessionCode" maxlength="40"
                autocomplete="off" spellcheck="false" />
@@ -64,7 +64,7 @@
       <!-- Join code, always visible once in a group -->
       <div class="card">
         <h3>Your group: <span id="groupTitle"></span> <span id="statusBadge" class="badge"></span></h3>
-        <p class="small muted" style="margin:0.2rem 0 0.6rem">Share this join code so a second device can join the same group:</p>
+        <p class="small muted" style="margin:0.2rem 0 0.6rem">Read this code out so the rest of your group can join, typing the same group name:</p>
         <div class="code-block">
           <span class="joincode" id="joinCodeDisplay">––––––</span>
           <button type="button" class="secondary" id="copyCode">Copy code</button>
@@ -73,53 +73,53 @@
 
       <!-- Re-readable instructions (P1): open at any point without losing your work. -->
       <details id="instructions" class="card instructions">
-        <summary>What am I doing here? — tap to re-read at any point</summary>
+        <summary>What am I doing here? Tap to re-read at any point</summary>
         <div class="instructions-body">
           <p class="small" style="margin-top:0.6rem"><strong>In ~15 minutes, get the core three done first:</strong></p>
           <ol class="small">
-            <li><strong>One artefact move</strong> — run your tool on your problem and keep what is useful.</li>
-            <li><strong>One caught error</strong> — a moment it was fluent and wrong. Keep it.</li>
-            <li><strong>One insight</strong> — the limitation, or the safeguard, for the 45-second round.</li>
+            <li><strong>One artefact</strong>: run your tool on your problem and keep what is useful.</li>
+            <li><strong>One caught error</strong>: a moment it was fluent and wrong. Keep it.</li>
+            <li><strong>One insight</strong>: the limitation, the safeguard or how your field over- or under-uses AI here, for the 45-second round.</li>
           </ol>
           <p class="small"><em>If you have ~5 minutes left:</em> sketch the automation–steering map (which steps
             the tool ran, where you steered) and decide whether oversight was interwoven or staged.</p>
-          <p class="small"><strong>Red lines — never paste</strong> personal data, students' marks or notes,
-            unpublished or participant data, or confidential/embargoed material. When in doubt:
-            <strong>anonymise, synthesise or abstain</strong>.</p>
+          <p class="small"><strong>Red lines.</strong> Never paste personal data, students' marks or notes,
+            unpublished or participant data, or confidential or embargoed material. When in doubt,
+            anonymise, synthesise or abstain.</p>
 
           <details class="ref">
-            <summary>The four tracks — pick one</summary>
+            <summary>The four tracks: pick one</summary>
             <ul class="small">
-              <li><strong>A · Methodological Blind-Spot Detector</strong> — turn the tool on your own study or design and verify which of its critiques are real. The purest test of the day's thesis.</li>
-              <li><strong>B · Executive-Function Layer</strong> — build a small, reusable aid for planning, triage or accessibility (e.g. messy notes → owned actions).</li>
-              <li><strong>C · Rapid Prototyping</strong> <em>(stretch)</em> — make a tiny artefact (a script, a chart, an explainer), then check it. Beware the "vibe-coding trap": it runs and looks right but is subtly wrong. You will not fully verify in 15 minutes — the verifying <em>is</em> the point.</li>
-              <li><strong>D · Public Engagement Translator</strong> — turn a finding into a lay summary or explainer, then audit it for fidelity (what got distorted?).</li>
-              <li><strong>Own problem</strong> — a real, non-confidential problem a member brings. Anonymise or synthesise first.</li>
+              <li><strong>A · Methodological Blind-Spot Detector</strong>: turn the tool on your own study or design and verify which of its critiques are real.</li>
+              <li><strong>B · Executive-Function Layer</strong>: build a small, reusable aid for planning, triage or accessibility (for example, messy notes into owned actions).</li>
+              <li><strong>C · Rapid Prototyping</strong> <em>(stretch)</em>: make a small artefact (a script, a chart, an explainer), then check it. Beware the 'vibe-coding' trap, where it runs and looks right but is subtly wrong. You will not fully verify it in 15 minutes, and the verifying is the point.</li>
+              <li><strong>D · Public Engagement</strong>: turn a finding into a lay summary or explainer, then audit it for fidelity (what got distorted?).</li>
+              <li><strong>Own problem</strong>: a real, non-confidential problem a member brings. Anonymise or synthesise it first.</li>
             </ul>
           </details>
 
           <details class="ref">
-            <summary>The five roles — take one each (or share)</summary>
+            <summary>The five roles: take one each, or share them</summary>
             <ul class="small">
-              <li><strong>Convenor</strong> — keeps the real problem and the clock in focus.</li>
-              <li><strong>Driver</strong> — operates the tools, owns the tool choices.</li>
-              <li><strong>Steward</strong> — guards the red lines (use the data check below).</li>
-              <li><strong>Reporter</strong> — owns the note, the link and the 45-second insight.</li>
-              <li><strong>Sceptic</strong> — tries to break the output, curates the caught errors.</li>
+              <li><strong>Convenor</strong>: keeps the real problem and the clock in focus.</li>
+              <li><strong>Driver</strong>: operates the tools and owns the tool choices.</li>
+              <li><strong>Steward</strong>: guards the red lines (use the data check below).</li>
+              <li><strong>Reporter</strong>: owns the note, the submission and the 45-second insight.</li>
+              <li><strong>Sceptic</strong>: tries to break the output and curates the caught errors.</li>
             </ul>
-            <p class="small muted">About where attention goes, not who owns the work — rotate the keyboard freely. An experienced group can ignore these.</p>
+            <p class="small muted">The roles are about where attention goes, so rotate the keyboard freely. An experienced group can ignore them.</p>
           </details>
 
           <details class="ref">
-            <summary>Can I paste this? — the data check</summary>
+            <summary>Can I paste this? The data check</summary>
             <p class="small">Walk four questions before anything goes into a free tool:</p>
             <ol class="small">
-              <li><strong>Personal data?</strong> (identifies a living person) → anonymise first; check your lawful basis.</li>
-              <li><strong>Special-category or children's data?</strong> (health, ethnicity, beliefs, biometrics) → stop; synthesise or abstain.</li>
-              <li><strong>Confidential, unpublished or embargoed?</strong> (grants, peer review, NDA, no consent) → stop; not yours alone to waive.</li>
+              <li><strong>Personal data?</strong> (identifies a living person) → anonymise it first, and check your lawful basis.</li>
+              <li><strong>Special-category or children's data?</strong> (health, ethnicity, beliefs, biometrics) → stop, then synthesise or abstain.</li>
+              <li><strong>Confidential, unpublished or embargoed?</strong> (grants, peer review, NDA, no consent) → stop, since it is not yours alone to waive.</li>
               <li><strong>Do you hold the rights?</strong> If unsure, treat it as restricted.</li>
             </ol>
-            <p class="small"><strong>If "no" to any:</strong> anonymise · synthesise · abstract up a level · or abstain (a valid finding for your museum).</p>
+            <p class="small"><strong>If the answer to any is no:</strong> anonymise, synthesise, abstract up a level or abstain (a valid finding for your museum).</p>
           </details>
         </div>
       </details>
@@ -136,7 +136,7 @@
       <!-- Submitted (awaiting review) -->
       <div id="submittedNotice" class="notice info" hidden>
         Submitted for review. The form is read-only while the facilitator looks at it.
-        If it's reopened you'll be able to edit again here.
+        If it is reopened you will be able to edit it again here.
       </div>
 
       <!-- The scenario picker + core three -->
@@ -144,12 +144,12 @@
         <h2>Your work</h2>
 
         <label for="scenario">Scenario
-          <span class="hint">Pick the track you're working on, or "Own problem".</span>
+          <span class="hint">Pick the track you are working on, or Own problem.</span>
         </label>
         <select id="scenario" name="scenario"></select>
 
         <div id="ownProblemNotice" class="notice warn" hidden>
-          <strong>Bringing your own problem?</strong> Anonymise, synthesise or abstain —
+          <strong>Bringing your own problem?</strong> Anonymise, synthesise or abstain, and
           never paste personal, student, unpublished or confidential data. If in any doubt,
           pick a worked-example track above instead.
         </div>
@@ -165,18 +165,18 @@
         <textarea id="artefact" name="artefact"></textarea>
 
         <label for="caughtErrors">Errors you caught
-          <span class="hint">What did you have to correct, reject, or verify?</span>
+          <span class="hint">What did you have to correct, reject or verify?</span>
         </label>
         <textarea id="caughtErrors" name="caughtErrors"></textarea>
 
         <label for="map">Automation–steering map <span class="muted small">(if you have ~5 min left)</span>
-          <span class="hint">Which steps the tool ran, and where <em>you</em> steered — decided, verified or overrode.</span>
+          <span class="hint">Which steps the tool ran, and where <em>you</em> steered by deciding, verifying or overriding.</span>
         </label>
         <textarea id="map" name="map"></textarea>
 
         <label for="oversight">Oversight model <span class="muted small">(if you have ~5 min left)</span></label>
         <select id="oversight" name="oversight">
-          <option value="">— choose —</option>
+          <option value="">choose one</option>
           <option value="interwoven">Interwoven (checking throughout)</option>
           <option value="staged">Staged (check at set points)</option>
         </select>
@@ -189,18 +189,18 @@
         </label>
         <textarea id="insight" name="insight"></textarea>
 
-        <label for="fieldUse">Field reflection <span class="muted small">(optional — for the wrap-up / lightning round)</span>
-          <span class="hint">Is your field generally <strong>under-</strong> or <strong>over-using</strong> GenAI for
-            this kind of task? Why, with what consequences — and how would you redress it over the next two years?</span>
+        <label for="fieldUse">Field reflection <span class="muted small">(optional, for the wrap-up or the lightning round)</span>
+          <span class="hint">Is your field generally <strong>under-</strong> or <strong>over-using</strong> generative AI for
+            this kind of task? Why, with what consequences, and how would you redress it over the next two years?</span>
         </label>
         <textarea id="fieldUse" name="fieldUse"></textarea>
 
         <fieldset id="surveyFields" class="survey">
-          <legend>Three quick reflections <span class="muted small">(optional — these power the live dashboard)</span></legend>
+          <legend>Three quick reflections <span class="muted small">(optional; these power the live dashboard)</span></legend>
 
           <div class="survey-q">
-            <p class="survey-label">Compared with good practice, is your field currently using GenAI for this task…</p>
-            <div class="scale" role="radiogroup" aria-label="Is your field using GenAI for this task too little or too much">
+            <p class="survey-label">Compared with good practice, is your field currently using generative AI for this task…</p>
+            <div class="scale" role="radiogroup" aria-label="Is your field using generative AI for this task too little or too much">
               <label><input type="radio" name="fieldBalance" value="1" /><span>Far too little</span></label>
               <label><input type="radio" name="fieldBalance" value="2" /><span>A little too little</span></label>
               <label><input type="radio" name="fieldBalance" value="3" /><span>About right</span></label>
@@ -234,8 +234,8 @@
 
         <label class="consent" for="shareConsent">
           <input type="checkbox" id="shareConsent" name="shareConsent" />
-          <span>We're happy for our group's <strong>non-identifying</strong> submission to be shared in the
-          public workshop archive — <a href="https://github.com/pablobernabeu/genai-research-teaching" target="_blank" rel="noopener">github.com/pablobernabeu/genai-research-teaching</a>. Optional; leave unticked to keep it private to the facilitator.</span>
+          <span>We are happy for our group's <strong>non-identifying</strong> submission to be shared in the
+          public workshop archive at <a href="https://github.com/pablobernabeu/genai-research-teaching" target="_blank" rel="noopener">github.com/pablobernabeu/genai-research-teaching</a>. Optional. Leave it unticked and your submission stays out of the public archive; approved work still appears on this session's passcode-gated dashboard.</span>
         </label>
 
         <p id="saveState" class="small muted" aria-live="polite">All changes save automatically.</p>
@@ -248,7 +248,7 @@
 
       <p class="experimental">
         Your group's shared record for the session. It saves on this device and syncs
-        when you reconnect; if you cannot use it, fall back to HackMD or paper.
+        when you reconnect. If you cannot use it, fall back to HackMD or paper.
       </p>
     </section>
   </main>

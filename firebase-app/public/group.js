@@ -11,10 +11,10 @@
 import {
   doc, getDoc, updateDoc, onSnapshot, runTransaction,
   collection, arrayUnion, serverTimestamp,
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 import {
   signInAnonymously, onAuthStateChanged,
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 
 import { db, auth, normaliseName, generateJoinCode, SCENARIOS, SURVEY_KEYS, friendlyError } from "./common.js";
 
@@ -62,9 +62,10 @@ function readSurvey() {
   }
   return out;
 }
-function applySurvey(survey) {
+function applySurvey(survey, keep = () => false) {
   const s = survey || {};
   for (const key of SURVEY_KEYS) {
+    if (keep(key)) continue;               // unsaved local answer wins until saved
     const want = String(s[key] || "");
     for (const r of surveyFields.querySelectorAll(`input[name="${key}"]`)) {
       r.checked = want !== "" && r.value === want;
@@ -78,6 +79,11 @@ let unsubscribe = null;   // group doc listener
 let currentDoc = null;    // latest snapshot data
 let applyingRemote = false; // guard so remote snapshots don't trigger autosave
 let saveTimer = null;
+// Fields the user has edited on THIS device and not yet saved. Autosave and submit write
+// only these, as dot-path updates, so two devices editing different fields merge instead
+// of the last writer replacing the whole responses map. Remote snapshots leave a dirty
+// field alone until it is saved, so a snapshot cannot wipe keystrokes typed during a save.
+const dirtyFields = new Set();
 // Sticky for this visit: remember the facilitator's reopen note and keep the
 // "Resubmit" label across snapshots until a fresh submit. (The doc itself stays
 // 'reopened' while edited, so this is mostly belt-and-braces.)
@@ -428,16 +434,31 @@ function renderGroup(data) {
     approvedNotice.hidden = false;
   }
 
-  // Push values into the fields without triggering autosave.
+  // A locked note (submitted or approved) must show exactly what the server holds. Any
+  // edit typed on this device after another device submitted was never part of the
+  // submission, so drop it here: keeping it would display it as though it had been
+  // submitted, and the next save after a reopen would write it over the other device's
+  // newer text.
+  if (!editable && dirtyFields.size) {
+    if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
+    dirtyFields.clear();
+    saveState.textContent = "Locked while the facilitator reviews it. Anything typed since the last save was not submitted.";
+  }
+
+  // Push values into the fields without triggering autosave. A field with unsaved local
+  // edits keeps its local value: the pending autosave will write it, and applying the
+  // (older) remote value now would drop the keystrokes typed since the last save.
   applyingRemote = true;
-  scenarioSel.value = data.scenario || "";
-  oversightSel.value = (data.responses && data.responses.oversight) || "";
+  const remote = data.responses || {};
+  const keep = (key) => dirtyFields.has(key);
+  if (!keep("scenario")) scenarioSel.value = data.scenario || "";
+  if (!keep("oversight")) oversightSel.value = remote.oversight || "";
   for (const f of RESPONSE_FIELDS) {
     const el = $(f);
-    if (el) el.value = (data.responses && data.responses[f]) || "";
+    if (el && !keep(f)) el.value = remote[f] || "";
   }
-  shareConsent.checked = !!data.shareConsent;
-  applySurvey(data.survey);
+  if (!keep("shareConsent")) shareConsent.checked = !!data.shareConsent;
+  applySurvey(data.survey, keep);
   applyingRemote = false;
 
   // Lock / unlock every input.
@@ -474,10 +495,43 @@ function setFormEnabled(enabled) {
 }
 
 // ---- Autosave (debounced ~800ms) -------------------------------------------
-// Every input change schedules a save. We collect the whole responses map plus the
-// scenario/track and write them, keeping status as-is ('draft' or 'reopened').
-function scheduleSave() {
+// Every input change marks its field dirty and schedules a save. A save writes only the
+// dirty fields, as dot paths, and keeps status as-is ('draft' or 'reopened'), so a write
+// from one device leaves another device's edits to other fields untouched.
+
+// Which document field an input element belongs to (see buildUpdate).
+function fieldKeyFor(el) {
+  if (el === scenarioSel) return "scenario";
+  if (el === oversightSel) return "oversight";
+  if (el === shareConsent) return "shareConsent";
+  if (el.type === "radio") return el.name;   // survey scales
+  return el.id;                              // the free-text response fields
+}
+
+// The update payload for a set of dirty fields: dot paths, so only those fields change
+// on the server and other devices' edits to other fields survive.
+function buildUpdate(fields) {
+  const update = {};
+  for (const f of fields) {
+    if (f === "scenario") {
+      update.scenario = scenarioSel.value;
+      update.track = trackForScenario(scenarioSel.value);
+    } else if (f === "oversight") {
+      update["responses.oversight"] = oversightSel.value;
+    } else if (f === "shareConsent") {
+      update.shareConsent = shareConsent.checked;
+    } else if (SURVEY_KEYS.includes(f)) {
+      update["survey." + f] = readSurvey()[f];
+    } else if (RESPONSE_FIELDS.includes(f)) {
+      update["responses." + f] = $(f).value;
+    }
+  }
+  return update;
+}
+
+function scheduleSave(e) {
   if (applyingRemote) return;            // remote snapshot, not a user edit
+  if (e && e.target) dirtyFields.add(fieldKeyFor(e.target));
   if (!currentDoc) return;
   const status = currentDoc.status;
   if (status !== "draft" && status !== "reopened") return; // not editable
@@ -491,19 +545,15 @@ function scheduleSave() {
 async function saveNow() {
   if (!groupId || !currentDoc) return;
   const status = currentDoc.status;
-  if (status !== "draft" && status !== "reopened") return;
+  if (status !== "draft" && status !== "reopened") {
+    dirtyFields.clear();   // the note locked under us; renderGroup has restored the server state
+    return;
+  }
 
-  const scenario = scenarioSel.value;
-  const responses = {
-    problem: $("problem").value,
-    artefact: $("artefact").value,
-    caughtErrors: $("caughtErrors").value,
-    map: $("map").value,
-    oversight: oversightSel.value,
-    oversightWhy: $("oversightWhy").value,
-    insight: $("insight").value,
-    fieldUse: $("fieldUse").value,
-  };
+  // Take the fields edited since the last save; anything typed while this write is in
+  // flight lands in a fresh set and is written by the next autosave.
+  const fields = new Set(dirtyFields);
+  dirtyFields.clear();
 
   try {
     // Owner-update rule: an owner may keep the doc 'draft' or 'reopened' while
@@ -511,16 +561,13 @@ async function saveNow() {
     // 'reopened' so the facilitator dashboard keeps showing a reopened submission as
     // 'reopened' until the group resubmits.
     await updateDoc(doc(db, "groups", groupId), {
-      scenario,
-      track: trackForScenario(scenario),
-      responses,
-      shareConsent: shareConsent.checked,
-      survey: readSurvey(),
+      ...buildUpdate(fields),
       status: status === "reopened" ? "reopened" : "draft",
       updatedAt: serverTimestamp(),
     });
     saveState.textContent = "All changes saved.";
   } catch (err) {
+    fields.forEach((f) => dirtyFields.add(f)); // keep them for the next attempt
     saveState.textContent = "";
     showWorkError("Could not save. " + friendlyError(err));
   }
@@ -554,16 +601,10 @@ submitBtn.addEventListener("click", async () => {
     return;
   }
 
-  const responses = {
-    problem: $("problem").value,
-    artefact: $("artefact").value,
-    caughtErrors: $("caughtErrors").value,
-    map: $("map").value,
-    oversight: oversightSel.value,
-    oversightWhy: $("oversightWhy").value,
-    insight: $("insight").value,
-    fieldUse: $("fieldUse").value,
-  };
+  // Persist this device's unsaved edits in the same write as the status change. Fields
+  // edited on another device are already on the server, so they are left untouched.
+  const fields = new Set(dirtyFields);
+  dirtyFields.clear();
 
   submitBtn.disabled = true;
   submitBtn.textContent = "Submitting…";
@@ -572,17 +613,16 @@ submitBtn.addEventListener("click", async () => {
     // also persist the latest content in the same write. name/joinCode/ownerUids
     // untouched.
     await updateDoc(doc(db, "groups", groupId), {
+      ...buildUpdate(fields),
       scenario,
       track: trackForScenario(scenario),
-      responses,
-      shareConsent: shareConsent.checked,
-      survey: readSurvey(),
       status: "submitted",
       updatedAt: serverTimestamp(),
     });
     saveState.textContent = "Submitted.";
     // The snapshot listener will lock the form via renderGroup().
   } catch (err) {
+    fields.forEach((f) => dirtyFields.add(f));
     showWorkError("Could not submit. " + friendlyError(err));
     submitBtn.disabled = false;
     submitBtn.textContent = "Submit for review";
@@ -637,10 +677,10 @@ document.addEventListener("visibilitychange", () => {
 window.addEventListener("beforeunload", flushPendingSave);
 
 // ---- Session countdown chip (P3) -------------------------------------------
-// Reads the facilitator's config/clock (any signed-in user may). Shows a CALM corner
-// countdown ONLY while running and not yet expired — so a timer that is off, never
-// started, or finished simply shows nothing: the safe, low-anxiety default. Advisory
-// only — it never locks the form.
+// Reads the facilitator's config/clock (any signed-in user may). Shows a calm corner
+// countdown while the facilitator's timer is running; once it expires the chip reads
+// "Time's up" until the facilitator resets or stops the timer. A timer that is off or
+// never started shows nothing. Advisory only: it never locks the form.
 let clockUnsub = null;
 let clockInterval = null;
 let lastAnnouncedMin = -1;

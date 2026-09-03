@@ -4,8 +4,10 @@
 //
 //   node scripts/md2pdf.mjs project_tracks.md evaluation_rubric_template.md
 //
-// Outputs to dist/ with hyphenated names (project-tracks.pdf, …). Needs a Chromium
-// browser; set CHROME_PATH if Edge/Chrome is not at a standard location.
+// Outputs to dist/ with hyphenated names (project-tracks.pdf, ...). Needs a Chromium
+// browser; set CHROME_PATH if Edge/Chrome is not at a standard location, and
+// CHROME_FLAGS for any extra launch flags (for example "--no-sandbox" when the
+// build runs as root in a container).
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
@@ -107,11 +109,18 @@ function renderToPdf(bodyHtml, name) {
   const tmp = resolve(outDir, `${name}.tmp.html`);
   const out = resolve(outDir, `${name.replace(/_/g, '-')}.pdf`);
   writeFileSync(tmp, html);
-  execFileSync(browser, [
-    '--headless=new', '--disable-gpu', '--no-pdf-header-footer',
-    `--print-to-pdf=${out}`, pathToFileURL(tmp).href,
-  ], { stdio: 'ignore' });
-  rmSync(tmp);
+  const extraFlags = (process.env.CHROME_FLAGS || '').split(/\s+/).filter(Boolean);
+  try {
+    execFileSync(browser, [
+      '--headless=new', '--disable-gpu', '--no-pdf-header-footer', ...extraFlags,
+      `--print-to-pdf=${out}`, pathToFileURL(tmp).href,
+    ], { stdio: ['ignore', 'ignore', 'pipe'] });
+  } catch (err) {
+    const stderr = err.stderr ? String(err.stderr).trim().split('\n').slice(-5).join('\n') : '';
+    throw new Error(`Chrome failed to print ${name}.` + (stderr ? `\n${stderr}` : ''));
+  } finally {
+    rmSync(tmp, { force: true });
+  }
   console.log('  =>', out);
 }
 

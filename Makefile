@@ -5,12 +5,14 @@
 #   make html       HTML only
 #   make pdf        PDF only (needs a Chromium/Edge browser)
 #   make pptx       PowerPoint
+#   make docs       PDFs of project_tracks.md and the rubric (npm run build:docs)
 #   make pack       organiser preview pack: slides + group pack + facilitator pack (npm run build:preview)
-#   make handouts   print-ready handout PDFs into dist/handouts/ (core set + the two one-pagers)
+#   make handouts   print-ready handout PDFs into dist/handouts/ (handoutscore + onepagers)
 #   make grouppack       one combined per-table group pack PDF
 #   make facilitatorpack one combined facilitator pack PDF
 #   make publish    refresh the committed ready-to-print PDFs in handouts/ (npm run build:publish)
 #   make watch      live-reloading preview
+#   make preview    open the deck in the browser (npm run preview)
 #   make clean      remove dist/
 #   make install    install marp-cli locally
 

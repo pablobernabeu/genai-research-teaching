@@ -1,21 +1,23 @@
 // facilitator.js — the FACILITATOR dashboard.
 //
-// Google sign-in only (NO anonymous). After sign-in we live-list ALL groups
-// and offer the two controls the rules permit: Approve and Reopen-with-note.
+// Google sign-in only (NO anonymous). After sign-in we live-list ALL groups and offer
+// the controls the rules permit: Approve (which also blanks joinCode and sessionCode),
+// Reopen with a note, Rename (name/nameLower plus the groupNames swap), Copy submission
+// and Export. The page also writes the session config: config/app (the passcode),
+// config/dashboard (its hash) and config/clock (the timer).
 //
 // The rules let exactly one account (matched by email) read every group and move
-// status. They forbid the facilitator from editing group content — so the only
-// writes here touch { status, facilitatorNote, updatedAt }. If a non-facilitator
+// status. They forbid the facilitator from editing group content. If a non-facilitator
 // signs in, the collection read is denied and the list simply stays empty.
 
 import {
   collection, onSnapshot, doc, updateDoc, setDoc, serverTimestamp,
   runTransaction, Timestamp,
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 import {
   GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult,
   signOut, onAuthStateChanged,
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 
 import { db, auth, friendlyError, normaliseName, dashboardHash, SURVEY, SURVEY_KEYS } from "./common.js";
 
@@ -211,6 +213,14 @@ sessionCodeForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   sessionCodeStatus.hidden = true;
   const value = sessionCodeInput.value.trim();
+  if (!value) {
+    // An empty passcode would leave the old dashboard hash in place while group creation
+    // accepted a blank code, so refuse it rather than write an inconsistent state.
+    sessionCodeStatus.hidden = false;
+    sessionCodeStatus.className = "notice error";
+    sessionCodeStatus.textContent = "Enter a passcode first. To change it, type the new one and set it again.";
+    return;
+  }
   setSessionCodeBtn.disabled = true;
   setSessionCodeBtn.textContent = "Saving…";
   try {
@@ -219,17 +229,11 @@ sessionCodeForm.addEventListener("submit", async (e) => {
     await setDoc(doc(db, "config", "app"), { sessionCode: value }, { merge: true });
     // config/dashboard gates the public dashboard with the SAME passcode, stored only as a
     // hash (never the passcode itself). Written whenever a passcode is set.
-    let dashMsg;
-    if (value) {
-      const passHash = await dashboardHash(value);
-      await setDoc(doc(db, "config", "dashboard"), { passHash });
-      dashMsg = " The public dashboard opens with this passcode too.";
-    } else {
-      dashMsg = " Set a passcode to open the public dashboard.";
-    }
+    const passHash = await dashboardHash(value);
+    await setDoc(doc(db, "config", "dashboard"), { passHash });
     sessionCodeStatus.hidden = false;
     sessionCodeStatus.className = "notice ok";
-    sessionCodeStatus.textContent = "Passcode set. Read it out to the room." + dashMsg;
+    sessionCodeStatus.textContent = "Passcode set. Read it out to the room. The public dashboard opens with this passcode too.";
   } catch (err) {
     sessionCodeStatus.hidden = false;
     sessionCodeStatus.className = "notice error";
@@ -269,7 +273,7 @@ function renderTimerStatus(d) {
     }
     const mm = Math.floor(remaining / 60000);
     const ss = Math.floor((remaining % 60000) / 1000);
-    timerStatus.textContent = `Running — ${mm}:${String(ss).padStart(2, "0")} left on every group's screen.`;
+    timerStatus.textContent = `Running: ${mm}:${String(ss).padStart(2, "0")} left on every group's screen.`;
   };
   tick();
   timerStatusInterval = setInterval(tick, 1000);
@@ -488,7 +492,9 @@ function card(g) {
   renameBtn.className = "ghost";
   renameBtn.textContent = "Rename…";
   renameBtn.addEventListener("click", () => rename(g.id, g.name, renameBtn));
-  row.append(approveBtn, reopenBtn, renameBtn);
+  // Reopen is for submitted work. An approved group has had its join code wiped and its
+  // devices signed out of the record, so reopening it would strand the group.
+  if (approved) row.append(approveBtn, renameBtn); else row.append(approveBtn, reopenBtn, renameBtn);
   // Copy submission — offered only for approved AND consented work (what the public
   // archive holds), so it pastes straight into submissions/.
   if (approved && g.shareConsent) {

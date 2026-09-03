@@ -3,7 +3,7 @@ marp: true
 theme: workshop
 paginate: true
 transition: slide
-title: "Generative AI in research and teaching — a practical, critical workshop"
+title: "Generative AI in research and teaching: a practical, critical workshop"
 author: "Pablo Bernabeu"
 description: "A two-part featured workshop (30 + 30 minutes, split by lunch) on the responsible and effective use of generative AI in research and teaching."
 keywords: "generative AI, research, teaching, responsible use, human-in-the-loop, data protection"
@@ -11,7 +11,7 @@ keywords: "generative AI, research, teaching, responsible use, human-in-the-loop
 
 <!-- _class: lead brand -->
 <!-- _paginate: false -->
-<!-- _footer: "A personal selection in the facilitator's own capacity. Not the position of Oxford or the host, and not legal advice." -->
+<!-- _footer: "A personal selection in the facilitator's own capacity, which is not the position of Oxford or the host and is not legal advice." -->
 
 # Generative AI in research and teaching
 
@@ -39,7 +39,7 @@ The University of Oxford accepts no liability for the selection, use or outcomes
 | *12:30–13:15* | *Networking lunch* | *a break* |
 | **13:15–13:45** | **Part 2 · Practical** AI for research and teaching | applied session |
 
-Part 1 sets up a way of thinking. The lunch is a genuine break. Part 2 puts the thinking into practice.
+Part 1 sets up a way of thinking, the lunch is a real break and Part 2 puts the thinking into practice.
 
 ---
 
@@ -54,11 +54,11 @@ Part 1 sets up a way of thinking. The lunch is a genuine break. Part 2 puts the 
 ## Our stance is discernment, not enthusiasm
 
 - Whatever your level of confidence, whether you have never tried one or use them daily, you are in the right room.
-- The aim is not technical instruction on any one tool, but a deeper understanding of the technology.
-- This is neither a sales pitch nor a sceptics' meeting. The aim is judgement. We use these tools and we interrogate them, in research and in teaching.
-- Success is not a polished demo but a clear-eyed account of what helped, what failed and where a human must stay in charge.
+- The aim is a deeper understanding of the technology, with no technical instruction on any one tool.
+- This is a session about judgement. We use these tools and we interrogate them, in research and in teaching.
+- Success means a clear account of what helped, what failed and where a human must stay in charge.
 
-> You bring the expertise. The tool is a fast and confident assistant that is often wrong. The aim is to leave knowing when not to reach for it.
+> You bring the expertise. The tool is a fast and confident assistant whose error rate depends on the task, and whose fluency never tells you which case you are in. The aim is to leave knowing when not to reach for it.
 
 ---
 
@@ -66,11 +66,11 @@ Part 1 sets up a way of thinking. The lunch is a genuine break. Part 2 puts the 
 
 <div class="redbox center">
 
-In one sentence each, recall the last time an AI tool either<br/>**helped you** or **let you down**, and which it was.
+In one sentence each, recall the last time an AI tool either<br/>helped you or let you down, and which it was.
 
 </div>
 
-Thirty seconds each. There is no need to perform. "I have not really used one" is a perfectly good answer.
+Thirty seconds each. There is no need to perform. 'I have not really used one' is a perfectly good answer.
 
 <span class="small muted">This primes the day. Most of us already have a story, and it usually turns on a moment of friction.</span>
 
@@ -85,19 +85,19 @@ Humans have always extended themselves with tools, and a labour economy that rew
 
 - mental arithmetic → the calculator
 - pen and paper → the computer
-- the calculator → Excel
+- the ledger → the spreadsheet
 
 </div>
 <div>
 
-- C → Python
-- Internet Explorer → Chrome
-- deterministic AI → generative AI
+- the typewriter → the word processor
+- the library catalogue → the search engine
+- deterministic software → generative AI
 
 </div>
 </div>
 
-> For better or worse, our institutions demand output, and we are adept at tooling up to supply it. Generative AI is the newest entry on that list, which is exactly why it deserves careful thought rather than automatic adoption.
+> For better or worse, our institutions demand output, and we are adept at tooling up to supply it. Generative AI is the newest entry on that list, which is why it deserves careful thought before any automatic adoption.
 
 ---
 
@@ -107,7 +107,7 @@ A generative AI tool works much like a chat assistant. You type a request and it
 
 - Choose one free tool today, such as ChatGPT, Claude, Gemini or Copilot. Any of them will serve.
 - A useful request states who you are, what you want and what a good answer would look like. You then push back on the reply.
-- Starter prompts for each track are in your group pack and in the app, ready to adapt.
+- Starter prompts for each track are in your group pack, ready to adapt.
 
 > Mixed groups are a strength. Newcomers ask the questions that matter, and regular users show what is possible. No one is behind.
 
@@ -117,12 +117,12 @@ A generative AI tool works much like a chat assistant. You type a request and it
 
 When a tool resists your intent, by giving a glib answer, missing the point or smoothing over a hard distinction, that friction is information. It marks where your judgement is doing real work.
 
-- In a survey of knowledge workers, higher confidence in the AI went with less critical thinking, while higher confidence in one's own expertise went with more (Lee et al., 2025).
+- In a survey of knowledge workers, those with more confidence in the AI reported less critical-thinking effort, while those with more confidence in their own expertise reported more (Lee et al., 2025). Self-reported, and correlational.
 - Deliberately reintroducing friction, through prompts that question the output, can restore critical and metacognitive engagement (Drosos et al., 2025).
 
-We treat friction as data to record rather than an obstacle to smooth away, whether marking, writing or analysing.
+We treat friction as data to record, whether we are marking, writing or analysing.
 
-<span class="small muted">Deliberate friction, the "cognitive forcing functions" that make you pause and decide, measurably cuts over-reliance on AI where explanations alone do not (Buçinca et al., 2021; link in the close).</span>
+<span class="small muted">Deliberate friction, the 'cognitive forcing functions' that make you pause and decide, measurably cuts over-reliance on AI where explanations alone do not (Buçinca et al., 2021; link in the close).</span>
 
 ---
 
@@ -131,10 +131,10 @@ We treat friction as data to record rather than an obstacle to smooth away, whet
 | Level | Examples (free tiers) | You trade… |
 |---|---|---|
 | Off-the-shelf chat | ChatGPT, Claude, Gemini, Copilot | convenient · least control · data leaves your hands |
-| No-code / low-code | Claude Projects, custom GPTs, Gradio/Streamlit, Colab | some setup · repeatable · clearer guardrails |
-| IDE / API level | VS Code + assistant, AI Studio API key, scripts | steepest · most control · most responsibility |
+| No-code / low-code | Claude Projects, Gemini Gems, saved reusable prompts | some setup · repeatable · clearer guardrails |
+| IDE / API level | Colab, Gradio/Streamlit, VS Code + assistant, AI Studio API key | steepest · most control · most responsibility |
 
-Friction rises as you move down the table, and so does your ability to keep a human in the loop.
+Effort and setup cost rise as you move down the table, and so does the control you keep over what the tool does with your data.
 
 <span class="small muted">No-code means setting things up by clicking and prompting, without writing code. Working at the IDE or API level means using a code editor or calling the model programmatically, with more control and more responsibility.</span>
 
@@ -148,10 +148,10 @@ Red line. If you would not pin it to a public noticeboard, do not paste it into 
 
 </div>
 
-Without a lawful basis and a cleared tool, never paste:
+Personal data needs a lawful basis and a cleared tool. Confidential material is not yours to release at all. So never paste:
 
 - Personal data of identifiable people, such as students, applicants, participants or staff (UK GDPR).
-- Special-category data, such as health, ethnicity, beliefs, sexuality or biometrics.
+- Special category data, such as health, ethnicity, beliefs, sexuality or biometrics.
 - Confidential or unpublished material, such as grant drafts, peer-review files or data under an NDA.
 - In teaching, also marks, references, pastoral notes, SpLD records, exam scripts and admissions data.
 
@@ -192,7 +192,7 @@ Beyond any single task, three larger shifts are worth carrying into Part 2.
 
 - Thinking and writing, decoupled. We have long thought by writing. If the tool drafts, where does the thinking go, and what is lost if we let it?
 - Fairness, as leveller or amplifier. AI might narrow gaps (a second language, thin support, an early career) or widen them. Which, and for whom?
-- Disclosure. We ask people to disclose their use of AI. Should we also disclose the conditions it offsets, or would that expose the very inequities it eased?
+- Disclosure. We ask people to disclose their use of AI. Should we also disclose what it offset for us, such as writing in a second language or having little support, or would that expose the very inequities it eased?
 
 > There are no settled answers here. These are policy questions in the making. Notice them in your own task.
 
@@ -215,15 +215,15 @@ Before you start a task, decide the following in advance.
 
 ## What Part 2 asks of you
 
-Take a real task, use a tool on it, then examine the result closely. Part 1 provided the way of thinking. Part 2 puts it into practice. You will rate your work on five dimensions, from 1 to 5.
+Take a real task, use a tool on it, then examine the result closely. Part 1 provided the way of thinking. Part 2 puts it into practice. You will look at your work through five dimensions, and score them in your pack afterwards if you wish.
 
 - Project Definition, your group's one real problem.
 - Technology Stack, which tool on the spectrum, and why (Part 1).
-- Data Security and Ethics, the red lines you hold (Part 1).
-- Financial and Scalability, whether the free tier holds.
+- Data Security & Ethics, the red lines you hold (Part 1).
+- Financial & Scalability, whether the free tier holds.
 - Human-in-the-Loop, where you steer, interwoven or staged (Part 1).
 
-<span class="small muted">Plus the friction you catch (your museum of caught errors), a short societal reflection (fairness, disclosure, thinking versus writing, and whether your field is over- or under-using AI here) and one insight to share. The app walks you through it.</span>
+<span class="small muted">Plus the friction you catch (your museum of caught errors), a short societal reflection (fairness, disclosure, thinking versus writing, and whether your field is over- or under-using AI here) and one insight to share. The app captures the essentials; the rubric and the reflection are in your pack.</span>
 
 ---
 
@@ -238,6 +238,7 @@ Groups of five. Move to the idea you would most like to try. The letter beside i
 - Critique an assessment or rubric (A)
 - Turn messy notes into clear actions (B)
 - Triage an email or admin backlog (B)
+- Plan a module, project or paper (B)
 
 </div>
 <div>
@@ -246,13 +247,14 @@ Groups of five. Move to the idea you would most like to try. The letter beside i
 - A quick visualisation or teaching aid (C)
 - A lay summary or press angle (D)
 - Explain a concept for students (D)
+- A social thread from a paper (D)
 
 </div>
 </div>
 
 <span class="small muted">Note who is in your group and which track you chose. You regroup straight after lunch, without re-forming.</span>
 
-<span class="small muted">A · Blind-Spot Detector, turn the tool on your own design and verify its critiques. B · Executive-Function Layer, build a reusable aid for planning or triage. C · Rapid Prototyping, make a small artefact, then check it. D · Public Engagement, translate a finding, then audit it for fidelity. Fuller briefs are in your group pack and in the app. Your group takes one problem into Part 2, either this seed or a real one a member brings.</span>
+<span class="small muted">A · Methodological Blind-Spot Detector, turn the tool on your own design and verify its critiques. B · Executive-Function Layer, build a reusable aid for planning or triage. C · Rapid Prototyping, make a small artefact, then check it. D · Public Engagement, translate a finding, then audit it for fidelity. Fuller briefs are in your group pack, with one-line summaries in the app. Your group takes one problem into Part 2, either this seed or a real one a member brings.</span>
 
 ---
 
@@ -302,45 +304,45 @@ Your facilitator will read out the session passcode you need to start a group.
 |---|---|---|
 | <span class="clock">13:15</span> | **Settle in.** Re-find your group, agree your one problem (60 s), open the app (HackMD as fallback), red lines on | 3 |
 | <span class="clock">13:18</span> | **Apply it.** Run the tool on your problem and capture one caught error and one insight (the automation–steering map if time allows) | 15 |
-| <span class="clock">13:33</span> | **Lightning round.** 45 seconds per group, on the limitation, the safeguard, or how your field over- or under-uses AI | 7 |
-| <span class="clock">13:40</span> | **Synthesis.** Drawing the threads together, with take-aways for research and teaching | 5 |
+| <span class="clock">13:33</span> | **Lightning round.** 45 seconds per group, on the limitation, the safeguard or how your field over- or under-uses AI | 7 |
+| <span class="clock">13:40</span> | **Synthesis.** Drawing the threads together, with takeaways for research and teaching | 5 |
 
 ---
 
 ## The five angles
 
-The note rates your work on five dimensions, from 1 (Nascent) through Developing to Robust. Split them across the group and share the keyboard freely. Place yourselves on 1, 3 and 5 during the session, and complete the rest when you tidy the note.
+Your pack rates your work on five dimensions, from 1 (Nascent) through 3 (Developing) to 5 (Robust). Share the five angles across the group and pass the keyboard freely. The scoring is for your pack and the discussion; the app holds the essentials.
 
 1. Project Definition (Convenor). Your group's one real problem, kept in focus.
 2. Technology Stack (Driver). The right tool on the spectrum, and why.
-3. Data Security and Ethics (Steward). The red lines you hold.
-4. Financial and Scalability (Reporter). Whether the free tier holds. This role also owns the note and the spoken insight.
-5. Human-in-the-Loop (Sceptic). Checkpoints and accountability. Add the automation–steering map when you tidy the note.
+3. Data Security & Ethics (Steward). The red lines you hold.
+4. Financial & Scalability (Reporter). Whether the free tier holds. This role also owns the note and the spoken insight.
+5. Human-in-the-Loop (Sceptic). Checkpoints and accountability, plus the automation–steering map if time allows.
 
-<span class="small muted">The five dimensions are for the note you tidy later, not five things to do live. During the session, focus on the three. An experienced group can ignore the labels.</span>
+<span class="small muted">The five dimensions frame your reflection and the fuller fallback note. During the session, focus on the core three. An experienced group can ignore the labels.</span>
 
 ---
 
 ## Working on a real problem
 
-Use your group's one problem: the seed, a member's real one, or a worked example from your pack. In fifteen minutes, complete these three first. If that is all you manage, you have done the task.
+Use your group's one problem: the seed, a member's real one or a worked example from your pack. Complete these three first. If that is all you manage, you have done the task.
 
 1. One artefact. Run your tool and produce something real, such as a critique, a template or a translation.
 2. One or two caught errors. Moments where it was fluent but wrong. Keep them.
-3. One insight. A limitation, a safeguard, or one honest observation about how your field is over- or under-using AI. This is your contribution to the 45-second round.
+3. One insight. A limitation, a safeguard or one honest observation about how your field is over- or under-using AI. This is your line for the 45-second round.
 
 > If about five minutes remain, go further. Add the automation–steering map (which steps the tool ran, and where you steered) and decide whether oversight was interwoven or staged, noting why and what it cost. If you fall behind, drop the map before the insight.
 
-<span class="small muted">Complete the three first. The map and the oversight model are a bonus if time allows. The full rubric scoring and the societal reflection come later, when you tidy the note.</span>
+<span class="small muted">The map and the oversight model are a bonus if time allows. The rubric scores and the societal reflection are for your pack and the discussion.</span>
 
 ---
 
 ## Capturing your work in the app
 
-There is no GitHub to touch and no report to write. This is fifteen minutes of capture, kept deliberately light.
+There is no GitHub to touch and no report to write. This is fifteen minutes of capture, kept light.
 
-1. The Reporter opens the app (genai-rt.web.app), names the group and enters the session passcode. There is no account and nothing to install. One device creates the group, and the others join with the code it shows.
-2. Fill in the essentials: the problem, the tool, one caught error and your insight, adding the map and the oversight model if time allows. The app saves as you go.
+1. The Reporter opens the app (genai-rt.web.app), names the group and enters the session passcode. There is no account and nothing to install. One device creates the group, then reads out the group name and the six-character code, and the others type both.
+2. Fill in the essentials: the problem, the artefact (and which tool made it), one caught error and your insight, adding the map and the oversight model if time allows. The app saves as you go.
 3. Submit for review. The facilitator sees it live and approves it. That is all.
 
 <span class="small muted">No device, or the app misbehaving? HackMD (hackmd.io) is the fallback, with the same headings. A countdown on screen shows the time left, and the facilitator archives the approved work afterwards.</span>
@@ -352,9 +354,9 @@ There is no GitHub to touch and no report to write. This is fifteen minutes of c
 Keep a short, honest log of the moments the tool went wrong, and what each one taught you.
 
 - A confident but fake citation · a flattened nuance · a plausible but invalid method · a biased rewrite · a misgraded answer.
-- For each, note what happened, how you caught it, and what it signals about where humans must stay in charge.
+- For each, note what happened, how you caught it and what it signals about where humans must stay in charge.
 
-> These are not failures of your group. They are the point.
+> These entries are the most valuable thing your group produces.
 
 ---
 
@@ -362,7 +364,7 @@ Keep a short, honest log of the moments the tool went wrong, and what each one t
 
 ## Fifteen minutes, starting now (13:18)
 
-<span class="subtitle">Tracks and rubric are in your pack and in the app · help is circulating</span>
+<span class="subtitle">Tracks are in your pack and in the app · the rubric is in your pack · help is circulating</span>
 
 Hold the red lines, record the friction, keep a human in the loop.
 
@@ -385,7 +387,7 @@ Thirty seconds, keyboards down, as a group.
 
 # Lightning round · 13:33
 
-<span class="subtitle">45 seconds per group · one insight · no slides · the Reporter delivers, the Convenor keeps time</span>
+<span class="subtitle">45 seconds per group · one insight · no slides · the Reporter delivers, the facilitator keeps time</span>
 
 What was the most significant limitation, the most important human-in-the-loop safeguard, or one honest thing this exposed about how your field over- or under-uses AI?
 
@@ -414,11 +416,11 @@ Four threads worth drawing out from the lightning round:
 
 > Use the tool where it earns its place. Keep the human where judgement is owed.
 
-- Treat fluency as a prompt to check, not a proxy for truth.
+- Treat fluency as a reason to check.
 - Build the checkpoint before you trust the output.
 - Record the friction. It maps where you matter.
-- Disclose use, respect data, and keep accountability with a named person.
-- Ask the bigger questions of who is helped, who is left out, and what we owe to disclose.
+- Disclose use, respect data and keep accountability with a named person.
+- Ask the bigger questions of who is helped, who is left out and what we owe to disclose.
 
 ---
 
@@ -426,7 +428,7 @@ Four threads worth drawing out from the lightning round:
 
 Choose one to try this week, in research or in teaching.
 
-1. Write a two-line note on your AI use for one task, recording what you used, what you checked, and what you did not delegate.
+1. Write a two-line note on your AI use for one task, recording what you used, what you checked and what you did not delegate.
 2. Add one human checkpoint to a workflow you already assist with AI.
 3. Before pasting anything sensitive, work through the one-page data decision aid from your pack.
 4. Keep your own museum of caught errors for a fortnight.
@@ -443,7 +445,7 @@ Choose one to try this week, in research or in teaching.
 <div>
 
 - **Russell Group (2023).** Principles on generative AI in education. russellgroup.ac.uk
-- **EC / ERA Forum (2024).** Living guidelines on responsible generative AI in research.
+- **EC / ERA Forum (2026, third version).** Living guidelines on the responsible use of generative AI in research.
 - **UNESCO (2023).** Guidance for generative AI in education and research (Miao & Holmes).
 - **ICO.** Guidance on AI and data protection (UK GDPR). ico.org.uk
 - **Lee et al. (2025, CHI).** The impact of generative AI on critical thinking, a survey of knowledge workers. <span class="doi">[doi.org/10.1145/3706598.3713778](https://doi.org/10.1145/3706598.3713778)</span>
@@ -451,10 +453,10 @@ Choose one to try this week, in research or in teaching.
 </div>
 <div>
 
-- **Drosos et al. (2025).** "It makes you think": provocations help restore thinking. <span class="doi">[arXiv:2501.17247](https://arxiv.org/abs/2501.17247)</span>
+- **Drosos et al. (2025).** 'It makes you think': provocations help restore thinking. <span class="doi">[arXiv:2501.17247](https://arxiv.org/abs/2501.17247)</span>
 - **Buçinca et al. (2021, CSCW).** Cognitive forcing functions reduce over-reliance on AI. <span class="doi">[doi.org/10.1145/3449287](https://doi.org/10.1145/3449287)</span>
 - **Bender et al. (2021, FAccT).** On the dangers of stochastic parrots, fluent remixing without understanding. <span class="doi">[doi.org/10.1145/3442188.3445922](https://doi.org/10.1145/3442188.3445922)</span>
-- **Karpathy (2025).** *Software is changing (again)*, the human on the "autonomy slider" [talk].
+- **Karpathy (2025).** *Software is changing (again)*, the human on the 'autonomy slider' [talk].
 - **Mollick (2023).** *Centaurs and cyborgs*, the human stays the architect [essay].
 
 </div>

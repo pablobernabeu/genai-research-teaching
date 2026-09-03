@@ -1,36 +1,36 @@
-# Post-workshop follow-up email + responsible-use commitment
+# Post-workshop follow-up email and responsible-use commitment
 
-> Send 3–5 days after the session. It closes the loop, shares the open archive and offers a light, voluntary commitment to carry the thinking forward. Continuous single-line paragraphs, so it pastes cleanly into an email client.
+> Send three to five days after the session. It closes the loop, shares the open archive and offers a light, voluntary commitment to carry the thinking forward. The paragraphs are continuous single lines, so the body pastes cleanly into an email client.
 
 ---
 
-**Subject:** Thank you — the archive, and a small commitment
+Subject: Thank you, the archive and a small commitment
 
 Dear colleague,
 
-Thank you for the energy you brought to ***Generative AI in research and teaching***. The most striking thing was not any tool — it was the quality of the **caught errors** and the **safeguards** you designed. That is exactly the discernment the session was for.
+Thank you for the energy you brought to Generative AI in research and teaching. The most striking thing was the quality of the caught errors and the safeguards you designed, which is exactly the discernment the session was for.
 
-**Your work is now an open archive.** Every group's note has been tidied into a public, reproducible record: **[REPOSITORY URL]** (see `submissions/`). It stands as a candid, collective map of where these tools help and where a human must stay in charge.
+Your work is now an open archive. The notes of the groups that opted in to sharing have been tidied into a public, reproducible record at https://github.com/pablobernabeu/genai-research-teaching (see `submissions/`). It stands as a frank, collective map of where these tools help and where a human must stay in charge.
 
-**The one idea worth keeping.** Treat the **friction** — the moment a tool resists you or quietly gets something wrong — as a **signal**, not a nuisance. It marks where your judgement is doing the real work.
+The one idea worth keeping is to treat friction, the moment a tool resists you or quietly gets something wrong, as a signal. It marks where your judgement is doing the real work.
 
-**A small, voluntary responsible-use commitment.** If it is useful, adopt one or two of these for the next month:
+A small, voluntary responsible-use commitment. If it is useful, adopt one or two of these for the next month:
 
-- I will **disclose** AI assistance where it matters, in line with policy and publisher rules.
-- I will **never paste** personal, special-category, confidential or embargoed material into a free consumer tool.
-- I will keep a **human checkpoint** on anything I would put my name to — I verify facts, figures and citations myself.
-- I will **record the friction** I notice, and let it tell me where I am needed.
-- I will stay **accountable** for the output: the tool proposes, I dispose.
+- I will disclose AI assistance where it matters, in line with policy and publisher rules.
+- I will never paste personal, special-category, confidential or embargoed material into a free consumer tool.
+- I will keep a human checkpoint on anything I would put my name to, and verify facts, figures and citations myself.
+- I will record the friction I notice, and let it tell me where I am needed.
+- I will stay accountable for the output: the tool proposes, and I dispose.
 
-**One favour.** A two-minute, anonymous feedback form would help me improve the next run: **[FEEDBACK URL]**.
+One favour. A two-minute, anonymous feedback form would help me improve the next run: [FEEDBACK URL].
 
-The further reading from the close is in the repository's facilitator guide (`workshop_plan.md`) if you would like to go deeper — including the Russell Group principles, the EC living guidelines, the ICO guidance and the studies on AI and critical thinking.
+The further reading from the close is in the repository's facilitator guide (`workshop_plan.md`) if you would like to go deeper, including the Russell Group principles, the ERA living guidelines, the ICO guidance and the studies on AI and critical thinking.
 
-For questions or to carry the conversation on, please use the Discussions tab in the repository ([REPOSITORY URL]) — answers there help everyone, rather than being sent privately.
+For questions, or to carry the conversation on, please use the Discussions tab in the repository (https://github.com/pablobernabeu/genai-research-teaching/discussions), so that answers help everyone.
 
 With thanks,
 
-**Pablo Bernabeu**
+Pablo Bernabeu
 Postdoctoral Researcher, Department of Education, and AI Ambassador, University of Oxford
 Fellow of the Software Sustainability Institute
 

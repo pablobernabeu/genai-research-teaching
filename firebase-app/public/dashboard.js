@@ -12,8 +12,8 @@
 
 import {
   collection, query, where, onSnapshot, doc,
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+import { signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 // The /auto build auto-registers controllers/elements/scales and default-exports the Chart
 // class (the bare +esm entry exports a namespace, so `new Chart()` would throw).
 import Chart from "https://cdn.jsdelivr.net/npm/chart.js@4/auto/+esm";

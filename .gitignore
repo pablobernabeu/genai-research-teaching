@@ -1,12 +1,12 @@
 # Node / npm
 node_modules/
 npm-debug.log*
-# package-lock.json is intentionally not committed: marp-cli must currently be
-# installed via a mirror registry (see the README install note), which would
-# otherwise be baked into the lockfile. CI installs with a registry fallback.
+# package-lock.json is intentionally not committed: marp-cli sometimes has to be
+# installed via a mirror registry (see the README install note), and the mirror URL
+# would then be baked into the lockfile. CI installs with a registry fallback.
 package-lock.json
 
-# Build output (rendered slides are generated from slides.md)
+# Build output (the rendered deck and the handout PDFs)
 dist/
 
 # Editor / OS cruft
@@ -19,9 +19,7 @@ Thumbs.db
 # Marp local cache
 .marp/
 
-# Facilitator's local prep note (kept out of the public repo; not part of the kit).
-preparatory resource.txt
-
-# Private planning docs — never part of the public kit
+# Private planning documents and the facilitator's local prep note: never part of
+# the public kit.
 *.docx
 preparatory resource.txt
