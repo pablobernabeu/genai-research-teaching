@@ -1,9 +1,9 @@
 # Evaluation rubric and note template
 
-This is the group's workbench for the day. By default you capture your work in the
-workshop app (genai-rt.web.app), whose short form covers the essentials: the problem,
-the artefact, the errors you caught, the automation–steering map, the oversight model,
-your insight and a field reflection. Nothing needs setting up beyond the passcode. The
+This is the group's workbench for the day. By default, you capture your work in the
+workshop app (genai-rt.web.app). Its short form covers the essentials: the problem, the
+artefact, the errors you caught, the automation–steering map, the oversight model, your
+insight and a field reflection. Nothing needs setting up beyond the passcode. The
 fuller template below adds the five rubric dimensions, each scored from 1 to 5
 (1 Nascent, 3 Developing, 5 Robust), a deliverable link, the museum table and the
 societal reflection. It is the note for the HackMD or paper fallback, and for a group
@@ -51,7 +51,7 @@ removes anything that should not be public, and commits it under `submissions/`.
 ## B. The note template (paste this box into HackMD or copy it on paper; the app has its own shorter form)
 
 ```markdown
-# [Group NN] · Track [A / B / C / D] · 24 June 2026
+# [Group NN] · Track [A / B / C / D] · 9 September 2026
 
 Roles taken (no names needed): Convenor · Reporter · Driver · Sceptic · Steward
 The real problem we brought: …

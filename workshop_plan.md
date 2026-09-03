@@ -21,10 +21,10 @@ The session aims at a deeper insight into the technology, and it avoids technica
 instruction on any one tool. Everyone is welcome, from those who have never
 opened a chatbot to daily users. The kit also places generative AI in context, as the
 latest in a long line of tools that a productivity-driven economy keeps pushing us
-towards: mental arithmetic gave way to the calculator, pen and paper to the computer,
-deterministic software to generative AI. For better or worse, our institutions reward
-output. The question is therefore how to use such tools with discernment, including when to
-decline them, in institutions that increasingly assume we will not.
+towards. Mental arithmetic gave way to the calculator, pen and paper to the computer,
+and deterministic software to generative AI. For better or worse, our institutions
+reward output. The question is therefore how to use such tools with discernment,
+including when to decline them, in institutions that increasingly assume we will not.
 
 A single thread runs through the session: the friction a researcher feels when a
 tool resists their intent is a useful epistemic signal. When an assistant gives a
@@ -248,10 +248,9 @@ A facilitator-timed round of short spoken contributions, without presentations.
 ### 5.6 Close · 13:40–13:45 · slides 28–34
 
 Synthesise the round instead of summarising it. Pull two or three concrete insights from the
-lightning round onto the threads slide (slide 29), then connect them to the through-line
-(slide 30): friction as
-signal, the tool spectrum, the data red lines, the human in the loop and the bigger
-questions. Give the take-home actions (slide 31), point to the further reading (slide
+lightning round onto the threads slide (slide 29). Then connect them to the through-line
+(slide 30): friction as signal, the tool spectrum, the data red lines, the human in the
+loop and the bigger questions. Give the take-home actions (slide 31), point to the further reading (slide
 32) and the follow-up email, and close on time at 13:45.
 
 ---

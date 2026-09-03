@@ -29,7 +29,7 @@ To keep the kit coherent, please preserve these conventions.
   facilitator (Pablo Bernabeu), the affiliation (Postdoctoral Researcher, Department of
   Education, and AI Ambassador, University of Oxford; Fellow of the Software
   Sustainability Institute), the host (University of Westminster) and the date
-  (24 June 2026). If you adapt the kit, swap these, the logo, the app details and the
+  (9 September 2026). If you adapt the kit, swap these, the logo, the app details and the
   disclaimer for your own, and fill the placeholders that remain: `[VENUE]` and
   `[POLL URL]` in the pre-workshop email, and `[FEEDBACK URL]` in the follow-up email.
 - No fabricated citations. Verify any reference against a primary source and include

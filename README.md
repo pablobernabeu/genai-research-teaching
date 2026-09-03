@@ -29,10 +29,10 @@ and with nothing to install. There are 60 minutes of contact time:
 In Part 2, groups of five choose one of four tracks and work a real problem from their
 research or teaching, capturing it in the workshop app
 ([genai-rt.web.app](https://genai-rt.web.app)). Each group assesses its work against a
-five-dimension rubric and a museum of caught errors, then gives a 45-second spoken
-insight: the most significant limitation it found, the most important
-human-in-the-loop safeguard it built in, or one honest observation about how its field
-is over- or under-using AI for the task.
+five-dimension rubric and a museum of caught errors. It then gives a 45-second spoken
+insight, choosing one of three: the most significant limitation it found, the most
+important human-in-the-loop safeguard it built in, or one honest observation about how
+its field is over- or under-using AI for the task.
 
 The session has five aims: to enjoy it, to reflect critically, to learn, to collaborate
 and to create.

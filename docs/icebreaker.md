@@ -1,6 +1,6 @@
 # Icebreaker: a senior-appropriate opener for Part 1
 
-A short, dignified opener for a room of experienced academics. It runs early in
+This is a short, dignified opener for a room of experienced academics. It runs early in
 Part 1 (around 12:03), with a neighbour, so it adds no time to the schedule, and it
 is slide 6. Groups of five do not exist yet, because they form at the end of Part 1,
 so this is a quick pair or trio exchange and never a table round. It seeds the day's
@@ -19,9 +19,9 @@ brings out real, recent experience and sets a frank tone. Allow two minutes, in
 parallel, then pull the room back. A couple of volunteered lines make a good bridge
 into 'friction is a signal'.
 
-Why it fits the cohort. It assumes expertise and recent first-hand use, invites a wry
-war story instead of a confession, and needs no preparation or AI knowledge. 'I have
-not really used one' is itself a valid and interesting answer.
+It fits the cohort because it assumes expertise and recent first-hand use, invites a
+wry story instead of a confession, and needs no preparation or knowledge of AI. 'I
+have not really used one' is itself a valid and interesting answer.
 
 ## Alternative: 'One hope, one suspicion' (about two minutes)
 

@@ -17,7 +17,7 @@ keywords: "generative AI, research, teaching, responsible use, human-in-the-loop
 
 ### A practical and critical workshop, in two parts
 
-<span class="subtitle">Part 1 · Conceptualising the use of AI in research (12:00)<br/>Part 2 · Practical AI for research and teaching (13:15)<br/><br/>Hosted at the University of Westminster · 24 June 2026<br/><br/>Dr Pablo Bernabeu<br/>Postdoctoral Researcher, Department of Education, and AI Ambassador, University of Oxford<br/>Fellow of the Software Sustainability Institute</span>
+<span class="subtitle">Part 1 · Conceptualising the use of AI in research (12:00)<br/>Part 2 · Practical AI for research and teaching (13:15)<br/><br/>Hosted at the University of Westminster · 9 September 2026<br/><br/>Dr Pablo Bernabeu<br/>Postdoctoral Researcher, Department of Education, and AI Ambassador, University of Oxford<br/>Fellow of the Software Sustainability Institute</span>
 
 ---
 
@@ -97,7 +97,7 @@ Humans have always extended themselves with tools, and a labour economy that rew
 </div>
 </div>
 
-> For better or worse, our institutions demand output, and we are adept at tooling up to supply it. Generative AI is the newest entry on that list, which is why it deserves careful thought before any automatic adoption.
+> This is the first entry on the list whose output can pass for judgement, so it earns more scrutiny than the last one did.
 
 ---
 
@@ -113,7 +113,7 @@ A generative AI tool works much like a chat assistant. You type a request and it
 
 ---
 
-## Cognitive friction is a signal, not a nuisance
+## Cognitive friction is a signal
 
 When a tool resists your intent, by giving a glib answer, missing the point or smoothing over a hard distinction, that friction is information. It marks where your judgement is doing real work.
 
@@ -151,7 +151,7 @@ Red line. If you would not pin it to a public noticeboard, do not paste it into 
 Personal data needs a lawful basis and a cleared tool. Confidential material is not yours to release at all. So never paste:
 
 - Personal data of identifiable people, such as students, applicants, participants or staff (UK GDPR).
-- Special category data, such as health, ethnicity, beliefs, sexuality or biometrics.
+- Special-category data, such as health, ethnicity, political or religious beliefs, trade union membership, sexuality, genetics or biometrics.
 - Confidential or unpublished material, such as grant drafts, peer-review files or data under an NDA.
 - In teaching, also marks, references, pastoral notes, SpLD records, exam scripts and admissions data.
 
@@ -161,7 +161,7 @@ Personal data needs a lawful basis and a cleared tool. Confidential material is 
 
 ## The ethical landscape
 
-These are not one risk but several, pulling in different directions.
+These risks are distinct, and they pull in different directions.
 
 <div class="columns">
 <div>
@@ -175,7 +175,7 @@ These are not one risk but several, pulling in different directions.
 <div>
 
 - **Equity**, who benefits and who is left out?
-- **Environment**, a real energy cost
+- **Environment**, an energy cost that scales with use
 - **Over-reliance**, a quiet de-skilling
 - **Accountability**, which never transfers
 

@@ -178,6 +178,10 @@ substitute.
       whatever providers you enable, so re-review that rule before adding any
       email-bearing provider (OIDC, SAML or Email/Password).
 - [ ] `public/firebase-config.js` holds your project's config.
+- [ ] Facilitator sign-in works in the browser you will use, with pop-ups allowed.
+      `authDomain` is the project's `*.firebaseapp.com` origin, a third party relative to
+      the Hosting domain, so the pop-up path is the reliable one and the redirect fallback
+      may not complete. Test the sign-in on the machine you will use, well before the day.
 - [ ] In the Firebase console Rules Playground, confirm that an anonymous user cannot
       read a `draft` it does not own, cannot approve its own document and cannot read
       another group, and that the public read returns only `approved` documents.

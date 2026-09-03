@@ -30,7 +30,7 @@ consented submissions in the workshop app, with HackMD or paper notes as the fal
    This archive is public.
 3. Commit it as a dated cohort file, renamed to the workshop date if you exported
    later, or split it into one file per group using the naming convention below, with
-   a clear message such as `Archive workshop submissions, 24 June 2026`.
+   a clear message such as `Archive workshop submissions, 9 September 2026`.
 4. For HackMD-fallback groups, open the note, export it to Markdown (HackMD's ··· menu
    under Download and Markdown, or append `/download` to a published note's URL),
    check it and add it alongside the rest. Archive a fallback note only if the group
@@ -67,9 +67,9 @@ YYYY-MM-DD_groupNN_track-X_short-slug.md
 Examples:
 
 ```
-2026-06-24_group01_track-A_survey-method-critique.md
-2026-06-24_group03_track-C_reading-time-explainer.md
-2026-06-24_group07_track-D_lay-summary-fidelity.md
+2026-09-09_group01_track-A_survey-method-critique.md
+2026-09-09_group03_track-C_reading-time-explainer.md
+2026-09-09_group07_track-D_lay-summary-fidelity.md
 ```
 
 ## A note on what is preserved

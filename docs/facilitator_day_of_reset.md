@@ -2,7 +2,7 @@
 
 *Operational only. The [facilitator guide](../workshop_plan.md) holds the rationale, the [run sheet](facilitator_run_sheet.md) the timeline and the [app README](../firebase-app/README.md) the full deployment steps.*
 
-A short reset that gets the live app into a clean, ready state for Westminster on 24 June 2026. The app (genai-rt.web.app) is the default capture surface, and HackMD or paper is the fallback.
+A short reset that gets the live app into a clean, ready state for Westminster on 9 September 2026. The app (genai-rt.web.app) is the default capture surface, and HackMD or paper is the fallback.
 
 ## Before Part 1 (about 11:52, with a re-check during lunch)
 
@@ -37,7 +37,7 @@ A short reset that gets the live app into a clean, ready state for Westminster o
 
 ## Troubleshooting
 
-- Sign-in fails: confirm that you are using the pre-registered Google account, and check that Google sign-in is enabled for the project in the Firebase console.
+- Sign-in fails: allow pop-ups for the site and try again, since the pop-up path is the reliable one. Then confirm that you are using the pre-registered Google account, and check that Google sign-in is enabled for the project in the Firebase console.
 - A group cannot start: the passcode is not set, or they have a typo. Re-read it, since the create path needs the session passcode.
 - Timer not showing: glance at your dashboard's Session timer status line first. It reads 'Running: MM:SS left …' when live and 'Timer is off.' when stopped. The group chip appears while the countdown is running and reads 'Time's up' after it expires.
 - App wobbles: tell the room to switch to HackMD (hackmd.io), with the same headings. In-progress edits are queued on the device and sync on reconnect, so nothing already typed is lost.

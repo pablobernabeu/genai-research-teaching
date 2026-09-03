@@ -6,6 +6,13 @@
 // The facilitator signs in with their Google account whose email matches
 // facilitatorEmail() in firestore.rules. Enable Google (and Anonymous) in Firebase
 // console → Authentication, and keep Email/Password disabled.
+//
+// authDomain note: the *.firebaseapp.com origin is a third party relative to the Hosting
+// domain that serves the page. Sign-in by pop-up works, whereas sign-in by redirect
+// depends on third-party storage and is unreliable in current browsers. The facilitator
+// page tries the pop-up first, so allow pop-ups for the site. Setting authDomain to the
+// Hosting domain serving the page is the documented cure, and it needs testing well
+// before the day.
 
 export const firebaseConfig = {
   apiKey: "YOUR_API_KEY",

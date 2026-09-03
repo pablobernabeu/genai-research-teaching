@@ -1,14 +1,15 @@
 # The museum of caught errors
 
-A small device with a large pedagogical payoff. Every group keeps a short, honest log
-of the moments their tool went wrong and, for each, what catching it taught them. The
-errors are the point of the exercise, and no reflection on the group.
+This is a small device with a large pedagogical payoff. Every group keeps a short,
+honest log of the moments their tool went wrong and, for each, what catching it taught
+them. The errors are the point of the exercise, and they say nothing about the group
+that found them.
 
 ## Why it exists
 
-The day's thesis is that friction is an epistemic signal. A caught error is friction
-made concrete: the instant the tool's fluent confidence parted company with the truth,
-and a human noticed. Collecting these does three things. It rewards scepticism and
+The day's thesis is that friction is an epistemic signal. A caught error is friction made
+concrete, at the moment when the tool remained fluent while its answer stopped being
+true, and a human noticed. Collecting these does three things. It rewards scepticism and
 turns 'the tool got it wrong' from an embarrassment into a prize. It builds a shared,
 specific vocabulary of failure modes, which is far more memorable than an abstract
 warning. And it produces, across the room, a frank map of where humans must stay in
@@ -26,8 +27,8 @@ Use the table already in your note in the app, or in HackMD on the fallback (fro
 | It invented an owner for a meeting action | Checked the action against the notes | No fact may appear that was not in the input |
 
 Aim for one or two good entries in the fifteen minutes, or two or three if you add to
-the note later, and avoid an exhaustive list. Depth is worth more
-than breadth: one error you understand is worth more than ten you merely noticed.
+the note later, and avoid an exhaustive list. One error the group understands is worth
+more than ten it merely noticed.
 
 ## Across the room (optional)
 

@@ -8,10 +8,10 @@ This applies to the workshop itself and to this repository's community spaces
 We are a community of researchers practising critical, respectful enquiry. We expect
 everyone to treat others with courtesy and good faith, especially in disagreement, and
 to welcome scepticism and dissent about tools and ideas, since challenging a claim is
-encouraged and demeaning a person is not. We expect consideration for differing
-levels of experience, so that no question about a tool is too basic, and respect for
-privacy and confidentiality, so that no one shares others' data, words or work without
-consent, online or in the room.
+encouraged and demeaning a person is not. We also expect consideration for differing
+levels of experience, so that no question about a tool is too basic. Privacy and
+confidentiality are to be respected, and no one shares others' data, words or work
+without consent, online or in the room.
 
 ## Unacceptable behaviour
 

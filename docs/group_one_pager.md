@@ -54,7 +54,7 @@ With about five minutes to spare, go further.
 - Data safety. No personal or confidential data goes into a free AI tool. When in doubt, anonymise, synthesise or abstain. The only identifier the app holds is your group name.
 - The timer. A chip in the corner shows the time left. It is advisory and never locks you out.
 - Roles, optional. Convenor keeps the problem and the clock, Driver runs the keyboard, Steward guards the red lines, Reporter owns the note and the spoken insight, and Sceptic tries to break the output.
-- If the app will not load. Use the HackMD link or paper the facilitator gives you. The headings are the same.
+- If the app will not load, use the HackMD link or the paper copy the facilitator gives you. The headings are the same.
 
 ---
 

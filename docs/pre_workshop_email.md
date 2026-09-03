@@ -4,36 +4,36 @@
 
 ---
 
-Subject: Before our AI workshop on 24 June 2026, a short read
+Subject: Before our AI workshop on 9 September 2026, a short read
 
 Dear colleague,
 
-Thank you for signing up to Generative AI in research and teaching on 24 June 2026 at [VENUE]. It runs in two parts: Part 1, Conceptualising the use of AI in research (12:00–12:30); a networking lunch (12:30–13:15); then Part 2, Practical AI for research and teaching (13:15–13:45), an applied session. There is nothing to install, and whatever your confidence with these tools, from never having tried one to daily use, you are welcome. No prior experience with AI tools is assumed.
+Thank you for signing up to Generative AI in research and teaching on 9 September 2026 at [VENUE]. It runs in two parts: Part 1, Conceptualising the use of AI in research (12:00–12:30); a networking lunch (12:30–13:15); then Part 2, Practical AI for research and teaching (13:15–13:45), an applied session. There is nothing to prepare and nothing to install, and whatever your confidence with these tools, from never having tried one to daily use, you are welcome. No prior experience with AI tools is assumed.
 
-Generative AI is the newest in a long line of tools we have always used to extend what we can do, from mental arithmetic to the calculator, pen and paper to the computer, and deterministic software to generative AI. This session offers a deeper insight into the technology itself, and it is not training in any one tool. We will do two things at once: put these tools to work and learn to read them well, because the real skill is knowing where they help and where your judgement leads. Your expertise is what makes them valuable. Fluent and confident as they are, they are not always right, and you are well placed to tell the difference. We will also open up the wider questions they raise: how our thinking shifts when the tool shares the writing, how AI might narrow or widen disparities (a second language, uneven support, career stage, background) and what, in the end, we choose to disclose.
+Generative AI is the newest in a long line of tools we have always used to extend what we can do, from mental arithmetic to the calculator and from pen and paper to the computer. This session offers a deeper insight into the technology itself, and a working understanding of it outlasts any one tool. We will do two things at once: put these tools to work and learn to read them well, because the real skill is knowing where they help and where your judgement leads. Your expertise is what makes them valuable. Fluent and confident as they are, they are not always right, and you are well placed to tell the difference. We will also open up the wider questions they raise: how our thinking shifts when the tool shares the writing, how AI might narrow or widen disparities (a second language, uneven support, career stage, background) and what, in the end, we choose to disclose.
 
 You do not need to prepare anything, because in Part 2 your group can work from a ready example we provide for each track. The session is more rewarding on a real problem, though, so if you have a recurring one from your research or teaching, come with it in mind: a methods section or assessment to stress-test, an admin burden to lighten, a finding or concept to make accessible, a dataset to visualise. Your group works on just one problem, so treat anything you bring as a candidate it might take up and not as a commitment. Whatever you bring must be non-confidential, or something you can anonymise first, so please do not bring personal data, students' marks or references, unpublished participant data, confidential grant or peer-review material, or anything under embargo.
 
-In Part 2 you will work in groups of five and write up your group's note in a simple browser app (genai-rt.web.app). There is nothing to install and no account to create: your group names itself, enters a passcode I read out on the day, fills in its note and submits it for me to review. If a group would rather not use the app, there is a fallback in HackMD, a free browser-based notepad, and a paper fallback too. Afterwards, I tidy the approved notes into an open, public archive of the day.
+In Part 2 you will work in groups of five and write up your group's note in a simple browser app (genai-rt.web.app). There is nothing to install and no account to create: your group names itself, enters a passcode I read out on the day, fills in its note and submits it for me to review. One device between the five of you is enough, and anyone who would rather follow on their own joins with the group name and the six-character code the app shows. If a group would rather not use the app, HackMD, a free browser-based notepad, does the same job, and paper works too. Afterwards, with each group's consent, I tidy the approved notes into an open, public archive of the day.
 
 What to bring:
 
-- A laptop and charger (the room has power and Wi-Fi throughout).
+- A fully charged phone. Everything runs in a browser and works on a phone, and a laptop is welcome if you would rather type on one. The room has power and Wi-Fi throughout.
 - Optionally, a real problem to work on (non-confidential; see above).
-- Optionally, a free account with one chat assistant (ChatGPT, Claude, Gemini or Copilot). It saves a few minutes, but there is time on the day. You do not need an account for the note-taking app.
-- Curiosity and scepticism. Both are welcome.
+- Optionally, a device already signed in to a free chat assistant (ChatGPT, Claude, Gemini or Copilot). One between the five of you is plenty, and if nobody has one, we will work around it instead of spending the session signing up.
+- Curiosity and scepticism, both of which are welcome.
 
-Optional, if time allows: two short pieces that anticipate the day's themes. A reading, by Kristi Girdharry, 'A writing professor's new task in the age of AI: teaching students when to struggle' (The Conversation, 2026), https://theconversation.com/a-writing-professors-new-task-in-the-age-of-ai-teaching-students-when-to-struggle-276590, on why the friction of thinking unaided is where discernment begins. And a talk, by Advait Sarkar, a researcher at Cambridge and Microsoft Research who works on AI and thinking, 'How to stop AI from killing your critical thinking' (TED, 2025), https://www.youtube.com/watch?v=3lPnN8omdPA.
+Two short pieces anticipate the day's themes, and both are entirely optional. The first is a reading by Kristi Girdharry, 'A writing professor's new task in the age of AI: teaching students when to struggle' (The Conversation, 2026), on why the friction of thinking unaided is where discernment begins: <https://theconversation.com/a-writing-professors-new-task-in-the-age-of-ai-teaching-students-when-to-struggle-276590>. The second is a talk by Advait Sarkar, a researcher at Cambridge and Microsoft Research who works on AI and thinking, 'How to stop AI from killing your critical thinking' (TED, 2025): <https://www.youtube.com/watch?v=3lPnN8omdPA>.
 
-And on the shift itself, with writing and programming moving up a level and you leading the ideation and steering at the key moments: Andrej Karpathy, 'Software is changing (again)' (a talk, 2025), https://www.youtube.com/watch?v=LCEmiRjPEtQ; and Ethan Mollick, 'Centaurs and cyborgs on the jagged frontier' (2023), https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged.
+On the shift itself, writing and programming are moving up a level of abstraction, with you leading the ideation and steering at the key moments. Andrej Karpathy sets this out in a talk, 'Software is changing (again)' (2025): <https://www.youtube.com/watch?v=LCEmiRjPEtQ>. Ethan Mollick describes two ways of dividing the work in 'Centaurs and cyborgs on the jagged frontier' (2023): <https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged>.
 
 No view here is the last word, because the technology moves too fast for that. Please bring your own critical, informed perspective to our shared tables.
 
-Optional, 60 seconds: this anonymous warm-up helps me pitch the session: [POLL URL].
+One last optional thing, which takes about 60 seconds. An anonymous warm-up poll helps me pitch the session to the room: [POLL URL].
 
 A note on data: these are free, third-party tools whose free tiers may reuse what you type. Treat anything you paste as potentially non-private. You remain responsible for compliance with your own institutional policy, the UK GDPR and research ethics. We will return to this on the day, with a one-page decision aid to help.
 
-Any questions, just reply. See you on 24 June 2026.
+Any questions, just reply. See you on 9 September 2026.
 
 Best wishes,
 

@@ -370,20 +370,17 @@ exportBtn.addEventListener("click", () => {
     `Downloaded ${sharedCount} approved & consented submission${sharedCount === 1 ? "" : "s"} as Markdown. Commit it under submissions/.`;
 });
 
-// Sort: submitted first (they need attention), then by updatedAt descending.
+// Sort: submitted first (they need attention), then by name. Name, not updatedAt: drafts
+// autosave every few seconds, and ordering by it made the cards reshuffle under the
+// facilitator's cursor mid-approval. Within a status the order now holds still.
 function sortGroups(groups) {
   const rank = { submitted: 0, reopened: 1, draft: 2, approved: 3 };
   return groups.sort((a, b) => {
     const ra = rank[a.status] ?? 9;
     const rb = rank[b.status] ?? 9;
     if (ra !== rb) return ra - rb;
-    return tsMillis(b.updatedAt) - tsMillis(a.updatedAt);
+    return String(a.name || "").localeCompare(String(b.name || ""), "en");
   });
-}
-
-function tsMillis(ts) {
-  if (ts && typeof ts.toMillis === "function") return ts.toMillis();
-  return 0;
 }
 
 function render(groups) {

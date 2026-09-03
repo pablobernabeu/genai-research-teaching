@@ -5,7 +5,7 @@
   Rename a real export to: YYYY-MM-DD_groupNN_track-X_short-slug.md
 -->
 
-# Group … · Track … · 24 June 2026
+# Group … · Track … · 9 September 2026
 
 | | |
 |---|---|

@@ -15,7 +15,7 @@ difference is your finding.
 2. Ask it to sort its own claims. 'Mark each claim as confident, uncertain or a guess,
    and say what would change your mind.' These labels are the model's guess about
    itself and not a measurement, and a confidently wrong claim will be labelled
-   confident, so use them only to decide what to verify first, and verify it elsewhere.
+   confident. Use them only to decide what to verify first, then verify it elsewhere.
 3. Demand checkable sources. 'Cite sources I can verify. If you are not sure a source
    exists, say so instead of inventing one.'
 4. Ask what it is missing. 'What would an expert say you have overlooked?'

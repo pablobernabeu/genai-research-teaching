@@ -1,7 +1,7 @@
 ---
 name: Workshop submissions (pinned issue, fallback only)
 about: Fallback only. The default is the app and dashboard. If a group cannot use the app and works in HackMD instead, the facilitator records its note link here.
-title: "[Submissions] HackMD fallback links, 24 June 2026"
+title: "[Submissions] HackMD fallback links, 9 September 2026"
 labels: ["submissions"]
 ---
 

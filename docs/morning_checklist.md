@@ -44,7 +44,7 @@ risk sits in the first ten minutes.
 
 - [ ] The name, date, venue, times and affiliation in the deck and the emails are yours
       (they are set to the facilitator's own: Department of Education, University of
-      Oxford, and the University of Westminster on 24 June 2026).
+      Oxford, and the University of Westminster on 9 September 2026).
 - [ ] The placeholders that remain were filled before sending: `[VENUE]` and
       `[POLL URL]` in the pre-workshop email, and `[FEEDBACK URL]` in the follow-up
       email.
