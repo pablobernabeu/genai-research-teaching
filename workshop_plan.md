@@ -84,7 +84,8 @@ short framing, quick application and room to run, with the facilitator circulati
 with questions instead of answers.
 
 Inclusion is built in from the start. Part 1 gives newcomers the practical grounding (what these tools are, how to get one, how to ask) and gives everyone the critical lens, and it then previews the rubric. A mixed-ability group therefore enters Part 2 together, and no one meets the task cold. Finally, the design is reproducible and open. Every group's
-reasoning is written into a shared note and archived publicly, so the cohort's
+reasoning is written into a shared note and, where the group consents, archived
+publicly, so the cohort's
 collective judgement outlasts the session.
 
 ---
@@ -214,8 +215,8 @@ roughly:
 
 > 'Thirty seconds, keyboards down. What has the tool made easier, and what does that
 > cost? Where did it resist you, and what was that friction telling you? Have
-> you held the data red lines? Now switch mode, from building to interrogating. Lock in
-> your map and your one insight.'
+> you held the data red lines? Now switch mode, from building to interrogating. Settle on
+> your one insight.'
 
 Groups that have been enjoying the tool now examine it.
 
@@ -235,7 +236,7 @@ A facilitator-timed round of short spoken contributions, without presentations.
   at 45 seconds each leaves nothing for those handovers, and ten groups do not fit at
   all. So with eight groups, keep to 45 seconds. With nine or ten, announce 35 seconds at
   the start of the round, and if you are still behind after six groups, take a one-line
-  contribution from the rest. Every group's written note enters the archive either way,
+  contribution from the rest. Every group's written note is captured either way,
   so a group that gives one line has still been heard.
 - As each group speaks, jot the recurring thread (over-trust, hallucinated citations,
   data leakage, de-skilling, a clever checkpoint) for the synthesis.
@@ -297,7 +298,7 @@ Friction (ask everywhere)
 | A group finishes early | Send them to the rubric dimension they have thought about least, which is usually Financial & Scalability or the automation–steering map, or set them to red-team a neighbouring group's output by probing it adversarially for weaknesses the other group missed. |
 | A group stalls | Shrink the task. 'Forget the grand version. What is the smallest real thing the tool could help with in ten minutes?' |
 | Uneven groups (four or six) | At four, the Convenor doubles as Steward. At six, split Driver and Sceptic across two people, or add a second Sceptic, since more red-teaming does no harm. |
-| Fewer or more than ten groups | The lightning round is about seven minutes, which fits eight groups at 45 seconds. With nine or ten, announce 35 seconds at the start of the round, and if you are still behind after six groups take a one-line contribution from the rest. Never overrun the 13:45 finish. |
+| Fewer or more than ten groups | The lightning round is about seven minutes, which just fits eight groups at 45 seconds, and only if handovers stay near five seconds. With nine or ten, announce 35 seconds at the start of the round, and if you are still behind after six groups take a one-line contribution from the rest. Never overrun the 13:45 finish. |
 | Someone pastes sensitive data | Stop it gently and immediately, note it as a live example of why the red lines exist and have them anonymise or synthesise before continuing. |
 | A dominant voice | Lean on roles: 'Steward, what is your read?' Give quieter roles explicit air. |
 | A sceptical or hostile participant | Welcome it, because scepticism is the point. Channel it into the Sceptic role and the museum. |

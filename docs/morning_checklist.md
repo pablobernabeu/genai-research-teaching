@@ -10,7 +10,8 @@ risk sits in the first ten minutes.
       `dist/slides.pdf` as a fallback. (Rebuild with `npm run build` if needed.)
 - [ ] Wi-Fi confirmed on a guest device, on the network participants will actually use.
 - [ ] Power: enough sockets and extension leads for tables of five.
-- [ ] genai-rt.web.app (the workshop app) reachable on the guest network, and the
+- [ ] genai-rt.web.app (the workshop app) opens on a guest device and shows the login
+      form, which is the proof that its code loaded rather than merely the page. The
       facilitator's Google sign-in to the dashboard works.
 - [ ] A chat tool (ChatGPT, Claude, Gemini or Copilot) reachable on the guest network.
 - [ ] A visible timer (phone, slide timer or kitchen timer) for the segment timings and
@@ -22,7 +23,9 @@ risk sits in the first ten minutes.
       any rehearsal groups, set the session passcode and set the timer's minutes
       without starting it. See the [day-of reset](facilitator_day_of_reset.md) for
       the full list.
-- [ ] Dashboard reachable and clear of any previous session's submissions, ready to
+- [ ] Dashboard reachable and clear of any previous session's submissions (clearing is
+      console-only, so if anything is there, note it and clear it during the lunch
+      reset), ready to
       approve groups as they submit.
 
 ## Printed materials (per table of five)

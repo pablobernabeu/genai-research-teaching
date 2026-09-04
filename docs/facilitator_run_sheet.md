@@ -34,16 +34,16 @@ A featured workshop in two 30-minute parts, split by a networking lunch.
 
 | When | Action |
 |---|---|
-| 12:30 | Not your session, but a networking break before Part 2. Re-check the dashboard once (passcode set, no rehearsal groups, timer not running). |
+| 12:30 | Not your session, but a networking break before Part 2. Leave slide 17 up throughout: it is the only thing telling people to come back to the same table. Re-check the dashboard once (passcode set, no rehearsal groups, timer not running). |
 
 ## Part 2 · Practical AI for research and teaching · 13:15–13:45
 
 | Clock | Segment | Slides | Facilitator does |
 |---|---|---|---|
 | 13:15 | Settle in and orient | 18–24 | Re-find groups; agree the one problem (60 seconds); app open (genai-rt.web.app); read out the passcode; red lines on. Slides 21–24 go past at pace: point at them, do not present them, since every word is in the pack. |
-| 13:18 | Apply it | 25 | Press Start countdown as slide 25 goes up. Circulate. Stop sensitive data, unstick stalls, one provocation each. Where a group has time, prompt the map (interwoven or staged). |
+| 13:18 | Apply it | 25 | Press Start countdown as slide 25 goes up. If the settle-in has run late, set Minutes so the countdown still ends at 13:33 rather than fifteen from now. Circulate. Stop sensitive data, unstick stalls, one provocation each. Where a group has time, prompt the map (interwoven or staged). |
 | about 13:26 | Pivot | 26 | Thirty seconds, keyboards down. Stop building, start interrogating. |
-| 13:33 | Lightning round | 27 | Visible timer. 45 seconds each with eight groups; announce 35 seconds if there are nine or ten, since handovers cost five to ten seconds apiece. Time the round and jot threads only: approve the submissions during the close or just after 13:45, not while timing (collect a HackMD link only from a fallback group). |
+| 13:33 | Lightning round | 27 | Visible timer. 45 seconds each with eight groups; announce 35 seconds if there are nine or ten, since handovers cost five to ten seconds apiece. Time the round and jot threads only: leave every approval until after the session, since reading a note properly takes longer than the close allows (collect a HackMD link only from a fallback group). |
 | 13:40 | Close | 28–34 | Synthesise two or three threads. Take-home actions. Reading. Follow-up. Close at 13:45. |
 
 ## After

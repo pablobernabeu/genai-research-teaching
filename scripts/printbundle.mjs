@@ -100,8 +100,19 @@ body { margin: 0; font-family: "Segoe UI", Arial, system-ui, sans-serif; color: 
 .empty { color: #c3c9cf; font-size: 9pt; text-align: center; padding-top: 60mm; }
 `;
 
+// A slot clips what overflows it, which would lose the foot of a card silently. The
+// longest card that has fitted comfortably is around 600 characters of markdown, so
+// warn well before that becomes a problem rather than discovering it in print.
+const SLOT_CHARS = 1100;
+
 function renderCutSheets(name, mdFile, label) {
   const cards = readCards(mdFile);
+  cards.forEach((c, i) => {
+    const chars = c.replace(/<[^>]+>/g, '').trim().length;
+    if (chars > SLOT_CHARS) {
+      console.warn(`  ! ${label} ${i + 1} is ${chars} characters and may be clipped by its half-page slot.`);
+    }
+  });
   const sheets = [];
   for (let i = 0; i < cards.length; i += 2) {
     const top = cards[i];

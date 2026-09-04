@@ -34,7 +34,7 @@ part of the open account of what this cohort learned.
    so that anyone with the link can read (you do not need to grant editing).
 6. Copy the note's link.
 7. Share that link with the facilitator before the lightning round at 13:33 where you
-   can, and during it at the latest. Show the note on screen with your group number and
+   can, and during it at the latest. Show the note on screen with your table number and
    track. You do not need a GitHub account, because the facilitator gathers every
    group's link.
 
@@ -98,9 +98,9 @@ Share publicly? yes / no (yes means the group is content for this note, which sh
 - Thinking versus writing: if the tool did the writing, what thinking did we still have to do, and what might we lose by offloading it? …
 - Fairness: could this widen or narrow disparities (first versus second language, more versus less support, career stage, socioeconomic background)? Who gains, and who is left behind? …
 - Disclosure: would we disclose using AI here? Would we, or should we, disclose the conditions it offset (for example, writing in a second language or limited support)? Why or why not? …
-- Disciplinary norms: is our field generally under- or over-using generative AI for this kind of task? Why, with what consequences, and how would we redress it over the next two years? …
+- Disciplinary norms: is our field generally under- or over-using generative AI for this kind of task? Why, with what consequences and how would we redress it over the next two years? …
 
-## Lightning-round insight (45 seconds, no slides)
+## Lightning-round insight (up to 45 seconds, no slides)
 > Pick the strongest of three: the single most significant limitation we found; the most
 > important human-in-the-loop safeguard we built in; or one honest thing this exposed
 > about how our field is over- or under-using AI for this task:

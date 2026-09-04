@@ -259,7 +259,7 @@ async function createGroup(displayName, nameLower, sessionCode) {
       const existing = await tx.get(nameRef);
       if (existing.exists()) {
         const taken = new Error("name-taken");
-        taken.userMessage = "That name is already taken — please choose another.";
+        taken.userMessage = "That name is already taken. If this is your group, add their six-character join code and leave the passcode blank. Otherwise pick another name.";
         throw taken;
       }
       // Uniqueness index: holds only a pointer, no secrets.

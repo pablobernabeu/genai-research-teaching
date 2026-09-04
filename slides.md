@@ -70,7 +70,7 @@ In one sentence each, recall the last time an AI tool either<br/>helped you or l
 
 </div>
 
-Take thirty seconds each, and there is no need to perform. 'I have not really used one' is a perfectly good answer.
+Take about a minute each, and there is no need to perform. 'I have not really used one' is a perfectly good answer.
 
 <span class="small muted">Most of us already have a story, and it usually turns on a moment of friction.</span>
 
@@ -229,7 +229,7 @@ Take a real task, use a tool on it, then examine the result closely. Part 1 prov
 
 ## Form your groups now
 
-Please form groups of five, and move to the idea you would most like to try. The letter beside it is your track.
+Move to the idea you would most like to try, and make a group of five with the people there. The letter beside it is your track.
 
 <div class="columns">
 <div>
@@ -304,7 +304,7 @@ Your facilitator will read out the session passcode you need to start a group.
 |---|---|---|
 | <span class="clock">13:15</span> | **Settle in.** Re-find your group, agree your one problem (60 s), open the app (HackMD as fallback), red lines on | 3 |
 | <span class="clock">13:18</span> | **Apply it.** Run the tool on your problem and capture one caught error and one insight (the automation–steering map if time allows) | 15 |
-| <span class="clock">13:33</span> | **Lightning round.** 45 seconds per group, on the limitation, the safeguard or how your field over- or under-uses AI | 7 |
+| <span class="clock">13:33</span> | **Lightning round.** Up to 45 seconds per group, on the limitation, the safeguard or how your field over- or under-uses AI | 7 |
 | <span class="clock">13:40</span> | **Synthesis.** Drawing the threads together, with takeaways for research and teaching | 5 |
 
 ---
@@ -329,7 +329,7 @@ Use your group's one problem: the seed, a member's real one or a worked example 
 
 1. One artefact. Run your tool and produce something real, such as a critique, a template or a translation.
 2. One or two caught errors. Moments where it was fluent but wrong. Keep them.
-3. One insight. A limitation, a safeguard or one honest observation about how your field is over- or under-using AI. This is your line for the 45-second round.
+3. One insight. A limitation, a safeguard or one honest observation about how your field is over- or under-using AI. This is your line for the lightning round.
 
 > If about five minutes remain, go further. Add the automation–steering map (which steps the tool ran, and where you steered) and decide whether oversight was interwoven or staged, noting why and what it cost. If you fall behind, drop the map before the insight.
 
@@ -343,7 +343,7 @@ There is no GitHub to touch and no report to write. This is fifteen minutes of c
 
 1. The Reporter opens the app (genai-rt.web.app), names the group and enters the session passcode. There is no account and nothing to install. One device creates the group, then reads out the group name and the six-character code, and the others type both.
 2. Fill in the essentials: the problem, the artefact (and which tool made it), one caught error and your insight, adding the map and the oversight model if time allows. The app saves as you go.
-3. Submit for review. The facilitator sees it live and approves it. That is all.
+3. Submit for review. Do it as soon as your insight is written, and by 13:33 at the latest. If you are still typing when the round starts, submit as soon as you have spoken.
 
 <span class="small muted">No device, or the app misbehaving? HackMD (hackmd.io) is the fallback, with the same headings. A countdown on screen shows the time left, and the facilitator archives the approved work afterwards.</span>
 
@@ -379,7 +379,7 @@ Thirty seconds, keyboards down, as a group.
 - What has the tool genuinely made easier, and what does that cost?
 - Where did it resist you, and what was that friction telling you?
 - Have we held the data red lines?
-- Switch now from building to interrogating. Settle your map and your insight.
+- Switch now from building to interrogating. Settle on your one insight.
 
 ---
 
@@ -387,7 +387,7 @@ Thirty seconds, keyboards down, as a group.
 
 # Lightning round · 13:33
 
-<span class="subtitle">45 seconds per group · one insight · no slides · the Reporter delivers, the facilitator keeps time</span>
+<span class="subtitle">One insight each · no slides · the Reporter delivers · the facilitator calls the time</span>
 
 What was the most significant limitation, the most important human-in-the-loop safeguard or one honest thing this exposed about how your field over- or under-uses AI?
 
@@ -403,7 +403,7 @@ What was the most significant limitation, the most important human-in-the-loop s
 
 ## What we saw across the room
 
-Four threads worth drawing out from the lightning round:
+Threads worth drawing out from the lightning round:
 
 - **Context decided.** A tool that helped on one task and was a hazard on the next.
 - **Friction as a signal.** Where the friction a group recorded marked the point at which human judgement was needed.
@@ -470,7 +470,7 @@ Choose one to try this week, in research or in teaching.
 
 ## Thank you
 
-Your notes become an open, reproducible archive at github.com/pablobernabeu/genai-research-teaching
+The notes of groups that opt in become an open, reproducible archive at github.com/pablobernabeu/genai-research-teaching
 
 Questions or follow-ups? Open a thread in the repository's Discussions tab (github.com/pablobernabeu/genai-research-teaching/discussions), so that answers help everyone.
 

@@ -11,7 +11,7 @@ A short reset that gets the live app into a clean, ready state for Westminster o
 - [ ] Clear the rehearsal and test groups. Deletion is console-only, with no button on the dashboard. In the Firestore console, delete stray test documents from the `groups` collection and the matching `groupNames` entry, or the name stays reserved.
 - [ ] Confirm that the facilitator group list is clear of rehearsal entries (that is where draft and submitted test groups show) and that the public board at genai-rt.web.app/dashboard.html is empty.
 - [ ] Set today's passcode in the Session passcode panel and write it where you can read it out (it overwrites any rehearsal value). The status should then read 'Passcode set. Read it out to the room.' Confirm that the public dashboard opens with this passcode too. Until it is set, no group can start.
-- [ ] In the Session timer panel, set Minutes (the default is 15, the build window) but do not start it yet. You can change the length only before starting.
+- [ ] In the Session timer panel, set Minutes (the default is 15, the build window) but do not start it yet. Set it to 14 rather than 15, so the countdown ends at 13:32 and leaves a minute to submit inside the build window. Pressing Start again with a new number simply restarts the countdown, so if the settle-in runs late, set Minutes to the time remaining until 13:32.
 - [ ] Have the 'Open the workshop app' slide ready, with the large URL genai-rt.web.app and the scannable QR code.
 - [ ] During lunch, glance at the dashboard once more: passcode set, no stray groups, timer not running.
 
@@ -27,7 +27,7 @@ A short reset that gets the live app into a clean, ready state for Westminster o
 - [ ] On each submission: Approve, Reopen… (it prompts for a short note) or Rename… as needed.
 - [ ] Approve only when the group is done. Approval shows the work on the session dashboard and makes the group's form read-only, because owners can edit only while a note is in draft or reopened. The join code is wiped too, so no new device can join, and Reopen is no longer offered.
 - [ ] Rename any identifying name the moment you spot one (Rename…, keeping it short and non-identifying).
-- [ ] If a phase overruns, use Reset / stop and then restart with new Minutes, since the length cannot change while the timer runs.
+- [ ] If a phase overruns, type a new number of Minutes and press Start again, which restarts the countdown at that length.
 
 ## After Part 2 (once groups have submitted)
 
@@ -39,6 +39,7 @@ A short reset that gets the live app into a clean, ready state for Westminster o
 
 - Sign-in fails: allow pop-ups for the site and try again, since the pop-up path is the reliable one. Then confirm that you are using the pre-registered Google account, and check that Google sign-in is enabled for the project in the Firebase console.
 - A group cannot start: the passcode is not set, or they have a typo. Re-read it, since the create path needs the session passcode.
+- Reopen… or Rename… does nothing: the browser has suppressed this page's dialogs, which it offers to do after several in a row. Reload the dashboard page.
 - Timer not showing: glance at your dashboard's Session timer status line first. It reads 'Running: MM:SS left …' when live and 'Timer is off.' when stopped. The group chip appears while the countdown is running and reads 'Time's up' after it expires.
 - App wobbles: tell the room to switch to HackMD (hackmd.io), with the same headings. In-progress edits are queued on the device and sync on reconnect, so nothing already typed is lost.
 

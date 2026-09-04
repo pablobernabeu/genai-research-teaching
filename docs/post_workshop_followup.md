@@ -10,7 +10,7 @@ Dear colleague,
 
 Thank you for the energy you brought to Generative AI in research and teaching. The most striking thing was the quality of the caught errors and the safeguards you designed, which is exactly the discernment the session was for.
 
-Your work is now an open archive. The notes of the groups that opted in to sharing have been tidied into a public, reproducible record at https://github.com/pablobernabeu/genai-research-teaching (see `submissions/`). It stands as a frank, collective map of where these tools help and where a human must stay in charge.
+Your work is now an open archive. The notes of the groups that opted in to sharing have been tidied into a public, reproducible record at https://github.com/pablobernabeu/genai-research-teaching (see `submissions/`). It stands as a frank, collective map of where these tools help and where a human must stay in charge. If your group tidied its note afterwards, or would now like it included, reply to this message and I will add it. The three quick scales many of you filled in are summarised on the session dashboard, and I have included the picture they give below.
 
 The one idea worth keeping is to treat friction, the moment a tool resists you or quietly gets something wrong, as a signal. It marks where your judgement is doing the real work.
 

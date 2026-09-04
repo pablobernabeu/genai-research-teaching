@@ -52,7 +52,7 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
-## 12:14 · SPECTRUM · RED LINES · ETHICS
+## 12:14–12:21 · SPECTRUM · RED LINES · ETHICS
 
 - **Do:** one breath each (slides 10–12). Name the teaching angle: students' data,
   assessment integrity, disclosure.
@@ -118,12 +118,15 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 
 ## 13:33 · LIGHTNING ROUND (7 min)
 
-- **Say:** '45 seconds, one insight, no slides: the biggest limitation, the best
-  safeguard or how your field over- or under-uses AI here.'
+- **Say:** 'One insight each and no slides. I will call the time. Give us the biggest
+  limitation, the best safeguard or how your field over- or under-uses AI here.'
+- **Say, before they submit:** 'If you are happy for your note to join the public
+  archive, tick the sharing box at the foot of the form. It is optional, and unticked
+  is a perfectly good answer.'
 - **Do:** visible timer. 45 seconds each with eight groups, or announce 35 seconds if
   there are nine or ten, since each handover costs five to ten seconds. Still behind
-  after six? Take one line from the rest. Jot each group's thread. Approve the notes
-  during the close, not while timing.
+  after six? Take one line from the rest. Jot each group's thread, and leave
+  every approval until after the session.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 

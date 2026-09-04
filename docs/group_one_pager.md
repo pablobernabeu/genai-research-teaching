@@ -34,7 +34,7 @@ This is the heart of the fifteen minutes. If this is all you manage, you have do
 
 1. Make one artefact. Run your tool on your problem and produce something real, such as a critique, a template or a translation.
 2. Catch the errors. Note one or two moments where it was fluent but wrong. Keep them. This is your museum of caught errors.
-3. Name one insight. A limitation, a safeguard or the honest thing this exposed. This is your line for the lightning round, which is about 45 seconds per group.
+3. Name one insight. A limitation, a safeguard or the honest thing this exposed. This is your line for the lightning round, which allows up to 45 seconds per group.
 
 With about five minutes to spare, go further.
 
@@ -44,7 +44,7 @@ With about five minutes to spare, go further.
 
 ## 5. Share and submit
 
-- Share, optional. Tick the consent box if your group is happy for its non-identifying note to enter the public archive on GitHub. Unticked, it stays out of the archive, although approved work still shows on the session's passcode-gated dashboard.
+- Sharing is optional. Tick the consent box if your group is happy for its non-identifying note to enter the public archive on GitHub. Unticked, it stays out of the archive, although approved work still shows on the session's passcode-gated dashboard.
 - Submit. Choose a scenario first, then submit when you are done: before the lightning round at 13:33 where you can, and during it at the latest.
 - After submitting. The form becomes read-only while the facilitator reviews it. If they reopen it with a note, you can edit and resubmit.
 
@@ -53,8 +53,8 @@ With about five minutes to spare, go further.
 - Your work is safe. The app saves as you go. If you reload the page or lose Wi-Fi, your note stays on the device and syncs when you reconnect.
 - Data safety. No personal or confidential data goes into a free AI tool. When in doubt, anonymise, synthesise or abstain. The only identifier the app holds is your group name.
 - The timer. A chip in the corner shows the time left. It is advisory and never locks you out.
-- Roles, optional. Convenor keeps the problem and the clock, Driver runs the keyboard, Steward guards the red lines, Reporter owns the note and the spoken insight, and Sceptic tries to break the output.
-- If the app will not load, use the HackMD link or the paper copy the facilitator gives you. The headings are the same.
+- Roles are optional. The Convenor keeps the problem and the clock, Driver runs the keyboard, Steward guards the red lines, Reporter owns the note and the spoken insight, and Sceptic tries to break the output.
+- If the app will not load, go to hackmd.io and use section A of the rubric in your pack, or the paper copy the facilitator gives you. The headings are the same.
 
 ---
 

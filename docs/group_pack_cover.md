@@ -8,7 +8,7 @@ you have done the task.
 
 1. One artefact. Run your tool on your problem and make something real: a critique, a template, a chart, a translation.
 2. One or two caught errors. Moments it was fluent and wrong. Keep them.
-3. One insight. The limitation, the safeguard or one honest thing this exposed about how your field is over- or under-using AI, which you will give in the lightning round, in about 45 seconds.
+3. One insight. The limitation, the safeguard or one honest thing this exposed about how your field is over- or under-using AI, which you will give in the lightning round, in up to 45 seconds.
 
 If you have about five minutes left, go deeper:
 
@@ -16,9 +16,9 @@ If you have about five minutes left, go deeper:
 5. Interwoven or staged? Was your oversight woven through every step, or staged at checkpoints between phases? Say why, and what it cost.
 
 A rough split keeps you on time. Give about eight minutes to building, up to the pivot
-at about 13:26, then four to breaking it and naming the insight. The last three are for
-the map and the oversight model if time is left. When you fall behind, drop the map and never the
-insight.
+at about 13:26, and the seven after it to testing what you made, naming your insight
+and submitting. Add the map and the oversight model in that stretch if five minutes or
+so remain. When you fall behind, drop the map and never the insight.
 
 The app has a box for the field reflection, so record it there if you get to it. The
 five rubric scores are in this pack alone, and they belong to the tidy-up afterwards
@@ -33,7 +33,7 @@ this pack walks you through it.
 
 ## Your shared note
 
-Your group's note lives in the workshop app. Scan the QR code or go to genai-rt.web.app,
+Your group's note lives in the workshop app. Scan the QR code on screen or go to genai-rt.web.app,
 and your facilitator reads out the session passcode. One device starts the group, and
 the others join with the code it shows. Fill in the essentials as you go, and submit
 before the lightning round at 13:33 where you can, and during it at the latest. There is

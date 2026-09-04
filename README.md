@@ -30,7 +30,7 @@ In Part 2, groups of five choose one of four tracks and work a real problem from
 research or teaching, capturing it in the workshop app
 ([genai-rt.web.app](https://genai-rt.web.app)). Each group assesses its work against a
 five-dimension rubric, which it scores when it tidies the note afterwards, and a museum
-of caught errors. It then gives a 45-second spoken
+of caught errors. It then gives a short spoken
 insight, choosing one of three options. These are the most significant limitation it
 found, the most important human-in-the-loop safeguard it built in or one honest
 observation about how its field is over- or under-using AI for the task.

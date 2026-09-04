@@ -61,7 +61,7 @@ Alongside the rating, each group reflects on the bigger picture.
 
 ## And one spoken insight
 
-Each group closes with a 45-second spoken insight, given without slides. It picks one
+Each group closes with a short spoken insight of up to 45 seconds, given without slides. It picks one
 of three: the single most significant limitation it found, the most important
 human-in-the-loop safeguard it built in or one honest observation about how its field
 is over- or under-using AI for the task.

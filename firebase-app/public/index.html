@@ -11,7 +11,7 @@
   <main class="wrap">
     <header class="page">
       <h1>Workshop app</h1>
-      <p class="sub">Claim a name, do the core three, submit for review.</p>
+      <p class="sub">Start or join your group, capture the core three and submit when you are ready.</p>
       <p class="small muted" style="margin:0.35rem 0 0">
         This is your group's shared note for the session. No device, or trouble here?
         HackMD (hackmd.io) is the fallback.
@@ -79,7 +79,7 @@
           <ol class="small">
             <li><strong>One artefact</strong>: run your tool on your problem and keep what is useful.</li>
             <li><strong>One caught error</strong>: a moment it was fluent and wrong. Keep it.</li>
-            <li><strong>One insight</strong>: the limitation, the safeguard or how your field over- or under-uses AI here, for the 45-second round.</li>
+            <li><strong>One insight</strong>: the limitation, the safeguard or how your field over- or under-uses AI here, for the lightning round.</li>
           </ol>
           <p class="small"><em>If you have ~5 minutes left:</em> sketch the automation–steering map (which steps
             the tool ran, where you steered) and decide whether oversight was interwoven or staged.</p>
@@ -104,7 +104,7 @@
               <li><strong>Convenor</strong>: keeps the real problem and the clock in focus.</li>
               <li><strong>Driver</strong>: operates the tools and owns the tool choices.</li>
               <li><strong>Steward</strong>: guards the red lines (use the data check below).</li>
-              <li><strong>Reporter</strong>: owns the note, the submission and the 45-second insight.</li>
+              <li><strong>Reporter</strong>: owns the note, the submission and the spoken insight.</li>
               <li><strong>Sceptic</strong>: tries to break the output and curates the caught errors.</li>
             </ul>
             <p class="small muted">The roles are about where attention goes, so rotate the keyboard freely. An experienced group can ignore them.</p>
@@ -128,13 +128,13 @@
       <div id="reopenedNotice" class="notice warn" hidden></div>
 
       <!-- Approved confirmation -->
-      <div id="approvedNotice" class="notice ok" hidden>
+      <div id="approvedNotice" class="notice ok" role="status" hidden>
         This submission has been approved. It now appears on the public
         dashboard. The form below is read-only.
       </div>
 
       <!-- Submitted (awaiting review) -->
-      <div id="submittedNotice" class="notice info" hidden>
+      <div id="submittedNotice" class="notice info" role="status" hidden>
         Your work has been submitted for review, and the form is read-only while the facilitator looks at it.
         If it is reopened, you will be able to edit it again here.
       </div>
@@ -196,7 +196,7 @@
         <textarea id="fieldUse" name="fieldUse"></textarea>
 
         <fieldset id="surveyFields" class="survey">
-          <legend>Three quick reflections <span class="muted small">(optional; these power the live dashboard)</span></legend>
+          <legend>Three quick reflections <span class="muted small">(optional, and they feed the session dashboard shared in the follow-up)</span></legend>
 
           <div class="survey-q">
             <p class="survey-label">Compared with good practice, is your field currently using generative AI for this task…</p>
