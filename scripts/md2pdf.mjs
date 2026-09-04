@@ -20,20 +20,21 @@ const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
 const CSS = `
 @page { size: A4; margin: 18mm 16mm; }
 body { font: 11pt/1.5 "Segoe UI", Arial, system-ui, sans-serif; color: #1c2024; }
-h1, h2, h3 { color: #0f6e6e; line-height: 1.2; break-after: avoid; }
+h1, h2, h3, h4 { color: #000; line-height: 1.2; break-after: avoid; break-inside: avoid; }
+p, li, blockquote { orphans: 2; widows: 2; }
 h1 { font-size: 20pt; border-bottom: 2px solid #d6dbe0; padding-bottom: .2em; }
 h2 { font-size: 14pt; margin-top: 1.3em; border-bottom: 1px solid #e6eaee; padding-bottom: .12em; }
 h3 { font-size: 12pt; color: #1c2024; }
-a { color: #0f6e6e; text-decoration: none; }
-strong { color: #0f6e6e; }
+a { color: #1c2024; text-decoration: underline; }
+strong { color: #000; }
 em { color: #5b6470; }
-code { background: #eef2f2; border-radius: 3px; padding: .05em .3em; font-size: .9em; }
-pre { background: #f6f8f8; border: 1px solid #e6eaee; border-radius: 6px; padding: .7em .9em; font-size: 9pt; break-inside: avoid; white-space: pre-wrap; }
+code { background: #efefef; border-radius: 3px; padding: .05em .3em; font-size: .9em; }
+pre { background: #f4f4f4; border: 1px solid #d0d0d0; border-radius: 6px; padding: .7em .9em; font-size: 9pt; white-space: pre-wrap; }
 pre code { background: none; padding: 0; }
 table { border-collapse: collapse; width: 100%; font-size: 9.5pt; margin: .6em 0; break-inside: avoid; }
 th, td { border: 1px solid #d6dbe0; padding: .3em .5em; text-align: left; vertical-align: top; }
-th { background: #eef3f3; }
-blockquote { border-left: 3px solid #0f6e6e; margin: .8em 0; padding: .2em .9em; color: #5b6470; break-inside: avoid; }
+th { background: #ececec; }
+blockquote { border-left: 3px solid #6b7278; margin: .8em 0; padding: .2em .9em; color: #5b6470; break-inside: avoid; }
 hr { border: none; border-top: 1px solid #d6dbe0; margin: 1.2em 0; }
 ul, ol { padding-left: 1.3em; }
 li { margin: .15em 0; }
@@ -47,15 +48,16 @@ li { margin: .15em 0; }
 const compactCss = (pt = 9.2) => `
 @page { size: A4; margin: 9mm 11mm; }
 body { font: ${pt}pt/1.2 "Segoe UI", Arial, system-ui, sans-serif; color: #1c2024; }
-h1, h2, h3 { color: #0f6e6e; line-height: 1.1; break-after: avoid; }
+h1, h2, h3, h4 { color: #000; line-height: 1.1; break-after: avoid; break-inside: avoid; }
+p, li { orphans: 2; widows: 2; }
 h1 { font-size: 1.63em; border-bottom: 2px solid #d6dbe0; padding-bottom: .08em; margin: 0 0 .18em; }
 h2 { font-size: 1.2em; margin: .5em 0 .1em; border-bottom: 1px solid #e6eaee; padding-bottom: .06em; }
 h3 { font-size: 1.04em; color: #1c2024; margin: .2em 0 .06em; }
 p { margin: .18em 0; }
-a { color: #0f6e6e; text-decoration: none; }
-strong { color: #0f6e6e; }
+a { color: #1c2024; text-decoration: underline; }
+strong { color: #000; }
 em { color: #5b6470; }
-code { background: #eef2f2; border-radius: 3px; padding: .03em .25em; font-size: .9em; }
+code { background: #efefef; border-radius: 3px; padding: .03em .25em; font-size: .9em; }
 ul, ol { list-style: none; padding-left: 0; margin: .14em 0; }
 li { position: relative; padding-left: 1.4em; margin: .02em 0; }
 ul > li::before { content: "•"; position: absolute; left: 0.55em; color: #5b6470; }

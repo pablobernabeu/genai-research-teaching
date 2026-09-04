@@ -65,10 +65,10 @@ body { margin: 0; font-family: "Segoe UI", Arial, system-ui, sans-serif; color: 
         display: flex; flex-direction: column; justify-content: center; align-items: center;
         text-align: center; break-after: page; }
 .sign:last-child { break-after: auto; }
-.track { font-size: 150pt; font-weight: 700; color: #0f6e6e; line-height: 1; }
+.track { font-size: 150pt; font-weight: 700; color: #000; line-height: 1; }
 .track-label { font-size: 16pt; letter-spacing: .18em; text-transform: uppercase; color: #5b6470; margin-bottom: 6mm; }
 .seed { font-size: 46pt; font-weight: 600; line-height: 1.15; margin-top: 8mm; max-width: 250mm; }
-.num { font-size: 400pt; font-weight: 700; color: #0f6e6e; line-height: .9; }
+.num { font-size: 400pt; font-weight: 700; color: #000; line-height: .9; }
 .num-label { font-size: 20pt; letter-spacing: .18em; text-transform: uppercase; color: #5b6470; }
 `;
 

@@ -45,9 +45,9 @@ the signal, so take one of the routes below before you paste anything.
 
 ---
 
-## Green, amber and red at a glance
+## At a glance: fine, careful, never
 
-| 🟢 Generally fine | 🟠 Pause and treat with care | 🔴 Do not paste into a free tool |
+| ✓ Generally fine | ▲ Pause and treat with care | ✗ Do not paste into a free tool |
 |---|---|---|
 | Already-public text (your published abstract) | Lightly disguised real material | Personal data of identifiable people |
 | Fully synthetic or fabricated examples | Aggregated or partially de-identified data | Special category, criminal offence or children's data |
