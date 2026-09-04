@@ -30,8 +30,10 @@ risk sits in the first ten minutes.
 - [ ] [Group pack booklet](../handouts/group-pack.pdf), one per table: cover, role
       cards, data decision aid, rubric, worked examples and starter prompts.
 - [ ] [Group one-pager](../handouts/group-one-pager.pdf), one or two per table.
-- [ ] Ten seed-idea signs, each with its track letter (`project_tracks.md`, the quick
-      group seeds), printed large and posted around the room before 12:00.
+- [ ] [Seed-idea signs](../handouts/seed-signs.pdf), ten of them, one per page in A4
+      landscape, printed and posted around the room before 12:00. Each carries its
+      track letter, and they are generated from the quick group seeds in
+      `project_tracks.md`.
 - [ ] Spare pens and paper (HackMD or paper is the fallback if a group cannot use the app).
 
 ## Facilitator kit
