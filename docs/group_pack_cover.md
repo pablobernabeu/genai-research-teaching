@@ -39,8 +39,9 @@ the others join with the code it shows. Fill in the essentials as you go, and su
 before the lightning round at 13:33 where you can, and during it at the latest. There is
 no account and nothing to install.
 
-> One note, one surface. Use the app by default. If you have no device or it will not
-> connect, HackMD (hackmd.io) is the fallback, with the same headings. Do not use both.
+> Keep to one note on one surface, and use the app by default. If you have no device
+> or it will not connect, HackMD (hackmd.io) is the fallback, with the same headings,
+> so do not use both.
 
 ## One reflection for the wrap-up
 

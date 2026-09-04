@@ -1,6 +1,6 @@
 # Evaluation rubric and note template
 
-This is the group's workbench for the day. By default, you capture your work in the
+This is where the group records its work through the day. By default, you capture your work in the
 workshop app (genai-rt.web.app). Its short form covers the essentials: the problem, the
 artefact, the errors you caught, the automation–steering map, the oversight model, your
 insight and a field reflection. Nothing needs setting up beyond the passcode. The
@@ -9,10 +9,10 @@ fuller template below adds the five rubric dimensions, each scored from 1 to 5
 societal reflection. It is the note for the HackMD or paper fallback, and for a group
 that wants to record its scores and reflection after submitting in the app.
 
-The rubric is a thinking tool and a shared record, and once it is archived it forms
+The rubric is a thinking tool and a shared record, and once it is archived, it forms
 part of the open account of what this cohort learned.
 
-> A note on the short format. The build window in Part 2 is about 15 minutes. Get the
+> The format is deliberately short, because the build window in Part 2 is about 15 minutes. Get the
 > core three first: the artefact (your tool run on your problem), one caught error and
 > one insight for the lightning round. If you have about five minutes left, add the
 > automation–steering map and say whether your oversight was interwoven or staged. The
@@ -44,7 +44,7 @@ part of the open account of what this cohort learned.
 > and the facilitator can transcribe one note into the archive afterwards.
 
 After the session, the facilitator exports every note whose group opted in to sharing,
-removes anything that should not be public, and commits it under `submissions/`.
+removes anything that should not be public and commits it under `submissions/`.
 
 ---
 

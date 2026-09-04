@@ -44,7 +44,7 @@ in-room polling, not for an asynchronous pre-read. Put the link in the
 ## Paste-ready for Microsoft Forms (auto-import)
 
 The same six questions, laid out the way Forms' Import questions feature expects:
-numbered questions, lettered options each on their own line, and open text where there
+numbered questions, lettered options each on their own line and open text where there
 are no options. Paste the block below into the import box, then check each question
 (Forms can mis-detect a type), set every question to not required (the poll is
 optional) and switch on the Anyone can respond setting described above. Keep this block

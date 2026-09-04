@@ -1,6 +1,6 @@
 # Pre-workshop briefing email
 
-> Send five to seven days ahead, as plain text or light HTML. Replace every bracketed placeholder. Keep it short, since the aim is to lower nerves and set expectations without pre-teaching. The paragraphs are single continuous lines, so the body pastes cleanly into an email client.
+> Send five to seven days ahead, as plain text or light HTML, and replace every bracketed placeholder. Keep it short, since the aim is to lower nerves and set expectations without pre-teaching. The paragraphs are single continuous lines, so the body pastes cleanly into an email client.
 
 ---
 
@@ -12,14 +12,14 @@ Thank you for signing up to Generative AI in research and teaching on 9 Septembe
 
 Generative AI is the newest in a long line of tools we have always used to extend what we can do, from mental arithmetic to the calculator and from pen and paper to the computer. This session offers a deeper insight into the technology itself, and a working understanding of it outlasts any one tool. We will do two things at once: put these tools to work and learn to read them well, because the real skill is knowing where they help and where your judgement leads. Your expertise is what makes them valuable. Fluent and confident as they are, they are not always right, and you are well placed to tell the difference. We will also open up the wider questions they raise. How does our thinking shift when the tool shares the writing? Does AI narrow or widen the disparities that come with a second language, uneven support, career stage or background? And what, in the end, do we choose to disclose?
 
-You do not need to prepare anything, because in Part 2 your group can work from a ready example we provide for each track. The session is more rewarding on a real problem, though. If you have a recurring one from your research or teaching, come with it in mind. It might be a methods section or an assessment to stress-test, an admin burden to lighten, a finding or concept to make accessible, or a dataset to visualise. Your group works on just one problem, so treat anything you bring as a candidate it might take up and not as a commitment. Whatever you bring must be non-confidential, or something you can anonymise first, so please do not bring personal data, students' marks or references, unpublished participant data, confidential grant or peer-review material, or anything under embargo.
+You do not need to prepare anything, because in Part 2 your group can work from a ready example we provide for each track. The session is more rewarding on a real problem, though. If you have a recurring one from your research or teaching, come with it in mind. It might be a methods section or an assessment to stress-test, an admin burden to lighten, a finding or concept to make accessible, or a dataset to visualise. Your group works on just one problem, so treat anything you bring as a candidate it might take up, with no commitment on your part. Whatever you bring must be non-confidential, or something you can anonymise first, so please do not bring personal data, students' marks or references, unpublished participant data, confidential grant or peer-review material, or anything under embargo.
 
 In Part 2, you will work in groups of five and write up your group's note in a simple browser app (genai-rt.web.app). There is nothing to install and no account to create: your group names itself, enters a passcode I read out on the day, fills in its note and submits it for me to review. One device between the five of you is enough, and anyone who would rather follow on their own joins with the group name and the six-character code the app shows. If a group would rather not use the app, HackMD, a free browser-based notepad, does the same job, and paper works too. Afterwards, with each group's consent, I tidy the approved notes into an open, public archive of the day.
 
 What to bring:
 
 - A fully charged phone. Everything runs in a browser and works on a phone, and a laptop is welcome if you would rather type on one. The room has power and Wi-Fi throughout.
-- Optionally, a real problem to work on (non-confidential; see above).
+- Optionally, a real problem to work on (non-confidential, as set out above).
 - Optionally, a device already signed in to a free chat assistant (ChatGPT, Claude, Gemini or Copilot). One between the five of you is plenty, and if nobody has one, we will work around it instead of spending the session signing up.
 - Curiosity and scepticism, both of which are welcome.
 
@@ -29,7 +29,7 @@ On the shift itself, writing and programming are moving up a level of abstractio
 
 No view here is the last word, because the technology moves too fast for that. Please bring your own critical, informed perspective to our shared tables.
 
-One last optional thing, which takes about 60 seconds. An anonymous warm-up poll helps me pitch the session to the room: [POLL URL].
+An anonymous warm-up poll, which is optional and takes about 60 seconds, helps me pitch the session to the room: [POLL URL].
 
 One thing is worth saying about data. These are free, third-party tools whose free tiers may reuse what you type. Treat anything you paste as potentially non-private. You remain responsible for compliance with your own institutional policy, the UK GDPR and research ethics. We will return to this on the day, with a one-page decision aid to help.
 

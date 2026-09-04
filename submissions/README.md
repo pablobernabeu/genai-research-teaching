@@ -25,12 +25,12 @@ consented submissions in the workshop app, with HackMD or paper notes as the fal
    file named `YYYY-MM-DD_genai-rt-submissions.md`, dated with the day you export,
    holding every approved group that consented to public sharing. If no approved group
    has consented, the button does nothing and says so.
-2. Check it before committing. Remove anything that should not be public: personal
-   data, anything a group pasted in error, real identifiers. When in doubt, redact.
-   This archive is public.
+2. Check it before committing, and remove anything that should not be public: personal
+   data, anything a group pasted in error, real identifiers. When in doubt, redact,
+   because this archive is public.
 3. Commit it as a dated cohort file, renamed to the workshop date if you exported
-   later, or split it into one file per group using the naming convention below, with
-   a clear message such as `Archive workshop submissions, 9 September 2026`.
+   later, or split it into one file per group using the naming convention below. Give
+   the commit a clear message such as `Archive workshop submissions, 9 September 2026`.
 4. For HackMD-fallback groups, open the note, export it to Markdown (HackMD's ··· menu
    under Download and Markdown, or append `/download` to a published note's URL),
    check it and add it alongside the rest. Archive a fallback note only if the group
@@ -43,10 +43,10 @@ shape first, and the fuller fallback shape after it.
 
 `npm run archive:pr` (that is, `node scripts/archive-pr.mjs`) reads the approved,
 consented submissions straight from the live project and opens a pull request adding
-the dated archive file, using your own `gh` authentication, so that no write token ever
-lives in the app. Run `npm run archive:pr -- --dry-run` to write the file and preview it
+the dated archive file. It uses your own `gh` authentication, so that no write token
+ever lives in the app. Run `npm run archive:pr -- --dry-run` to write the file and preview it
 without committing or opening a pull request. Set `GENAI_RT_PROJECT` and `GENAI_RT_API_KEY` first (the
-Firebase project id and web API key, which are not secrets; see
+Firebase project id and web API key, which are not secrets, and which you will find in
 `firebase-app/public/firebase-config.js` or the console). Only groups that ticked the
 optional consent box are included.
 
@@ -76,8 +76,8 @@ Examples:
 
 The point of the archive is the reasoning: the tracks chosen, the caught errors, the
 automation–steering map and oversight model, the field reflection and the
-human-in-the-loop safeguards, plus rubric scores and the societal reflection where a
-fallback note supplies them. Read across a cohort and you have a frank map of where
+human-in-the-loop safeguards. Rubric scores and the societal reflection are preserved
+as well, where a fallback note supplies them. Read across a cohort and you have a frank map of where
 these tools helped real researchers and where a human had to stay in charge.
 
 ---

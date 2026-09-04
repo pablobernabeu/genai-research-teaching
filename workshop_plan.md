@@ -13,9 +13,7 @@ networking lunch) for university researchers and educators.
 ## 1. The stance
 
 The guiding posture is critical, evidence-oriented and balanced, and the aim is
-discernment, not enthusiasm. Participants are accomplished researchers. Treat them as
-expert peers who happen to be new to a tool, and avoid anything that resembles a
-sales pitch.
+discernment, not enthusiasm. Participants are accomplished researchers, so treat them as expert peers who happen to be new to a tool, and avoid anything that resembles a sales pitch.
 
 The session aims at a deeper insight into the technology, and it avoids technical
 instruction on any one tool. Everyone is welcome, from those who have never
@@ -45,7 +43,7 @@ intervention: we build friction back in and observe what it reveals.
 
 ## 2. Learning objectives
 
-By the end of the session a participant should be able to:
+By the end of the session, a participant should be able to:
 
 1. Locate a given task on the tool spectrum (off-the-shelf, no-code or IDE/API
    level) and justify the choice against control, data exposure and effort.
@@ -85,10 +83,7 @@ the experience and the second examines it. The format is also senior-appropriate
 short framing, quick application and room to run, with the facilitator circulating
 with questions instead of answers.
 
-Inclusion is built in from the start, because Part 1 gives newcomers the practical grounding (what these
-tools are, how to get one, how to ask) and gives everyone the critical lens, then
-previews the rubric, so that a mixed-ability group enters Part 2 together and no one
-meets the task cold. Finally, the design is reproducible and open. Every group's
+Inclusion is built in from the start. Part 1 gives newcomers the practical grounding (what these tools are, how to get one, how to ask) and gives everyone the critical lens, and it then previews the rubric. A mixed-ability group therefore enters Part 2 together, and no one meets the task cold. Finally, the design is reproducible and open. Every group's
 reasoning is written into a shared note and archived publicly, so the cohort's
 collective judgement outlasts the session.
 
@@ -193,17 +188,17 @@ Your job is to circulate, and you present very little. Keep the 'Go' slide (25) 
 Part 2 timeline (slide 20) displayed and use the prompt bank in section 6.
 
 - 13:15–13:18, settle in. Groups re-find each other after lunch, open the app
-  (genai-rt.web.app; read out the session passcode, with HackMD as the fallback) and
-  agree their one problem in about 60 seconds, either the seed they formed around or a
-  real one a member brought. Re-state the red lines. Slides 21 to 24 go past at pace as
+  (genai-rt.web.app, with HackMD as the fallback) and agree their one problem in about
+  60 seconds, either the seed they formed around or a real one a member brought. Read
+  out the session passcode and re-state the red lines. Slides 21 to 24 go past at pace as
   you do this: point at them without presenting them, because every word on them is
   in the group pack and the one-pager. If the room is slow to settle, skip them and
   point to the one-pager instead.
 - 13:18–13:33, apply it. Let them work. Intervene only to stop sensitive data going
-  into a tool, to unstick a group that cannot start, or to drop a single provocation.
+  into a tool, to unstick a group that cannot start or to drop a single provocation.
   Around 13:26, run the brief pivot (section 5.4). Note good caught errors for the
   synthesis. Where a group has time, encourage it to sketch its automation–steering
-  map and to decide whether oversight is interwoven or staged; where it does not, one
+  map and to decide whether oversight is interwoven or staged. Where it does not, one
   caught error and one insight are enough.
 - 13:33–13:40, lightning round. See section 5.5.
 - 13:40–13:45, close. See section 5.6.
@@ -222,15 +217,15 @@ roughly:
 > you held the data red lines? Now switch mode, from building to interrogating. Lock in
 > your map and your one insight.'
 
-This is the turning point: groups that have been enjoying the tool now examine it.
+Groups that have been enjoying the tool now examine it.
 
 ### 5.5 Lightning round · 13:33–13:40 · slide 27
 
 A facilitator-timed round of short spoken contributions, without presentations.
 
 - One 45-second spoken insight per group, with no slides. The Reporter picks the
-  strongest of three: the most significant limitation you found; the most important
-  human-in-the-loop safeguard you built in; or one honest thing this exposed about how
+  strongest of three: the most significant limitation you found, the most important
+  human-in-the-loop safeguard you built in or one honest thing this exposed about how
   your field is over- or under-using AI for this task. The third option is where the
   field-level reflection gets voiced from the work just done. Offer it, and never force
   it.
@@ -238,7 +233,7 @@ A facilitator-timed round of short spoken contributions, without presentations.
 - Timing, and be honest with yourself about it. Seven minutes is 420 seconds, and a
   handover between groups costs five to ten seconds even when it runs well. Nine groups
   at 45 seconds each leaves nothing for those handovers, and ten groups do not fit at
-  all. So with eight groups keep to 45 seconds, with nine or ten announce 35 seconds at
+  all. So with eight groups, keep to 45 seconds. With nine or ten, announce 35 seconds at
   the start of the round, and if you are still behind after six groups, take a one-line
   contribution from the rest. Every group's written note enters the archive either way,
   so a group that gives one line has still been heard.
@@ -257,8 +252,7 @@ loop and the bigger questions. Give the take-home actions (slide 31), point to t
 
 ## 6. Circulating prompt bank
 
-Carry these with you. They are tuned to the sub-phases and to the five rubric dimensions. Ask
-one, listen and move on.
+Carry these with you, because they are tuned to the sub-phases and to the five rubric dimensions, and ask one, listen and move on.
 
 Project Definition
 - 'What is the actual problem here, in one sentence a colleague would recognise?'
@@ -365,7 +359,7 @@ Cognition, critical thinking and friction
   *Generative AI without guardrails can harm learning: evidence from high school
   mathematics.* Proceedings of the National Academy of Sciences, 122(26), e2422633122.
   <https://doi.org/10.1073/pnas.2422633122> Unguarded AI lifts practice performance but
-  harms later unaided performance; a guarded version that gives hints without answers
+  harms later unaided performance. A guarded version that gives hints without answers
   largely removes the harm.
 
 Working at a higher level: ideation and steering

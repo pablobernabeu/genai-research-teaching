@@ -1,9 +1,7 @@
 # Project tracks
 
 Four tracks, each a different test of where generative AI helps a researcher and
-where it must not be trusted. Choose one per group. A spread across the room makes the
-lightning round richer, so if one seed draws a crowd and another none, the facilitator
-will say so as people move.
+where it must not be trusted. Choose one track per group, bearing in mind that a spread across the room makes the lightning round richer. If one seed draws a crowd and another none, the facilitator will say so as people move.
 
 Each track can be entered in the fifteen-minute build window of Part 2 (see the
 [facilitator guide](workshop_plan.md)), and none can be finished in it, which is
@@ -14,17 +12,16 @@ in Track D, audit one of your audience versions in full rather than all of them.
 The deliverable is a clear account of what helped, what failed and where a human
 stayed in charge.
 
-> A note on time. Keep the artefact small. Track C (rapid prototyping) is a deliberate
-> stretch: in fifteen minutes you will not finish and fully verify a working artefact,
-> and that is fine, because the point is the verification habit (what you checked and
-> what you refused to trust) and not a finished build. If a track is running long, drop
+> Time is short, so keep the artefact small. Track C (rapid prototyping) is a deliberate
+> stretch: in fifteen minutes, you will not finish and fully verify a working artefact,
+> and that is fine, because the verification habit, which is what you checked and
+> what you refused to trust, matters more here than a finished build. If a track is running long, drop
 > the map before the insight.
 
 ## Quick group seeds (for fast formation)
 
 To form groups fast at the end of Part 1, people gather at a concrete idea, and the
-letter beside it is its track. Aim for fives. Your group then takes one problem into
-Part 2, either this seed or a real one a member brings.
+letter beside it is its track. Aim for fives, and your group then takes one problem into Part 2, either this seed or a real one a member brings.
 
 - Stress-test a study design (A) · Critique an assessment or marking rubric (A)
 - Turn messy notes into owned actions (B) · Tame an email or admin backlog (B) · Plan a module, project or paper (B)
@@ -68,7 +65,7 @@ Part 2, either this seed or a real one a member brings.
   listed under each track, is for the HackMD or paper fallback and for a group that
   wants to record its scores and reflection. No GitHub account is needed.
 
-A note on free tools and your data. Free consumer tiers commonly reuse inputs to
+It is worth pausing over what free tools do with your data. Free consumer tiers commonly reuse inputs to
 improve models, and settings change without notice. Treat anything you paste as
 potentially non-private. This kit names tools as examples on a spectrum and endorses
 none of them, so check each tool's current terms yourself.
@@ -144,7 +141,7 @@ no-code).
 
 ### Rationale
 A great deal of research work is executive function: planning, sequencing, triaging,
-summarising, and turning a sprawling inbox or a messy set of notes into ordered next
+summarising and turning a sprawling inbox or a messy set of notes into ordered next
 actions. Used well, AI can lower that load and widen access, which is particularly
 valuable for neurodivergent colleagues or anyone under heavy administrative strain.
 Used carelessly, the same scaffolding de-skills, creates dependency or advantages

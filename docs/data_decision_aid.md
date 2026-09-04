@@ -28,14 +28,14 @@ notice. Treat anything you type as potentially non-private and non-retractable.
    ethnic origin, political opinions, religious or philosophical beliefs, trade union
    membership, genetic data, biometric data used to identify someone, health, sex life
    or sexual orientation. Criminal offence data, under Article 10, carries similar
-   weight. If yes, stop. A free consumer tool is the wrong place. Anonymise beyond
-   recognition, synthesise or abstain. Children's data and commercially sensitive
+   weight. If yes, stop there, because a free consumer tool is the wrong place, and your
+   options are to anonymise beyond recognition, to synthesise or to abstain. Children's data and commercially sensitive
    material are not special category, but both carry extra duties, so treat them the
    same way here.
 3. Is it confidential, unpublished or restricted? This covers unpublished data or
    manuscripts, grant drafts, peer-review files, material covered by a non-disclosure
    agreement, anything under embargo and anything shared without co-author or
-   participant consent. If yes, stop. Confidentiality and embargoes are not yours
+   participant consent. If yes, stop there, because confidentiality and embargoes are not yours
    alone to waive.
 4. Do you hold the rights? Is the text or image yours to share, or is it someone
    else's intellectual property? If unsure, treat it as restricted.

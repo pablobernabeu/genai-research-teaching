@@ -22,7 +22,7 @@ Here is a small, voluntary responsible-use commitment, and if it is useful, adop
 - I will record the friction I notice, and let it tell me where I am needed.
 - I will stay accountable for the output: the tool proposes, and I dispose.
 
-One favour, if you have a moment: a two-minute, anonymous feedback form would help me improve the next run: [FEEDBACK URL].
+If you have a moment, a two-minute, anonymous feedback form would help me improve the next run: [FEEDBACK URL].
 
 The further reading from the close is in the repository's facilitator guide (`workshop_plan.md`) if you would like to go deeper. It includes the Russell Group principles, the ERA living guidelines, the ICO guidance and the studies on AI and critical thinking.
 

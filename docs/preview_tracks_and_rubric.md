@@ -13,8 +13,7 @@ experience assumed.
 
 ## The four tracks
 
-Each track is a different test of where generative AI helps a researcher and where it
-must not be trusted. A group picks one.
+Each track is a different test of where generative AI helps a researcher and where it must not be trusted, and a group picks one.
 
 - A · Methodological Blind-Spot Detector. Turn the tool into a sceptical reviewer of
   your own design, then do the harder step: verify which of its critiques are real,

@@ -93,7 +93,7 @@ headings, and the facilitator keeps them as they are.
 - Disciplinary norms: is our field under- or over-using generative AI for this kind of task, with what consequences and how we would redress it over the next two years: …
 
 ### Lightning-round insight (45 seconds, no slides)
-> The most significant limitation, the most important human-in-the-loop safeguard, or
+> The most significant limitation, the most important human-in-the-loop safeguard or
 > one honest thing this exposed about how our field is over- or under-using AI for this
 > task: …
 

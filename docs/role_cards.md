@@ -1,12 +1,12 @@
 # Group role cards (optional prompt sheet)
 
 Five angles to keep an eye on in a group of five. Take one each, or divide them
-however suits you. They are about where attention goes, and never about who owns the
-work, so rotate the keyboard freely. Each maps to one rubric dimension, so make sure
+however suits you. They mark where attention goes, so treat the
+work as shared and rotate the keyboard freely. Each maps to one rubric dimension, so make sure
 none is left unwatched. An experienced group can ignore these entirely, provided that
 the building does not crowd out the interrogating.
 
-> Print tip. Optional. Print one set per group if it helps, and cut along the rules.
+> Printing is optional, so print one set per group if it helps, and cut along the rules.
 > At four people, the Convenor doubles as Steward. At six, add a second Sceptic, since
 > more red-teaming does no harm.
 
@@ -64,10 +64,10 @@ The mapping (canonical):
 
 **Your angle:** the record and the insight.
 
-- **Do:** keep the group's note in the app (or in the rubric template on the fallback); judge whether the
-  approach survives the free tier and scale; submit the note for review before the
-  lightning round at 13:33 where you can, and during it at the latest; give the
-  45-second insight at 13:33 (no slides).
+- **Do:** keep the group's note in the app, or in the rubric template on the fallback.
+  Judge whether the approach survives the free tier and scale. Submit the note for
+  review before the lightning round at 13:33 where you can, and during it at the
+  latest, then give the 45-second insight at 13:33, with no slides.
 - **At the pivot (about 13:26):** make sure the note is being filled in as you go, and
   not left to the end.
 - **Ask often:** 'Does this still work next month, for fifty people, for free?'

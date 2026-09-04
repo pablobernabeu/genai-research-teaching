@@ -1,8 +1,8 @@
 # App reset checklist for the day
 
-*Operational only. The [facilitator guide](../workshop_plan.md) holds the rationale, the [run sheet](facilitator_run_sheet.md) the timeline and the [app README](../firebase-app/README.md) the full deployment steps.*
+*This checklist is operational only. The [facilitator guide](../workshop_plan.md) holds the rationale, the [run sheet](facilitator_run_sheet.md) the timeline and the [app README](../firebase-app/README.md) the full deployment steps.*
 
-A short reset that gets the live app into a clean, ready state for Westminster on 9 September 2026. The app (genai-rt.web.app) is the default capture surface, and HackMD or paper is the fallback.
+A short reset that gets the live app into a clean, ready state for Westminster on 9 September 2026. The app (genai-rt.web.app) is where groups capture their work by default, and HackMD or paper is the fallback.
 
 ## Before Part 1 (about 11:52, with a re-check during lunch)
 
@@ -17,9 +17,9 @@ A short reset that gets the live app into a clean, ready state for Westminster o
 
 ## At the start of Part 2
 
-- [ ] Read out the passcode and the URL (genai-rt.web.app), and show the QR slide. 'One device per group creates, then reads out its group name and the six-character code; everyone else types both and leaves the passcode blank.'
+- [ ] Read out the passcode and the URL (genai-rt.web.app), and show the QR slide. 'One device per group creates, then reads out its group name and the six-character code. Everyone else types both and leaves the passcode blank.'
 - [ ] Remind groups to choose a group name that does not identify anyone (for example 'Otters' or 'Team Kelp'), which is the one name they type on the login form.
-- [ ] Press Start countdown at 13:18, when the 'Fifteen minutes, starting now' slide goes up, and not at the 13:15 settle-in. The corner chip is advisory: a calm countdown that never locks their form. Once it expires, it reads 'Time's up' until you reset it.
+- [ ] Press Start countdown at 13:18, when the 'Fifteen minutes, starting now' slide goes up, and leave it unstarted through the 13:15 settle-in. The corner chip is advisory: a calm countdown that never locks their form. Once it expires, it reads 'Time's up' until you reset it.
 
 ## During
 
@@ -33,7 +33,7 @@ A short reset that gets the live app into a clean, ready state for Westminster o
 
 - [ ] Export approved (Markdown) from the dashboard is the default path. It exports only approved and consented groups and downloads `YYYY-MM-DD_genai-rt-submissions.md`, dated with the day you export.
 - [ ] Check it before committing (names and content), rename it to the workshop date if you exported later, then commit under `submissions/`.
-- [ ] Alternatively, from your own machine if pre-configured, run `npm run archive:pr` (it needs `GENAI_RT_PROJECT` and `GENAI_RT_API_KEY` set and `gh` already logged in; run `npm run archive:pr -- --dry-run` to preview). If either is not ready, use the Markdown export above.
+- [ ] Alternatively, from your own machine if pre-configured, run `npm run archive:pr` (it needs `GENAI_RT_PROJECT` and `GENAI_RT_API_KEY` set and `gh` already logged in). To preview, run `npm run archive:pr -- --dry-run`. If either is not ready, use the Markdown export above.
 
 ## Troubleshooting
 

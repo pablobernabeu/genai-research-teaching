@@ -65,7 +65,7 @@ data.
 
 ## Licence of contributions
 
-By contributing you agree that your contribution is licensed under the same terms as
+By contributing, you agree that your contribution is licensed under the same terms as
 the relevant part of the repository: CC BY 4.0 for materials, and MIT for the build
 tooling and the app (see `LICENSE` and `LICENSE-CODE`).
 

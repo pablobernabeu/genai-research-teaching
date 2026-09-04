@@ -31,9 +31,9 @@ research or teaching, capturing it in the workshop app
 ([genai-rt.web.app](https://genai-rt.web.app)). Each group assesses its work against a
 five-dimension rubric, which it scores when it tidies the note afterwards, and a museum
 of caught errors. It then gives a 45-second spoken
-insight, choosing one of three: the most significant limitation it found, the most
-important human-in-the-loop safeguard it built in, or one honest observation about how
-its field is over- or under-using AI for the task.
+insight, choosing one of three options. These are the most significant limitation it
+found, the most important human-in-the-loop safeguard it built in or one honest
+observation about how its field is over- or under-using AI for the task.
 
 The session has five aims: to enjoy it, to reflect critically, to learn, to collaborate
 and to create.
@@ -128,7 +128,7 @@ A `Makefile` mirrors these for Unix users: `make`, `make html`, `make pdf`,
 scripts remain the primary, cross-platform interface, and `archive:pr` is theirs
 alone.
 
-> Install note. marp-cli pulls in `speech-rule-engine` (via MathJax), whose npm
+> When you install, note that marp-cli pulls in `speech-rule-engine` (via MathJax), whose npm
 > registry metadata intermittently fails to parse on the default registry. If
 > `npm install` errors with 'Bad control character in string literal in JSON',
 > install once via a mirror (`npm install --registry=https://registry.npmmirror.com`)

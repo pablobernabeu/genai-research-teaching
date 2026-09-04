@@ -7,7 +7,7 @@ labels: ["submissions"]
 
 ## HackMD fallback links
 
-The default capture surface is the app at genai-rt.web.app, where the facilitator
+By default, groups capture their work in the app at genai-rt.web.app, where the facilitator
 approves each group's submission on the dashboard. This issue is the fallback record:
 when a group cannot use the app and works in HackMD instead, the facilitator records
 its note link here.

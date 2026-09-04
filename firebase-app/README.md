@@ -6,7 +6,8 @@ submits. The facilitator vets each submission from a private dashboard and appro
 or reopens it for edits, and approved work appears on a passcode-gated session
 dashboard with live summary statistics.
 
-> This is the default capture surface for Part 2, and HackMD or paper is the fallback.
+> This is where groups capture their work in Part 2 by default, and HackMD or paper is
+> the fallback.
 > Test it end to end before the day, with real devices, the conference Wi-Fi, the
 > create, submit, approve and reopen loop, and the timer. If anything wobbles on the
 > day, groups fall back to HackMD or paper without losing work.
@@ -27,7 +28,7 @@ Firebase Hosting serves three static pages with no build step: vanilla ES module
 the Firebase v12 modular SDK and Chart.js from a CDN, which keeps the code easy to read
 and audit.
 
-Authentication is minimal. Groups and the public dashboard sign in anonymously, and the
+Authentication is minimal, in that groups and the public dashboard sign in anonymously, and the
 facilitator signs in with a Google account recognised by its verified email. All trust
 is enforced in `firestore.rules`, never in the interface. The dashboard adds a passcode
 gate on top, using the same passcode groups use, which is a privacy gate rather than a
@@ -78,8 +79,8 @@ compares against it and rejects an empty value).
 
 `config/clock` holds `{ running, durationSec, startedAt, endsAt }`, the optional session
 countdown. Any signed-in device may read it, so that groups can show a calm corner
-timer, and only the facilitator may write, and only those four fields (the rule pins
-them with `hasOnly`, so no secret can be smuggled onto a group-readable document). The
+timer. Only the facilitator may write, and only those four fields, since the rule pins
+them with `hasOnly`, so no secret can be smuggled onto a group-readable document. The
 absolute `endsAt` is the single source of truth, so every screen agrees. The chip shows
 while `running`, and once the countdown expires it reads 'Time's up' until the
 facilitator resets or stops the timer.
@@ -145,12 +146,12 @@ substitute.
   (`draft` or `reopened`). A `submitted` or `approved` group cannot gain new owners, so
   submitted or approved work cannot be overwritten. A wrong code fails closed, because it
   would change the `joinCode` field, which the rules reject.
-- The facilitator, matched by verified email (the rule also requires `email_verified`,
-  so the privileged claim cannot be self-registered), may move `status`, add a note and
-  rename a group (to fix an inappropriate or personal name), but cannot edit a group's
-  content. Renaming swaps the `groupNames` index in one transaction, and only the
+- The facilitator is matched by verified email, and the rule also requires
+  `email_verified`, so the privileged claim cannot be self-registered. The facilitator
+  may move `status`, add a note and rename a group (to fix an inappropriate or personal
+  name), but cannot edit a group's content. Renaming swaps the `groupNames` index in one transaction, and only the
   facilitator may delete a `groupNames` entry, so groups still cannot reassign names.
-- On approval the document is scrubbed: the rule requires `joinCode` and `sessionCode`
+- On approval, the document is scrubbed: the rule requires `joinCode` and `sessionCode`
   to be blanked, so the document, now readable by any signed-in device and shown on the
   passcode-gated dashboard, carries no secrets.
 - Only signed-in devices can read `approved` documents, and nothing in `draft` or
@@ -179,9 +180,10 @@ substitute.
       email-bearing provider (OIDC, SAML or Email/Password).
 - [ ] `public/firebase-config.js` holds your project's config.
 - [ ] Facilitator sign-in works in the browser you will use, with pop-ups allowed.
-      `authDomain` is the project's `*.firebaseapp.com` origin, a third party relative to
-      the Hosting domain, so the pop-up path is the reliable one and the redirect fallback
-      may not complete. Test the sign-in on the machine you will use, well before the day.
+      `authDomain` is the project's `*.firebaseapp.com` origin, which is a third party
+      relative to the Hosting domain. The pop-up path is therefore the reliable one, and
+      the redirect fallback may not complete. Test the sign-in on the machine you will
+      use, well before the day.
 - [ ] In the Firebase console Rules Playground, confirm that an anonymous user cannot
       read a `draft` it does not own, cannot approve its own document and cannot read
       another group, and that the public read returns only `approved` documents.

@@ -1,7 +1,7 @@
 # Facilitator cue cards (print-ready)
 
 The holdable subset of the [facilitator guide](../workshop_plan.md): one card per
-moment, with the line to say and the thing to watch. Cut along the rules. Times are
+moment, with the line to say and the thing to watch. Cut the cards apart along the rules. Times are
 wall-clock, and the workshop is two 30-minute parts split by lunch.
 
 ---

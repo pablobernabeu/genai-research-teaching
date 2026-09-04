@@ -1,6 +1,6 @@
 # Starter-prompt library
 
-Starting points, and never scripts. Adapt freely, replace the bracketed parts and
+Each prompt below is a starting point. Adapt freely, replace the bracketed parts and
 remember the [data decision aid](data_decision_aid.md) before you paste anything.
 
 Each track has two prompts, and the order matters. Run the first pass as it stands,
@@ -14,8 +14,8 @@ difference is your finding.
 1. Make it disagree with itself. Ask for the strongest case against its own answer.
 2. Ask it to sort its own claims. 'Mark each claim as confident, uncertain or a guess,
    and say what would change your mind.' These labels are the model's guess about
-   itself and not a measurement, and a confidently wrong claim will be labelled
-   confident. Use them only to decide what to verify first, then verify it elsewhere.
+   itself, with no measurement behind them, and a confidently wrong claim will be
+   labelled confident. Use them only to decide what to verify first, then verify it elsewhere.
 3. Demand checkable sources. 'Cite sources I can verify. If you are not sure a source
    exists, say so instead of inventing one.'
 4. Ask what it is missing. 'What would an expert say you have overlooked?'

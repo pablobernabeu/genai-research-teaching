@@ -67,8 +67,8 @@ check that the tool did not quietly invent or misattribute anything.
 #### First move
 
 Ask for a structured action list with owner, deadline and priority, plus a
-separate 'unclear or needs an owner' list. Build it as a reusable template, and not as
-a one-off.
+separate 'unclear or needs an owner' list. Build it as a reusable template your group could run again on the next set of
+notes.
 
 #### What to watch for
 
@@ -97,7 +97,7 @@ actually correct before you would ever show it to anyone.
 Ask a tool with a preview (for example, Claude artifacts or Gemini's
 Canvas) to build a small, self-contained HTML page with a labelled bar or line chart
 of these values, plus a one-sentence plain-language takeaway. Keep a verification
-log.
+log as you go.
 
 #### What to watch for
 

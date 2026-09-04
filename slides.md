@@ -70,7 +70,7 @@ In one sentence each, recall the last time an AI tool either<br/>helped you or l
 
 </div>
 
-Thirty seconds each. There is no need to perform. 'I have not really used one' is a perfectly good answer.
+Take thirty seconds each, and there is no need to perform. 'I have not really used one' is a perfectly good answer.
 
 <span class="small muted">Most of us already have a story, and it usually turns on a moment of friction.</span>
 
@@ -229,7 +229,7 @@ Take a real task, use a tool on it, then examine the result closely. Part 1 prov
 
 ## Form your groups now
 
-Groups of five. Move to the idea you would most like to try. The letter beside it is your track.
+Please form groups of five, and move to the idea you would most like to try. The letter beside it is your track.
 
 <div class="columns">
 <div>
@@ -325,7 +325,7 @@ Your pack rates your work on five dimensions, from 1 (Nascent) through 3 (Develo
 
 ## Working on a real problem
 
-Use your group's one problem: the seed, a member's real one or a worked example from your pack. Complete these three first. If that is all you manage, you have done the task.
+Use your group's one problem: the seed, a member's real one or a worked example from your pack. Complete the three items below first, and if that is all you manage, you have done the task.
 
 1. One artefact. Run your tool and produce something real, such as a critique, a template or a translation.
 2. One or two caught errors. Moments where it was fluent but wrong. Keep them.
@@ -389,7 +389,7 @@ Thirty seconds, keyboards down, as a group.
 
 <span class="subtitle">45 seconds per group · one insight · no slides · the Reporter delivers, the facilitator keeps time</span>
 
-What was the most significant limitation, the most important human-in-the-loop safeguard, or one honest thing this exposed about how your field over- or under-uses AI?
+What was the most significant limitation, the most important human-in-the-loop safeguard or one honest thing this exposed about how your field over- or under-uses AI?
 
 ---
 
@@ -406,7 +406,7 @@ What was the most significant limitation, the most important human-in-the-loop s
 Four threads worth drawing out from the lightning round:
 
 - **Context decided.** A tool that helped on one task and was a hazard on the next.
-- **Friction as a signal.** Where the friction a group recorded marked where judgement lives.
+- **Friction as a signal.** Where the friction a group recorded marked the point at which human judgement was needed.
 - **A checkpoint named in advance.** The strongest safeguard a group built in.
 - **Where a free tier drew a hard line.** On data, scale or accountability.
 
