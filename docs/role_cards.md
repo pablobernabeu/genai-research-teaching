@@ -24,7 +24,7 @@ The mapping (canonical):
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
-## CONVENOR · *Project Definition*
+## Convenor · *Project Definition*
 
 **Your angle:** the group stays on a real problem, and on time.
 
@@ -38,7 +38,7 @@ The mapping (canonical):
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
-## DRIVER · *Technology Stack*
+## Driver · *Technology Stack*
 
 **Your angle:** running the tool, and the choices that go with it.
 
@@ -51,7 +51,7 @@ The mapping (canonical):
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
-## STEWARD · *Data Security and Ethics*
+## Steward · *Data Security and Ethics*
 
 **Your angle:** holding the red lines.
 
@@ -65,7 +65,7 @@ The mapping (canonical):
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
-## REPORTER · *Financial and Scalability*
+## Reporter · *Financial and Scalability*
 
 **Your angle:** the record, and the insight the room hears.
 
@@ -79,7 +79,7 @@ The mapping (canonical):
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
-## SCEPTIC · *Human-in-the-Loop Protocol*
+## Sceptic · *Human-in-the-Loop Protocol*
 
 **Your angle:** testing the output, and deciding where the human has to stay.
 

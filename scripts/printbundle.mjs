@@ -13,12 +13,12 @@
 // lost a leaf is obvious while collating. Needs a Chromium browser, as the other PDF
 // steps do.
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { resolve, join } from 'node:path';
-import { pathToFileURL } from 'node:url';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import MarkdownIt from 'markdown-it';
+import { findBrowser, printToPdf } from './chrome.mjs';
 
 const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
 
@@ -31,41 +31,26 @@ while (args[0] && args[0].startsWith('--')) {
   else break;
 }
 
-function findBrowser() {
-  const candidates = [
-    process.env.CHROME_PATH,
-    'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
-    'C:/Program Files/Microsoft/Edge/Application/msedge.exe',
-    'C:/Program Files/Google/Chrome/Application/chrome.exe',
-    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-    '/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser',
-  ].filter(Boolean);
-  for (const p of candidates) if (existsSync(p)) return p;
-  throw new Error('No Edge/Chrome found — set CHROME_PATH to a Chromium browser.');
-}
 const browser = findBrowser();
-const extraFlags = (process.env.CHROME_FLAGS || '').split(/\s+/).filter(Boolean);
 const tmpDir = resolve(outDir, '.bundle-tmp');
 mkdirSync(tmpDir, { recursive: true });
-
-function chromePrint(htmlPath, pdfPath) {
-  execFileSync(browser, [
-    '--headless=new', '--disable-gpu', '--no-pdf-header-footer', ...extraFlags,
-    `--print-to-pdf=${pdfPath}`, pathToFileURL(htmlPath).href,
-  ], { stdio: ['ignore', 'ignore', 'pipe'] });
-}
 
 function renderHtml(name, html) {
   const htmlPath = join(tmpDir, `${name}.html`);
   const pdfPath = join(tmpDir, `${name}.pdf`);
   writeFileSync(htmlPath, html);
-  chromePrint(htmlPath, pdfPath);
+  printToPdf(browser, htmlPath, pdfPath, name);
   return pdfPath;
 }
 
 function renderDoc(name, mdFiles) {
-  execFileSync(process.execPath, ['scripts/md2pdf.mjs', '--out', tmpDir, '--bundle', name, ...mdFiles],
-    { stdio: ['ignore', 'ignore', 'pipe'] });
+  try {
+    execFileSync(process.execPath, ['scripts/md2pdf.mjs', '--out', tmpDir, '--bundle', name, ...mdFiles],
+      { stdio: ['ignore', 'ignore', 'pipe'] });
+  } catch (err) {
+    const stderr = err.stderr ? String(err.stderr).trim().split('\n').slice(-5).join('\n') : '';
+    throw new Error(`md2pdf failed while rendering ${name}.` + (stderr ? `\n${stderr}` : ''));
+  }
   return join(tmpDir, `${name}.pdf`);
 }
 
@@ -79,38 +64,53 @@ function readCards(mdFile) {
   return chunks.filter((c) => c.startsWith('##')).map((c) => md.render(c));
 }
 
-const CUT_CSS = `
+// Each card sits in a fixed half-page slot inside a ruled frame, so a cut card looks
+// finished and the guillotine has a visual reference for a square cut. The type is set
+// far larger than a page of prose would be: these are read at arm's length across a
+// table, or held while standing, and the frame keeps the line to about seventy
+// characters at that size.
+const cutCss = (pt) => `
 @page { size: A4; margin: 0; }
-body { margin: 0; font-family: "Segoe UI", Arial, system-ui, sans-serif; color: #1c2024; }
+body { margin: 0; font-family: "Segoe UI", Arial, system-ui, sans-serif; color: #16191c;
+       hyphens: none; text-wrap: pretty; }
 .sheet { width: 210mm; height: 297mm; box-sizing: border-box; break-after: page;
          display: flex; flex-direction: column; }
 .sheet:last-child { break-after: auto; }
 /* Two equal slots, so the cut always falls at exactly half the sheet. */
-.slot { height: 148.5mm; box-sizing: border-box; padding: 11mm 14mm 7mm; overflow: hidden; position: relative; }
-.slot.top { border-bottom: 1px dashed #9aa3ab; }
-.scissors { position: absolute; left: 4mm; bottom: -3.1mm; font-size: 11pt; color: #9aa3ab; background: #fff; padding: 0 1mm; }
-.slot h2 { font-size: 15pt; color: #000; margin: 0 0 2mm; line-height: 1.15; }
-.slot h2 em { font-style: italic; color: #3a4046; font-weight: 600; }
-.slot p { margin: .9mm 0; font-size: 10pt; line-height: 1.34; }
-.slot ul { margin: 1.2mm 0; padding-left: 5mm; }
-.slot li { font-size: 10pt; line-height: 1.34; margin: .7mm 0; }
-.slot strong { color: #000; }
-.slot blockquote { margin: 1.5mm 0; padding-left: 4mm; border-left: 2px solid #6b7278; color: #5b6470; font-size: 9.5pt; }
-.tag { position: absolute; right: 14mm; bottom: 5mm; font-size: 7.5pt; color: #9aa3ab; letter-spacing: .04em; }
-.empty { color: #c3c9cf; font-size: 9pt; text-align: center; padding-top: 60mm; }
+.slot { height: 148.5mm; box-sizing: border-box; padding: 8mm 19mm; overflow: hidden; position: relative; }
+.slot.top { border-bottom: 1px dashed #7d868f; }
+.card { height: 100%; box-sizing: border-box; border: 1px solid #a9b0b7; border-radius: 2mm;
+        padding: 7mm 9mm 10mm; overflow: hidden; }
+.scissors { position: absolute; left: 4mm; bottom: -3.1mm; font-size: 11pt; color: #7d868f; background: #fff; padding: 0 1mm; }
+.card h2 { font-size: ${(pt * 1.34).toFixed(1)}pt; color: #000; margin: 0 0 3.4mm; line-height: 1.18;
+           border-bottom: 1px solid #c8ccd0; padding-bottom: 2.4mm; }
+.card h2 em { font-style: italic; color: #33393f; font-weight: 600; }
+.card p { margin: 2mm 0; font-size: ${pt}pt; line-height: 1.5; }
+.card ul { margin: 2.4mm 0 0; padding-left: 5.5mm; }
+.card li { font-size: ${pt}pt; line-height: 1.5; margin: 2.6mm 0; }
+.card strong { color: #000; }
+.card blockquote { margin: 2.4mm 0; padding-left: 4mm; border-left: 2px solid #6b7278; color: #33393f; font-size: ${(pt * 0.95).toFixed(1)}pt; }
+.tag { position: absolute; right: 19mm; bottom: 3.6mm; font-size: 8pt; color: #7d868f; letter-spacing: .04em; }
+.empty { color: #7d868f; font-size: 10.5pt; text-align: center; padding-top: 62mm; }
 `;
 
-// A slot clips what overflows it, which would lose the foot of a card silently. The
-// longest card that has fitted comfortably is around 600 characters of markdown, so
-// warn well before that becomes a problem rather than discovering it in print.
-const SLOT_CHARS = 1100;
+// A slot clips what overflows it, which would lose the foot of a card silently. At a
+// given point size the frame holds a known number of lines, so derive the budget from
+// the geometry instead of carrying a magic number, and warn well before the limit.
+function slotBudget(pt) {
+  const lineMm = pt * 0.3528 * 1.5;
+  const charsPerLine = 148 / (0.16179 * pt);
+  const bodyMm = 116.5 - pt * 0.3528 * 1.34 * 1.18 - 5.8;
+  return Math.round(charsPerLine * (bodyMm / lineMm) * 0.86);
+}
 
-function renderCutSheets(name, mdFile, label) {
+function renderCutSheets(name, mdFile, label, pt) {
   const cards = readCards(mdFile);
+  const budget = slotBudget(pt);
   cards.forEach((c, i) => {
     const chars = c.replace(/<[^>]+>/g, '').trim().length;
-    if (chars > SLOT_CHARS) {
-      console.warn(`  ! ${label} ${i + 1} is ${chars} characters and may be clipped by its half-page slot.`);
+    if (chars > budget) {
+      console.warn(`  ! ${label} ${i + 1} is ${chars} characters against a budget of ${budget} and may be clipped by its half-page slot.`);
     }
   });
   const sheets = [];
@@ -119,21 +119,25 @@ function renderCutSheets(name, mdFile, label) {
     const bottom = cards[i + 1];
     sheets.push(
       `<section class="sheet">` +
-      `<div class="slot top">${top}<span class="scissors">✂</span>` +
+      `<div class="slot top"><div class="card">${top}</div><span class="scissors">✂</span>` +
       `<span class="tag">${label} ${i + 1} of ${cards.length}</span></div>` +
-      `<div class="slot">${bottom ?? '<p class="empty">This half is deliberately blank.</p>'}` +
-      (bottom ? `<span class="tag">${label} ${i + 2} of ${cards.length}</span>` : '') +
+      (bottom
+        ? `<div class="slot"><div class="card">${bottom}</div>` +
+          `<span class="tag">${label} ${i + 2} of ${cards.length}</span>`
+        : `<div class="slot"><p class="empty">Blank. Keep it for scrap at your table.</p>`) +
       `</div></section>`
     );
   }
   const path = renderHtml(name,
     `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${name}</title>` +
-    `<style>${CUT_CSS}</style></head><body>${sheets.join('')}</body></html>`);
+    `<style>${cutCss(pt)}</style></head><body>${sheets.join('')}</body></html>`);
   return { path, count: cards.length };
 }
 
-const roleCards = renderCutSheets('cut-role-cards', 'docs/role_cards.md', 'Role card');
-const cueCards = renderCutSheets('cut-cue-cards', 'docs/cue_cards.md', 'Cue card');
+// Attendees read the role cards seated; the facilitator glances at a cue card while
+// standing and talking, so those are set larger again.
+const roleCards = renderCutSheets('cut-role-cards', 'docs/role_cards.md', 'Role card', 12.5);
+const cueCards = renderCutSheets('cut-cue-cards', 'docs/cue_cards.md', 'Cue card', 13);
 
 // ---- sections, ordered by the job they belong to --------------------------------
 const onePager = Math.max(2 * groups, 2);

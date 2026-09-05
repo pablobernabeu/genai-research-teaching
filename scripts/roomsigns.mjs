@@ -8,13 +8,11 @@
 //   node scripts/roomsigns.mjs --tables 12     # more tables (default 10)
 //
 // The seeds are read from project_tracks.md, so the signs cannot drift from the
-// briefs. Needs a Chromium browser, as the other PDF steps do; set CHROME_PATH and
-// CHROME_FLAGS the same way.
+// briefs. Needs a Chromium browser, as the other PDF steps do.
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
+import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { findBrowser, printToPdf } from './chrome.mjs';
 
 let args = process.argv.slice(2);
 let outDir = 'dist/handouts';
@@ -23,19 +21,6 @@ while (args[0] && args[0].startsWith('--')) {
   if (args[0] === '--out') { outDir = args[1]; args = args.slice(2); }
   else if (args[0] === '--tables') { tables = parseInt(args[1], 10); args = args.slice(2); }
   else break;
-}
-
-function findBrowser() {
-  const candidates = [
-    process.env.CHROME_PATH,
-    'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
-    'C:/Program Files/Microsoft/Edge/Application/msedge.exe',
-    'C:/Program Files/Google/Chrome/Application/chrome.exe',
-    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-    '/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser',
-  ].filter(Boolean);
-  for (const p of candidates) if (existsSync(p)) return p;
-  throw new Error('No Edge/Chrome found — set CHROME_PATH to a Chromium browser.');
 }
 
 // The seeds live in the "Quick group seeds" section of project_tracks.md, as bullet
@@ -81,15 +66,8 @@ function render(bodyHtml, name) {
   const tmp = resolve(outDir, `${name}.tmp.html`);
   const out = resolve(outDir, `${name}.pdf`);
   writeFileSync(tmp, html);
-  const extraFlags = (process.env.CHROME_FLAGS || '').split(/\s+/).filter(Boolean);
   try {
-    execFileSync(browser, [
-      '--headless=new', '--disable-gpu', '--no-pdf-header-footer', ...extraFlags,
-      `--print-to-pdf=${out}`, pathToFileURL(tmp).href,
-    ], { stdio: ['ignore', 'ignore', 'pipe'] });
-  } catch (err) {
-    const stderr = err.stderr ? String(err.stderr).trim().split('\n').slice(-5).join('\n') : '';
-    throw new Error(`Chrome failed to print ${name}.` + (stderr ? `\n${stderr}` : ''));
+    printToPdf(browser, tmp, out, name);
   } finally {
     rmSync(tmp, { force: true });
   }

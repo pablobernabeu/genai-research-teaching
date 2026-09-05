@@ -5,80 +5,81 @@
 //   node scripts/md2pdf.mjs project_tracks.md evaluation_rubric_template.md
 //
 // Outputs to dist/ with hyphenated names (project-tracks.pdf, ...). Needs a Chromium
-// browser; set CHROME_PATH if Edge/Chrome is not at a standard location, and
-// CHROME_FLAGS for any extra launch flags (for example "--no-sandbox" when the
-// build runs as root in a container).
+// browser, found and launched by scripts/chrome.mjs.
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
+import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { basename, resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
 import MarkdownIt from 'markdown-it';
+import { findBrowser, printToPdf } from './chrome.mjs';
 
 const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
 
+// markdown-it leaves the task-list syntax of "- [ ] ..." as the literal characters
+// "[ ]", which reads poorly on a checklist someone actually ticks with a pen. Turn it
+// into a class the stylesheets draw as an empty box.
+const render = (src) => md.render(src).replace(/<li>\s*\[[ xX]\]\s*/g, '<li class="tick">');
+
 const CSS = `
-@page { size: A4; margin: 18mm 16mm; }
-body { font: 11pt/1.5 "Segoe UI", Arial, system-ui, sans-serif; color: #1c2024; }
-h1, h2, h3, h4 { color: #000; line-height: 1.2; break-after: avoid; break-inside: avoid; }
+@page { size: A4; margin: 19mm 28mm 16mm; }
+body { font: 12pt/1.6 "Segoe UI", Arial, system-ui, sans-serif; color: #16191c;
+       hyphens: none; text-wrap: pretty; }
+h1, h2, h3, h4 { color: #000; line-height: 1.22; break-after: avoid; break-inside: avoid; }
 p, li, blockquote { orphans: 2; widows: 2; }
-h1 { font-size: 20pt; border-bottom: 2px solid #d6dbe0; padding-bottom: .2em; }
-h2 { font-size: 14pt; margin-top: 1.3em; border-bottom: 1px solid #e6eaee; padding-bottom: .12em; }
-h3 { font-size: 12pt; color: #1c2024; }
-a { color: #1c2024; text-decoration: underline; }
+h1 { font-size: 21pt; border-bottom: 2px solid #b9c0c7; padding-bottom: .18em; margin: 0 0 .7em; }
+h2 { font-size: 15pt; margin: 1.6em 0 .45em; border-bottom: 1px solid #d6dbe0; padding-bottom: .12em; }
+h3 { font-size: 12.6pt; color: #16191c; margin: 1.1em 0 .3em; }
+p { margin: .55em 0; }
+a { color: #16191c; text-decoration: underline; }
 strong { color: #000; }
-em { color: #5b6470; }
-code { background: #efefef; border-radius: 3px; padding: .05em .3em; font-size: .9em; }
-pre { background: #f4f4f4; border: 1px solid #d0d0d0; border-radius: 6px; padding: .7em .9em; font-size: 9pt; white-space: pre-wrap; }
+em { color: #3a4046; }
+code { background: #eceef0; border-radius: 3px; padding: .05em .3em; font-size: .9em; }
+pre { background: #f2f3f4; border: 1px solid #c8ccd0; border-radius: 6px; padding: .7em .9em; font-size: 10pt; white-space: pre-wrap; }
 pre code { background: none; padding: 0; }
-table { border-collapse: collapse; width: 100%; font-size: 9.5pt; margin: .6em 0; break-inside: avoid; }
-th, td { border: 1px solid #d6dbe0; padding: .3em .5em; text-align: left; vertical-align: top; }
-th { background: #ececec; }
-blockquote { border-left: 3px solid #6b7278; margin: .8em 0; padding: .2em .9em; color: #5b6470; break-inside: avoid; }
-hr { border: none; border-top: 1px solid #d6dbe0; margin: 1.2em 0; }
-ul, ol { padding-left: 1.3em; }
-li { margin: .15em 0; }
+table { border-collapse: collapse; width: 100%; font-size: 10.5pt; line-height: 1.42; margin: .8em 0; break-inside: avoid; }
+th, td { border: 1px solid #c8ccd0; padding: .42em .55em; text-align: left; vertical-align: top; }
+th { background: #e6e8ea; color: #000; }
+blockquote { border-left: 4px solid #16191c; background: #f2f3f4; margin: 1em 0;
+             padding: .55em 1em; color: #23282d; break-inside: avoid; }
+blockquote p { margin: .3em 0; }
+hr { border: none; border-top: 1px solid #c8ccd0; margin: 1.6em 0; }
+ul, ol { padding-left: 1.35em; margin: .55em 0; }
+li { margin: .3em 0; }
+li > ul, li > ol { margin: .25em 0; }
+li.tick { list-style: none; position: relative; margin-left: -.35em; padding-left: 1.6em; }
+li.tick::before { content: ""; position: absolute; left: 0; top: .3em; width: .8em; height: .8em; border: 1px solid #16191c; }
 .page-break { break-before: page; }
 `;
 
-// A denser variant for single-sheet handouts (the one-pagers): smaller type, tighter
-// margins and spacing, so a content-rich sheet fits on one printed side. The body
-// point size is adjustable (--fontpt) so a shorter sheet can use larger, more readable
-// type; headings are em-relative, so they scale with it.
-const compactCss = (pt = 9.2) => `
-@page { size: A4; margin: 9mm 11mm; }
-body { font: ${pt}pt/1.2 "Segoe UI", Arial, system-ui, sans-serif; color: #1c2024; }
-h1, h2, h3, h4 { color: #000; line-height: 1.1; break-after: avoid; break-inside: avoid; }
+// A denser variant for the single-sheet handouts. It trades the booklet's generous
+// setting for enough room to fit a content-rich sheet on one printed side, and it can
+// set the text in columns (--columns), which is what keeps the line short enough to
+// read quickly even at this size. The body point size is adjustable (--fontpt);
+// headings are em-relative, so they scale with it.
+const compactCss = (pt = 9.2, columns = 1) => `
+@page { size: A4; margin: 10mm 12mm; }
+body { font: ${pt}pt/1.4 "Segoe UI", Arial, system-ui, sans-serif; color: #16191c;
+       hyphens: none; text-wrap: pretty;${columns > 1 ? `
+       column-count: ${columns}; column-gap: 8mm; column-rule: 1px solid #d6dbe0;` : ''} }
+h1, h2, h3, h4 { color: #000; line-height: 1.15; break-after: avoid; break-inside: avoid; }
 p, li { orphans: 2; widows: 2; }
-h1 { font-size: 1.63em; border-bottom: 2px solid #d6dbe0; padding-bottom: .08em; margin: 0 0 .18em; }
-h2 { font-size: 1.2em; margin: .5em 0 .1em; border-bottom: 1px solid #e6eaee; padding-bottom: .06em; }
-h3 { font-size: 1.04em; color: #1c2024; margin: .2em 0 .06em; }
-p { margin: .18em 0; }
-a { color: #1c2024; text-decoration: underline; }
+h1 { font-size: 1.7em; border-bottom: 2px solid #b9c0c7; padding-bottom: .1em; margin: 0 0 .35em;${columns > 1 ? ' column-span: all;' : ''} }
+h2 { font-size: 1.22em; margin: .85em 0 .2em; border-bottom: 1px solid #d6dbe0; padding-bottom: .08em; }
+h3 { font-size: 1.05em; color: #16191c; margin: .4em 0 .1em; }
+p { margin: .3em 0; }
+a { color: #16191c; text-decoration: underline; }
 strong { color: #000; }
-em { color: #5b6470; }
-code { background: #efefef; border-radius: 3px; padding: .03em .25em; font-size: .9em; }
-ul, ol { list-style: none; padding-left: 0; margin: .14em 0; }
-li { position: relative; padding-left: 1.4em; margin: .02em 0; }
-ul > li::before { content: "•"; position: absolute; left: 0.55em; color: #5b6470; }
+em { color: #3a4046; }
+code { background: #eceef0; border-radius: 3px; padding: .03em .25em; font-size: .9em; }
+ul, ol { list-style: none; padding-left: 0; margin: .28em 0; }
+li { position: relative; padding-left: 1.35em; margin: .22em 0; break-inside: avoid; }
+ul > li::before { content: "\\2022"; position: absolute; left: 0.5em; color: #3a4046; }
 ol { counter-reset: li-counter; }
 ol > li { counter-increment: li-counter; }
-ol > li::before { content: counter(li-counter) "."; position: absolute; left: 0.3em; color: #5b6470; font-variant-numeric: tabular-nums; }
-hr { border: none; border-top: 1px solid #d6dbe0; margin: .38em 0; }
+ol > li::before { content: counter(li-counter) "."; position: absolute; left: 0.2em; color: #3a4046; font-variant-numeric: tabular-nums; }
+li.tick { padding-left: 1.5em; }
+li.tick::before { content: ""; position: absolute; left: 0.1em; top: .3em; width: .82em; height: .82em; border: 1px solid #16191c; }
+hr { border: none; border-top: 1px solid #c8ccd0; margin: .7em 0;${columns > 1 ? ' column-span: all;' : ''} }
 `;
-
-function findBrowser() {
-  const candidates = [
-    process.env.CHROME_PATH,
-    'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
-    'C:/Program Files/Microsoft/Edge/Application/msedge.exe',
-    'C:/Program Files/Google/Chrome/Application/chrome.exe',
-    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-    '/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser',
-  ].filter(Boolean);
-  for (const p of candidates) if (existsSync(p)) return p;
-  throw new Error('No Edge/Chrome found — set CHROME_PATH to a Chromium browser.');
-}
 
 // Leading flags: "--out <dir>" sets the output directory (default: dist);
 // "--bundle <name>" concatenates all inputs into a single PDF, one section per file
@@ -88,17 +89,24 @@ let outDir = 'dist';
 let bundle = null;
 let compact = false;
 let compactPt = 9.2;
+let columns = 1;
 while (args[0] && args[0].startsWith('--')) {
   if (args[0] === '--out') { outDir = args[1]; args = args.slice(2); }
   else if (args[0] === '--bundle') { bundle = args[1]; args = args.slice(2); }
   else if (args[0] === '--compact') { compact = true; args = args.slice(1); }
   else if (args[0] === '--fontpt') { compactPt = parseFloat(args[1]); args = args.slice(2); }
+  else if (args[0] === '--columns') { columns = parseInt(args[1], 10); args = args.slice(2); }
   else break;
 }
-const activeCss = compact ? compactCss(compactPt) : CSS;
+const activeCss = compact ? compactCss(compactPt, columns) : CSS;
 const files = args;
 if (!files.length) {
-  console.error('usage: node scripts/md2pdf.mjs [--out <dir>] [--bundle <name>] <file.md> [<file.md> ...]');
+  console.error('usage: node scripts/md2pdf.mjs [options] <file.md> [<file.md> ...]');
+  console.error('  --out <dir>      where the PDFs go (default: dist/)');
+  console.error('  --bundle <name>  concatenate the inputs into one <name>.pdf');
+  console.error('  --compact        the denser single-sheet layout, for the one-pagers');
+  console.error('  --fontpt <pt>    base font size in points, with --compact');
+  console.error('  --columns <n>    set the text in n columns, with --compact');
   process.exit(1);
 }
 
@@ -111,15 +119,8 @@ function renderToPdf(bodyHtml, name) {
   const tmp = resolve(outDir, `${name}.tmp.html`);
   const out = resolve(outDir, `${name.replace(/_/g, '-')}.pdf`);
   writeFileSync(tmp, html);
-  const extraFlags = (process.env.CHROME_FLAGS || '').split(/\s+/).filter(Boolean);
   try {
-    execFileSync(browser, [
-      '--headless=new', '--disable-gpu', '--no-pdf-header-footer', ...extraFlags,
-      `--print-to-pdf=${out}`, pathToFileURL(tmp).href,
-    ], { stdio: ['ignore', 'ignore', 'pipe'] });
-  } catch (err) {
-    const stderr = err.stderr ? String(err.stderr).trim().split('\n').slice(-5).join('\n') : '';
-    throw new Error(`Chrome failed to print ${name}.` + (stderr ? `\n${stderr}` : ''));
+    printToPdf(browser, tmp, out, name);
   } finally {
     rmSync(tmp, { force: true });
   }
@@ -127,9 +128,9 @@ function renderToPdf(bodyHtml, name) {
 }
 
 if (bundle) {
-  const body = files.map(f => md.render(readFileSync(f, 'utf8')))
+  const body = files.map(f => render(readFileSync(f, 'utf8')))
     .join('\n\n<div class="page-break"></div>\n\n');
   renderToPdf(body, bundle);
 } else {
-  for (const f of files) renderToPdf(md.render(readFileSync(f, 'utf8')), basename(f, '.md'));
+  for (const f of files) renderToPdf(render(readFileSync(f, 'utf8')), basename(f, '.md'));
 }
