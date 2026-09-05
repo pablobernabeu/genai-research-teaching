@@ -10,6 +10,7 @@
 #   make handouts   print-ready handout PDFs into dist/handouts/ (handoutscore + onepagers)
 #   make grouppack       one combined per-table group pack PDF
 #   make facilitatorpack one combined facilitator pack PDF
+#   make check      fail if a committed handout is older than its source
 #   make publish    refresh the committed ready-to-print PDFs in handouts/ (npm run build:publish)
 #   make signs      room signs: one per seed idea, plus the table numbers
 #   make bundle     the whole print job as a single PDF
@@ -22,7 +23,7 @@ MARP   := npx marp --config-file ./marp.config.mjs
 SLIDES := ./slides.md
 OUT    := ./dist
 
-.PHONY: all html pdf pptx docs pack handouts handoutscore onepagers grouppack facilitatorpack signs bundle publish watch preview clean install
+.PHONY: all html pdf pptx docs pack handouts handoutscore onepagers grouppack facilitatorpack signs bundle check publish watch preview clean install
 
 all: html pdf
 
@@ -77,6 +78,10 @@ publish:
 	node scripts/md2pdf.mjs --out handouts --bundle facilitator-pack docs/cue_cards.md docs/facilitator_run_sheet.md docs/morning_checklist.md
 	node scripts/roomsigns.mjs --out handouts
 	node scripts/printbundle.mjs --out handouts
+
+# Are the committed handouts behind their sources? Run before a print job.
+check:
+	node scripts/check-handouts.mjs
 
 watch:
 	$(MARP) -w -s .

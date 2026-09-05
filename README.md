@@ -158,8 +158,11 @@ print them without building anything:
 - [`handouts/seed-signs.pdf`](handouts/seed-signs.pdf) and [`handouts/table-numbers.pdf`](handouts/table-numbers.pdf), the A4 landscape signs to post around the room.
 - [`handouts/print-bundle.pdf`](handouts/print-bundle.pdf), every one of the above in a single file, each section behind a slip stating its copy count, its paper and how it is finished. This is the one to hand to a print shop.
 
-They are generated from the Markdown sources and may lag behind them, so run
-`npm run build:publish` to refresh them after editing.
+They are generated from the Markdown sources and can lag behind them, so run
+`npm run build:publish` after editing, and `npm run check:handouts` before sending
+anything to a printer: it fails if a committed PDF is older than a source it is
+built from.
+
 
 ## Sharing a preview
 
