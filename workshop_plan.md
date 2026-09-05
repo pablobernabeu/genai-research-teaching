@@ -295,14 +295,18 @@ Friction (ask everywhere)
 | Wi-Fi fails | Switch the affected groups to the offline path: critique a printed worked example (`docs/worked_examples.md`) against the rubric. The thinking is the deliverable, and the tool is only the occasion for it. |
 | A chosen tool demands payment or a login wall | Move down the spectrum to a free off-the-shelf chat tool, and treat the paywall itself as a finding under Financial & Scalability. |
 | The app will not load for a group | Fall back to HackMD (hackmd.io) or paper for that group. The rubric template is plain Markdown and portable, and the facilitator transcribes it into the archive afterwards. A brief Wi-Fi blip needs no action, because the app caches offline and re-syncs. |
+| Nobody in a group has a device | Give them the printed worked example and the paper rubric from the pack. That group works on paper, keeps its caught errors and speaks in the lightning round like everyone else, and the facilitator transcribes the note afterwards. |
 | A group finishes early | Send them to the rubric dimension they have thought about least, which is usually Financial & Scalability or the automation–steering map, or set them to red-team a neighbouring group's output by probing it adversarially for weaknesses the other group missed. |
 | A group stalls | Shrink the task. 'Forget the grand version. What is the smallest real thing the tool could help with in ten minutes?' |
 | Uneven groups (four or six) | At four, the Convenor doubles as Steward. At six, split Driver and Sceptic across two people, or add a second Sceptic, since more red-teaming does no harm. |
+| Someone arrives for Part 2 having missed Part 1 | Put them into any group of four and hand them a one-pager. The group briefs them in a sentence, and nothing in Part 2 depends on having heard Part 1. |
+| Part 1 starts late | Drop 'Saved or burned' (slide 6), then compress slides 10 to 13 into one breath each. Never cut the group formation at 12:26, since Part 2 has no way to recover it. |
+| A group of two or three, or of seven or eight | Below four, merge it with a neighbouring group. Above six, split it in two and give each half its own lightning-round slot. |
 | Fewer or more than ten groups | The lightning round is about seven minutes, which just fits eight groups at 45 seconds, and only if handovers stay near five seconds. With nine or ten, announce 35 seconds at the start of the round, and if you are still behind after six groups take a one-line contribution from the rest. Never overrun the 13:45 finish. |
 | Someone pastes sensitive data | Stop it gently and immediately, note it as a live example of why the red lines exist and have them anonymise or synthesise before continuing. |
 | A dominant voice | Lean on roles: 'Steward, what is your read?' Give quieter roles explicit air. |
 | A sceptical or hostile participant | Welcome it, because scepticism is the point. Channel it into the Sceptic role and the museum. |
-| AV or logo issues | The deck is self-contained and the logo is embedded. If projection fails, the instructions are all in `project_tracks.md` and the rubric template. |
+| AV or logo issues | The deck is self-contained and the logo is embedded. If projection fails, everything a group needs is on the one-pager already on its table (`docs/group_one_pager.md`), with the rubric behind it in the pack. |
 
 ---
 
@@ -326,7 +330,7 @@ Governance, policy and assessment
   educational assessment.* Journal of University Teaching and Learning Practice, 21(6).
   <https://doi.org/10.53761/q3azde36>
 - Perkins, M., Roe, J. & Furze, L. (2025). *Reimagining the Artificial Intelligence
-  Assessment Scale (AIAS): a refined framework for educational assessment.* Journal of
+  Assessment Scale: a refined framework for educational assessment.* Journal of
   University Teaching and Learning Practice, 22(7). <https://doi.org/10.53761/rrm4y757>
   The current version of the scale, which supersedes the 2024 paper.
 - Lodge, J. M., Howard, S., Bearman, M., Dawson, P. & Associates (2023). *Assessment
@@ -334,8 +338,12 @@ Governance, policy and assessment
   and Standards Agency (TEQSA). <https://www.teqsa.gov.au/guides-resources/resources/corporate-publications/assessment-reform-age-artificial-intelligence>
 
 Data protection
-- Information Commissioner's Office (2023). *Guidance on AI and data protection.*
-  Guidance issued under the UK GDPR. <https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/>
+- Information Commissioner's Office. *Guidance on AI and data protection.* Issued under
+  the UK GDPR, last substantially updated on 15 March 2023 and under review at the time
+  of writing, with an updated version expected in autumn 2026. Note that the Data (Use
+  and Access) Act 2025 amended the UK GDPR, and that Articles 22A to 22D on automated
+  decision-making replaced Article 22 from 5 February 2026. The red lines in this kit are
+  unaffected, though check the current text before relying on any specific provision. <https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/>
 
 Cognition, critical thinking and friction
 - Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R. & Wilson,
@@ -345,7 +353,8 @@ Cognition, critical thinking and friction
   <https://doi.org/10.1145/3706598.3713778>
 - Drosos, I., Sarkar, A., Xu, X. & Toronto, N. (2025). *'It makes you think':
   provocations help restore critical thinking to AI-assisted knowledge work.*
-  arXiv:2501.17247. <https://arxiv.org/abs/2501.17247>
+  arXiv:2501.17247. <https://arxiv.org/abs/2501.17247> A preprint, not peer reviewed at
+  the time of writing.
 - Sarkar, A. (2024). *Intention is all you need.* Proceedings of the 35th Annual
   Conference of the Psychology of Programming Interest Group (PPIG 2024);
   arXiv:2410.18851. <https://arxiv.org/abs/2410.18851> The scholarly anchor for the

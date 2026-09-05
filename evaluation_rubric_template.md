@@ -21,7 +21,7 @@ part of the open account of what this cohort learned.
 
 ---
 
-## A. The HackMD fallback (about five minutes, Reporter drives, only if you cannot use the app)
+## A. The HackMD fallback (about five minutes, led by the Reporter, and only if you cannot use the app)
 
 1. Go to hackmd.io and sign in. It is free, and you can use a Google, GitHub or email
    login. There is nothing to install.

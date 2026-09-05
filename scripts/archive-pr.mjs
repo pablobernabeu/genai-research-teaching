@@ -23,6 +23,32 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { execSync } from "node:child_process";
 
 const DRY = process.argv.includes("--dry-run");
+// The archive is named for the WORKSHOP date, not the day the export happens, so that
+// cohorts sort chronologically (see submissions/README.md). Default to today, and pass
+// --date=YYYY-MM-DD when archiving a day or two afterwards, as the run sheet expects.
+const dateArg = (process.argv.find((a) => a.startsWith("--date=")) || "").slice(7);
+if (dateArg && !/^\d{4}-\d{2}-\d{2}$/.test(dateArg)) {
+  console.error("--date must be YYYY-MM-DD.");
+  process.exit(1);
+}
+// The consent box names one archive, so the PR has to go there. Run this from a clone of
+// the public archive repository, with GENAI_RT_PROJECT and GENAI_RT_API_KEY set if this
+// copy's firebase-config.js holds placeholders.
+const ARCHIVE_REPO = "genai-research-teaching";
+function assertArchiveRemote() {
+  let origin = "";
+  try {
+    origin = execSync("git remote get-url origin", { encoding: "utf8" }).trim();
+  } catch {
+    console.error("No git remote named origin, so there is nowhere to open a pull request.");
+    process.exit(1);
+  }
+  if (!origin.includes(ARCHIVE_REPO)) {
+    console.error(`origin is ${origin}, which is not the ${ARCHIVE_REPO} archive.`);
+    console.error("Groups consented to that archive alone. Run this from a clone of it.");
+    process.exit(1);
+  }
+}
 const fail = (msg) => { console.error(msg); process.exitCode = 1; };
 
 function configFromFile() {
@@ -115,7 +141,7 @@ async function main() {
   if (groups.length === 0) return fail("No approved, consented submissions found — nothing to archive.");
 
   // --- build the Markdown (same compact shape as the dashboard export) ------
-  const date = new Date().toISOString().slice(0, 10);
+  const date = dateArg || new Date().toISOString().slice(0, 10);
   const val = (s) => (s && String(s).trim()) || "—";
   let md = `# Approved submissions — ${date}\n\n${groups.length} approved, consented group${groups.length === 1 ? "" : "s"}.\n`;
   groups.forEach((g, i) => {
@@ -144,6 +170,7 @@ async function main() {
   // --- open a PR via the GitHub CLI (your own auth; no token in the app) ----
   const branch = `archive/${date}`;
   const sh = (cmd) => execSync(cmd, { stdio: "inherit" });
+  if (!DRY) assertArchiveRemote();
   try {
     sh(`git checkout -b ${branch}`);
     sh(`git add ${file}`);

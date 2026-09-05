@@ -2,18 +2,17 @@
 
 *This checklist is operational only. The [facilitator guide](../workshop_plan.md) holds the rationale, the [run sheet](facilitator_run_sheet.md) the timeline and the [app README](../firebase-app/README.md) the full deployment steps.*
 
-A short reset that gets the live app into a clean, ready state for Westminster on 9 September 2026. The app (genai-rt.web.app) is where groups capture their work by default, and HackMD or paper is the fallback.
+A short reset, in the minutes before Part 2, that gets the live app into a clean, ready state for Westminster on 9 September 2026. The app (genai-rt.web.app) is where groups capture their work by default, and HackMD or paper is the fallback.
 
-## Before Part 1 (about 11:52, with a re-check during lunch)
+## During the lunch break (about 12:45–13:10)
 
-- [ ] Sign in to the facilitator dashboard at genai-rt.web.app/facilitator.html with the Google account pcbernabeu@gmail.com ('Sign in with Google'). Group devices do not sign in here.
+- [ ] Sign in to the facilitator dashboard at genai-rt.web.app/facilitator.html with your facilitator Google account, the one named in `firebase-app/firestore.rules` ('Sign in with Google'). Group devices do not sign in here.
 - [ ] Confirm that sign-in actually completes and that you are on the dashboard, not on the sign-in card. If it bounces, the project's Google sign-in needs checking in the Firebase console, which is a pre-deployment concern to fix before the room fills.
 - [ ] Clear the rehearsal and test groups. Deletion is console-only, with no button on the dashboard. In the Firestore console, delete stray test documents from the `groups` collection and the matching `groupNames` entry, or the name stays reserved.
 - [ ] Confirm that the facilitator group list is clear of rehearsal entries (that is where draft and submitted test groups show) and that the public board at genai-rt.web.app/dashboard.html is empty.
-- [ ] Set today's passcode in the Session passcode panel and write it where you can read it out (it overwrites any rehearsal value). The status should then read 'Passcode set. Read it out to the room.' Confirm that the public dashboard opens with this passcode too. Until it is set, no group can start.
+- [ ] Set today's passcode in the Session passcode panel and write it where the room can see it (it overwrites any rehearsal value). The status should then read 'Passcode set. Read it out to the room.' Confirm that the public dashboard opens with this passcode too. Until it is set, no group can start.
 - [ ] In the Session timer panel, set Minutes (the default is 15, the build window) but do not start it yet. Set it to 14 rather than 15, so the countdown ends at 13:32 and leaves a minute to submit inside the build window. Pressing Start again with a new number simply restarts the countdown, so if the settle-in runs late, set Minutes to the time remaining until 13:32.
-- [ ] Have the 'Open the workshop app' slide ready, with the large URL genai-rt.web.app and the scannable QR code.
-- [ ] During lunch, glance at the dashboard once more: passcode set, no stray groups, timer not running.
+- [ ] Have the 'Open the workshop app' slide ready, with the large URL genai-rt.web.app and the scannable QR code, and put it up at about 13:12 so that groups can start joining as they sit.
 
 ## At the start of Part 2
 

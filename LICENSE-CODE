@@ -7,8 +7,12 @@ this repository, namely package.json, marp.config.mjs, themes/workshop.css, Make
 the scripts under scripts/, the groupwork app under firebase-app/, the GitHub Actions
 workflows under .github/, and similar scaffolding. All workshop
 teaching materials (Markdown documents, slides, the rubric and other prose) are
-licensed separately under Creative Commons Attribution 4.0 International; see
+licensed separately under Creative Commons Attribution 4.0 International, and see
 LICENSE.
+
+The University of Oxford crest, held in assets/logo.svg and embedded as a data URI in
+themes/workshop.css, is a trade mark of the University. It is not licensed under this
+or any other licence in this repository, and it is not yours to redistribute.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

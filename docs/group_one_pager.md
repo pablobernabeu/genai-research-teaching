@@ -1,6 +1,7 @@
 # Your group's quick start
 
-*One or two copies per table. Everything here works on a phone.*
+*One or two copies per table. Everything here works on a phone, though a laptop helps if
+you pick Track C and want to build or visualise something.*
 
 ## 1. Open the app
 

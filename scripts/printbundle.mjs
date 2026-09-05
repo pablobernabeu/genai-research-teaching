@@ -189,6 +189,15 @@ const SECTIONS = [
   },
   {
     part: 'Part 3 — facilitator only',
+    title: 'Lightning-round tally',
+    path: 'handouts/lightning-round-tally.pdf',
+    copies: '1 copy',
+    sides: 'Single-sided', paper: 'A4 portrait', finish: 'Loose, on a clipboard or the lectern',
+    note: 'Somewhere to write one line per group during the round at 13:33, which the close at 13:40 then draws its threads from.',
+    footer: false,
+  },
+  {
+    part: 'Part 3 — facilitator only',
     title: 'Day-of app reset',
     path: 'handouts/facilitator-day-of-reset.pdf',
     copies: '1 copy',

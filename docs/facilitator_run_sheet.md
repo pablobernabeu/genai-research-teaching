@@ -12,9 +12,9 @@ A featured workshop in two 30-minute parts, split by a networking lunch.
 |---|---|
 | 11:45 | Projector on, deck open in presenter mode, Wi-Fi and power confirmed. |
 | 11:50 | Create and pin the fallback-links issue, so that it is there if a group fails over to HackMD later (participants do not post to it). |
-| 11:52 | Reset the app (genai-rt.web.app): sign in to the private dashboard, clear rehearsal groups, set the session passcode and set the timer's minutes without starting it (see the [day-of reset](facilitator_day_of_reset.md)). No pre-named notes are needed. |
+| 11:52 | Pre-flight the app (genai-rt.web.app): sign in to the private dashboard and confirm that it loads. The full reset, meaning today's passcode, the timer and the clearing of rehearsal groups, happens in the lunch break (see the [day-of reset](facilitator_day_of_reset.md)). No pre-named notes are needed. |
 | 11:55 | Lay out one group pack booklet and one or two group one-pagers on each table of five, with spare pens and paper. Post the ten seed ideas around the room, each with its track letter, ready for the 12:26 formation. |
-| 11:58 | Visible timer ready, title slide up (slide 1). Start at 12:00. |
+| 11:58 | Visible timer ready, the lightning-round tally sheet and a pen to hand, title slide up (slide 1). Start at 12:00. |
 
 ## Part 1 · Conceptualising the use of AI in research · 12:00–12:30
 
@@ -34,16 +34,18 @@ A featured workshop in two 30-minute parts, split by a networking lunch.
 
 | When | Action |
 |---|---|
-| 12:30 | Not your session, but a networking break before Part 2. Leave slide 17 up throughout: it is the only thing telling people to come back to the same table. Re-check the dashboard once (passcode set, no rehearsal groups, timer not running). |
+| 12:30 | Not your session, but a networking break before Part 2. Leave slide 17 up throughout: it is the only thing telling people to come back to the same table. |
+| 12:45–13:10 | Reset the app: today's passcode, the timer length and any rehearsal groups to clear. See the [day-of reset](facilitator_day_of_reset.md). |
+| 13:12 | Slides 18 and 19 (the Part 2 divider, then the QR code and the address) on screen before anyone sits down, and today's passcode written up where the room can read it. Groups can then start joining as they sit, instead of waiting for you to read it out. |
 
 ## Part 2 · Practical AI for research and teaching · 13:15–13:45
 
 | Clock | Segment | Slides | Facilitator does |
 |---|---|---|---|
-| 13:15 | Settle in and orient | 18–24 | Re-find groups; agree the one problem (60 seconds); app open (genai-rt.web.app); read out the passcode; red lines on. Slides 21–24 go past at pace: point at them, do not present them, since every word is in the pack. |
-| 13:18 | Apply it | 25 | Press Start countdown as slide 25 goes up. If the settle-in has run late, set Minutes so the countdown still ends at 13:33 rather than fifteen from now. Circulate. Stop sensitive data, unstick stalls, one provocation each. Where a group has time, prompt the map (interwoven or staged). |
+| 13:15 | Settle in and orient | 19–24 | Re-find groups; agree the one problem (60 seconds); app open (genai-rt.web.app); read out the passcode; red lines on. Slides 21–24 go past at pace: point at them, do not present them, since every word is in the pack. |
+| 13:18 | Apply it | 25 | Press Start countdown as slide 25 goes up. If the settle-in has run late, set Minutes so the countdown still ends at 13:32 rather than fifteen from now. Circulate. Stop sensitive data, unstick stalls, one provocation each. Where a group has time, prompt the map (interwoven or staged). |
 | about 13:26 | Pivot | 26 | Thirty seconds, keyboards down. Stop building, start interrogating. |
-| 13:33 | Lightning round | 27 | Visible timer. 45 seconds each with eight groups; announce 35 seconds if there are nine or ten, since handovers cost five to ten seconds apiece. Time the round and jot threads only: leave every approval until after the session, since reading a note properly takes longer than the close allows (collect a HackMD link only from a fallback group). |
+| 13:33 | Lightning round | 27 | Visible timer. 45 seconds each with eight groups; announce 35 seconds if there are nine or ten, since handovers cost five to ten seconds apiece. Time the round and jot one line per group on the tally sheet: leave every approval until after the session, since reading a note properly takes longer than the close allows (collect a HackMD link only from a fallback group). |
 | 13:40 | Close | 28–34 | Synthesise two or three threads. Take-home actions. Reading. Follow-up. Close at 13:45. |
 
 ## After

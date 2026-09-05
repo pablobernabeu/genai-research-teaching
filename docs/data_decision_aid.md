@@ -56,7 +56,7 @@ the signal, so take one of the routes below before you paste anything.
 
 ---
 
-## If the answer is no: what to do instead
+## If you cannot paste it: what to do instead
 
 - Anonymise. Remove names, identifiers and anything that singles someone out, and
   check that it cannot be re-identified by combination.

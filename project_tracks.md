@@ -50,10 +50,10 @@ letter beside it is its track. Aim for fives, and your group then takes one prob
   synthesise or abstain.
 - Record the friction. Where the tool resists you is the most valuable thing you will
   find. Keep a running [museum of caught errors](docs/museum_of_caught_errors.md).
-- Reflect on the bigger picture. Your note has a short societal reflection: does this
-  widen or narrow disparities (first versus second language, support, career stage,
-  background), what would you disclose, and what happens to thinking when the tool
-  does the writing?
+- Reflect on the bigger picture. The fuller note in your pack carries a short societal
+  reflection: does this widen or narrow disparities (first versus second language,
+  support, career stage, background), what would you disclose, and what happens to
+  thinking when the tool does the writing?
 - Plan automation against steering. In your human-in-the-loop section, map which
   phases you will automate and where a human steers, then decide whether that
   oversight is interwoven through the whole project or staged at distinct checkpoints,

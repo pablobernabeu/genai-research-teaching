@@ -33,8 +33,8 @@ more than ten it merely noticed.
 ## Across the room (optional)
 
 If time and the room allow, the facilitator can keep a visible wall, on a flip chart
-or a shared slide, and invite one museum piece from each group during the lightning
-round or the breaks. Group the entries by failure mode (hallucinated facts, lost
+or a shared slide, and invite one museum piece from each group in the breaks or
+afterwards, since the lightning round is costed to the second and has nothing spare. Group the entries by failure mode (hallucinated facts, lost
 nuance, false confidence, bias, data leakage). The wall becomes the cohort's
 collective findings and a natural feed into the closing synthesis.
 

@@ -74,7 +74,8 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 ## 12:26 · WHAT PART 2 ASKS, THEN FORM GROUPS (end of Part 1)
 
 - **Say:** 'These ideas, and the bigger questions, are the rubric and the reflection
-  you will fill in. Now form groups of five: gather at the idea on screen, and the
+  you will fill in. Now form groups of five: walk to the sign for the idea you would
+  most like to try, and the
   letter is your track.'
 - **Do:** preview the rubric (slide 15) and the tracks (slide 16), then send them to
   lunch. End Part 1 at 12:30.
@@ -113,6 +114,10 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 - **Say:** 'Thirty seconds, keyboards down. What did it make easier, and at what
   cost? Where did it resist you? Have you held the red lines? Now switch from
   building to interrogating.'
+- **Say, while every form is still open:** 'One more thing before you submit. If you
+  are happy for your note to join the public archive, tick the sharing box at the foot
+  of the form. It is optional, and unticked is a perfectly good answer. Submitting
+  locks the box, so decide it now.'
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
@@ -120,13 +125,10 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 
 - **Say:** 'One insight each and no slides. I will call the time. Give us the biggest
   limitation, the best safeguard or how your field over- or under-uses AI here.'
-- **Say, before they submit:** 'If you are happy for your note to join the public
-  archive, tick the sharing box at the foot of the form. It is optional, and unticked
-  is a perfectly good answer.'
 - **Do:** visible timer. 45 seconds each with eight groups, or announce 35 seconds if
   there are nine or ten, since each handover costs five to ten seconds. Still behind
-  after six? Take one line from the rest. Jot each group's thread, and leave
-  every approval until after the session.
+  after six? Take one line from the rest. Write one line per group on the tally
+  sheet, and leave every approval until after the session.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
@@ -136,6 +138,20 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 - **Connect:** friction as signal, the spectrum, the red lines, the human in the loop.
 - **Give:** the take-home actions, the further reading and the follow-up. Close at
   13:45.
+
+### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+
+## Any time · IF IT BREAKS
+
+- **Wi-Fi or the app is down.** The pack is enough. Groups critique the printed worked
+  example against the rubric, on paper, and you type the notes up afterwards.
+- **Projection fails.** Everything a group needs is on the one-pager already on its table.
+- **Someone arrives for Part 2 only.** Put them into any group of four, hand them a
+  one-pager and let the group brief them in a sentence. No catching up is needed.
+- **Part 1 starts late.** Drop 'Saved or burned', then compress slides 10 to 13. Never cut
+  the group formation at 12:26, since Part 2 depends on it.
+- **A group is smaller than four or larger than six.** Below four, merge it with a
+  neighbour. Above six, split it in two and give each half a lightning-round slot.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 

@@ -16,7 +16,7 @@ import {
 import { signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 // The /auto build auto-registers controllers/elements/scales and default-exports the Chart
 // class (the bare +esm entry exports a namespace, so `new Chart()` would throw).
-import Chart from "https://cdn.jsdelivr.net/npm/chart.js@4/auto/+esm";
+import Chart from "https://cdn.jsdelivr.net/npm/chart.js@4.5.1/auto/+esm";
 
 import { db, auth, SCENARIOS, SURVEY, dashboardHash, friendlyError } from "./common.js";
 

@@ -38,6 +38,8 @@ pre code { background: none; padding: 0; }
 table { border-collapse: collapse; width: 100%; font-size: 10.5pt; line-height: 1.42; margin: .8em 0; break-inside: avoid; }
 th, td { border: 1px solid #c8ccd0; padding: .42em .55em; text-align: left; vertical-align: top; }
 th { background: #e6e8ea; color: #000; }
+table.rows td { height: 12mm; }
+table.rows td.n { color: #5b6470; text-align: center; font-variant-numeric: tabular-nums; }
 blockquote { border-left: 4px solid #16191c; background: #f2f3f4; margin: 1em 0;
              padding: .55em 1em; color: #23282d; break-inside: avoid; }
 blockquote p { margin: .3em 0; }
@@ -79,6 +81,11 @@ ol > li::before { content: counter(li-counter) "."; position: absolute; left: 0.
 li.tick { padding-left: 1.5em; }
 li.tick::before { content: ""; position: absolute; left: 0.1em; top: .3em; width: .82em; height: .82em; border: 1px solid #16191c; }
 hr { border: none; border-top: 1px solid #c8ccd0; margin: .7em 0;${columns > 1 ? ' column-span: all;' : ''} }
+table { border-collapse: collapse; width: 100%; font-size: .96em; margin: .5em 0; break-inside: avoid; }
+th, td { border: 1px solid #c8ccd0; padding: .3em .45em; text-align: left; vertical-align: top; }
+th { background: #e6e8ea; color: #000; }
+table.rows td { height: 11mm; }
+table.rows td.n { color: #5b6470; text-align: center; font-variant-numeric: tabular-nums; }
 `;
 
 // Leading flags: "--out <dir>" sets the output directory (default: dist);

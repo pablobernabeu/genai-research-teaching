@@ -8,6 +8,8 @@
   --ink: #1c2b2b;
   --muted: #5a6a6a;
   --line: #d6e0e0;
+  /* The border that has to be seen: 3.06:1 on white, which the pale rule is not. */
+  --line-strong: #9aa8a8;
   --bg: #f5f8f8;
   --card: #ffffff;
   --amber: #8a5a00;
@@ -110,7 +112,7 @@ select,
 textarea {
   width: 100%;
   padding: 0.6rem 0.7rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: 8px;
   font: inherit;
   color: var(--ink);
@@ -120,7 +122,7 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 3px solid rgba(15, 110, 110, 0.35);
+  outline: 3px solid var(--teal);
   outline-offset: 1px;
   border-color: var(--teal);
 }
@@ -149,8 +151,8 @@ button {
 }
 
 button:hover { background: var(--teal-dark); }
-button:focus-visible { outline: 3px solid rgba(15, 110, 110, 0.45); outline-offset: 2px; }
-button:disabled { background: #9bb3b3; cursor: not-allowed; }
+button:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+button:disabled { background: #6b8585; cursor: not-allowed; }
 
 button.secondary {
   background: #fff;
@@ -162,7 +164,7 @@ button.secondary:hover { background: var(--teal-tint); }
 button.ghost {
   background: transparent;
   color: var(--teal-dark);
-  border-color: var(--line);
+  border-color: var(--line-strong);
 }
 button.ghost:hover { background: var(--teal-tint); }
 
@@ -329,7 +331,7 @@ details.instructions[open] summary { margin-bottom: 0.3rem; }
   max-width: 50vw; /* never crowd the form's buttons on a phone */
   background: var(--card);
   color: var(--ink);
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: 999px;
   box-shadow: var(--shadow);
   padding: 0.35rem 0.8rem;
@@ -374,8 +376,15 @@ label.consent input[type="checkbox"] {
 }
 
 /* Three quick survey scales (group form): pill radios that double as touch targets. */
+/* Divides the core three from the fields that only get filled if time allows. */
+.section-break {
+  border-top: 1px dashed var(--line);
+  margin: 1.4rem 0 0.2rem;
+  padding-top: 0.8rem;
+}
+
 fieldset.survey {
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: 10px;
   margin: 1.1rem 0 0.3rem;
   padding: 0.4rem 0.9rem 0.9rem;
@@ -397,7 +406,7 @@ fieldset.survey legend {
   margin: 0;
   font-weight: 400;
   font-size: 0.85rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: 999px;
   padding: 0.3rem 0.7rem;
   min-height: 44px;
@@ -419,7 +428,7 @@ fieldset.survey legend {
   font-weight: 600;
 }
 .scale label:has(input:disabled) { cursor: not-allowed; opacity: 0.65; }
-.scale input:focus-visible { outline: 3px solid rgba(15, 110, 110, 0.4); outline-offset: 2px; }
+.scale input:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
 
 /* Facilitator card — consent pill and a state-coloured Approve button. */
 .pill {

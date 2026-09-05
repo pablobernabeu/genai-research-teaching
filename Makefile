@@ -51,6 +51,7 @@ handoutscore:
 onepagers:
 	node scripts/md2pdf.mjs --compact --fontpt 10.2 --columns 2 --out dist/handouts docs/group_one_pager.md
 	node scripts/md2pdf.mjs --compact --fontpt 10 --columns 2 --out dist/handouts docs/facilitator_day_of_reset.md
+	node scripts/md2pdf.mjs --compact --fontpt 11 --out dist/handouts docs/lightning_round_tally.md
 
 signs:
 	node scripts/roomsigns.mjs --out dist/handouts
@@ -70,6 +71,7 @@ publish:
 	$(MARP) $(SLIDES) -o ./handouts/slides.pdf
 	node scripts/md2pdf.mjs --compact --fontpt 10.2 --columns 2 --out handouts docs/group_one_pager.md
 	node scripts/md2pdf.mjs --compact --fontpt 10 --columns 2 --out handouts docs/facilitator_day_of_reset.md
+	node scripts/md2pdf.mjs --compact --fontpt 11 --out handouts docs/lightning_round_tally.md
 	node scripts/md2pdf.mjs --out handouts --bundle group-pack docs/group_pack_cover.md docs/role_cards.md docs/data_decision_aid.md evaluation_rubric_template.md docs/worked_examples.md docs/starter_prompts.md
 	node scripts/md2pdf.mjs --out handouts --bundle facilitator-pack docs/cue_cards.md docs/facilitator_run_sheet.md docs/morning_checklist.md
 	node scripts/roomsigns.mjs --out handouts

@@ -252,7 +252,7 @@ Move to the idea you would most like to try, and make a group of five with the p
 </div>
 </div>
 
-<span class="small muted">Note who is in your group and which track you chose. You regroup straight after lunch, without re-forming.</span>
+<span class="small muted">Before you break, settle three things and write them on the front of your pack: a group name that identifies nobody, who is in the group and where you will sit at 13:15. We will not form groups again after lunch.</span>
 
 <span class="small muted">A · Methodological Blind-Spot Detector, turn the tool on your own design and verify its critiques. B · Executive-Function Layer, build a reusable aid for planning or triage. C · Rapid Prototyping, make a small artefact, then check it. D · Public Engagement, translate a finding, then audit it for fidelity. Fuller briefs are in your group pack, with one-line summaries in the app. Your group takes one problem into Part 2, either this seed or a real one a member brings.</span>
 
@@ -263,6 +263,8 @@ Move to the idea you would most like to try, and make a group of five with the p
 ## Networking lunch
 
 <span class="subtitle">12:30–13:15</span>
+
+<span class="small muted">Part 2 starts at 13:15. Come back to this table, with the same people and the group name you agreed.</span>
 
 ---
 
@@ -279,7 +281,7 @@ Move to the idea you would most like to try, and make a group of five with the p
 <div class="qr-row">
 
 <div class="qr">
-<svg viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="QR code linking to the group app at genai-rt.web.app" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0 0h33v33H0z"/><path stroke="#000000" d="M4 4.5h7m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M4 5.5h1m5 0h1m2 0h2m2 0h3m2 0h1m5 0h1M4 6.5h1m1 0h3m1 0h1m1 0h5m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M4 7.5h1m1 0h3m1 0h1m1 0h1m3 0h3m3 0h1m1 0h3m1 0h1M4 8.5h1m1 0h3m1 0h1m1 0h2m8 0h1m1 0h3m1 0h1M4 9.5h1m5 0h1m1 0h1m5 0h2m2 0h1m5 0h1M4 10.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M12 11.5h1m1 0h1m3 0h3M4 12.5h1m1 0h5m4 0h6m1 0h5M4 13.5h4m1 0h1m4 0h1m1 0h1m3 0h1m2 0h1m3 0h1M4 14.5h3m1 0h1m1 0h2m3 0h3m1 0h1m1 0h5m1 0h2M4 15.5h1m1 0h1m1 0h2m1 0h2m1 0h1m6 0h3m4 0h1M7 16.5h4m1 0h2m1 0h1m1 0h1m1 0h4m1 0h1m1 0h3M4 17.5h2m1 0h1m1 0h1m3 0h2m1 0h2m2 0h1m2 0h1m1 0h1m1 0h1M4 18.5h1m2 0h1m2 0h1m1 0h2m3 0h5m1 0h3m1 0h2M4 19.5h1m2 0h1m1 0h1m3 0h2m1 0h1m2 0h2m2 0h2m3 0h1M4 20.5h1m4 0h2m1 0h1m1 0h1m1 0h3m1 0h5m1 0h1M12 21.5h1m1 0h1m4 0h2m3 0h2M4 22.5h7m2 0h4m3 0h1m1 0h1m1 0h1m1 0h3M4 23.5h1m5 0h1m1 0h2m1 0h1m2 0h3m3 0h2m2 0h1M4 24.5h1m1 0h3m1 0h1m1 0h2m1 0h10m1 0h1M4 25.5h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h5M4 26.5h1m1 0h3m1 0h1m1 0h2m2 0h1m2 0h2m4 0h2m1 0h1M4 27.5h1m5 0h1m5 0h1m2 0h2m1 0h4m2 0h1M4 28.5h7m1 0h3m2 0h2m2 0h8"/></svg>
+<svg viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="QR code linking to the group app at genai-rt.web.app" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0 0h33v33H0z"/><path stroke="#000000" d="M4 4.5h7m3 0h1m1 0h1m1 0h1m1 0h1m1 0h7M4 5.5h1m5 0h1m2 0h2m2 0h3m2 0h1m5 0h1M4 6.5h1m1 0h3m1 0h1m1 0h5m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M4 7.5h1m1 0h3m1 0h1m1 0h1m3 0h3m3 0h1m1 0h3m1 0h1M4 8.5h1m1 0h3m1 0h1m1 0h2m8 0h1m1 0h3m1 0h1M4 9.5h1m5 0h1m1 0h1m5 0h2m2 0h1m5 0h1M4 10.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M12 11.5h1m1 0h1m3 0h3M4 12.5h1m1 0h5m4 0h6m1 0h5M4 13.5h4m1 0h1m4 0h1m1 0h1m3 0h1m2 0h1m3 0h1M4 14.5h3m1 0h1m1 0h2m3 0h3m1 0h1m1 0h5m1 0h2M4 15.5h1m1 0h1m1 0h2m1 0h2m1 0h1m6 0h3m4 0h1M7 16.5h4m1 0h2m1 0h1m1 0h1m1 0h4m1 0h1m1 0h3M4 17.5h2m1 0h1m1 0h1m3 0h2m1 0h2m2 0h1m2 0h1m1 0h1m1 0h1M4 18.5h1m2 0h1m2 0h1m1 0h2m3 0h5m1 0h3m1 0h2M4 19.5h1m2 0h1m1 0h1m3 0h2m1 0h1m2 0h2m2 0h2m3 0h1M4 20.5h1m4 0h2m1 0h1m1 0h1m1 0h3m1 0h5m1 0h1M12 21.5h1m1 0h1m4 0h2m3 0h2M4 22.5h7m2 0h4m3 0h1m1 0h1m1 0h1m1 0h3M4 23.5h1m5 0h1m1 0h2m1 0h1m2 0h3m3 0h2m2 0h1M4 24.5h1m1 0h3m1 0h1m1 0h2m1 0h10m1 0h1M4 25.5h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h5M4 26.5h1m1 0h3m1 0h1m1 0h2m2 0h1m2 0h2m4 0h2m1 0h1M4 27.5h1m5 0h1m5 0h1m2 0h2m1 0h4m2 0h1M4 28.5h7m1 0h3m2 0h2m2 0h8"/></svg>
 </div>
 
 <div class="qr-text">
@@ -288,9 +290,10 @@ Move to the idea you would most like to try, and make a group of five with the p
 
 Scan the code, or type the address into any browser.
 
-Your facilitator will read out the session passcode you need to start a group.
+One device per group starts the group with the session passcode your facilitator reads
+out. Everyone else joins with that group's name and the six-character code it shows.
 
-<span class="small muted">No device, or trouble connecting? HackMD (hackmd.io) is the fallback, and your facilitator will point you there.</span>
+<span class="small muted">If nobody at the table has a device, work on paper: the worked example and the rubric in your pack are all you need. If you have a device but it will not connect, HackMD (hackmd.io) is the fallback, and your facilitator will point you there.</span>
 
 </div>
 
@@ -311,15 +314,15 @@ Your facilitator will read out the session passcode you need to start a group.
 
 ## The five angles
 
-Your pack rates your work on five dimensions, from 1 (Nascent) through 3 (Developing) to 5 (Robust). Share the five angles across the group and pass the keyboard freely. The scoring is for your pack and the discussion. The app holds the essentials.
+Take one angle each so nothing goes unwatched, and share the keyboard freely.
 
 1. Project Definition (Convenor). Your group's one real problem, kept in focus.
 2. Technology Stack (Driver). The right tool on the spectrum, and why.
-3. Data Security & Ethics (Steward). The red lines you hold.
-4. Financial & Scalability (Reporter). Whether the free tier holds. This role also owns the note and the spoken insight.
-5. Human-in-the-Loop (Sceptic). Checkpoints and accountability, plus the automation–steering map if time allows.
+3. Data Security and Ethics (Steward). The red lines you hold.
+4. Financial and Scalability (Reporter). Whether the free tier holds. The Reporter also owns the note and the spoken insight.
+5. Human-in-the-Loop (Sceptic). Checkpoints, accountability and the automation–steering map.
 
-<span class="small muted">The five dimensions frame your reflection and the fuller fallback note. During the session, focus on the core three. An experienced group can ignore the labels.</span>
+<span class="small muted">These are angles of attention for the fifteen minutes. The 1–5 scoring on each dimension belongs to the tidy-up afterwards, so do not stop to score anything today. An experienced group can ignore the labels.</span>
 
 ---
 
@@ -390,6 +393,8 @@ Thirty seconds, keyboards down, as a group.
 <span class="subtitle">One insight each · no slides · the Reporter delivers · the facilitator calls the time</span>
 
 What was the most significant limitation, the most important human-in-the-loop safeguard or one honest thing this exposed about how your field over- or under-uses AI?
+
+<span class="small muted">If you would rather not speak, hand me your line and I will read it out.</span>
 
 ---
 

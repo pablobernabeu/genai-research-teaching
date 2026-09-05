@@ -24,7 +24,7 @@ service cloud.firestore {
     function facilitatorEmail() {
       // The one privileged account: the email on the Google account the facilitator
       // signs in with. Change this to your facilitator login.
-      return 'pcbernabeu@gmail.com';
+      return 'YOUR_FACILITATOR_ACCOUNT@example.com';
     }
     function isFacilitator() {
       // Authorised purely by the verified email claim — provider-agnostic (it does not

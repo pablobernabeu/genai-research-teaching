@@ -19,16 +19,20 @@ below, in this format:
 ```
 Group: 03
 Track: C (Rapid Prototyping for Knowledge Translation)
-Link: https://hackmd.io/your-note-link
 Share publicly: yes / no
 ```
+
+Keep the note links out of this issue. It is public, so a link posted here publishes
+the note whatever the group answered about sharing. Hold the links in your own notes
+and record only the group, the track and the answer here.
 
 Participants do not post here and need no GitHub account. They simply share their link
 with the facilitator, on screen or written down.
 
 ### Notes
 - One entry per group. If a group edits its note afterwards, the link still works.
-- Each group's HackMD note should be set so that anyone with the link can read it.
+- Ask each fallback group to share its note link with you directly rather than making
+  the note readable to anyone who has the link.
 - After the session, the facilitator exports to Markdown every linked note whose group
   said yes to public sharing, removes any personal data and archives it under
   `submissions/`.

@@ -2,6 +2,8 @@
 
 **Group:** \_\_\_\_\_\_ *(a short, friendly name that does not identify anyone, such as 'Otters' or 'Team Kelp')*   ·   **Track:** \_\_\_\_\_\_  (A · B · C · D)
 
+**Table we return to at 13:15:** \_\_\_\_\_\_   ·   **Join code the app shows** (after 13:15)**:** \_\_\_\_\_\_
+
 Everything your group needs for the applied session is in this booklet. You have about
 fifteen minutes in Part 2. Get the core three done first. If that is all you manage,
 you have done the task.
@@ -39,9 +41,11 @@ the others join with the code it shows. Fill in the essentials as you go, and su
 before the lightning round at 13:33 where you can, and during it at the latest. There is
 no account and nothing to install.
 
-> Keep to one note on one surface, and use the app by default. If you have no device
-> or it will not connect, HackMD (hackmd.io) is the fallback, with the same headings,
-> so do not use both.
+> Keep to one note on one surface, and use the app by default. If nobody at the table
+> has a device, work on paper: the worked example and the rubric in this pack are all
+> you need, and your facilitator will type it up afterwards. If you have a device but it
+> will not connect, HackMD (hackmd.io) is the fallback and carries the same headings, so
+> please keep to whichever one you start with.
 
 ## One reflection for the wrap-up
 

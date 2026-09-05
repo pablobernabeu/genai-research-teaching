@@ -19,7 +19,7 @@
     </header>
 
     <!-- Connection / auth status -->
-    <div id="authNotice" class="notice info">Connecting…</div>
+    <div id="authNotice" class="notice info" role="status">Connecting…</div>
 
     <!-- ================= LOGIN ================= -->
     <section id="loginView" class="card" hidden>
@@ -41,14 +41,15 @@
           <span class="hint">Leave blank to create a new group. Enter the code to join an existing one.</span>
         </label>
         <input type="text" id="joinCode" name="joinCode" maxlength="6"
-               autocapitalize="characters" spellcheck="false"
+               autocapitalize="characters" spellcheck="false" autocorrect="off"
                placeholder="(blank = create)" style="text-transform:uppercase" />
 
         <label for="sessionCode">Session passcode
           <span class="hint">Given by the facilitator, and needed to start a new group.</span>
         </label>
         <input type="text" id="sessionCode" name="sessionCode" maxlength="40"
-               autocomplete="off" spellcheck="false" />
+               autocomplete="off" spellcheck="false"
+               autocapitalize="none" autocorrect="off" />
 
         <div class="btn-row">
           <button type="submit" id="loginSubmit">Continue</button>
@@ -63,7 +64,7 @@
 
       <!-- Join code, always visible once in a group -->
       <div class="card">
-        <h3>Your group: <span id="groupTitle"></span> <span id="statusBadge" class="badge"></span></h3>
+        <h2>Your group: <span id="groupTitle"></span> <span id="statusBadge" class="badge"></span></h2>
         <p class="small muted" style="margin:0.2rem 0 0.6rem">Read this code out so the rest of your group can join, typing the same group name:</p>
         <div class="code-block">
           <span class="joincode" id="joinCodeDisplay">––––––</span>
@@ -75,13 +76,13 @@
       <details id="instructions" class="card instructions">
         <summary>What am I doing here? Tap to re-read at any point</summary>
         <div class="instructions-body">
-          <p class="small" style="margin-top:0.6rem"><strong>In ~15 minutes, get the core three done first:</strong></p>
+          <p class="small" style="margin-top:0.6rem"><strong>You have about fifteen minutes, and the core three come first:</strong></p>
           <ol class="small">
             <li><strong>One artefact</strong>: run your tool on your problem and keep what is useful.</li>
             <li><strong>One caught error</strong>: a moment it was fluent and wrong. Keep it.</li>
             <li><strong>One insight</strong>: the limitation, the safeguard or how your field over- or under-uses AI here, for the lightning round.</li>
           </ol>
-          <p class="small"><em>If you have ~5 minutes left:</em> sketch the automation–steering map (which steps
+          <p class="small"><em>With about five minutes left</em>, sketch the automation–steering map (which steps
             the tool ran, where you steered) and decide whether oversight was interwoven or staged.</p>
           <p class="small"><strong>Red lines.</strong> Never paste personal data, students' marks or notes,
             unpublished or participant data, or confidential or embargoed material. When in doubt,
@@ -92,7 +93,7 @@
             <ul class="small">
               <li><strong>A · Methodological Blind-Spot Detector</strong>: turn the tool on your own study or design and verify which of its critiques are real.</li>
               <li><strong>B · Executive-Function Layer</strong>: build a small, reusable aid for planning, triage or accessibility (for example, messy notes into owned actions).</li>
-              <li><strong>C · Rapid Prototyping</strong> <em>(stretch)</em>: make a small artefact (a script, a chart, an explainer), then check it. Beware the 'vibe-coding' trap, where it runs and looks right but is subtly wrong. You will not fully verify it in 15 minutes, and the verifying is the point.</li>
+              <li><strong>C · Rapid Prototyping</strong> <em>(stretch)</em>: make a small artefact (a script, a chart, an explainer), then check it. Beware the 'vibe-coding' trap, where it runs and looks right but is subtly wrong. You will not fully verify it in fifteen minutes, and the verifying is the point.</li>
               <li><strong>D · Public Engagement</strong>: turn a finding into a lay summary or explainer, then audit it for fidelity (what got distorted?).</li>
               <li><strong>Own problem</strong>: a real, non-confidential problem a member brings. Anonymise or synthesise it first.</li>
             </ul>
@@ -119,13 +120,13 @@
               <li><strong>Confidential, unpublished or embargoed?</strong> (grants, peer review, NDA, no consent) → stop, since it is not yours alone to waive.</li>
               <li><strong>Do you hold the rights?</strong> If unsure, treat it as restricted.</li>
             </ol>
-            <p class="small"><strong>If the answer to any is no:</strong> anonymise, synthesise, abstract up a level or abstain (a valid finding for your museum).</p>
+            <p class="small">If any of those four gives you pause, anonymise, synthesise, abstract up a level or abstain, which is itself a valid finding for your museum.</p>
           </details>
         </div>
       </details>
 
       <!-- Facilitator note shown when reopened -->
-      <div id="reopenedNotice" class="notice warn" hidden></div>
+      <div id="reopenedNotice" class="notice warn" role="status" hidden></div>
 
       <!-- Approved confirmation -->
       <div id="approvedNotice" class="notice ok" role="status" hidden>
@@ -148,7 +149,7 @@
         </label>
         <select id="scenario" name="scenario"></select>
 
-        <div id="ownProblemNotice" class="notice warn" hidden>
+        <div id="ownProblemNotice" class="notice warn" role="alert" hidden>
           <strong>Bringing your own problem?</strong> Anonymise, synthesise or abstain, and
           never paste personal, student, unpublished or confidential data. If in any doubt,
           pick a worked-example track above instead.
@@ -169,12 +170,22 @@
         </label>
         <textarea id="caughtErrors" name="caughtErrors"></textarea>
 
-        <label for="map">Automation–steering map <span class="muted small">(if you have ~5 min left)</span>
+        <label for="insight">Key insight
+          <span class="hint">The one thing worth sharing with the room.</span>
+        </label>
+        <textarea id="insight" name="insight"></textarea>
+
+        <p class="section-break small muted">That is the core three. Everything below is worth
+          adding if about five minutes remain, and worth leaving blank if they do not. The one
+          exception is the sharing box at the foot of the form, which takes a second and decides
+          whether your note joins the public archive.</p>
+
+        <label for="map">Automation–steering map <span class="muted small">(worth adding if about five minutes remain)</span>
           <span class="hint">Which steps the tool ran, and where <em>you</em> steered by deciding, verifying or overriding.</span>
         </label>
         <textarea id="map" name="map"></textarea>
 
-        <label for="oversight">Oversight model <span class="muted small">(if you have ~5 min left)</span></label>
+        <label for="oversight">Oversight model <span class="muted small">(worth adding if about five minutes remain)</span></label>
         <select id="oversight" name="oversight">
           <option value="">choose one</option>
           <option value="interwoven">Interwoven (checking throughout)</option>
@@ -183,11 +194,6 @@
 
         <label for="oversightWhy">Why that oversight model?</label>
         <textarea id="oversightWhy" name="oversightWhy"></textarea>
-
-        <label for="insight">Key insight
-          <span class="hint">The one thing worth sharing with the room.</span>
-        </label>
-        <textarea id="insight" name="insight"></textarea>
 
         <label for="fieldUse">Field reflection <span class="muted small">(optional, for the wrap-up or the lightning round)</span>
           <span class="hint">Is your field generally <em>under-</em> or <em>over-using</em> generative AI for

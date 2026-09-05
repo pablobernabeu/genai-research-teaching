@@ -1,6 +1,8 @@
 # Pre-workshop briefing email
 
-> Send five to seven days ahead, as plain text or light HTML, and replace every bracketed placeholder. Keep it short, since the aim is to lower nerves and set expectations without pre-teaching. The paragraphs are single continuous lines, so the body pastes cleanly into an email client.
+> Send it as early as you can, ideally five to seven days ahead. Inside a week, open by
+> acknowledging the short notice and keep the asks to the two under 'What to bring'.
+> Send it as plain text or light HTML, and replace every bracketed placeholder. Keep it short, since the aim is to lower nerves and set expectations without pre-teaching. The paragraphs are single continuous lines, so the body pastes cleanly into an email client.
 
 ---
 
@@ -18,14 +20,14 @@ In Part 2, you will work in groups of five and write up your group's note in a s
 
 What to bring:
 
-- A fully charged phone. Everything runs in a browser and works on a phone, and a laptop is welcome if you would rather type on one. The room has power and Wi-Fi throughout.
+- A fully charged phone. Everything runs in a browser and works on a phone. Bring a laptop if you would rather type on one, and certainly if you fancy building or visualising something, since that is awkward on a phone. One laptop per table is plenty. There should be power and Wi-Fi in the room, though it is worth arriving charged.
 - Optionally, a real problem to work on (non-confidential, as set out above).
-- Optionally, a device already signed in to a free chat assistant (ChatGPT, Claude, Gemini or Copilot). One between the five of you is plenty, and if nobody has one, we will work around it instead of spending the session signing up.
+- The one thing worth doing beforehand: open a free account on ChatGPT, Claude, Gemini or Copilot and stay signed in on your phone. One person per table is enough, though more is better, and if nobody has one we will work around it instead of spending the session signing up.
 - Curiosity and scepticism, both of which are welcome.
 
-Two short pieces anticipate the day's themes, and both are entirely optional. The first is a reading by Kristi Girdharry, 'A writing professor's new task in the age of AI: teaching students when to struggle' (The Conversation, 2026), on why the friction of thinking unaided is where discernment begins: <https://theconversation.com/a-writing-professors-new-task-in-the-age-of-ai-teaching-students-when-to-struggle-276590>. The second is a talk by Advait Sarkar, a researcher at Cambridge and Microsoft Research who works on AI and thinking, 'How to stop AI from killing your critical thinking' (TED, 2025): <https://www.youtube.com/watch?v=3lPnN8omdPA>.
+Two short pieces anticipate the day's themes. Nothing here is expected before the day, and they read just as well afterwards. The first is a reading by Kristi Girdharry, 'A writing professor's new task in the age of AI: teaching students when to struggle' (The Conversation, 2026), on why the friction of thinking unaided is where discernment begins: <https://theconversation.com/a-writing-professors-new-task-in-the-age-of-ai-teaching-students-when-to-struggle-276590>. The second is a talk by Advait Sarkar, a researcher at Cambridge and Microsoft Research who works on AI and thinking, 'How to stop AI from killing your critical thinking' (TED, 2025): <https://www.youtube.com/watch?v=3lPnN8omdPA>.
 
-On the shift itself, writing and programming are moving up a level of abstraction, with you leading the ideation and steering at the key moments. Andrej Karpathy sets this out in a talk, 'Software is changing (again)' (2025): <https://www.youtube.com/watch?v=LCEmiRjPEtQ>. Ethan Mollick describes two ways of dividing the work in 'Centaurs and cyborgs on the jagged frontier' (2023): <https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged>.
+If you would like more afterwards, the deck lists these again at the close. On the shift itself, writing and programming are moving up a level of abstraction, with you leading the ideation and steering at the key moments. Andrej Karpathy sets this out in a talk, 'Software is changing (again)' (2025): <https://www.youtube.com/watch?v=LCEmiRjPEtQ>. Ethan Mollick describes two ways of dividing the work in 'Centaurs and cyborgs on the jagged frontier' (2023): <https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged>.
 
 No view here is the last word, because the technology moves too fast for that. Please bring your own critical, informed perspective to our shared tables.
 

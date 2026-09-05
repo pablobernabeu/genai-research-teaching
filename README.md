@@ -52,7 +52,7 @@ and to create.
 │
 ├── firebase-app/                   ← the Part 2 workshop app: Firestore + Hosting, security rules, three pages
 │   └── README.md                   ← app architecture, data model, security model and setup
-├── handouts/                       ← ready-to-print PDFs (slides, the two packs, the two one-pagers); refresh with `npm run build:publish`
+├── handouts/                       ← ready-to-print PDFs, including the single print bundle for a print shop; refresh with `npm run build:publish`
 │
 ├── themes/
 │   └── workshop.css                ← custom Marp theme (extends `gaia`; logo and the title-slide disclaimer footer)
@@ -71,6 +71,7 @@ and to create.
 │   ├── group_pack_cover.md         ← cover and orientation sheet for the printed group-pack booklet
 │   ├── role_cards.md               ← optional prompt cards for the five group roles
 │   ├── cue_cards.md                ← print-ready facilitator cue cards
+│   ├── lightning_round_tally.md    ← one line per group during the lightning round, for the close
 │   ├── icebreaker.md               ← a senior-appropriate opener
 │   ├── starter_prompts.md          ← a starter-prompt library, per track
 │   ├── worked_examples.md          ← one worked example per track (offline fallback)
@@ -152,7 +153,10 @@ print them without building anything:
 - [`handouts/group-pack.pdf`](handouts/group-pack.pdf), the combined per-table booklet (cover, role cards, data aid, rubric, worked examples, starter prompts).
 - [`handouts/facilitator-pack.pdf`](handouts/facilitator-pack.pdf), the combined facilitator booklet (cue cards, run sheet, morning checklist).
 - [`handouts/group-one-pager.pdf`](handouts/group-one-pager.pdf), the one-page group quick start.
-- [`handouts/facilitator-day-of-reset.pdf`](handouts/facilitator-day-of-reset.pdf), the one-page app reset checklist.
+- [`handouts/facilitator-day-of-reset.pdf`](handouts/facilitator-day-of-reset.pdf), the app reset checklist.
+- [`handouts/lightning-round-tally.pdf`](handouts/lightning-round-tally.pdf), the sheet for one line per group during the lightning round.
+- [`handouts/seed-signs.pdf`](handouts/seed-signs.pdf) and [`handouts/table-numbers.pdf`](handouts/table-numbers.pdf), the A4 landscape signs to post around the room.
+- [`handouts/print-bundle.pdf`](handouts/print-bundle.pdf), every one of the above in a single file, each section behind a slip stating its copy count, its paper and how it is finished. This is the one to hand to a print shop.
 
 They are generated from the Markdown sources and may lag behind them, so run
 `npm run build:publish` to refresh them after editing.
