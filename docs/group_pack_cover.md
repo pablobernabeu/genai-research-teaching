@@ -9,7 +9,7 @@ fifteen minutes in Part 2. Get the core three done first. If that is all you man
 you have done the task.
 
 1. One artefact. Run your tool on your problem and make something real: a critique, a template, a chart, a translation.
-2. One or two caught errors. Moments it was fluent and wrong. Keep them.
+2. One or two caught errors. Note the moments when it was fluent and wrong, and keep them.
 3. One insight. The limitation, the safeguard or one honest thing this exposed about how your field is over- or under-using AI, which you will give in the lightning round, in up to 45 seconds.
 
 If you have about five minutes left, go deeper:
@@ -23,8 +23,8 @@ and submitting. Add the map and the oversight model in that stretch if five minu
 so remain. When you fall behind, drop the map and never the insight.
 
 The app has a box for the field reflection, so record it there if you get to it. The
-five rubric scores are in this pack alone, and they belong to the tidy-up afterwards
-rather than the fifteen minutes.
+five rubric scores are in this pack alone, and they belong to the tidy-up afterwards,
+once the fifteen minutes are over.
 
 ## Before you paste anything: the red lines
 

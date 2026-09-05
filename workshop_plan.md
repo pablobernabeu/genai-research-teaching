@@ -59,7 +59,7 @@ By the end of the session, a participant should be able to:
 
 Four of the five objectives map onto a rubric dimension and a group role, so each has
 an owner and a place in the written record. The second is carried instead by the museum
-of caught errors, which everyone contributes to, and the Financial & Scalability
+of caught errors, which everyone contributes to, and the Financial and Scalability
 dimension supports the first by testing a tool choice against cost and scale.
 
 ---
@@ -231,7 +231,7 @@ A facilitator-timed round of short spoken contributions, without presentations.
   field-level reflection gets voiced from the work just done. Offer it, and never force
   it.
 - Keep a visible timer. At 45 seconds, thank the group and move on.
-- Timing, and be honest with yourself about it. Seven minutes is 420 seconds, and a
+- Be honest with yourself about the timing. Seven minutes is 420 seconds, and a
   handover between groups costs five to ten seconds even when it runs well. Nine groups
   at 45 seconds each leaves nothing for those handovers, and ten groups do not fit at
   all. So with eight groups, keep to 45 seconds. With nine or ten, announce 35 seconds at
@@ -253,7 +253,7 @@ loop and the bigger questions. Give the take-home actions (slide 31), point to t
 
 ## 6. Circulating prompt bank
 
-Carry these with you, because they are tuned to the sub-phases and to the five rubric dimensions, and ask one, listen and move on.
+Carry these prompts with you, since they are tuned to the sub-phases and to the five rubric dimensions. Ask one, listen, then move on.
 
 Project Definition
 - 'What is the actual problem here, in one sentence a colleague would recognise?'
@@ -263,12 +263,12 @@ Technology Stack
 - 'Why this tool and not one a level up or down the spectrum?'
 - 'What would you lose, and gain, by moving to a no-code or API approach?'
 
-Data Security & Ethics
+Data Security and Ethics
 - 'What exactly are you about to paste in? Whose data is it?'
 - 'If your group ticks the share box, this note goes into a public archive. Is there anything in it, or anything you have pasted into the tool, that you would regret?'
 - 'Where would you need to disclose that you used AI for this?'
 
-Financial & Scalability Constraints
+Financial and Scalability Constraints
 - 'Does this still work on the free tier next month, for fifty people?'
 - 'What breaks first when you scale this: cost, limits or trust?'
 
@@ -293,16 +293,16 @@ Friction (ask everywhere)
 | If… | Then… |
 |---|---|
 | Wi-Fi fails | Switch the affected groups to the offline path: critique a printed worked example (`docs/worked_examples.md`) against the rubric. The thinking is the deliverable, and the tool is only the occasion for it. |
-| A chosen tool demands payment or a login wall | Move down the spectrum to a free off-the-shelf chat tool, and treat the paywall itself as a finding under Financial & Scalability. |
+| A chosen tool demands payment or a login wall | Move down the spectrum to a free off-the-shelf chat tool, and treat the paywall itself as a finding under Financial and Scalability. |
 | The app will not load for a group | Fall back to HackMD (hackmd.io) or paper for that group. The rubric template is plain Markdown and portable, and the facilitator transcribes it into the archive afterwards. A brief Wi-Fi blip needs no action, because the app caches offline and re-syncs. |
 | Nobody in a group has a device | Give them the printed worked example and the paper rubric from the pack. That group works on paper, keeps its caught errors and speaks in the lightning round like everyone else, and the facilitator transcribes the note afterwards. |
-| A group finishes early | Send them to the rubric dimension they have thought about least, which is usually Financial & Scalability or the automation–steering map, or set them to red-team a neighbouring group's output by probing it adversarially for weaknesses the other group missed. |
+| A group finishes early | Send them to the rubric dimension they have thought about least, which is usually Financial and Scalability or the automation–steering map, or set them to red-team a neighbouring group's output. |
 | A group stalls | Shrink the task. 'Forget the grand version. What is the smallest real thing the tool could help with in ten minutes?' |
 | Uneven groups (four or six) | At four, the Convenor doubles as Steward. At six, split Driver and Sceptic across two people, or add a second Sceptic, since more red-teaming does no harm. |
 | Someone arrives for Part 2 having missed Part 1 | Put them into any group of four and hand them a one-pager. The group briefs them in a sentence, and nothing in Part 2 depends on having heard Part 1. |
 | Part 1 starts late | Drop 'Saved or burned' (slide 6), then compress slides 10 to 13 into one breath each. Never cut the group formation at 12:26, since Part 2 has no way to recover it. |
 | A group of two or three, or of seven or eight | Below four, merge it with a neighbouring group. Above six, split it in two and give each half its own lightning-round slot. |
-| Fewer or more than ten groups | The lightning round is about seven minutes, which just fits eight groups at 45 seconds, and only if handovers stay near five seconds. With nine or ten, announce 35 seconds at the start of the round, and if you are still behind after six groups take a one-line contribution from the rest. Never overrun the 13:45 finish. |
+| Nine or ten groups | The lightning round is about seven minutes, which just fits eight groups at 45 seconds, and only if handovers stay near five seconds. With nine or ten, announce 35 seconds at the start of the round, and if you are still behind after six groups take a one-line contribution from the rest. Never overrun the 13:45 finish. |
 | Someone pastes sensitive data | Stop it gently and immediately, note it as a live example of why the red lines exist and have them anonymise or synthesise before continuing. |
 | A dominant voice | Lean on roles: 'Steward, what is your read?' Give quieter roles explicit air. |
 | A sceptical or hostile participant | Welcome it, because scepticism is the point. Channel it into the Sceptic role and the museum. |

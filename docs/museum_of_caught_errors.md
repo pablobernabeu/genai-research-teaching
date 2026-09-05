@@ -22,7 +22,7 @@ Use the table already in your note in the app, or in HackMD on the fallback (fro
 
 | What happened | How we caught it | What it signals about where humans must stay |
 |---|---|---|
-| It cited a paper that does not exist | Tried to find the DOI; no such paper | Never trust a citation you have not opened |
+| It cited a paper that does not exist | Tried to find the DOI, and no such paper exists | Never trust a citation you have not opened |
 | It dropped 'preliminary' and wrote 'proven' | Compared the rewrite to the source | A human must guard every caveat |
 | It invented an owner for a meeting action | Checked the action against the notes | No fact may appear that was not in the input |
 

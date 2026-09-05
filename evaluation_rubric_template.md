@@ -12,7 +12,7 @@ that wants to record its scores and reflection after submitting in the app.
 The rubric is a thinking tool and a shared record, and once it is archived, it forms
 part of the open account of what this cohort learned.
 
-> The format is deliberately short, because the build window in Part 2 is about 15 minutes. Get the
+> The format is deliberately short, because the build window in Part 2 is about fifteen minutes. Get the
 > core three first: the artefact (your tool run on your problem), one caught error and
 > one insight for the lightning round. If you have about five minutes left, add the
 > automation–steering map and say whether your oversight was interwoven or staged. The
@@ -38,8 +38,8 @@ part of the open account of what this cohort learned.
    track. You do not need a GitHub account, because the facilitator gathers every
    group's link.
 
-> If HackMD will not let you sign up (some logins are restricted), do not lose time
-> troubleshooting: switch to paper at once. Write the same template in any shared
+> If HackMD will not let you sign up (some logins are restricted), there is no need to
+> lose time on troubleshooting, so switch to paper straight away. Write the same template in any shared
 > document or on paper. It is plain Markdown,
 > and the facilitator can transcribe one note into the archive afterwards.
 
@@ -65,11 +65,11 @@ Share publicly? yes / no (yes means the group is content for this note, which sh
 - Tool(s) used, and where they sit on the spectrum (off-the-shelf / no-code / IDE–API): …
 - Why this level and not one up or down (control, data exposure, effort): …
 
-## 3. Data Security & Ethics
+## 3. Data Security and Ethics
 - What we put into the tool, and how we de-identified it: …
 - Red lines we held; UK GDPR, ethics, disclosure of AI use, IP, consent and fairness: …
 
-## 4. Financial & Scalability Constraints
+## 4. Financial and Scalability Constraints
 - Free-tier limits we hit or foresee: …
 - What breaks first at scale (cost, usage limits or trust): …
 
@@ -81,7 +81,7 @@ Share publicly? yes / no (yes means the group is content for this note, which sh
 | … | … | … |
 
 - Interwoven or staged? Is our oversight interwoven (continuous, with a human in the loop at every step) or staged (concentrated at distinct checkpoints between phases)? Which did we choose, and why?
-- What our choice costs, and how we offset it. (Interwoven oversight is thorough but heavy, and checking every step can dull attention until things are waved through out of habit; staged oversight is lighter, but errors can accumulate unnoticed between checkpoints.): …
+- What our choice costs, and how we offset it. Interwoven oversight is thorough but heavy, and checking every step can dull attention until things are waved through out of habit. Staged oversight is lighter, but errors can accumulate unnoticed between checkpoints: …
 - Checkpoints we set in advance: …
 - What we will never delegate to the tool: …
 - Who is accountable for the final judgement: …
@@ -112,8 +112,8 @@ Share publicly? yes / no (yes means the group is content for this note, which sh
 |---|---|---|
 | Project Definition | | |
 | Technology Stack | | |
-| Data Security & Ethics | | |
-| Financial & Scalability | | |
+| Data Security and Ethics | | |
+| Financial and Scalability | | |
 | Human-in-the-Loop | | |
 ```
 
@@ -147,7 +147,7 @@ Robust than Developing.
 - **5, Robust:** deliberate placement on the spectrum, with a reasoned trade-off of
   control, data exposure and effort, and alternatives weighed.
 
-### 3 · Data Security & Ethics
+### 3 · Data Security and Ethics
 *Were the red lines held, and were the UK GDPR, ethics and fairness addressed?*
 
 - **1, Nascent:** personal, special-category or confidential data used without
@@ -158,7 +158,7 @@ Robust than Developing.
   disclosure, IP, consent, bias and fairness addressed; and a note that would
   withstand being public.
 
-### 4 · Financial & Scalability Constraints
+### 4 · Financial and Scalability Constraints
 *Does the free tier hold, and what breaks at scale?*
 
 - **1, Nascent:** no thought to cost or scale, and an assumption that it stays free

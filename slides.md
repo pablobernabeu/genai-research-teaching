@@ -53,12 +53,12 @@ Part 1 sets up a way of thinking, the lunch is a real break and Part 2 puts the 
 
 ## Our stance is discernment, not enthusiasm
 
-- Whatever your level of confidence, whether you have never tried one or use them daily, you are in the right room.
+- Whatever your level of confidence, from never having used an AI tool to using one daily, you are in the right room.
 - The aim is a deeper understanding of the technology, with no technical instruction on any one tool.
 - This is a session about judgement. We use these tools and we interrogate them, in research and in teaching.
 - Success means a clear account of what helped, what failed and where a human must stay in charge.
 
-> You bring the expertise. The tool is a fast and confident assistant whose error rate depends on the task, and whose fluency never tells you which case you are in. The aim is to leave knowing when not to reach for it.
+> You bring the expertise. The tool is a fast and confident assistant whose error rate depends on the task, and whose fluency never tells you which case you are in. Leave knowing when not to reach for it.
 
 ---
 
@@ -66,7 +66,7 @@ Part 1 sets up a way of thinking, the lunch is a real break and Part 2 puts the 
 
 <div class="redbox center">
 
-In one sentence each, recall the last time an AI tool either<br/>helped you or let you down, and which it was.
+In one sentence each, recall the last time an AI tool<br/>either helped you or let you down.
 
 </div>
 
@@ -103,7 +103,7 @@ Humans have always extended themselves with tools, and a labour economy that rew
 
 ## Getting started, with no expertise needed
 
-A generative AI tool works much like a chat assistant. You type a request and it writes back. That is essentially the whole interface.
+A generative AI tool works much like a chat assistant. You type a request and it writes back. That is the whole interface.
 
 - Choose one free tool today, such as ChatGPT, Claude, Gemini or Copilot. Any of them will serve.
 - A useful request states who you are, what you want and what a good answer would look like. You then push back on the reply.
@@ -122,7 +122,7 @@ When a tool resists your intent, by giving a glib answer, missing the point or s
 
 We treat friction as data to record, whether we are marking, writing or analysing.
 
-<span class="small muted">Deliberate friction, the 'cognitive forcing functions' that make you pause and decide, measurably cuts over-reliance on AI where explanations alone do not (Buçinca et al., 2021; link in the close).</span>
+<span class="small muted">Deliberate friction, the 'cognitive forcing functions' that make you pause and decide, measurably cuts over-reliance on AI where explanations alone do not (Buçinca et al., 2021, with a link in the close).</span>
 
 ---
 
@@ -188,11 +188,11 @@ These risks are distinct, and they pull in different directions.
 
 ## Stepping back, the bigger questions
 
-Beyond any single task, three larger shifts are worth carrying into Part 2.
+Beyond any single task, three larger questions are worth carrying into Part 2.
 
 - Thinking and writing, decoupled. We have long thought by writing. If the tool drafts, where does the thinking go, and what is lost if we let it?
 - Fairness, as leveller or amplifier. AI might narrow gaps (a second language, thin support, an early career) or widen them. Which, and for whom?
-- Disclosure. We ask people to disclose their use of AI. Should we also disclose what it offset for us, such as writing in a second language or having little support, or would that expose the very inequities it eased?
+- Disclosure. We ask people to disclose their use of AI. Should we also disclose the conditions it offsets, such as writing in a second language or having little support, or would that expose the very inequities it eased?
 
 > There are no settled answers here. These are policy questions in the making. Notice them in your own task.
 
@@ -215,12 +215,12 @@ Before you start a task, decide the following in advance.
 
 ## What Part 2 asks of you
 
-Take a real task, use a tool on it, then examine the result closely. Part 1 provided the way of thinking. Part 2 puts it into practice. You will look at your work through five dimensions, and score them in your pack afterwards if you wish.
+Take a real task, use a tool on it, then examine the result closely. Part 1 provides the way of thinking. Part 2 puts it into practice. You will look at your work through five dimensions, and score them in your pack afterwards if you wish.
 
 - Project Definition, your group's one real problem.
 - Technology Stack, which tool on the spectrum, and why (Part 1).
-- Data Security & Ethics, the red lines you hold (Part 1).
-- Financial & Scalability, whether the free tier holds.
+- Data Security and Ethics, the red lines you hold (Part 1).
+- Financial and Scalability, whether the free tier holds.
 - Human-in-the-Loop, where you steer, interwoven or staged (Part 1).
 
 <span class="small muted">Plus the friction you catch (your museum of caught errors), a short societal reflection (fairness, disclosure, thinking versus writing and whether your field is over- or under-using AI here) and one insight to share. The app captures the essentials, and the rubric and the reflection are in your pack.</span>
@@ -320,7 +320,7 @@ Take one angle each so nothing goes unwatched, and share the keyboard freely.
 2. Technology Stack (Driver). The right tool on the spectrum, and why.
 3. Data Security and Ethics (Steward). The red lines you hold.
 4. Financial and Scalability (Reporter). Whether the free tier holds. The Reporter also owns the note and the spoken insight.
-5. Human-in-the-Loop (Sceptic). Checkpoints, accountability and the automation–steering map.
+5. Human-in-the-Loop (Sceptic). Checkpoints, accountability and the automation–steering map if time allows.
 
 <span class="small muted">These are angles of attention for the fifteen minutes. The 1–5 scoring on each dimension belongs to the tidy-up afterwards, so do not stop to score anything today. An experienced group can ignore the labels.</span>
 
@@ -335,8 +335,6 @@ Use your group's one problem: the seed, a member's real one or a worked example 
 3. One insight. A limitation, a safeguard or one honest observation about how your field is over- or under-using AI. This is your line for the lightning round.
 
 > If about five minutes remain, go further. Add the automation–steering map (which steps the tool ran, and where you steered) and decide whether oversight was interwoven or staged, noting why and what it cost. If you fall behind, drop the map before the insight.
-
-<span class="small muted">The map and the oversight model are a bonus if time allows. The rubric scores and the societal reflection are for your pack and the discussion.</span>
 
 ---
 
@@ -359,7 +357,7 @@ Keep a short, honest log of the moments the tool went wrong, and what each one t
 - A confident but fake citation · a flattened nuance · a plausible but invalid method · a biased rewrite · a misgraded answer.
 - For each, note what happened, how you caught it and what it signals about where humans must stay in charge.
 
-> These entries are the most valuable thing your group produces.
+> These entries are the most valuable things your group produces.
 
 ---
 
@@ -367,7 +365,7 @@ Keep a short, honest log of the moments the tool went wrong, and what each one t
 
 ## Fifteen minutes, starting now (13:18)
 
-<span class="subtitle">Tracks are in your pack and in the app · the rubric is in your pack · help is circulating</span>
+<span class="subtitle">Tracks and rubric in your pack · tracks also in the app · help is circulating</span>
 
 Hold the red lines, record the friction, keep a human in the loop.
 
@@ -411,7 +409,7 @@ What was the most significant limitation, the most important human-in-the-loop s
 Threads worth drawing out from the lightning round:
 
 - **Context decided.** A tool that helped on one task and was a hazard on the next.
-- **Friction as a signal.** Where the friction a group recorded marked the point at which human judgement was needed.
+- **Friction as a signal.** A moment of resistance a group recorded, and the judgement it exposed.
 - **A checkpoint named in advance.** The strongest safeguard a group built in.
 - **Where a free tier drew a hard line.** On data, scale or accountability.
 
@@ -423,7 +421,7 @@ Threads worth drawing out from the lightning round:
 
 - Treat fluency as a reason to check.
 - Build the checkpoint before you trust the output.
-- Record the friction. It maps where you matter.
+- Record the friction while it is fresh, since it shows where your judgement was needed.
 - Disclose use, respect data and keep accountability with a named person.
 - Ask the bigger questions of who is helped, who is left out and what we owe to disclose.
 
@@ -477,9 +475,9 @@ Choose one to try this week, in research or in teaching.
 
 The notes of groups that opt in become an open, reproducible archive at github.com/pablobernabeu/genai-research-teaching
 
-Questions or follow-ups? Open a thread in the repository's Discussions tab (github.com/pablobernabeu/genai-research-teaching/discussions), so that answers help everyone.
+If you have questions or follow-ups, open a thread in the repository's Discussions tab (github.com/pablobernabeu/genai-research-teaching/discussions), so that answers help everyone.
 
-<span class="subtitle">The tool is fast and confident. You are the one who is accountable, and who decides when its fluency has earned your trust. Bring both to the work.</span>
+<span class="subtitle">The tool is fast and confident. You are the one who is accountable, and who decides when its fluency has earned your trust.</span>
 
 ---
 

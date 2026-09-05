@@ -131,16 +131,21 @@ service cloud.firestore {
         && unchanged('joinCode')
         && unchanged('sessionCode');
 
-      // UPDATE (joining): a second device adds ITSELF to ownerUids by proving
-      // it knows the joinCode. It may change nothing else. A wrong code changes
-      // the joinCode field, which both the equality check and affectedKeys
-      // reject — so guessing fails closed.
+      // UPDATE (joining): a second device adds ITSELF to ownerUids by proving it knows
+      // the joinCode, writing that proof under its OWN uid in joinProofs.
+      //
+      // The proof cannot be a comparison against joinCode itself. An update merges, so a
+      // caller who simply OMITS joinCode leaves it untouched and any equality check on it
+      // is trivially true: that let a signed-in stranger join any draft group, read its
+      // note and the session passcode, and submit on its behalf. Keying the proof by
+      // request.auth.uid closes it, because a caller has nothing to inherit under a key
+      // only they can write and a missing key errors, which counts as a denial.
       // Joining is allowed ONLY before submission (draft/reopened) — a submitted or
       // approved group cannot gain new owners, so its work cannot be overwritten.
       allow update: if request.auth != null
         && resource.data.status in ['draft', 'reopened']
-        && request.resource.data.joinCode == resource.data.joinCode
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['ownerUids', 'updatedAt'])
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['ownerUids', 'updatedAt', 'joinProofs'])
+        && request.resource.data.joinProofs[request.auth.uid] == resource.data.joinCode
         && request.resource.data.ownerUids.hasAll(resource.data.ownerUids)
         && (request.auth.uid in request.resource.data.ownerUids);
 
@@ -149,10 +154,11 @@ service cloud.firestore {
       // On APPROVE the facilitator must also blank joinCode and sessionCode, so the
       // now-publicly-readable document carries no secrets.
       allow update: if isFacilitator()
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'facilitatorNote', 'updatedAt', 'joinCode', 'sessionCode'])
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'facilitatorNote', 'updatedAt', 'joinCode', 'sessionCode', 'joinProofs'])
         && request.resource.data.status in ['submitted', 'approved', 'reopened', 'draft']
         && (request.resource.data.status != 'approved'
-            || (request.resource.data.joinCode == '' && request.resource.data.sessionCode == ''));
+            || (request.resource.data.joinCode == '' && request.resource.data.sessionCode == ''
+                && request.resource.data.get('joinProofs', {}).keys().size() == 0));
 
       // UPDATE (facilitator rename): fix an inappropriate or personal name without
       // destroying the group's work. Facilitator-only, and may touch ONLY the name and

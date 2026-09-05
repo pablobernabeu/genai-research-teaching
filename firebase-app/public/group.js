@@ -112,7 +112,7 @@ function clearWorkError() {
 function buildScenarioOptions() {
   const placeholder = document.createElement("option");
   placeholder.value = "";
-  placeholder.textContent = "— choose a scenario —";
+  placeholder.textContent = "choose a scenario";
   scenarioSel.appendChild(placeholder);
   for (const s of SCENARIOS) {
     const opt = document.createElement("option");
@@ -153,7 +153,7 @@ onAuthStateChanged(auth, (user) => {
   } catch (err) {
     authNotice.className = "notice error";
     authNotice.textContent =
-      "Could not connect. Check your connection and reload. " + friendlyError(err);
+      "We could not connect. Check your connection and reload. " + friendlyError(err);
   }
   if (signedIn) {
     // P2: silently resume the group from last time (after a reload/disconnect) before we
@@ -200,7 +200,7 @@ loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   clearLoginError();
   if (!uid) {
-    showLoginError("Still connecting — please wait a moment and try again.");
+    showLoginError("Still connecting. Please wait a moment and try again.");
     return;
   }
 
@@ -219,7 +219,7 @@ loginForm.addEventListener("submit", async (e) => {
   // Creating (no join code) requires the facilitator's session passcode up front, so
   // we fail fast with a clear message rather than attempting a write the rule denies.
   if (!typedCode && !sessionCode) {
-    showLoginError("Enter the session passcode to start a group.");
+    showLoginError("Please enter the session passcode to start a group.");
     return;
   }
 
@@ -302,7 +302,7 @@ async function createGroup(displayName, nameLower, sessionCode) {
     const msg = String((err && err.message) || "");
     if (code.includes("permission-denied") || /permission|PERMISSION_DENIED/i.test(msg)) {
       const badCode = new Error("bad-session-code");
-      badCode.userMessage = "That session passcode is not right — check with the facilitator (it is needed to start a group).";
+      badCode.userMessage = "That session passcode was not accepted. Please check it with the facilitator, since it is needed to start a group.";
       throw badCode;
     }
     throw err;
@@ -322,7 +322,7 @@ async function joinGroup(nameLower, typedCode) {
   const nameSnap = await getDoc(doc(db, "groupNames", nameLower));
   if (!nameSnap.exists()) {
     const notFound = new Error("no-such-group");
-    notFound.userMessage = "No group with that name yet. Check the spelling, or leave the code blank to create it.";
+    notFound.userMessage = "There is no group with that name yet. Check the spelling, or leave the code blank to create it.";
     throw notFound;
   }
   const targetId = nameSnap.data().groupId;
@@ -332,9 +332,12 @@ async function joinGroup(nameLower, typedCode) {
     await updateDoc(groupRef, {
       // arrayUnion keeps the existing owners (hasAll(...) in the rule) and adds us.
       ownerUids: arrayUnion(uid),
-      // We must send the join code we believe is correct; the rule compares it to
-      // the stored value. If it differs, the write is denied.
-      joinCode: typedCode,
+      // The proof that we know the code, written under OUR OWN uid. The rule compares
+      // it to the stored joinCode. It has to be keyed by uid: a plain field could be
+      // left in place by a later caller who simply omits it, and an update merges, so
+      // an omitted field is an unchanged field and any equality check on it passes for
+      // free. Keying it by the caller means an outsider has nothing to inherit.
+      ["joinProofs." + uid]: typedCode,
       updatedAt: serverTimestamp(),
     });
   } catch (err) {
@@ -344,7 +347,7 @@ async function joinGroup(nameLower, typedCode) {
       // If the group is approved we CAN read it, so we say so precisely; otherwise we
       // name both possibilities rather than blaming the code.
       let message =
-        "Could not join. Either the join code is wrong, or this group has already been submitted (submitted groups lock to new devices). Check the code with your group.";
+        "We could not join that group. Either the join code is wrong, or this group has already been submitted (submitted groups lock to new devices). Check the code with your group.";
       try {
         const snap = await getDoc(groupRef);
         if (snap.exists() && snap.data().status === "approved") {
@@ -383,7 +386,7 @@ function enterGroup(id) {
       // With the persistent cache, a brief drop keeps serving from disk; surface it calmly
       // rather than as a dead-end, and reassure that work is not lost.
       if (!navigator.onLine || err.code === "unavailable") {
-        showWorkError("Working offline — your changes are saved on this device and will sync when you reconnect.");
+        showWorkError("You are working offline. Your changes are saved on this device and will sync when you reconnect.");
       } else {
         showWorkError("Lost the live connection. " + friendlyError(err));
       }
@@ -425,9 +428,8 @@ function renderGroup(data) {
   if ((status === "reopened" || (status === "draft" && wasReopened))) {
     reopenedNotice.hidden = false;
     reopenedNotice.innerHTML =
-      "<strong>Reopened for edits.</strong> Facilitator note: " +
-      escapeHtml(reopenedNote) +
-      " — make your changes and resubmit.";
+      "<strong>Reopened for edits.</strong> Make your changes, then press Resubmit for review. Facilitator's note: " +
+      escapeHtml(reopenedNote);
   } else if (status === "submitted") {
     submittedNotice.hidden = false;
   } else if (status === "approved") {
@@ -569,7 +571,7 @@ async function saveNow() {
   } catch (err) {
     fields.forEach((f) => dirtyFields.add(f)); // keep them for the next attempt
     saveState.textContent = "";
-    showWorkError("Could not save. " + friendlyError(err));
+    showWorkError("We could not save that. " + friendlyError(err));
   }
 }
 
@@ -623,7 +625,7 @@ submitBtn.addEventListener("click", async () => {
     // The snapshot listener will lock the form via renderGroup().
   } catch (err) {
     fields.forEach((f) => dirtyFields.add(f));
-    showWorkError("Could not submit. " + friendlyError(err));
+    showWorkError("We could not submit that. " + friendlyError(err));
     submitBtn.disabled = false;
     submitBtn.textContent = "Submit for review";
   }
@@ -704,7 +706,7 @@ function renderClock(d) {
       timerChip.hidden = false;
       timerChip.classList.remove("ending");
       timerChip.textContent = "Time's up";
-      timerAnnounce.textContent = "Time is up — start wrapping up.";
+      timerAnnounce.textContent = "Time is up, so start wrapping up.";
       if (clockInterval) { clearInterval(clockInterval); clockInterval = null; }
       return;
     }

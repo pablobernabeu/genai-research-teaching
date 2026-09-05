@@ -102,7 +102,7 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 
 ## 13:18 · APPLY IT (15 min)
 
-- **Let them work.** Stop sensitive data, unstick stalls and offer one provocation
+- **Do:** let them work. Stop sensitive data, unstick stalls and offer one provocation
   each.
 - **Push:** one caught error and one insight first. Where a group has time, the
   automation–steering map and the choice between interwoven and staged oversight.
@@ -134,7 +134,7 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 
 ## 13:40 · CLOSE (5 min)
 
-- **Synthesise the round** by naming two or three threads from it.
+- **Do:** synthesise the round by naming two or three threads from it.
 - **Connect:** friction as signal, the spectrum, the red lines, the human in the loop.
 - **Give:** the take-home actions, the further reading and the follow-up. Close at
   13:45.

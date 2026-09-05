@@ -108,10 +108,10 @@ export async function dashboardHash(passcode) {
 export function friendlyError(err) {
   const code = err && err.code ? err.code : "";
   if (code === "permission-denied") {
-    return "That action was not permitted. (The server rejected it — this is by design.)";
+    return "The server would not allow that. Please check with your facilitator.";
   }
   if (code === "unavailable" || code === "failed-precondition") {
-    return "You appear to be offline. Your work is saved locally and will sync when you reconnect.";
+    return "You appear to be offline. Your work is saved on this device and will sync when you reconnect.";
   }
   if (code === "not-found") {
     return "We could not find that record.";

@@ -19,8 +19,8 @@ To keep the kit coherent, please preserve these conventions.
 
 - British English throughout, in an academic register that is neither familiar nor
   distant. Use single quotation marks, and no serial comma unless it prevents
-  ambiguity. Avoid em dashes, decorative bold, semicolons where a full stop would do,
-  and lists that carry an argument a paragraph could carry.
+  ambiguity. Avoid em dashes, decorative bold, semicolons where a comma would do and
+  lists that carry an argument a paragraph could carry.
 - A formal, balanced, evidence-oriented tone. The stance is discernment, not
   enthusiasm, so avoid the marketing register.
 - Keep the disclaimer in every standalone document and in the deck, in the agreed
@@ -36,7 +36,7 @@ To keep the kit coherent, please preserve these conventions.
   a working link, or leave a clearly labelled placeholder describing the source. The
   further-reading list in the facilitator guide records when it was last checked.
 - Protect the timing. The workshop is two 30-minute parts split by lunch (60 minutes
-  of contact), and any change must keep each part reconciling and the timings
+  of contact), and any change must keep each part's minutes adding up and the timings
   consistent everywhere (slides, guide, tracks, rubric, run sheet, cue cards).
 - Keep the documents and the app in step. If you change what the app captures or how
   a control is named, update the one-pager, the day-of reset, the rubric template and

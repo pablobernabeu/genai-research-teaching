@@ -1,8 +1,8 @@
 # Lightning round: one line per group
 
-Somewhere to write while the room talks, because the close at 13:40 asks for two or
-three threads drawn from the round, and ten contributions of three-quarters of a minute
-are more than anyone recalls unaided. Fill in the middle columns as each group speaks,
+Somewhere to write while the room talks. The close at 13:40 asks for two or three
+threads drawn from the round, and ten contributions of 45 seconds each are more than
+anyone recalls unaided. Fill in the middle columns as each group speaks,
 and put a word in the last one for the thread it belongs under.
 
 <table class="rows">

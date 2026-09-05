@@ -7,7 +7,7 @@
 // keeps the sandbox.
 
 import { execFileSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, statSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 
 export function findBrowser() {
@@ -36,5 +36,10 @@ export function printToPdf(browser, htmlPath, pdfPath, label) {
   } catch (err) {
     const stderr = err.stderr ? String(err.stderr).trim().split('\n').slice(-5).join('\n') : '';
     throw new Error(`Chrome failed to print ${label}.` + (stderr ? `\n${stderr}` : ''));
+  }
+  // Chrome can exit 0 without writing anything, which would otherwise be reported as a
+  // successful build of a file that is not there.
+  if (!existsSync(pdfPath) || statSync(pdfPath).size < 1024) {
+    throw new Error(`Chrome exited cleanly but wrote no usable PDF for ${label}.`);
   }
 }

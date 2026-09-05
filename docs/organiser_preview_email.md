@@ -14,7 +14,7 @@ Ahead of the Westminster Business School Internal Research and Scholarship Confe
 - The group pack: the single booklet each table receives in Part 2, with an orienting cover, the five role cards, the one-page data decision aid, the evaluation rubric, a worked example for each track and a library of starter prompts.
 - The facilitator pack: the run-of-show I hold on the day, with the cue cards, the minute-by-minute run sheet and the morning checklist.
 
-The approach is deliberately critical. The aim is discernment, not enthusiasm, and a deeper insight into the technology instead of instruction on any single tool. It assumes no prior experience and needs nothing installed, since everything runs on free tiers in the browser, so it suits attendees at any level of confidence. The materials are openly licensed and reproducible, and the groups' notes become part of an open archive of the day.
+The approach is deliberately critical. The aim is discernment, not enthusiasm, and a deeper insight into the technology instead of instruction on any single tool. It assumes no prior experience and needs nothing installed, because everything runs on free tiers in the browser. It therefore suits attendees at any level of confidence. The materials are openly licensed and reproducible, and the groups' notes become part of an open archive of the day.
 
 These are drafts, and I would welcome a steer on framing, scope or anything that would help the materials sit well within the programme. I am happy to talk them through if that is easier.
 

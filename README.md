@@ -29,8 +29,8 @@ and with nothing to install. There are 60 minutes of contact time:
 In Part 2, groups of five choose one of four tracks and work a real problem from their
 research or teaching, capturing it in the workshop app
 ([genai-rt.web.app](https://genai-rt.web.app)). Each group assesses its work against a
-five-dimension rubric, which it scores when it tidies the note afterwards, and a museum
-of caught errors. It then gives a short spoken
+five-dimension rubric, which it scores when it tidies the note afterwards, and keeps a
+museum of caught errors. It then gives a short spoken
 insight, choosing one of three options. These are the most significant limitation it
 found, the most important human-in-the-loop safeguard it built in or one honest
 observation about how its field is over- or under-using AI for the task.
@@ -94,7 +94,7 @@ and to create.
 ```
 
 A facilitator new to the kit should read `workshop_plan.md`, then `project_tracks.md`,
-then `evaluation_rubric_template.md`, then `slides.md`, and finally the
+then `evaluation_rubric_template.md`, then `slides.md` and finally the
 [`docs/`](docs/) kit.
 
 ---
@@ -113,7 +113,7 @@ npm run build:pdf      # PDF only (needs a Chromium or Edge browser present)
 npm run build:pptx     # PowerPoint
 npm run build:docs     # PDFs of project_tracks.md and the rubric → dist/
 npm run build:preview  # organiser preview pack → slides + group pack + facilitator pack (needs a Chromium browser)
-npm run build:handouts # print-ready handout PDFs → dist/handouts/ (role cards, data aid, rubric, cue cards, and so on)
+npm run build:handouts # print-ready handout PDFs → dist/handouts/ (role cards, data aid, rubric, cue cards and so on)
 npm run build:grouppack       # one combined per-table booklet → dist/handouts/group-pack.pdf
 npm run build:facilitatorpack # one combined facilitator booklet → dist/handouts/facilitator-pack.pdf
 npm run build:publish  # refresh the committed ready-to-print PDFs in handouts/
@@ -126,8 +126,8 @@ npm run clean          # remove dist/
 A `Makefile` mirrors these for Unix users: `make`, `make html`, `make pdf`,
 `make pptx`, `make docs`, `make pack`, `make handouts`, `make grouppack`,
 `make facilitatorpack`, `make publish`, `make watch` and `make clean`. The npm
-scripts remain the primary, cross-platform interface, and `archive:pr` is theirs
-alone.
+scripts remain the primary, cross-platform interface, and only they offer
+`archive:pr`.
 
 > When you install, note that marp-cli pulls in `speech-rule-engine` (via MathJax), whose npm
 > registry metadata intermittently fails to parse on the default registry. If
@@ -138,8 +138,8 @@ alone.
 Every script that produces a PDF needs a Chromium or Edge browser on the machine:
 `build:pdf`, `build:docs`, `build:preview`, `build:handouts`, `build:grouppack`,
 `build:facilitatorpack` and `build:publish`. Only `build:html`, `watch` and `clean` do
-not. They find the browser through `CHROME_PATH` when it is not at a standard
-location. When the handout build runs as root in a container, pass any
+not. The PDF scripts find the browser through `CHROME_PATH` when it is not at a
+standard location. When the handout build runs as root in a container, pass any
 extra launch flags through `CHROME_FLAGS` (for example `--no-sandbox`).
 
 The output in `dist/` is generated and git-ignored, so rebuild it at any time.

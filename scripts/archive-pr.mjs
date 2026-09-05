@@ -1,23 +1,22 @@
 #!/usr/bin/env node
-// archive-pr.mjs — open a pull request adding the approved, CONSENTED Part 2 submissions
+// archive-pr.mjs. Open a pull request adding the approved, consented Part 2 submissions
 // to the public archive (submissions/).
 //
-// Why a local script and not a dashboard button: opening a PR needs write access to the
-// repo, and a static web app has nowhere safe to hold a write-token. This runs on your
-// machine with your own `gh` auth, so no credential ever lives in the app. It reads the
-// LIVE Firestore: approved group docs are readable by any signed-in caller, so the script
-// signs in anonymously (the same auth the web app uses) and includes ONLY groups that
-// ticked "share publicly".
+// This is a local script and not a dashboard button because opening a PR needs write
+// access to the repo, and a static web app has nowhere safe to hold a write-token. This
+// runs on your machine with your own `gh` auth, so no credential ever lives in the app.
+// It reads the live Firestore: approved group docs are readable by any signed-in caller,
+// so the script signs in anonymously (the same auth the web app uses) and includes only
+// groups that ticked 'share publicly'.
 //
 // Usage (from your clone of the workshop repo, on a clean default branch):
 //   GENAI_RT_PROJECT=<projectId> GENAI_RT_API_KEY=<webApiKey> node scripts/archive-pr.mjs
 //   (or `npm run archive:pr`). Add --dry-run to write the file but skip git/PR; through
 //   npm the flag needs the bare separator, as `npm run archive:pr -- --dry-run`.
 //
-// The project id and web API key are NOT secrets (they ship in the web app). Find them in
+// The project id and web API key are not secrets (they ship in the web app). Find them in
 // firebase-app/public/firebase-config.js or the Firebase console. If that file already
-// holds real values (e.g. in the private working repo), they are used as a fallback and
-// you can omit the env vars.
+// holds real values, they are used as a fallback and you can omit the env vars.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { execSync } from "node:child_process";
@@ -79,9 +78,9 @@ function decodeFields(fields) {
   return o;
 }
 
-// Approved docs are now readable only by a SIGNED-IN caller (the rule requires
-// request.auth != null). Mint an anonymous ID token from the Identity Toolkit REST API —
-// the same anonymous auth the web app uses — and call Firestore with it. The web API key
+// Approved docs are readable only by a signed-in caller (the rule requires
+// request.auth != null). Mint an anonymous ID token from the Identity Toolkit REST API,
+// the same anonymous auth the web app uses, and call Firestore with it. The web API key
 // is the project's public key, not a secret.
 async function anonIdToken(apiKey) {
   const r = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`, {

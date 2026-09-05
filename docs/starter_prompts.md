@@ -28,7 +28,7 @@ difference is your finding.
 #### First pass, unguarded
 
 Naming the flaws for it would tell you only that it can follow
-a list, so do not.
+a list, so leave them unnamed.
 
 > 'Act as a sceptical peer reviewer. Here is a study design: [PASTE ANONYMISED
 > DESIGN]. What is wrong with it? For each issue, say how serious it is and why.'

@@ -37,8 +37,8 @@ in-room polling, not for an asynchronous pre-read. Put the link in the
    Methods and analysis · Admin and planning · Building or prototyping ·
    Public communication · Not sure yet
 
-6. *(Optional, anonymous)* In a few words, one hope and one worry about AI in your
-   research.
+6. *(Optional, anonymous)* In a few words, what is one hope and one worry you have
+   about AI in your research?
    *Tell respondents not to include anything identifying.*
 
 ## Paste-ready for Microsoft Forms (auto-import)
@@ -73,7 +73,7 @@ D. The bigger questions (fairness, disclosure, what AI does to thinking)
 E. Time-saving ideas
 F. Just to see what is possible
 
-4. How comfortable are you that you know the data red lines (what should never go into a free AI tool)?
+4. How comfortable are you that you know the data red lines, meaning what should never go into a free AI tool?
 A. Not at all
 B. Somewhat
 C. Fairly
@@ -86,7 +86,7 @@ C. Building or prototyping
 D. Public communication
 E. Not sure yet
 
-6. In a few words, what is one hope and one worry you have about AI in your research? (Optional; please do not include anything that could identify you.)
+6. In a few words, what is one hope and one worry you have about AI in your research? (Optional, and please do not include anything that could identify you.)
 ```
 
 ## Using the results

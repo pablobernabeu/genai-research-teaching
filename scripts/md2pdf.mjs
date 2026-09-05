@@ -1,6 +1,6 @@
-// Render Markdown documents to clean, paginated PDFs — for sharing materials as
+// Render Markdown documents to clean, paginated PDFs, for sharing materials as
 // attachments (e.g. an organiser preview). Pipeline: Markdown -> HTML (markdown-it)
-// -> PDF (headless Edge/Chrome "print to PDF"). No LaTeX or pandoc needed.
+// -> PDF (headless Edge/Chrome 'print to PDF'). No LaTeX or pandoc needed.
 //
 //   node scripts/md2pdf.mjs project_tracks.md evaluation_rubric_template.md
 //
@@ -11,6 +11,7 @@ import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { basename, resolve } from 'node:path';
 import MarkdownIt from 'markdown-it';
 import { findBrowser, printToPdf } from './chrome.mjs';
+import { num } from './args.mjs';
 
 const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
 
@@ -55,7 +56,7 @@ li.tick::before { content: ""; position: absolute; left: 0; top: .3em; width: .8
 // A denser variant for the single-sheet handouts. It trades the booklet's generous
 // setting for enough room to fit a content-rich sheet on one printed side, and it can
 // set the text in columns (--columns), which is what keeps the line short enough to
-// read quickly even at this size. The body point size is adjustable (--fontpt);
+// read quickly even at this size. The body point size is adjustable (--fontpt), and
 // headings are em-relative, so they scale with it.
 const compactCss = (pt = 9.2, columns = 1) => `
 @page { size: A4; margin: 10mm 12mm; }
@@ -88,8 +89,8 @@ table.rows td { height: 11mm; }
 table.rows td.n { color: #5b6470; text-align: center; font-variant-numeric: tabular-nums; }
 `;
 
-// Leading flags: "--out <dir>" sets the output directory (default: dist);
-// "--bundle <name>" concatenates all inputs into a single PDF, one section per file
+// Leading flags. '--out <dir>' sets the output directory (default: dist).
+// '--bundle <name>' concatenates all inputs into a single PDF, one section per file
 // with a page break between (default: one PDF per file).
 let args = process.argv.slice(2);
 let outDir = 'dist';
@@ -101,8 +102,8 @@ while (args[0] && args[0].startsWith('--')) {
   if (args[0] === '--out') { outDir = args[1]; args = args.slice(2); }
   else if (args[0] === '--bundle') { bundle = args[1]; args = args.slice(2); }
   else if (args[0] === '--compact') { compact = true; args = args.slice(1); }
-  else if (args[0] === '--fontpt') { compactPt = parseFloat(args[1]); args = args.slice(2); }
-  else if (args[0] === '--columns') { columns = parseInt(args[1], 10); args = args.slice(2); }
+  else if (args[0] === '--fontpt') { compactPt = num(args[1], '--fontpt'); args = args.slice(2); }
+  else if (args[0] === '--columns') { columns = num(args[1], '--columns'); args = args.slice(2); }
   else break;
 }
 const activeCss = compact ? compactCss(compactPt, columns) : CSS;

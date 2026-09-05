@@ -1,7 +1,7 @@
-// Render the room signs the morning checklist calls for: one large sign per seed
-// idea, for people to gather at when groups form at the end of Part 1, and one large
-// numeral per table, which each group writes down so it can find its table again
-// after lunch.
+// Render the room signs the morning checklist calls for. There is one large sign per
+// seed idea, for people to gather at when groups form at the end of Part 1, and one
+// large numeral per table, which each group writes down so it can find its table
+// again after lunch.
 //
 //   node scripts/roomsigns.mjs                 # both, to dist/handouts
 //   node scripts/roomsigns.mjs --out handouts  # to the committed handouts folder
@@ -13,17 +13,18 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { findBrowser, printToPdf } from './chrome.mjs';
+import { num } from './args.mjs';
 
 let args = process.argv.slice(2);
 let outDir = 'dist/handouts';
 let tables = 10;
 while (args[0] && args[0].startsWith('--')) {
   if (args[0] === '--out') { outDir = args[1]; args = args.slice(2); }
-  else if (args[0] === '--tables') { tables = parseInt(args[1], 10); args = args.slice(2); }
+  else if (args[0] === '--tables') { tables = num(args[1], '--tables'); args = args.slice(2); }
   else break;
 }
 
-// The seeds live in the "Quick group seeds" section of project_tracks.md, as bullet
+// The seeds live in the 'Quick group seeds' section of project_tracks.md, as bullet
 // lines of "text (LETTER)" separated by a middle dot. Reading them here keeps the
 // signs, the briefs and the deck in step.
 function readSeeds() {

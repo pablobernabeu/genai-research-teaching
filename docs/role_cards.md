@@ -16,8 +16,8 @@ The mapping (canonical):
 |---|---|---|
 | **Convenor** | Project Definition | Keeps the real problem and the clock in focus |
 | **Driver** | Technology Stack | Operates the tools and owns the tool choices |
-| **Steward** | Data Security & Ethics | Guards the red lines |
-| **Reporter** | Financial & Scalability | Owns the record, the submission and the spoken insight |
+| **Steward** | Data Security and Ethics | Guards the red lines |
+| **Reporter** | Financial and Scalability | Owns the record, the submission and the spoken insight |
 | **Sceptic** | Human-in-the-Loop Protocol | Tries to break the output and curates the caught errors |
 
 ---
@@ -26,7 +26,7 @@ The mapping (canonical):
 
 ## Convenor · *Project Definition*
 
-**Your angle:** the group stays on a real problem, and on time.
+Your angle is that the group stays on a real problem, and on time.
 
 - **In the fifteen minutes.** Settle on your one problem in the first minute, either the
   seed your group formed around or a real one someone brought, and say how you would know the
@@ -40,11 +40,11 @@ The mapping (canonical):
 
 ## Driver · *Technology Stack*
 
-**Your angle:** running the tool, and the choices that go with it.
+Your angle is running the tool, and the choices that go with it.
 
 - **In the fifteen minutes.** Share your screen so the group can see what the tool is
   doing. Place your tool on the spectrum, whether off-the-shelf, no-code or at the
-  IDE and API level, and be ready to say why that level rather than one above or below.
+  IDE and API level, and be ready to say why you chose that level over one above or below.
 - **At the pivot, about 13:26.** Have an answer ready, in a sentence, for what the tool
   genuinely made easier and what that ease cost.
 - **Worth asking.** 'Would a different level of tool change what we can trust?'
@@ -53,7 +53,7 @@ The mapping (canonical):
 
 ## Steward · *Data Security and Ethics*
 
-**Your angle:** holding the red lines.
+Your angle is holding the red lines.
 
 - **In the fifteen minutes.** Look over anything before it is pasted, using the data
   decision aid in your pack. Watch for personal data, special-category data and
@@ -67,21 +67,21 @@ The mapping (canonical):
 
 ## Reporter · *Financial and Scalability*
 
-**Your angle:** the record, and the insight the room hears.
+Your angle is the record, and the insight the room hears.
 
 - **In the fifteen minutes.** Keep the group's note in the app as you go, or in the
   rubric template if you are on the paper fallback. Form a view on whether the approach
   survives the free tier and a larger cohort. Submit the note before the lightning round
   at 13:33 where you can, and during it at the latest.
 - **At the pivot, about 13:26.** Glance at the note and check it is being filled in as you
-  go, rather than left to the last minute.
+  go, instead of leaving it to the last minute.
 - **Worth asking.** 'Does this still work next month, for fifty people, for free?'
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
 ## Sceptic · *Human-in-the-Loop Protocol*
 
-**Your angle:** testing the output, and deciding where the human has to stay.
+Your angle is testing the output, and deciding where the human has to stay.
 
 - **In the fifteen minutes.** Press on every result, looking for invented detail, bias
   and confident error, and keep the good catches for the museum. Name the checkpoints

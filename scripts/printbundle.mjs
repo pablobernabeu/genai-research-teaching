@@ -1,7 +1,7 @@
 // Assemble every printable item into one PDF for the print shop, arranged around the
-// three jobs the facilitator actually does: cut the cards, collate the group bundles,
+// three jobs the facilitator does on the day: cut the cards, collate the group bundles
 // and put up the room signs. Each section sits behind a slip stating its copy count,
-// whether it prints single- or double-sided, and which way up the paper goes.
+// whether it prints single- or double-sided and which way up the paper goes.
 //
 //   node scripts/printbundle.mjs                  # -> dist/handouts/print-bundle.pdf
 //   node scripts/printbundle.mjs --out handouts   # -> the committed handouts folder
@@ -13,12 +13,13 @@
 // lost a leaf is obvious while collating. Needs a Chromium browser, as the other PDF
 // steps do.
 
-import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { resolve, join } from 'node:path';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import MarkdownIt from 'markdown-it';
 import { findBrowser, printToPdf } from './chrome.mjs';
+import { num } from './args.mjs';
 
 const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
 
@@ -27,7 +28,7 @@ let outDir = 'dist/handouts';
 let groups = 10;
 while (args[0] && args[0].startsWith('--')) {
   if (args[0] === '--out') { outDir = args[1]; args = args.slice(2); }
-  else if (args[0] === '--groups') { groups = parseInt(args[1], 10); args = args.slice(2); }
+  else if (args[0] === '--groups') { groups = num(args[1], '--groups'); args = args.slice(2); }
   else break;
 }
 
@@ -124,7 +125,7 @@ function renderCutSheets(name, mdFile, label, pt) {
       (bottom
         ? `<div class="slot"><div class="card">${bottom}</div>` +
           `<span class="tag">${label} ${i + 2} of ${cards.length}</span>`
-        : `<div class="slot"><p class="empty">Blank. Keep it for scrap at your table.</p>`) +
+        : `<div class="slot"><p class="empty">Blank. Keep it for notes.</p>`) +
       `</div></section>`
     );
   }
@@ -163,8 +164,8 @@ const SECTIONS = [
   {
     part: 'Part 2 — collate into group bundles',
     title: 'Group pack booklet',
-    path: 'handouts/group-pack.pdf',
-    copies: `${groups} copies, plus one spare`,
+    path: join(outDir, 'group-pack.pdf'),
+    copies: `${groups} copies, plus one spare`, copiesN: groups + 1,
     sides: 'Double-sided', paper: 'A4 portrait', finish: 'Stapled, top left',
     note: 'One booklet per table. The cover has fill-in fields, so every table needs its own. The footer numbers every page, so a booklet missing a leaf shows up while collating.',
     footer: 'Group pack',
@@ -172,7 +173,7 @@ const SECTIONS = [
   {
     part: 'Part 2 — collate into group bundles',
     title: 'Group quick-start one-pager',
-    path: 'handouts/group-one-pager.pdf',
+    path: join(outDir, 'group-one-pager.pdf'),
     copies: `${onePager} copies`,
     sides: 'Single-sided', paper: 'A4 portrait', finish: 'Loose, two laid on each table',
     note: 'Two per table, on top of the booklet.',
@@ -190,7 +191,7 @@ const SECTIONS = [
   {
     part: 'Part 3 — facilitator only',
     title: 'Lightning-round tally',
-    path: 'handouts/lightning-round-tally.pdf',
+    path: join(outDir, 'lightning-round-tally.pdf'),
     copies: '1 copy',
     sides: 'Single-sided', paper: 'A4 portrait', finish: 'Loose, on a clipboard or the lectern',
     note: 'Somewhere to write one line per group during the round at 13:33, which the close at 13:40 then draws its threads from.',
@@ -199,7 +200,7 @@ const SECTIONS = [
   {
     part: 'Part 3 — facilitator only',
     title: 'Day-of app reset',
-    path: 'handouts/facilitator-day-of-reset.pdf',
+    path: join(outDir, 'facilitator-day-of-reset.pdf'),
     copies: '1 copy',
     sides: 'Single-sided', paper: 'A4 portrait', finish: 'Loose',
     note: 'The passcode, timer and export steps for the lunch break.',
@@ -208,7 +209,7 @@ const SECTIONS = [
   {
     part: 'Part 4 — put up around the room',
     title: 'Seed-idea signs',
-    path: 'handouts/seed-signs.pdf',
+    path: join(outDir, 'seed-signs.pdf'),
     copies: '1 copy',
     sides: 'SINGLE-SIDED', paper: 'A4 LANDSCAPE', finish: 'Heaviest paper available',
     note: 'Posted around the room before 12:00, spread out so ten groups can gather without crowding. Do not let the printer rotate or shrink these to fit portrait.',
@@ -217,7 +218,7 @@ const SECTIONS = [
   {
     part: 'Part 4 — put up around the room',
     title: 'Table numbers',
-    path: 'handouts/table-numbers.pdf',
+    path: join(outDir, 'table-numbers.pdf'),
     copies: '1 copy',
     sides: 'SINGLE-SIDED', paper: 'A4 LANDSCAPE', finish: 'Heaviest paper available',
     note: 'One on each table, readable across the room.',
@@ -228,6 +229,11 @@ const SECTIONS = [
 const resolved = [];
 for (const s of SECTIONS) {
   const path = typeof s.path === 'function' ? s.path() : s.path;
+  if (!existsSync(path)) {
+    console.error(`Missing ${path}. Build the individual handouts into ${outDir} first;`);
+    console.error('`npm run build:publish` does the whole sequence in the right order.');
+    process.exit(1);
+  }
   const doc = await PDFDocument.load(readFileSync(path));
   resolved.push({ ...s, path, pages: doc.getPageCount() });
 }
@@ -339,7 +345,7 @@ writeFileSync(out, await bundle.save());
 rmSync(tmpDir, { recursive: true, force: true });
 
 const sheets = resolved.reduce((n, s) => {
-  const copies = parseInt(String(s.copies).match(/\d+/)?.[0] ?? '1', 10);
+  const copies = s.copiesN ?? parseInt(String(s.copies).match(/\d+/)?.[0] ?? '1', 10);
   const perCopy = s.sides.toLowerCase().startsWith('double') ? Math.ceil(s.pages / 2) : s.pages;
   return n + copies * perCopy;
 }, 0);

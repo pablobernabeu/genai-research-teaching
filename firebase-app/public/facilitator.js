@@ -542,6 +542,9 @@ async function approve(id, btn) {
       status: "approved",
       joinCode: "",
       sessionCode: "",
+      // An approved document is readable by any signed-in device, so it must carry no
+      // secrets. joinProofs holds the join code once per joining device.
+      joinProofs: {},
       updatedAt: serverTimestamp(),
     });
     // Snapshot listener re-renders automatically.

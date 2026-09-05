@@ -8,20 +8,20 @@ Each track can be entered in the fifteen-minute build window of Part 2 (see the
 expected. Work the tool on a real problem, record one caught error and one insight, and
 sketch the automation–steering map if time is left. Bound the work as you go: in Track
 A, verify the three objections you find most consequential instead of all of them, and
-in Track D, audit one of your audience versions in full rather than all of them.
+in Track D, audit one of your audience versions in full and leave the rest.
 The deliverable is a clear account of what helped, what failed and where a human
 stayed in charge.
 
 > Time is short, so keep the artefact small. Track C (rapid prototyping) is a deliberate
 > stretch: in fifteen minutes, you will not finish and fully verify a working artefact,
-> and that is fine, because the verification habit, which is what you checked and
+> and that is fine. The verification habit, which is what you checked and
 > what you refused to trust, matters more here than a finished build. If a track is running long, drop
 > the map before the insight.
 
 ## Quick group seeds (for fast formation)
 
 To form groups fast at the end of Part 1, people gather at a concrete idea, and the
-letter beside it is its track. Aim for fives, and your group then takes one problem into Part 2, either this seed or a real one a member brings.
+letter beside it is its track. Aim for groups of five, and your group then takes one problem into Part 2, either this seed or a real one a member brings.
 
 - Stress-test a study design (A) · Critique an assessment or marking rubric (A)
 - Turn messy notes into owned actions (B) · Tame an email or admin backlog (B) · Plan a module, project or paper (B)
@@ -42,9 +42,10 @@ letter beside it is its track. Aim for fives, and your group then takes one prob
   explainer to build (C), a concept to translate for students (D).
 - Free tiers only. No paid plans, no installs and no prior experience assumed, and
   everything runs in a browser. One person in the group does need a device already
-  signed in to a free chat assistant. If nobody is, do not spend the window creating an
-  account: use a tool that works without signing in, or share a neighbouring group's
-  screen for one run, and spend your own time on the verification.
+  signed in to a free chat assistant. If no one is signed in, there is no need to spend
+  the window creating an account, since you can use a tool that works without signing
+  in, or share a neighbouring group's screen for one run, and spend your own time on
+  the verification.
 - Mind the red lines before you paste anything. Use the one-page
   [data decision aid](docs/data_decision_aid.md). When in doubt, anonymise,
   synthesise or abstain.
@@ -104,7 +105,7 @@ two is instructive.
    genuine weakness you had not fully weighed), generic (true of almost any study, so
    not informative) or wrong (a hallucinated or invalid objection). Cross-check
    factual claims in Perplexity.
-4. Distil. Turn the exercise into a reusable critique protocol (the prompt plus the
+4. Distil the method. Turn the exercise into a reusable critique protocol (the prompt plus the
    verification rule) that a colleague could apply tomorrow.
 
 ### Created artefact
@@ -120,9 +121,9 @@ first, because the critique still works on the structure.
 ### Note headings (tailored)
 - Project Definition: the design under review and what a useful critique would change.
 - Technology Stack: the tool(s) chosen and why off-the-shelf suffices here.
-- Data Security & Ethics: how you de-identified the design, and disclosure if this
+- Data Security and Ethics: how you de-identified the design, and disclosure if this
   critique fed a real submission.
-- Financial & Scalability Constraints: whether the free tier sustains this as a
+- Financial and Scalability Constraints: whether the free tier sustains this as a
   routine pre-submission check.
 - Human-in-the-Loop Protocol: your rule for accepting, parking or rejecting a machine
   critique, who signs off and whether oversight is interwoven or staged.
@@ -162,7 +163,7 @@ use, to hold the template.
 3. Stress-test (evaluation). Check three failure modes: accuracy (does it drop or
    invent actions?), over-reliance (what skill atrophies if you always use it?) and
    equity (does it only help people who phrase prompts well, or in English?).
-4. Set the guardrails. Decide what the human must always still do.
+4. Set the guardrails. Decide what the human must always do.
 
 ### Created artefact
 A reusable executive-function template or prompt (for example, a meeting-to-actions
@@ -178,8 +179,8 @@ personal data.
 ### Note headings (tailored)
 - Project Definition: the burden you are reducing and what 'better' means.
 - Technology Stack: why a template or prompt instead of ad hoc chat.
-- Data Security & Ethics: how you redacted, and the equity and accessibility effects.
-- Financial & Scalability Constraints: free-tier limits, and whether it helps a whole
+- Data Security and Ethics: how you redacted, and the equity and accessibility effects.
+- Financial and Scalability Constraints: free-tier limits, and whether it helps a whole
   team or just one fluent user.
 - Human-in-the-Loop Protocol: what the human always verifies, the de-skilling
   guardrail, and whether oversight is interwoven or staged.
@@ -195,7 +196,7 @@ The spectrum: no-code app builders through to the IDE or API level, which offers
 most control and the most responsibility.
 
 ### Rationale
-Findings often die in PDFs. A small interactive artefact (a one-page explainer, a
+Findings often reach no further than the PDF they were published in. A small interactive artefact (a one-page explainer, a
 simple visualisation, a tiny calculator) can carry a result to people who will never
 read the paper, and generative AI now builds such things from a prompt in minutes.
 That speed is the hazard, because it is trivial to produce something that
@@ -243,9 +244,9 @@ does not mean that it is correct.
 ### Note headings (tailored)
 - Project Definition: the finding and the audience the artefact serves.
 - Technology Stack: where on the spectrum you worked, and the trade-off you accepted.
-- Data Security & Ethics: data provenance, the licences of generated code and assets,
+- Data Security and Ethics: data provenance, the licences of generated code and assets,
   and accessibility.
-- Financial & Scalability Constraints: free-tier and hosting limits, and what
+- Financial and Scalability Constraints: free-tier and hosting limits, and what
   publishing would actually require.
 - Human-in-the-Loop Protocol: your verification gate before publication, who is
   accountable for correctness, and whether oversight is interwoven or staged.
@@ -296,9 +297,9 @@ breach both ethics and trust.
 ### Note headings (tailored)
 - Project Definition: the finding and the audiences you are translating for.
 - Technology Stack: the drafting, readability and translation tools used.
-- Data Security & Ethics: publication status, embargo and consent, and the ethics of
+- Data Security and Ethics: publication status, embargo and consent, and the ethics of
   disclosing AI assistance in science communication.
-- Financial & Scalability Constraints: free-tier limits, and sustaining this across a
+- Financial and Scalability Constraints: free-tier limits, and sustaining this across a
   communications workflow.
 - Human-in-the-Loop Protocol: the fidelity check before anything goes public, who
   approves, and whether oversight is interwoven or staged.

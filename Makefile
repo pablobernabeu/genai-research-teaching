@@ -56,7 +56,8 @@ onepagers:
 signs:
 	node scripts/roomsigns.mjs --out dist/handouts
 
-bundle:
+# The bundle embeds the pieces from its own --out directory, so they must exist first.
+bundle: onepagers grouppack facilitatorpack signs
 	node scripts/printbundle.mjs --out dist/handouts
 
 grouppack:

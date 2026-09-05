@@ -6,6 +6,12 @@ A short reset, in the minutes before Part 2, that gets the live app into a clean
 
 ## During the lunch break (about 12:45–13:10)
 
+- [ ] Confirm the live app is running the current code. If anything under `firebase-app/`
+      has changed since the last deploy, run `firebase deploy --only firestore:rules,hosting`,
+      which has to send both together: the join rule and the join code the pages write
+      were changed as a pair, so deploying one without the other stops groups joining.
+      Then create a test group on one device and join it from a second before you clear
+      the rehearsal groups.
 - [ ] Sign in to the facilitator dashboard at genai-rt.web.app/facilitator.html with your facilitator Google account, the one named in `firebase-app/firestore.rules` ('Sign in with Google'). Group devices do not sign in here.
 - [ ] Confirm that sign-in actually completes and that you are on the dashboard, not on the sign-in card. If it bounces, the project's Google sign-in needs checking in the Firebase console, which is a pre-deployment concern to fix before the room fills.
 - [ ] Clear the rehearsal and test groups. Deletion is console-only, with no button on the dashboard. In the Firestore console, delete stray test documents from the `groups` collection and the matching `groupNames` entry, or the name stays reserved.
@@ -18,7 +24,7 @@ A short reset, in the minutes before Part 2, that gets the live app into a clean
 
 - [ ] Read out the passcode and the URL (genai-rt.web.app), and show the QR slide. 'One device per group creates, then reads out its group name and the six-character code. Everyone else types both and leaves the passcode blank.'
 - [ ] Remind groups to choose a group name that does not identify anyone (for example 'Otters' or 'Team Kelp'), which is the one name they type on the login form.
-- [ ] Press Start countdown at 13:18, when the 'Fifteen minutes, starting now' slide goes up, and leave it unstarted through the 13:15 settle-in. The corner chip is advisory: a calm countdown that never locks their form. Once it expires, it reads 'Time's up' until you reset it.
+- [ ] Press Start countdown at 13:18, when the 'Fifteen minutes, starting now' slide goes up, and not at the 13:15 settle-in. The corner chip is advisory, a calm countdown that never locks their form. Once it expires, it reads 'Time's up' until you reset it.
 
 ## During
 

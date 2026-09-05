@@ -9,7 +9,7 @@
 
 | | |
 |---|---|
-| **Group** | groupNN (the group's number in the export; its app name is non-identifying) |
+| **Group** | groupNN (the group's number in the export, since its app name is non-identifying) |
 | **Track** | A / B / C / D / own, with the track name |
 | **Date** | YYYY-MM-DD (the workshop date) |
 | **Source** | App export (Export approved (Markdown)) or HackMD/paper note (fallback) |
@@ -57,11 +57,11 @@ headings, and the facilitator keeps them as they are.
 - Tool(s) and where they sit on the spectrum: …
 - Why this level and not one up or down: …
 
-### 3. Data Security & Ethics
+### 3. Data Security and Ethics
 - What we put in, and how we de-identified it: …
 - Red lines held; UK GDPR, ethics, disclosure, IP and consent: …
 
-### 4. Financial & Scalability Constraints
+### 4. Financial and Scalability Constraints
 - Free-tier limits hit or foreseen: …
 - What breaks first at scale: …
 
@@ -90,7 +90,7 @@ headings, and the facilitator keeps them as they are.
 - Thinking versus writing: what thinking we still had to do, and what we might lose: …
 - Fairness: does this widen or narrow disparities (language, support, career stage, background), and who gains or is left behind: …
 - Disclosure: would we disclose AI use, and the conditions it offset, and why or why not: …
-- Disciplinary norms: is our field under- or over-using generative AI for this kind of task, with what consequences and how we would redress it over the next two years: …
+- Disciplinary norms. Is our field under- or over-using generative AI for this kind of task, with what consequences, and how would we redress it? …
 
 ### Lightning-round insight (up to 45 seconds, no slides)
 > The most significant limitation, the most important human-in-the-loop safeguard or
@@ -102,6 +102,6 @@ headings, and the facilitator keeps them as they are.
 |---|---|---|
 | Project Definition | | |
 | Technology Stack | | |
-| Data Security & Ethics | | |
-| Financial & Scalability | | |
+| Data Security and Ethics | | |
+| Financial and Scalability | | |
 | Human-in-the-Loop | | |

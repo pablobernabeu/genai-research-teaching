@@ -45,14 +45,14 @@ A featured workshop in two 30-minute parts, split by a networking lunch.
 | 13:15 | Settle in and orient | 19–24 | Re-find groups; agree the one problem (60 seconds); app open (genai-rt.web.app); read out the passcode; red lines on. Slides 21–24 go past at pace: point at them, do not present them, since every word is in the pack. |
 | 13:18 | Apply it | 25 | Press Start countdown as slide 25 goes up. If the settle-in has run late, set Minutes so the countdown still ends at 13:32 rather than fifteen from now. Circulate. Stop sensitive data, unstick stalls, one provocation each. Where a group has time, prompt the map (interwoven or staged). |
 | about 13:26 | Pivot | 26 | Thirty seconds, keyboards down. Stop building, start interrogating. |
-| 13:33 | Lightning round | 27 | Visible timer. 45 seconds each with eight groups; announce 35 seconds if there are nine or ten, since handovers cost five to ten seconds apiece. Time the round and jot one line per group on the tally sheet: leave every approval until after the session, since reading a note properly takes longer than the close allows (collect a HackMD link only from a fallback group). |
+| 13:33 | Lightning round | 27 | Visible timer. 45 seconds each with eight groups; announce 35 seconds if there are nine or ten, since handovers cost five to ten seconds apiece. Time the round and jot one line per group on the tally sheet. Leave every approval until after the session, since reading a note properly takes longer than the close allows (collect a HackMD link only from a fallback group). |
 | 13:40 | Close | 28–34 | Synthesise two or three threads. Take-home actions. Reading. Follow-up. Close at 13:45. |
 
 ## After
 
 | When | Action |
 |---|---|
-| Same day | Check that every app group is approved on the dashboard, and that any HackMD-fallback group's link is in the issue. Nudge any missing. |
+| Same day | Check that every app group is approved on the dashboard, and that any HackMD-fallback group's link is in the issue. Nudge any that are missing. |
 | +1–2 days | Export the approved, consented work from the dashboard (Export approved (Markdown)), export any HackMD-fallback note too, and archive under `submissions/` (see [submissions/README.md](../submissions/README.md)). |
 | +3–5 days | Send the [follow-up email](post_workshop_followup.md) with the responsible-use commitment and the archive link. |
 

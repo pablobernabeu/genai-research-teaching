@@ -1,10 +1,10 @@
 # The workshop app for Part 2
 
 A small, self-contained web app that centralises the Part 2 groupwork. Each group
-logs in under a unique, self-chosen group name, works through the core three and
-submits. The facilitator vets each submission from a private dashboard and approves it
-or reopens it for edits, and approved work appears on a passcode-gated session
-dashboard with live summary statistics.
+logs in under a unique, self-chosen group name, works through the core three (artefact,
+caught error, insight) and submits. The facilitator vets each submission from a private
+dashboard and approves it or reopens it for edits, and approved work appears on a
+passcode-gated session dashboard with live summary statistics.
 
 > This is where groups capture their work in Part 2 by default, and HackMD or paper is
 > the fallback.
@@ -46,16 +46,17 @@ Pages (in `public/`):
 | `facilitator.html` | facilitator only | live list of all groups; approve, reopen or rename each submission; set the passcode and the optional session timer; export the approved, consented work |
 | `dashboard.html` | anyone with the session passcode | approved submissions plus live statistics and plots (field over- or under-use, trust against steering, tracks, oversight) |
 
-## Data model (the build contract)
+## Data model
 
 `groups/{groupId}`, where `groupId` is a client-generated Firestore id:
 
 | field | type | notes |
 |---|---|---|
 | `name` | string | display name, as typed |
-| `nameLower` | string | `name.trim().toLowerCase()`, used for uniqueness; matches the `groupNames` id |
-| `joinCode` | string | six characters from `ABCDEFGHJKLMNPQRSTUVWXYZ23456789` (no I, L, O, 0 or 1, so it can be read aloud), generated on create and shown to the group so that a second device can join; blanked on approval |
-| `sessionCode` | string | the per-session passcode typed on create, which must equal `config/app.sessionCode`; blanked on approval |
+| `nameLower` | string | `name.trim().toLowerCase()`, used for uniqueness, and matching the `groupNames` id |
+| `joinCode` | string | six characters from `ABCDEFGHJKLMNPQRSTUVWXYZ23456789` (no I, O, 0 or 1, so it can be read aloud), generated on create and shown to the group so that a second device can join. Blanked on approval. |
+| `joinProofs` | map | one entry per joining device, `uid` to the join code it typed. The join rule compares the entry under the caller's own uid, which is what stops a caller inheriting someone else's proof by omitting the field. Cleared on approval. |
+| `sessionCode` | string | the per-session passcode typed on create, which must equal `config/app.sessionCode`. Blanked on approval. |
 | `ownerUids` | array&lt;string&gt; | anonymous uids; create sets `[creatorUid]`, and joining appends via `arrayUnion` |
 | `status` | string | `draft`, then `submitted`, then `approved`, or `reopened` (back to the group) |
 | `scenario` | string | the chosen scenario label, or `Own problem` |
@@ -105,7 +106,7 @@ approval blanks the join code and each device discards its stored session, so a 
 group could not get back in. The rules themselves do not forbid it, so avoid moving an
 approved document back from the Firestore console.
 
-## Setup (about 15 minutes; the Spark free plan is enough, with no Cloud Functions)
+## Setup (about 15 minutes, and the Spark free plan is enough, with no Cloud Functions)
 
 1. Create a Firebase project (or reuse one) at <https://console.firebase.google.com>.
 2. Under Firestore, create a database in production mode.
@@ -142,7 +143,8 @@ substitute.
   out.
 - A group cannot change its owners, name or join code, cannot self-approve and cannot
   read another group's draft.
-- Joining requires the correct join code, and is allowed only before submission
+- Joining requires the caller to write the correct join code under its own uid in
+  `joinProofs`, and is allowed only before submission
   (`draft` or `reopened`). A `submitted` or `approved` group cannot gain new owners, so
   submitted or approved work cannot be overwritten. A wrong code fails closed, because it
   would change the `joinCode` field, which the rules reject.
@@ -161,7 +163,7 @@ substitute.
   use (verified client-side against a hash in `config/dashboard`). This is a privacy gate
   rather than a hard wall. The data is non-identifying by design, and a determined
   signed-in caller could still read `approved` documents directly, since there is no
-  backend on the free plan to enforce a typed secret on a read. The protection is sized to the data.
+  backend on the free plan to enforce a typed secret on a read.
 - Only the facilitator can read or write `config/app` (the session passcode).
 - `config/dashboard` (the dashboard gate) is readable by any signed-in device but
   writable only by the facilitator, pinned by `hasOnly` to `passHash` (a hash of the
@@ -214,6 +216,6 @@ substitute.
 
 ## Licence and status
 
-Part of the workshop kit (MIT for the tooling and the app). It is intentionally
-minimal, with the goal of a readable, auditable app, which makes it a good object to
-critique against the workshop's own rubric.
+Part of the workshop kit (MIT for the tooling and the app). It is deliberately minimal,
+so that it stays readable and auditable, and that makes it a good object to critique
+against the workshop's own rubric.

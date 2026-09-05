@@ -267,8 +267,20 @@ function renderScenarioChart(groups) {
 function renderOversightChart(groups) {
   const interwoven = groups.filter((g) => g.responses && g.responses.oversight === "interwoven").length;
   const staged = groups.filter((g) => g.responses && g.responses.oversight === "staged").length;
+  // The two segments were told apart by two shades of teal at 2.2:1, which is colour
+  // alone and vanishes in monochrome or for a colour-blind viewer. Amber against teal
+  // separates by hue AND luminance, the counts go in the labels, and a white border
+  // keeps the boundary visible whatever the projector does to the colour.
   upsert("oversightChart", "doughnut",
-    { labels: ["Interwoven", "Staged"], datasets: [{ data: [interwoven, staged], backgroundColor: [TEAL, TEAL_LIGHT] }] },
+    {
+      labels: [`Interwoven (${interwoven})`, `Staged (${staged})`],
+      datasets: [{
+        data: [interwoven, staged],
+        backgroundColor: [TEAL, AMBER_LIGHT],
+        borderColor: "#ffffff",
+        borderWidth: 3,
+      }],
+    },
     { responsive: true, plugins: { legend: { position: "bottom" } } });
 }
 

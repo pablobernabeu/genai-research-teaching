@@ -39,9 +39,9 @@ thoughtful 3 with a sharp caught error is worth more than an unexamined 5.
 
 1. Project Definition: is the real problem, and its success criterion, clear?
 2. Technology Stack: is it the right tool on the spectrum, and why?
-3. Data Security & Ethics: were the red lines held, and were the UK GDPR, ethics and
+3. Data Security and Ethics: were the red lines held, and were the UK GDPR, ethics and
    fairness addressed?
-4. Financial & Scalability: does the free tier hold, and what breaks at scale?
+4. Financial and Scalability: does the free tier hold, and what breaks at scale?
 5. Human-in-the-Loop: are there explicit checkpoints, verification and
    accountability, with a deliberate map of what is automated against where the human
    steers?

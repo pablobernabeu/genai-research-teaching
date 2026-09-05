@@ -1,15 +1,13 @@
 # Worked examples: one per track
 
-A worked example is the fallback, for when neither your group's seed nor a member's
-real problem is to hand. Use your group's seed, or a
-real, non-confidential problem a member brings, and turn to the example below only if
-neither is to hand. It is also what you use when the Wi-Fi fails and you switch to
-critiquing on paper.
+Use your group's seed, or a real, non-confidential problem a member brings, and turn
+to the example below only if neither is to hand. It is also what you use when the
+Wi-Fi fails and you switch to critiquing on paper.
 
 The material below is fully synthetic and safe to paste, with no real people, data or
 unpublished work, so a group with nothing to hand can start at once. If you are using
 it, still spend a minute on the data decision aid: say what you would have had to strip
-out had this been your own material, and record that under Data Security & Ethics.
+out had this been your own material, and record that under Data Security and Ethics.
 Each example is sized for the short build window and leads naturally to a caught
 error.
 

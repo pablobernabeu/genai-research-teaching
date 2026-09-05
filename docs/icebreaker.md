@@ -3,9 +3,9 @@
 This is a short, dignified opener for a room of experienced academics. It runs early in
 Part 1 (around 12:03), with a neighbour, so it adds no time to the schedule, and it
 is slide 6. Groups of five do not exist yet, because they form at the end of Part 1,
-so run this as a quick pair or trio exchange. Do not turn it into a table round. It seeds the day's
-thesis, that the friction in our AI encounters is worth attending to, without anyone
-having to perform.
+so run this as a quick pair or trio exchange, and keep it there instead of turning it
+into a table round. It seeds the day's thesis, that the friction in our AI encounters
+is worth attending to, without anyone having to perform.
 
 ## Primary: 'Saved or burned' (about two minutes)
 
