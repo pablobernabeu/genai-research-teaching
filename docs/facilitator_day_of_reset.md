@@ -46,6 +46,10 @@ A short reset, in the minutes before Part 2, that gets the live app into a clean
 - A group cannot start: the passcode is not set, or they have a typo. Re-read it, since the create path needs the session passcode.
 - Reopen… or Rename… does nothing: the browser has suppressed this page's dialogs, which it offers to do after several in a row. Reload the dashboard page.
 - Timer not showing: glance at your dashboard's Session timer status line first. It reads 'Running: MM:SS left …' when live and 'Timer is off.' when stopped. The group chip appears while the countdown is running and reads 'Time's up' after it expires.
+- A group's page sits on 'Connecting…': after about nine seconds it says so itself and
+  names the fallback, and it says so at once if the code could not be fetched at all.
+  The usual cause is a Wi-Fi sign-in page that has not been accepted on that device, so
+  have them open any other site first, then reload. Failing that, HackMD or paper.
 - App wobbles: tell the room to switch to HackMD (hackmd.io), with the same headings. In-progress edits are queued on the device and sync on reconnect, so nothing already typed is lost.
 
 ---

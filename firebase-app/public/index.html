@@ -266,5 +266,38 @@
   <span id="timerAnnounce" class="sr-only" role="timer" aria-live="polite"></span>
 
   <script type="module" src="./group.js"></script>
+
+  <!-- If the app never starts, say so and say what to do. The login form is hidden until
+       group.js has run, and group.js pulls the Firebase SDK from a CDN, so anything that
+       stops either one leaves the page sitting on "Connecting…" with nothing to act on:
+       a Wi-Fi sign-in page swallowing the request, a content blocker, a slow or dropped
+       connection, or a plain script error. This is a CLASSIC script on purpose. A module
+       that fails to load never runs, so it could not report its own failure. -->
+  <script>
+    (function () {
+      var GIVE_UP_AFTER_MS = 9000;
+      function showing(id) { var el = document.getElementById(id); return el && !el.hidden; }
+      function stuck() {
+        if (showing('loginView') || showing('workView')) return;
+        var n = document.getElementById('authNotice');
+        // Leave a message the app has already put up: it will be more specific than this one.
+        if (!n || n.className.indexOf('error') !== -1) return;
+        n.hidden = false;
+        n.className = 'notice error';
+        n.textContent = 'The app has not finished loading. Check that this device is online, '
+          + 'and that you have accepted any Wi-Fi sign-in page, then reload. If it still will not '
+          + 'load, say so and we will put your group on HackMD (hackmd.io) or on paper. Nothing is lost.';
+      }
+      setTimeout(stuck, GIVE_UP_AFTER_MS);
+      // A script that fails to load fires an error event on its own element, so report at once.
+      window.addEventListener('error', function (e) {
+        if (e && e.target && e.target.tagName === 'SCRIPT') stuck();
+      }, true);
+    })();
+  </script>
+  <noscript>
+    <div class="notice error">This page needs JavaScript. Turn it on and reload, or tell your
+    facilitator and your group can work in HackMD (hackmd.io) or on paper instead.</div>
+  </noscript>
 </body>
 </html>
