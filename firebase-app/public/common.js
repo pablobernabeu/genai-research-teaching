@@ -108,10 +108,15 @@ export async function dashboardHash(passcode) {
 export function friendlyError(err) {
   const code = err && err.code ? err.code : "";
   if (code === "permission-denied") {
-    return "That action was not permitted. (The server rejected it — this is by design.)";
+    return "The server would not allow that. Check with your facilitator.";
   }
-  if (code === "unavailable" || code === "failed-precondition") {
+  if (code === "unavailable") {
     return "You appear to be offline. Your work is saved locally and will sync when you reconnect.";
+  }
+  if (code === "failed-precondition") {
+    // Not an offline error: usually a missing index or a transaction whose precondition
+    // changed underneath us. Telling a participant their work is safe would be a guess.
+    return "The server could not complete that. Please try again.";
   }
   if (code === "not-found") {
     return "We could not find that record.";

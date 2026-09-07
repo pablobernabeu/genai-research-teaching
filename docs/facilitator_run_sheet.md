@@ -1,6 +1,6 @@
 # Facilitator run sheet
 
-The single-glance timeline for the day. It is operational only: the reasoning is in
+The quick timeline for the day. It is operational only: the reasoning is in
 the [facilitator guide](../workshop_plan.md), and the holdable prompts are on the
 [cue cards](cue_cards.md). Slide numbers refer to [slides.md](../slides.md).
 
@@ -13,22 +13,22 @@ A featured workshop in two 30-minute parts, split by a networking lunch.
 | 11:45 | Projector on, deck open in presenter mode, Wi-Fi and power confirmed. |
 | 11:50 | Create and pin the fallback-links issue, so that it is there if a group fails over to HackMD later (participants do not post to it). |
 | 11:52 | Reset the app (genai-rt.web.app): sign in to the private dashboard, clear rehearsal groups, set the session passcode and set the timer's minutes without starting it (see the [day-of reset](facilitator_day_of_reset.md)). No pre-named notes are needed. |
-| 11:55 | Lay out one group pack booklet and one or two group one-pagers on each table of five, with spare pens and paper. Post the ten seed ideas around the room, each with its track letter, ready for the 12:26 formation. |
+| 11:55 | Lay two group sheets and one group pack on each table of five, with spare pens and paper. The sheet is the one people read, so put it on top. Post the ten seed ideas around the room, each with its track letter, ready for the 12:26 formation. |
 | 11:58 | Visible timer ready, title slide up (slide 1). Start at 12:00. |
 
 ## Part 1 · Conceptualising the use of AI in research · 12:00–12:30
 
 | Clock | Segment | Slides | Facilitator does |
 |---|---|---|---|
-| 12:00 | Welcome and stance | 1–5 | Start on time. Disclaimer aloud. Discernment, not enthusiasm; the aim is insight, and all are welcome. |
+| 12:00 | Welcome and stance | 1–5 | Start on time. Read the disclaimer. Introduce the critical stance and welcome every level of experience. |
 | 12:03 | Saved or burned | 6 | A sentence each with a neighbour, two minutes, then move on. |
 | 12:05 | A long line of tools | 7 | AI in the history of tools and the productivity economy: the question is how, with discernment. |
 | 12:08 | Getting started | 8 | What these tools are, pick one free tool, how to ask. For all levels. |
 | 12:10 | Friction is a signal | 9 | The central idea. Lee et al. and Drosos et al. in a sentence each. |
 | 12:14 | Spectrum, red lines, ethics | 10–12 | One breath each. Name the teaching angle (students' data, assessment, disclosure). |
 | 12:21 | The bigger questions | 13 | Paradigm shift, fairness, disclosure, posed as live questions for Part 2. |
-| 12:23 | Human in the loop and the map | 14 | Accountability stays human; interwoven or staged. |
-| 12:26 | What Part 2 asks, then form groups | 15–16 | Two minutes on the rubric, two on formation. Groups of five form at a seed, with the seed letters posted around the room beforehand so that people walk to a sign. Each group's track follows from its seed, so point it to the matching worked example and starter prompts in the pack. |
+| 12:23 | Human in the loop and the map | 14 | Accountability stays human. Introduce interwoven and staged oversight. |
+| 12:26 | What Part 2 asks, then form groups | 15–16 | Two minutes on the three things Part 2 asks, two on formation. Groups of five form at a seed, with the seed letters posted around the room beforehand so that people walk to a sign. Each group's track follows from its seed, so point it to the ready example for that track in the pack. |
 
 ## Networking lunch · 12:30–13:15
 
@@ -40,10 +40,10 @@ A featured workshop in two 30-minute parts, split by a networking lunch.
 
 | Clock | Segment | Slides | Facilitator does |
 |---|---|---|---|
-| 13:15 | Settle in and orient | 18–24 | Re-find groups; agree the one problem (60 seconds); app open (genai-rt.web.app); read out the passcode; red lines on. Slides 21–24 go past at pace: point at them, do not present them, since every word is in the pack. |
-| 13:18 | Apply it | 25 | Press Start countdown as slide 25 goes up. If the settle-in has run late, set Minutes so the countdown still ends at 13:33 rather than fifteen from now. Circulate. Stop sensitive data, unstick stalls, one provocation each. Where a group has time, prompt the map (interwoven or staged). |
+| 13:15 | Settle in and orient | 18–24 | Re-find groups, agree one problem in 60 seconds and open genai-rt.web.app. Read out the passcode and keep the red lines visible. Point to slides 21–24, but do not present them: the group sheet has the instructions. |
+| 13:18 | Apply it | 25 | Press Start countdown as slide 25 goes up. If the settle-in runs late, set Minutes so the countdown still ends at 13:33. Circulate. Stop sensitive data, unstick stalls and offer one provocation to each group. Prioritise a caught error and a clear line for the room. Leave the optional boxes to groups with time left. |
 | about 13:26 | Pivot | 26 | Thirty seconds, keyboards down. Stop building, start interrogating. |
-| 13:33 | Lightning round | 27 | Visible timer. 45 seconds each with eight groups; announce 35 seconds if there are nine or ten, since handovers cost five to ten seconds apiece. Time the round and jot threads only: leave every approval until after the session, since reading a note properly takes longer than the close allows (collect a HackMD link only from a fallback group). |
+| 13:33 | Lightning round | 27 | Use a visible timer. Give eight groups 45 seconds each. With nine or ten, announce 35 seconds because handovers take time. Jot themes only and leave approvals until after the session. Collect a HackMD link only from a fallback group. |
 | 13:40 | Close | 28–34 | Synthesise two or three threads. Take-home actions. Reading. Follow-up. Close at 13:45. |
 
 ## After

@@ -30,9 +30,10 @@ risk sits in the first ten minutes.
 
 ## Printed materials (per table of five)
 
-- [ ] [Group pack booklet](../handouts/group-pack.pdf), one per table: cover, role
-      cards, data decision aid, rubric, worked examples and starter prompts.
-- [ ] [Group one-pager](../handouts/group-one-pager.pdf), one or two per table.
+- [ ] [Group sheet](../handouts/group-one-pager.pdf), two per table. It holds the whole
+      of Part 2 on one side, so it is the sheet people actually read.
+- [ ] [Group pack](../handouts/group-pack.pdf), one per table: a ready example and first
+      prompts for each track, then the rubric and the fallback note.
 - [ ] [Seed-idea signs](../handouts/seed-signs.pdf), ten of them, one per page in A4
       landscape, printed and posted around the room before 12:00. Each carries its
       track letter, and they are generated from the quick group seeds in

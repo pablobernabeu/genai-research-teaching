@@ -1,17 +1,14 @@
 # Worked examples: one per track
 
-A worked example is the fallback, for when neither your group's seed nor a member's
-real problem is to hand. Use your group's seed, or a
-real, non-confidential problem a member brings, and turn to the example below only if
-neither is to hand. It is also what you use when the Wi-Fi fails and you switch to
-critiquing on paper.
+A worked example is a fallback. Start with the seed your group formed around or a
+member's non-confidential problem. Use the example for your track only when neither is
+available. It also gives you something to critique on paper if the Wi-Fi fails.
 
-The material below is fully synthetic and safe to paste, with no real people, data or
-unpublished work, so a group with nothing to hand can start at once. If you are using
-it, still spend a minute on the data decision aid: say what you would have had to strip
-out had this been your own material, and record that under Data Security & Ethics.
-Each example is sized for the short build window and leads naturally to a caught
-error.
+The material below is synthetic and safe to paste. It contains no identifiable people,
+data or unpublished work, so a group can begin at once. Spend a minute on the data
+decision aid anyway. Say what you would remove from your own material, then record it
+under Data Security & Ethics. Each example is small enough to start in the short build
+window and should lead to a useful caught error.
 
 ---
 
@@ -41,11 +38,10 @@ generalisability), and note what the guardrails added.
 
 #### What to watch for
 
-A strong tool should flag the causal claim from cross-sectional
-data, common-method or single-source bias (the same person rates both variables),
-self-selection via LinkedIn and self-report of one's own team. Note whether it also
-pads the list with vague, always-true objections, and whether it ever invents a
-statistic or a citation. Those are your museum pieces.
+A useful answer should flag the causal claim from cross-sectional data, common-method
+or single-source bias (the same person rates both variables), self-selection via
+LinkedIn and self-report of one's own team. Look for vague, always-true objections and
+invented statistics or citations. Record them as caught errors.
 
 ---
 
@@ -53,7 +49,7 @@ statistic or a citation. Those are your museum pieces.
 
 #### Scenario
 
-Turn a messy set of meeting notes into a clean, owned action list, then
+Turn a messy set of meeting notes into a clear action list, then
 check that the tool did not quietly invent or misattribute anything.
 
 > *Synthetic meeting notes (safe to paste; roles only, no real people):*
@@ -66,17 +62,16 @@ check that the tool did not quietly invent or misattribute anything.
 
 #### First move
 
-Ask for a structured action list with owner, deadline and priority, plus a
-separate 'unclear or needs an owner' list. Build it as a reusable template your group could run again on the next set of
-notes.
+Ask for a structured action list with owner, deadline and priority. Ask it to place
+unclear items, or items without an owner, in a separate list. Turn the resulting prompt
+into a template your group could use again.
 
 #### What to watch for
 
-Does the tool invent owners or dates that the notes never stated
-('Deputy Director, by 30 June')? Does it silently drop the items with no owner instead
-of flagging them? Does it confidently over-formalise a vague discussion? The safeguard
-you design ('every action must trace to a line in the notes; no invented owners') is
-the deliverable.
+Does the tool invent owners or dates that the notes never stated ('Deputy Director, by
+30 June')? Does it silently drop items with no owner? Does it over-formalise a vague
+discussion? Use a safeguard such as 'every action must trace to a line in the notes; no
+invented owners'.
 
 ---
 
@@ -84,8 +79,7 @@ the deliverable.
 
 #### Scenario
 
-Build a tiny interactive that communicates a finding, and verify that it is
-actually correct before you would ever show it to anyone.
+Build a tiny interactive that communicates a finding, then verify it before sharing it.
 
 > *Synthetic finding and data (safe to paste):*
 > 'In a (made-up) study, average reading time for a one-page brief fell as font size
@@ -131,11 +125,10 @@ over-claim, dropped caveat or false certainty.
 
 #### What to watch for
 
-Watch the tool quietly upgrade 'tended to report slightly higher
-confidence' into 'boosts exam results', drop 'small, preliminary, correlational' and
-add a confident headline the evidence cannot bear. Your fidelity checklist ('every
-claim traceable to the source; all caveats survive; no causal language') is the
-artefact.
+Watch the tool quietly upgrade 'tended to report slightly higher confidence' into
+'boosts exam results', drop 'small, preliminary, correlational' or add a headline the
+evidence cannot bear. Create a fidelity checklist: every claim is traceable to the
+source, all caveats survive and no causal language appears.
 
 ---
 

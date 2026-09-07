@@ -132,21 +132,11 @@ function renderCutSheets(name, mdFile, label) {
   return { path, count: cards.length };
 }
 
-const roleCards = renderCutSheets('cut-role-cards', 'docs/role_cards.md', 'Role card');
 const cueCards = renderCutSheets('cut-cue-cards', 'docs/cue_cards.md', 'Cue card');
 
 // ---- sections, ordered by the job they belong to --------------------------------
 const onePager = Math.max(2 * groups, 2);
 const SECTIONS = [
-  {
-    part: 'Part 1 — cut these',
-    title: 'Role cards, for cutting',
-    path: roleCards.path,
-    copies: `${groups} copies`,
-    sides: 'SINGLE-SIDED', paper: 'A4 portrait', finish: 'Cut once across the middle of every sheet',
-    note: `${roleCards.count} cards, two to a sheet. Every sheet cuts at the same height, so the whole stack can go through a guillotine in one pass. Cutting a double-sided sheet would destroy its reverse, which is why this section prints on one side only.`,
-    footer: false,
-  },
   {
     part: 'Part 1 — cut these',
     title: 'Facilitator cue cards, for cutting',

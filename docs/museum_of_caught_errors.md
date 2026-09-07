@@ -17,8 +17,8 @@ the loop.
 
 ## How a group keeps it
 
-Use the table already in your note in the app, or in HackMD on the fallback (from the
-[rubric template](../evaluation_rubric_template.md)):
+In the app, this is the 'Errors you caught' box, and a line each is plenty. On the
+paper fallback, three columns keep the entries honest:
 
 | What happened | How we caught it | What it signals about where humans must stay |
 |---|---|---|

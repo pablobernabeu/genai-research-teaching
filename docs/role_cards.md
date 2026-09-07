@@ -29,7 +29,7 @@ The mapping (canonical):
 **Your angle:** the group stays on a real problem, and on time.
 
 - **In the fifteen minutes.** Settle on your one problem in the first minute, either the
-  seed you gathered at or a real one someone brought, and say how you would know the
+  seed your group formed around or a real one someone brought, and say how you would know the
   tool had helped. Share the five angles out, keep half an eye on the clock and make
   room for everyone to speak.
 - **At the pivot, about 13:26.** The halt lasts about half a minute, so keep it short.

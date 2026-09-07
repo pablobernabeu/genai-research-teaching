@@ -5,11 +5,13 @@ and colleagues. The full working briefs are in
 [`project_tracks.md`](../project_tracks.md) and
 [`evaluation_rubric_template.md`](../evaluation_rubric_template.md).
 
-In Part 2, each group of five takes one real problem (or a ready example) and works it
-through one of four tracks, then examines the result against a five-dimension rubric
-and a short societal reflection. Every track works for a research or a teaching task,
-and everything runs on free browser tools, with nothing to install and no prior
-experience assumed.
+In Part 2, each group of five takes one real problem, or a ready example, and works it
+through one of four tracks. The applied window is only fifteen minutes, so it asks for
+three things: run a tool on the problem, catch it out where it was fluent and wrong,
+and settle on one line for the room. The five-dimension rubric and the short societal
+reflection sit behind that, for a group that wants to score and think about its work
+afterwards. Every track works for a research or a teaching task, and everything runs on
+free browser tools, with nothing to install and no prior experience assumed.
 
 ## The four tracks
 
@@ -33,9 +35,10 @@ Each track is a different test of where generative AI helps a researcher and whe
 
 ## The rubric: five dimensions
 
-Groups self-assess against five dimensions, each rated from 1 to 5 (1 Nascent,
-3 Developing, 5 Robust). It is a reflection scaffold, so a
-thoughtful 3 with a sharp caught error is worth more than an unexamined 5.
+Groups may self-assess against five dimensions, each rated from 1 to 5 (1 Nascent,
+3 Developing, 5 Robust), when they tidy the note afterwards. It is a reflection
+scaffold and not a task for the fifteen minutes, so a thoughtful 3 with a sharp caught
+error is worth more than an unexamined 5.
 
 1. Project Definition: is the real problem, and its success criterion, clear?
 2. Technology Stack: is it the right tool on the spectrum, and why?

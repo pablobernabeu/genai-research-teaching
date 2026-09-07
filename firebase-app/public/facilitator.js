@@ -48,6 +48,7 @@ let unsubscribeConfig = null; // config/app passcode listener
 let unsubscribeClock = null;  // config/clock timer listener
 let timerStatusInterval = null;
 let latestGroups = [];        // newest snapshot, for the Markdown export
+const cardErrors = new Map(); // group id -> last action error, retained across snapshots
 
 // Human labels for the response fields, in display order.
 const RESPONSE_LABELS = [
@@ -406,6 +407,7 @@ function render(groups) {
 function card(g) {
   const el = document.createElement("div");
   el.className = "card group-card";
+  el.dataset.groupId = g.id;
 
   // Header: name + status badge + scenario.
   const meta = document.createElement("div");
@@ -489,9 +491,9 @@ function card(g) {
   renameBtn.className = "ghost";
   renameBtn.textContent = "Rename…";
   renameBtn.addEventListener("click", () => rename(g.id, g.name, renameBtn));
-  // Reopen is for submitted work. An approved group has had its join code wiped and its
-  // devices signed out of the record, so reopening it would strand the group.
-  if (approved) row.append(approveBtn, renameBtn); else row.append(approveBtn, reopenBtn, renameBtn);
+  // Keep Reopen available after approval. The rules leave ownerUids untouched, so the
+  // group's existing devices can still receive the reopened record.
+  row.append(approveBtn, reopenBtn, renameBtn);
   // Copy submission — offered only for approved AND consented work (what the public
   // archive holds), so it pastes straight into submissions/.
   if (approved && g.shareConsent) {
@@ -507,6 +509,11 @@ function card(g) {
   errBox.className = "notice error";
   errBox.hidden = true;
   errBox.dataset.role = "err";
+  const previousError = cardErrors.get(g.id);
+  if (previousError) {
+    errBox.hidden = false;
+    errBox.textContent = previousError;
+  }
   el.appendChild(errBox);
 
   return el;
@@ -514,9 +521,18 @@ function card(g) {
 
 function showCardError(btn, msg) {
   const cardEl = btn.closest(".group-card");
+  cardErrors.set(cardEl.dataset.groupId, msg);
   const box = cardEl.querySelector('[data-role="err"]');
   box.hidden = false;
   box.textContent = msg;
+}
+
+function clearCardError(btn) {
+  const cardEl = btn.closest(".group-card");
+  cardErrors.delete(cardEl.dataset.groupId);
+  const box = cardEl.querySelector('[data-role="err"]');
+  box.hidden = true;
+  box.textContent = "";
 }
 
 // Copy one approved + consented group's submission to the clipboard, in the same compact
@@ -524,11 +540,13 @@ function showCardError(btn, msg) {
 async function copyGroup(g, btn) {
   try {
     await navigator.clipboard.writeText(groupBlock(g, ""));
+    clearCardError(btn);
     const original = btn.textContent;
     btn.textContent = "Copied ✓";
     setTimeout(() => { btn.textContent = original; }, 1500);
-  } catch (err) {
-    showCardError(btn, "Could not copy to the clipboard. " + friendlyError(err));
+  } catch (_) {
+    // Clipboard access can fail outside a secure context or without a user gesture.
+    showCardError(btn, "Your browser would not let the page copy to the clipboard. Use 'Export for the archive (Markdown)' instead.");
   }
 }
 
@@ -544,6 +562,7 @@ async function approve(id, btn) {
       sessionCode: "",
       updatedAt: serverTimestamp(),
     });
+    clearCardError(btn);
     // Snapshot listener re-renders automatically.
   } catch (err) {
     showCardError(btn, "Could not approve. " + friendlyError(err));
@@ -554,6 +573,11 @@ async function approve(id, btn) {
 // REOPEN — prompt for a note, then move status → 'reopened' and set facilitatorNote.
 // Matches the facilitator-update rule (only status + facilitatorNote + updatedAt).
 async function reopen(id, btn) {
+  const g = latestGroups.find((x) => x.id === id);
+  if (g && g.status === "approved" &&
+      !window.confirm("This group is already approved. Reopening removes it from the public dashboard, and a device that has reloaded since approval will not be able to rejoin. Reopen anyway?")) {
+    return;
+  }
   const note = window.prompt(
     "Add a short note for the group (what to fix before resubmitting):",
     ""
@@ -566,6 +590,7 @@ async function reopen(id, btn) {
       facilitatorNote: note,
       updatedAt: serverTimestamp(),
     });
+    clearCardError(btn);
   } catch (err) {
     showCardError(btn, "Could not reopen. " + friendlyError(err));
     btn.disabled = false;
@@ -618,6 +643,7 @@ async function rename(id, currentName, btn) {
       tx.delete(doc(db, "groupNames", oldLower));
       tx.update(groupRef, { name: newName, nameLower: newLower, updatedAt: serverTimestamp() });
     });
+    clearCardError(btn);
     // The snapshot listener re-renders the card with the new name.
   } catch (err) {
     showCardError(btn, err.userMessage || ("Could not rename. " + friendlyError(err)));

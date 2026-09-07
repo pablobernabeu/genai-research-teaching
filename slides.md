@@ -39,7 +39,7 @@ The University of Oxford accepts no liability for the selection, use or outcomes
 | *12:30–13:15* | *Networking lunch* | *a break* |
 | **13:15–13:45** | **Part 2 · Practical** AI for research and teaching | applied session |
 
-Part 1 sets up a way of thinking, the lunch is a real break and Part 2 puts the thinking into practice.
+Part 1 gives us a common frame. Lunch is a proper break. Part 2 puts those ideas to work.
 
 ---
 
@@ -51,14 +51,14 @@ Part 1 sets up a way of thinking, the lunch is a real break and Part 2 puts the 
 
 ---
 
-## Our stance is discernment, not enthusiasm
+## Our stance: critical judgement
 
 - Whatever your level of confidence, whether you have never tried one or use them daily, you are in the right room.
 - The aim is a deeper understanding of the technology, with no technical instruction on any one tool.
 - This is a session about judgement. We use these tools and we interrogate them, in research and in teaching.
 - Success means a clear account of what helped, what failed and where a human must stay in charge.
 
-> You bring the expertise. The tool is a fast and confident assistant whose error rate depends on the task, and whose fluency never tells you which case you are in. The aim is to leave knowing when not to reach for it.
+> You bring the expertise. The tool is fast and can sound certain, but its reliability depends on the task. The aim is to leave able to decide when to use it and when to leave it aside.
 
 ---
 
@@ -107,7 +107,7 @@ A generative AI tool works much like a chat assistant. You type a request and it
 
 - Choose one free tool today, such as ChatGPT, Claude, Gemini or Copilot. Any of them will serve.
 - A useful request states who you are, what you want and what a good answer would look like. You then push back on the reply.
-- Starter prompts for each track are in your group pack, ready to adapt.
+- A ready example for each track is in your group reference pack.
 
 > Mixed groups are a strength. Newcomers ask the questions that matter, and regular users show what is possible. No one is behind.
 
@@ -115,7 +115,7 @@ A generative AI tool works much like a chat assistant. You type a request and it
 
 ## Cognitive friction is a signal
 
-When a tool resists your intent, by giving a glib answer, missing the point or smoothing over a hard distinction, that friction is information. It marks where your judgement is doing real work.
+When a tool resists your intent by giving a glib answer, missing the point or smoothing over a hard distinction, that friction is information. It marks where your judgement matters.
 
 - In a survey of knowledge workers, those with more confidence in the AI reported less critical-thinking effort, while those with more confidence in their own expertise reported more (Lee et al., 2025). Self-reported, and correlational.
 - Deliberately reintroducing friction, through prompts that question the output, can restore critical and metacognitive engagement (Drosos et al., 2025).
@@ -148,7 +148,7 @@ Red line. If you would not pin it to a public noticeboard, do not paste it into 
 
 </div>
 
-Personal data needs a lawful basis and a cleared tool. Confidential material is not yours to release at all. So never paste:
+Personal data needs a lawful basis and a cleared tool. Confidential material is not yours to release at all. Do not paste:
 
 - Personal data of identifiable people, such as students, applicants, participants or staff (UK GDPR).
 - Special-category data, such as health, ethnicity, political or religious beliefs, trade union membership, sexuality, genetics or biometrics.
@@ -200,7 +200,7 @@ Beyond any single task, three larger shifts are worth carrying into Part 2.
 
 ## The human-in-the-loop principle
 
-The AI proposes and the human disposes. Accountability does not transfer to a tool.
+The tool can propose, but a human remains accountable.
 
 Before you start a task, decide the following in advance.
 
@@ -215,15 +215,19 @@ Before you start a task, decide the following in advance.
 
 ## What Part 2 asks of you
 
-Take a real task, use a tool on it, then examine the result closely. Part 1 provided the way of thinking. Part 2 puts it into practice. You will look at your work through five dimensions, and score them in your pack afterwards if you wish.
+Take one task, use a tool on it and examine what comes back. Part 1 gave you the frame.
+The applied session is where you use it. Your group has fifteen minutes and three things
+to do.
 
-- Project Definition, your group's one real problem.
-- Technology Stack, which tool on the spectrum, and why (Part 1).
-- Data Security & Ethics, the red lines you hold (Part 1).
-- Financial & Scalability, whether the free tier holds.
-- Human-in-the-Loop, where you steer, interwoven or staged (Part 1).
+1. **Use it.** Keep a tangible result: a critique, a template, a chart or a translation.
+2. **Catch it out.** One or two moments where the tool was fluent and wrong.
+3. **Prepare one line** for the room, which you give in up to 45 seconds at 13:33.
 
-<span class="small muted">Plus the friction you catch (your museum of caught errors), a short societal reflection (fairness, disclosure, thinking versus writing and whether your field is over- or under-using AI here) and one insight to share. The app captures the essentials, and the rubric and the reflection are in your pack.</span>
+> These three tasks apply the earlier ideas. The spectrum guides the tool choice and the
+> red lines govern what goes into it. Caught errors reveal friction. A named checkpoint
+> keeps a human in the loop.
+
+<span class="small muted">Your pack also holds a five-dimension rubric and a short reflection on the wider questions. Both support the debrief after the activity.</span>
 
 ---
 
@@ -254,7 +258,7 @@ Move to the idea you would most like to try, and make a group of five with the p
 
 <span class="small muted">Note who is in your group and which track you chose. You regroup straight after lunch, without re-forming.</span>
 
-<span class="small muted">A · Methodological Blind-Spot Detector, turn the tool on your own design and verify its critiques. B · Executive-Function Layer, build a reusable aid for planning or triage. C · Rapid Prototyping, make a small artefact, then check it. D · Public Engagement, translate a finding, then audit it for fidelity. Fuller briefs are in your group pack, with one-line summaries in the app. Your group takes one problem into Part 2, either this seed or a real one a member brings.</span>
+<span class="small muted">A · Methodological Blind-Spot Detector, test a design and verify the critique. B · Executive-Function Layer, build a reusable aid for planning or triage. C · Rapid Prototyping, make a small artefact, then check it. D · Public Engagement, translate a finding, then audit it for fidelity. Fuller briefs are in your group reference pack, with one-line summaries in the app. Take one problem into Part 2: the seed or a member's non-confidential task.</span>
 
 ---
 
@@ -303,47 +307,47 @@ Your facilitator will read out the session passcode you need to start a group.
 | When | Phase | Mins |
 |---|---|---|
 | <span class="clock">13:15</span> | **Settle in.** Re-find your group, agree your one problem (60 s), open the app (HackMD as fallback), red lines on | 3 |
-| <span class="clock">13:18</span> | **Apply it.** Run the tool on your problem and capture one caught error and one insight (the automation–steering map if time allows) | 15 |
+| <span class="clock">13:18</span> | **Apply it.** Run the tool on your problem, catch it out and settle on one line for the room | 15 |
 | <span class="clock">13:33</span> | **Lightning round.** Up to 45 seconds per group, on the limitation, the safeguard or how your field over- or under-uses AI | 7 |
 | <span class="clock">13:40</span> | **Synthesis.** Drawing the threads together, with takeaways for research and teaching | 5 |
 
 ---
 
-## The five angles
+## Three jobs, shared in seconds
 
-Your pack rates your work on five dimensions, from 1 (Nascent) through 3 (Developing) to 5 (Robust). Share the five angles across the group and pass the keyboard freely. The scoring is for your pack and the discussion. The app holds the essentials.
+Five of you, one problem, one shared note. Divide three jobs and start.
 
-1. Project Definition (Convenor). Your group's one real problem, kept in focus.
-2. Technology Stack (Driver). The right tool on the spectrum, and why.
-3. Data Security & Ethics (Steward). The red lines you hold.
-4. Financial & Scalability (Reporter). Whether the free tier holds. This role also owns the note and the spoken insight.
-5. Human-in-the-Loop (Sceptic). Checkpoints and accountability, plus the automation–steering map if time allows.
+1. One of you **drives the tool**.
+2. One **guards the red lines**, using the check on your group sheet.
+3. One **keeps the note** in the app and speaks for the group at 13:33.
 
-<span class="small muted">The five dimensions frame your reflection and the fuller fallback note. During the session, focus on the core three. An experienced group can ignore the labels.</span>
+> The rest of the group should question the output. Pass the keyboard around freely.
+
+<span class="small muted">The five-dimension rubric in your pack supports reflection afterwards. A sharp caught error tells you more than an unexamined 5.</span>
 
 ---
 
-## Working on a real problem
+## Work on one problem
 
-Use your group's one problem: the seed, a member's real one or a worked example from your pack. Complete the three items below first, and if that is all you manage, you have done the task.
+Use the problem your group agreed: the seed you formed around, a member's non-confidential task or the ready example for your track.
 
-1. One artefact. Run your tool and produce something real, such as a critique, a template or a translation.
-2. One or two caught errors. Moments where it was fluent but wrong. Keep them.
-3. One insight. A limitation, a safeguard or one honest observation about how your field is over- or under-using AI. This is your line for the lightning round.
+1. **Use it** and keep a tangible result, such as a critique, a template, a chart or a translation.
+2. **Catch it out.** Write down the fluent-but-wrong moments as they happen. They show what needs checking.
+3. **Prepare one line** for the room: the limitation you found, the checkpoint you would require before use or how your field over- or under-uses AI here.
 
-> If about five minutes remain, go further. Add the automation–steering map (which steps the tool ran, and where you steered) and decide whether oversight was interwoven or staged, noting why and what it cost. If you fall behind, drop the map before the insight.
+> If time runs short, write that line before anything else. If time is left, map which steps the tool ran and where you steered. Then decide whether oversight is interwoven or staged, and reflect on how your field uses AI.
 
-<span class="small muted">The map and the oversight model are a bonus if time allows. The rubric scores and the societal reflection are for your pack and the discussion.</span>
+<span class="small muted">Those last three are optional extras.</span>
 
 ---
 
 ## Capturing your work in the app
 
-There is no GitHub to touch and no report to write. This is fifteen minutes of capture, kept light.
+There is no GitHub to touch and no report to write. Use the app to capture the essentials.
 
-1. The Reporter opens the app (genai-rt.web.app), names the group and enters the session passcode. There is no account and nothing to install. One device creates the group, then reads out the group name and the six-character code, and the others type both.
-2. Fill in the essentials: the problem, the artefact (and which tool made it), one caught error and your insight, adding the map and the oversight model if time allows. The app saves as you go.
-3. Submit for review. Do it as soon as your insight is written, and by 13:33 at the latest. If you are still typing when the round starts, submit as soon as you have spoken.
+1. The note-keeper opens genai-rt.web.app, names the group and enters the session passcode. One device creates the group, then reads out the group name and six-character code. The others use both to join. There is no account and nothing to install.
+2. Fill in the problem, the artefact and which tool made it, the errors you caught and your line for the room. The app saves as you go.
+3. Submit for review as soon as that line is written, and by 13:33 at the latest. If you are still typing when the round starts, submit as soon as you have spoken.
 
 <span class="small muted">No device, or the app misbehaving? HackMD (hackmd.io) is the fallback, with the same headings. A countdown on screen shows the time left, and the facilitator archives the approved work afterwards.</span>
 
@@ -351,12 +355,12 @@ There is no GitHub to touch and no report to write. This is fifteen minutes of c
 
 ## The museum of caught errors
 
-Keep a short, honest log of the moments the tool went wrong, and what each one taught you.
+Keep a short record of the moments the tool went wrong and what each one taught you.
 
 - A confident but fake citation · a flattened nuance · a plausible but invalid method · a biased rewrite · a misgraded answer.
 - For each, note what happened, how you caught it and what it signals about where humans must stay in charge.
 
-> These entries are the most valuable thing your group produces.
+> These entries often provide the most useful discussion material.
 
 ---
 
@@ -376,7 +380,7 @@ Hold the red lines, record the friction, keep a human in the loop.
 
 Thirty seconds, keyboards down, as a group.
 
-- What has the tool genuinely made easier, and what does that cost?
+- What has the tool made easier, and what does that cost?
 - Where did it resist you, and what was that friction telling you?
 - Have we held the data red lines?
 - Switch now from building to interrogating. Settle on your one insight.
@@ -387,9 +391,9 @@ Thirty seconds, keyboards down, as a group.
 
 # Lightning round · 13:33
 
-<span class="subtitle">One insight each · no slides · the Reporter delivers · the facilitator calls the time</span>
+<span class="subtitle">One insight each · no slides · the note-keeper speaks · the facilitator calls the time</span>
 
-What was the most significant limitation, the most important human-in-the-loop safeguard or one honest thing this exposed about how your field over- or under-uses AI?
+What was the most significant limitation, the most important human-in-the-loop safeguard or one observation about how your field over- or under-uses AI?
 
 ---
 
@@ -405,8 +409,8 @@ What was the most significant limitation, the most important human-in-the-loop s
 
 Threads worth drawing out from the lightning round:
 
-- **Context decided.** A tool that helped on one task and was a hazard on the next.
-- **Friction as a signal.** Where the friction a group recorded marked the point at which human judgement was needed.
+- **Context matters.** A tool that helped on one task was a hazard on the next.
+- **Friction as a signal.** A group's friction marked the point at which human judgement was needed.
 - **A checkpoint named in advance.** The strongest safeguard a group built in.
 - **Where a free tier drew a hard line.** On data, scale or accountability.
 
@@ -430,7 +434,7 @@ Choose one to try this week, in research or in teaching.
 
 1. Write a two-line note on your AI use for one task, recording what you used, what you checked and what you did not delegate.
 2. Add one human checkpoint to a workflow you already assist with AI.
-3. Before pasting anything sensitive, work through the one-page data decision aid from your pack.
+3. Before pasting anything sensitive, work through the data check on your group sheet.
 4. Keep your own museum of caught errors for a fortnight.
 
 <span class="small muted">A short follow-up, with a responsible-use commitment, will reach you by email.</span>
@@ -472,7 +476,7 @@ Choose one to try this week, in research or in teaching.
 
 The notes of groups that opt in become an open, reproducible archive at github.com/pablobernabeu/genai-research-teaching
 
-Questions or follow-ups? Open a thread in the repository's Discussions tab (github.com/pablobernabeu/genai-research-teaching/discussions), so that answers help everyone.
+Questions and follow-ups go in the repository's Discussions tab (github.com/pablobernabeu/genai-research-teaching/discussions), so that answers help everyone.
 
 <span class="subtitle">The tool is fast and confident. You are the one who is accountable, and who decides when its fluency has earned your trust. Bring both to the work.</span>
 

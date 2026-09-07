@@ -29,18 +29,19 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 ## 12:05 · A LONG LINE OF TOOLS
 
 - **Say:** 'AI is the latest in a long line of productivity tools, from the calculator
-  and the computer to the spreadsheet and now generative AI, in an economy that
-  rewards output. The question is how to use it with discernment.'
+  and the computer to the spreadsheet and now generative AI. Our institutions reward
+  output, so we need to decide when the tool helps and when it does not.'
 - **Do:** show the chain on screen, and take no more than a couple of minutes.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
 ## 12:08 · GETTING STARTED (no experience needed)
 
-- **Say:** 'A chat assistant: you type a request and it writes back. Pick one free
-  tool. Say who you are, what you want and what good looks like, then push back.'
-- **Do:** point to the starter prompts, and reassure the room that mixed groups are a
-  strength and no one is behind.
+- **Say:** 'A chat assistant takes a request and writes back. Pick one free tool. Say
+  who you are, what you want and what a useful response would look like, then push
+  back.'
+- **Do:** point to the ready examples in the group pack, and reassure the room that
+  mixed groups are a strength and no one is behind.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
@@ -73,11 +74,10 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 
 ## 12:26 · WHAT PART 2 ASKS, THEN FORM GROUPS (end of Part 1)
 
-- **Say:** 'These ideas, and the bigger questions, are the rubric and the reflection
-  you will fill in. Now form groups of five: gather at the idea on screen, and the
-  letter is your track.'
-- **Do:** preview the rubric (slide 15) and the tracks (slide 16), then send them to
-  lunch. End Part 1 at 12:30.
+- **Say:** 'Part 2 puts these ideas to work. Now form groups of five: gather at the
+  idea on screen, and the letter is your track.'
+- **Do:** show the three things Part 2 asks (slide 15) and the tracks (slide 16), then
+  send them to lunch. End Part 1 at 12:30.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
@@ -90,12 +90,11 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 
 ## 13:15 · SETTLE IN (Part 2)
 
-- **Say:** 'Re-find your group. Quickly agree your one problem, the seed or a real one
-  someone brought. Open the app at genai-rt.web.app. Here is the passcode. Red lines
-  on.'
-- **Do:** about three minutes in all: regroup, agree the one problem in roughly a
-  minute, then open the app and read out the passcode. Keep it tight so that it does
-  not eat into the fifteen-minute build window.
+- **Say:** 'Re-find your group. Quickly agree one problem: the seed or a
+  non-confidential task someone brought. Open the app at genai-rt.web.app. Here is the
+  passcode. Keep the red lines in mind.'
+- **Do:** take about three minutes: regroup, agree the problem in roughly a minute,
+  then open the app and read out the passcode. Protect the fifteen-minute build window.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
@@ -103,8 +102,8 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 
 - **Let them work.** Stop sensitive data, unstick stalls and offer one provocation
   each.
-- **Push:** one caught error and one insight first. Where a group has time, the
-  automation–steering map and the choice between interwoven and staged oversight.
+- **Push:** a caught error first, then the one line for the room. The optional boxes
+  in the app are for groups with time left.
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
@@ -120,9 +119,8 @@ wall-clock, and the workshop is two 30-minute parts split by lunch.
 
 - **Say:** 'One insight each and no slides. I will call the time. Give us the biggest
   limitation, the best safeguard or how your field over- or under-uses AI here.'
-- **Say, before they submit:** 'If you are happy for your note to join the public
-  archive, tick the sharing box at the foot of the form. It is optional, and unticked
-  is a perfectly good answer.'
+- **Say, before they submit:** 'Tick the sharing box at the foot of the form only if
+  you are happy for your note to join the public archive. It is optional.'
 - **Do:** visible timer. 45 seconds each with eight groups, or announce 35 seconds if
   there are nine or ten, since each handover costs five to ten seconds. Still behind
   after six? Take one line from the rest. Jot each group's thread, and leave

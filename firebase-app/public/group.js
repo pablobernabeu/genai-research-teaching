@@ -79,6 +79,7 @@ let unsubscribe = null;   // group doc listener
 let currentDoc = null;    // latest snapshot data
 let applyingRemote = false; // guard so remote snapshots don't trigger autosave
 let saveTimer = null;
+let resuming = true;       // keep the login form hidden until maybeResume has decided
 // Fields the user has edited on THIS device and not yet saved. Autosave and submit write
 // only these, as dot-path updates, so two devices editing different fields merge instead
 // of the last writer replacing the whole responses map. Remote snapshots leave a dirty
@@ -135,7 +136,7 @@ onAuthStateChanged(auth, (user) => {
     authNotice.hidden = true;
     // Only reveal the login form once we actually have an anonymous identity,
     // because both create and join require request.auth != null.
-    if (!groupId) loginView.hidden = false;
+    if (!groupId && !resuming) loginView.hidden = false;
   } else {
     uid = null;
   }
@@ -162,6 +163,8 @@ onAuthStateChanged(auth, (user) => {
     // Watch the facilitator's optional session countdown (any signed-in user may read it).
     watchClock();
   }
+  resuming = false;
+  if (uid && !groupId) loginView.hidden = false;
 })();
 
 // RESUME — after a reload or a dropped connection, get the group straight back to work
@@ -185,6 +188,8 @@ async function maybeResume() {
     enterGroup(stored.groupId);
   } catch (err) {
     // permission-denied => our anon uid rotated and we are no longer an owner.
+    // Keep the stored session for transient failures so a reload can retry it.
+    if (err.code !== "permission-denied") return;
     if (stored.joinCode && stored.name) {
       try {
         await joinGroup(normaliseName(stored.name), String(stored.joinCode).toUpperCase());
@@ -365,6 +370,7 @@ async function joinGroup(nameLower, typedCode) {
 
 // ---- Enter the live workspace ----------------------------------------------
 function enterGroup(id) {
+  if (unsubscribe) { unsubscribe(); unsubscribe = null; }
   groupId = id;
   loginView.hidden = true;
   workView.hidden = false;
@@ -498,6 +504,9 @@ function setFormEnabled(enabled) {
 // Every input change marks its field dirty and schedules a save. A save writes only the
 // dirty fields, as dot paths, and keeps status as-is ('draft' or 'reopened'), so a write
 // from one device leaves another device's edits to other fields untouched.
+function setSaveState(text) {
+  if (saveState.textContent !== text) saveState.textContent = text;
+}
 
 // Which document field an input element belongs to (see buildUpdate).
 function fieldKeyFor(el) {
@@ -536,7 +545,7 @@ function scheduleSave(e) {
   const status = currentDoc.status;
   if (status !== "draft" && status !== "reopened") return; // not editable
 
-  saveState.textContent = "Saving…";
+  setSaveState("Saving…");
   clearWorkError();
   if (saveTimer) clearTimeout(saveTimer);
   saveTimer = setTimeout(saveNow, 800);
@@ -555,20 +564,24 @@ async function saveNow() {
   const fields = new Set(dirtyFields);
   dirtyFields.clear();
 
+  // The persistent cache applies the write locally before the server acknowledges it.
+  // Show that local save immediately rather than leaving the live region on "Saving…"
+  // while an offline promise waits for reconnection.
+  const write = updateDoc(doc(db, "groups", groupId), {
+    ...buildUpdate(fields),
+    status: status === "reopened" ? "reopened" : "draft",
+    updatedAt: serverTimestamp(),
+  });
+  setSaveState(navigator.onLine ? "Saving…" : "Saved on this device.");
   try {
-    // Owner-update rule: an owner may keep the doc 'draft' or 'reopened' while
-    // editing, and never touches name/nameLower/joinCode/ownerUids. We PRESERVE
-    // 'reopened' so the facilitator dashboard keeps showing a reopened submission as
-    // 'reopened' until the group resubmits.
-    await updateDoc(doc(db, "groups", groupId), {
-      ...buildUpdate(fields),
-      status: status === "reopened" ? "reopened" : "draft",
-      updatedAt: serverTimestamp(),
-    });
-    saveState.textContent = "All changes saved.";
+    await write;
+    setSaveState("All changes saved.");
+    clearWorkError();
   } catch (err) {
     fields.forEach((f) => dirtyFields.add(f)); // keep them for the next attempt
-    saveState.textContent = "";
+    saveState.textContent = (!navigator.onLine || err.code === "unavailable")
+      ? "Saved on this device; it will sync when you reconnect."
+      : "";
     showWorkError("Could not save. " + friendlyError(err));
   }
 }
@@ -639,6 +652,7 @@ copyCode.addEventListener("click", async () => {
   } catch {
     // Clipboard may be unavailable; the code is visible regardless.
     copyCode.textContent = "Copy code";
+    showWorkError("Could not copy the join code. You can still read it above.");
   }
 });
 

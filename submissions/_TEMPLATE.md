@@ -13,7 +13,7 @@
 | **Track** | A / B / C / D / own, with the track name |
 | **Date** | YYYY-MM-DD (the workshop date) |
 | **Source** | App export (Export approved (Markdown)) or HackMD/paper note (fallback) |
-| **Consent** | The group ticked the share box in the app, or said yes to 'Share publicly?' in the fallback note |
+| **Consent** | The group ticked the share box in the app, or answered yes to 'Archive this note publicly?' in the fallback note |
 | **Archived by** | Pablo Bernabeu, exported to Markdown and checked for personal data |
 
 ---
@@ -45,63 +45,28 @@ headings, and the facilitator keeps them as they are.
 
 ## Shape 2: the fallback note (from the rubric template)
 
-**Roles taken (no names):** Convenor · Reporter · Driver · Sceptic · Steward
+A group that could not use the app writes the same headings on HackMD or on paper, so a
+fallback note archives in the same shape as an export. Anything under 'optional' is
+often blank, which is expected.
 
-**The real problem we brought:** …
+**Jobs taken (no names):** who drove the tool · who guarded the red lines · who kept the note
 
-### 1. Project Definition
-- The real problem: …
-- Success criterion: …
+**The problem:** …
 
-### 2. Technology Stack
-- Tool(s) and where they sit on the spectrum: …
-- Why this level and not one up or down: …
+**The artefact, and the tool that made it:** …
 
-### 3. Data Security & Ethics
-- What we put in, and how we de-identified it: …
-- Red lines held; UK GDPR, ethics, disclosure, IP and consent: …
+**Errors caught (what happened, how we caught it, where a human must stay):** …
 
-### 4. Financial & Scalability Constraints
-- Free-tier limits hit or foreseen: …
-- What breaks first at scale: …
+**Our line for the lightning round:** …
 
-### 5. Human-in-the-Loop Protocol
-- Automation–steering map (phase, automated, human steering):
+**Automation–steering map (optional):** the phases, what the tool ran, where the group steered.
 
-| Phase | Automated (AI does) | Human steering |
-|---|---|---|
-| … | … | … |
+**Oversight interwoven or staged, and why (optional):** …
 
-- Interwoven or staged (continuous oversight, or checkpoints between phases), and why: …
-- What the choice costs, and how we offset it: …
-- Checkpoints set in advance: …
-- What we will never delegate: …
-- Who is accountable for the final judgement: …
+**Field reflection (optional):** whether the field is over- or under-using AI for this kind of task, and what the group would change.
 
-### Deliverable
-- Link or screenshot of the artefact: …
+**Archive this note publicly?** yes / no
 
-### Museum of caught errors
-| What happened | How we caught it | What it signals |
-|---|---|---|
-| … | … | … |
-
-### Societal reflection (no score)
-- Thinking versus writing: what thinking we still had to do, and what we might lose: …
-- Fairness: does this widen or narrow disparities (language, support, career stage, background), and who gains or is left behind: …
-- Disclosure: would we disclose AI use, and the conditions it offset, and why or why not: …
-- Disciplinary norms: is our field under- or over-using generative AI for this kind of task, with what consequences and how we would redress it over the next two years: …
-
-### Lightning-round insight (up to 45 seconds, no slides)
-> The most significant limitation, the most important human-in-the-loop safeguard or
-> one honest thing this exposed about how our field is over- or under-using AI for this
-> task: …
-
-### Self-assessment (1 Nascent · 3 Developing · 5 Robust)
-| Dimension | Score (1–5) | One-line justification |
-|---|---|---|
-| Project Definition | | |
-| Technology Stack | | |
-| Data Security & Ethics | | |
-| Financial & Scalability | | |
-| Human-in-the-Loop | | |
+**Rubric scores (optional, 1 Nascent · 3 Developing · 5 Robust):** project definition,
+technology stack, data security and ethics, financial and scalability, human in the
+loop, each with a sentence saying why.

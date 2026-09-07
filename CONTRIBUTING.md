@@ -39,7 +39,7 @@ To keep the kit coherent, please preserve these conventions.
   of contact), and any change must keep each part reconciling and the timings
   consistent everywhere (slides, guide, tracks, rubric, run sheet, cue cards).
 - Keep the documents and the app in step. If you change what the app captures or how
-  a control is named, update the one-pager, the day-of reset, the rubric template and
+  a control is named, update the group sheet, the day-of reset, the rubric template and
   the submissions README in the same change.
 
 ## Building the slides

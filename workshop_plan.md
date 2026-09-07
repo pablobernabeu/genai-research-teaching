@@ -12,32 +12,31 @@ networking lunch) for university researchers and educators.
 
 ## 1. The stance
 
-The guiding posture is critical, evidence-oriented and balanced, and the aim is
-discernment, not enthusiasm. Participants are accomplished researchers, so treat them as expert peers who happen to be new to a tool, and avoid anything that resembles a sales pitch.
+The workshop is critical, evidence-informed and balanced. Its purpose is to help
+participants make discerning choices about generative AI. They are accomplished
+researchers, so treat them as expert peers who may be new to a particular tool. Avoid
+anything that resembles a sales pitch.
 
-The session aims at a deeper insight into the technology, and it avoids technical
-instruction on any one tool. Everyone is welcome, from those who have never
-opened a chatbot to daily users. The kit also places generative AI in context, as the
-latest in a long line of tools that a productivity-driven economy keeps pushing us
-towards. Mental arithmetic gave way to the calculator, pen and paper to the computer,
-and deterministic software to generative AI. For better or worse, our institutions
-reward output. The question is therefore how to use such tools with discernment,
-including when to decline them, in institutions that increasingly assume we will not.
+The session offers a deeper understanding of the technology. It does not teach any one
+tool. Everyone is welcome, from people who have never opened a chatbot to daily users.
+The workshop places generative AI in the longer history of productivity tools, from the
+calculator and computer to the spreadsheet and generative AI. Our institutions reward
+output, so participants need to decide when a tool helps and when it is better left
+alone.
 
-A single thread runs through the session: the friction a researcher feels when a
-tool resists their intent is a useful epistemic signal. When an assistant gives a
-glib answer, flattens a hard distinction or invents a citation, that resistance marks
-where the researcher's judgement is doing real work. The whole design
-therefore asks participants to record friction instead of smoothing it away.
+A central idea runs through the session: friction can be a useful epistemic signal.
+When an assistant gives a glib answer, flattens a hard distinction or invents a
+citation, the problem reveals where a researcher's judgement matters. Participants
+record those moments as they arise.
 
-This is a balanced position, and the kit keeps the evidence on both sides in view.
+The workshop keeps benefits and risks in view.
 In a survey of knowledge workers, people reported that generative AI reduced the
 effort of critical thinking on their tasks. In the same survey, higher confidence in
 the tool went with less self-reported critical thinking, while higher confidence in
 one's own expertise went with more (Lee et al., 2025). Reintroducing friction on
 purpose, through brief provocations that question an output, can restore critical and
-metacognitive engagement, on the evidence of a small design study (Drosos et al., 2025). The design is thus itself an
-intervention: we build friction back in and observe what it reveals.
+metacognitive engagement in a small design study (Drosos et al., 2025). The workshop
+builds in those pauses and asks participants what they reveal.
 
 ---
 
@@ -47,46 +46,46 @@ By the end of the session, a participant should be able to:
 
 1. Locate a given task on the tool spectrum (off-the-shelf, no-code or IDE/API
    level) and justify the choice against control, data exposure and effort.
-2. Recognise cognitive friction as an epistemic signal and record it, instead of
-   treating it as an obstacle.
+2. Recognise cognitive friction as a useful signal and record it.
 3. Apply the data-security red lines and a simple decision aid before submitting
    anything to a third-party tool.
-4. Identify the principal ethical tensions and name the disclosure and
+4. Identify the key ethical tensions and name the disclosure and
    accountability implications for their own work.
-5. Design an explicit human-in-the-loop protocol for a real task, mapping the
+5. Design an explicit human-in-the-loop protocol for a task, mapping the
    automated phases against the human-steered ones and deciding whether oversight
    is interwoven through the project or staged at distinct checkpoints.
 
-Four of the five objectives map onto a rubric dimension and a group role, so each has
-an owner and a place in the written record. The second is carried instead by the museum
-of caught errors, which everyone contributes to, and the Financial & Scalability
-dimension supports the first by testing a tool choice against cost and scale.
+The applied session has room for three things: run a tool on one problem, catch one or
+two errors, and prepare one line for the room. These give groups practice in choosing a
+tool, reviewing its output and naming a safeguard. The person guarding the red lines
+applies the data-security objective. The lightning-round line often raises disclosure
+or accountability. Groups that have time can map their human checkpoints in more
+detail. The five rubric dimensions remain available for the written record after the
+session. They do not belong in the fifteen-minute build.
 
 ---
 
 ## 3. Pedagogical design
 
-The workshop runs in two parts with a real break between them. A 30-minute
-conceptual first part builds the lens and ends by forming groups. After a 45-minute
-networking lunch, a 30-minute applied second part puts the lens to work.
+The workshop has two 30-minute parts with a proper break between them. The conceptual
+first part gives participants a shared frame and ends with group formation. After a
+45-minute networking lunch, the applied second part puts that frame to work.
 
-The work is problem-based, in that groups bring a real, recurring problem (anonymised
-or synthesised) from their research or teaching, because authentic tasks expose
-authentic friction and toy tasks do not. It is also collaborative, since groups of five
-are large enough that every group's insight fits the lightning round and small enough
-that everyone works on the problem. Attention rotates across five angles without
-fixed ownership, and peers catch each other's over-trust.
+The activity is problem-based. Groups work with a recurring research or teaching task,
+using material that has been anonymised or synthesised. Groups of five are small enough
+for everyone to contribute and large enough to produce a useful lightning round. Three
+jobs are assigned quickly: one person drives the tool, one guards the red lines, and
+one keeps the note and speaks. Everyone else questions the output.
 
-The design is critical by construction. Part 2 separates building from interrogating
-at a brief pivot mid-way through the applied session, so that the first stretch earns
-the experience and the second examines it. The format is also senior-appropriate:
-short framing, quick application and room to run, with the facilitator circulating
-with questions instead of answers.
+Part 2 includes a brief pivot from building to interrogating. The first stretch gives
+groups experience of the tool, and the second asks them to examine it. The format suits
+senior participants: brief framing, quick application and time to work while the
+facilitator circulates with questions.
 
-Inclusion is built in from the start. Part 1 gives newcomers the practical grounding (what these tools are, how to get one, how to ask) and gives everyone the critical lens, and it then previews the rubric. A mixed-ability group therefore enters Part 2 together, and no one meets the task cold. Finally, the design is reproducible and open. Every group's
-reasoning is written into a shared note and, where the group consents, archived
-publicly, so the cohort's
-collective judgement outlasts the session.
+Part 1 gives newcomers enough practical grounding to take part and gives everyone the
+same critical frame. It also previews the rubric. Each group enters Part 2 together,
+with a shared note to record its reasoning. Groups that consent can add that note to a
+public archive after the session.
 
 ---
 
@@ -114,17 +113,17 @@ Inside Part 1 (12:00–12:30):
 | 12:17 | Data-security red lines and the ethical landscape | 4 |
 | 12:21 | The bigger questions: paradigm shift, fairness, disclosure | 2 |
 | 12:23 | The human-in-the-loop principle and the automation–steering map | 3 |
-| 12:26 | What Part 2 asks (the rubric, including the societal reflection), then form groups of five | 4 |
+| 12:26 | What Part 2 asks, then form groups of five | 4 |
 
 The segments sum to 30 minutes (3 + 2 + 3 + 2 + 4 + 3 + 4 + 2 + 3 + 4). The
-conceptual content previews the rubric and forms the groups, so Part 2 starts fast.
+conceptual content gives groups the ideas they need, then forms them before lunch.
 
 Inside Part 2 (13:15–13:45):
 
 | Clock | Segment | Mins |
 |---|---|---|
 | 13:15 | Settle in: re-find your group after lunch, open the app (HackMD as the fallback), red lines on | 3 |
-| 13:18 | Apply it: run the tool, capture one caught error and one insight, then the map and oversight model if time is left | 15 |
+| 13:18 | Apply it: run the tool, catch it out and settle on one line for the room, with the optional extras if time is left | 15 |
 | *about 13:26* | *Pivot (woven in): stop building, start interrogating* | |
 | 13:33 | Lightning round: 45 seconds per group on the limitation, the safeguard or how the field over- or under-uses AI here | 7 |
 | 13:40 | Synthesis: what we found, and takeaways for research and teaching | 5 |
@@ -138,26 +137,24 @@ announcement woven into circulation, and it takes no extra time.
 
 ### 5.1 Part 1 · Conceptualising the use of AI in research · 12:00–12:30 · slides 2–16
 
-A 30-minute conceptual session that sets up the groupwork. You are building a shared
-lens and giving everyone, from newcomer to power user, the confidence to take part in
-Part 2. Keep it brisk and a little interactive.
+A 30-minute conceptual session that prepares the groupwork. It gives everyone, from
+newcomer to regular user, enough shared ground to take part in Part 2. Keep it brisk
+and interactive.
 
 - Welcome and disclaimer (slide 2). Read the disclaimer aloud. It sets the tone that
   accountability stays with us.
-- The stance (slide 5). Discernment, not enthusiasm. The aim is deeper insight, and
-  everyone is welcome whatever their confidence.
+- The stance (slide 5). The aim is critical, practical judgement. Everyone is welcome,
+  whatever their confidence.
 - 'Saved or burned' (slide 6). A sentence each with a neighbour primes the room and
   brings out real, recent friction. Keep it to two minutes.
-- A long line of tools (slide 7). Place AI in context as the latest in a history of
-  productivity tools (calculator, computer, spreadsheet, generative AI) in an economy
-  that rewards output. This frames the day: the question is how to use it with
-  discernment.
-- Getting started (slide 8). The inclusive floor: what a chat assistant is, pick one
-  free tool, the shape of a useful request and the strength of mixed-ability groups.
-  Newcomers need this to get the most from Part 2, so say it plainly and move on.
-- Friction as signal (slide 9). This is the central idea. Cite Lee et al. and Drosos
-  et al. in a sentence each, and note that it bears on marking and writing as much as
-  on analysis.
+- A long line of tools (slide 7). Place AI in the history of productivity tools
+  (calculator, computer, spreadsheet, generative AI) and the institutions that reward
+  output. Ask when the tool helps and when it does not.
+- Getting started (slide 8). Explain what a chat assistant is, ask participants to pick
+  one free tool, and show the shape of a useful request. Say why mixed-ability groups
+  work well, then move on.
+- Friction as signal (slide 9). Cite Lee et al. and Drosos et al. in a sentence each,
+  and note that this applies to marking and writing as well as analysis.
 - The spectrum, red lines and ethics (slides 10–12). Reference frames for Part 2, with
   the teaching angle named (students' data, assessment integrity, disclosure).
 - The bigger questions (slide 13). The societal lens: the thinking and writing shift,
@@ -166,14 +163,11 @@ Part 2. Keep it brisk and a little interactive.
   without settling them now.
 - Human-in-the-loop and the map (slide 14). Accountability stays human. Preview
   interwoven and staged oversight.
-- What Part 2 asks, then form groups (slides 15–16). Give this segment two minutes and
-  two minutes. Show that the concepts just covered are the rubric and the societal
-  reflection they will complete (slide 15), then have people form groups of five by
-  gathering at a seed idea (slide 16). Post the seed letters around the room beforehand,
-  so that people walk to a sign instead of squinting at a slide, which is what makes
-  formation fit the time. This is
-  the one piece of setup in Part 1. Each group settles on its one problem, either that
-  seed or a real one a member brought, in the first minute of Part 2.
+- What Part 2 asks, then form groups (slides 15–16). Give this segment two minutes on
+  the task and two on forming groups. Show slide 15, then have people gather at a seed
+  idea on slide 16. Post the seed letters around the room beforehand, so people can form
+  groups without reading a list from the screen. Each group settles on one problem in
+  the first minute of Part 2.
 
 Resist overrunning, because the conceptual content is the foundation for the applied
 session and every concept should arrive as something participants will use in Part 2.
@@ -190,23 +184,22 @@ Part 2 timeline (slide 20) displayed and use the prompt bank in section 6.
 
 - 13:15–13:18, settle in. Groups re-find each other after lunch, open the app
   (genai-rt.web.app, with HackMD as the fallback) and agree their one problem in about
-  60 seconds, either the seed they formed around or a real one a member brought. Read
+  60 seconds, either the seed they formed around or a member's non-confidential task. Read
   out the session passcode and re-state the red lines. Slides 21 to 24 go past at pace as
-  you do this: point at them without presenting them, because every word on them is
-  in the group pack and the one-pager. If the room is slow to settle, skip them and
-  point to the one-pager instead.
+  you do this: point at them without presenting them, because every word on them is on
+  the group sheet. If the room is slow to settle, skip them and point to the sheet
+  instead.
 - 13:18–13:33, apply it. Let them work. Intervene only to stop sensitive data going
-  into a tool, to unstick a group that cannot start or to drop a single provocation.
+  into a tool, to unstick a group that cannot start or to offer a single provocation.
   Around 13:26, run the brief pivot (section 5.4). Note good caught errors for the
-  synthesis. Where a group has time, encourage it to sketch its automation–steering
-  map and to decide whether oversight is interwoven or staged. Where it does not, one
-  caught error and one insight are enough.
+  synthesis. A group with time left can use the optional boxes in the app for the
+  automation–steering map, oversight choice and field reflection. Most groups will not
+  reach them. A caught error and a clear line for the room are enough.
 - 13:33–13:40, lightning round. See section 5.5.
 - 13:40–13:45, close. See section 5.6.
 
-This is a compressed applied session, and depth matters more than coverage. One
-genuine caught error and one clear human checkpoint are worth more than a
-half-finished artefact.
+There is no need to cover every dimension. One caught error and a clear human checkpoint
+matter more than a half-finished artefact.
 
 ### 5.4 The pivot · around 13:26 (slide 26)
 
@@ -224,30 +217,26 @@ Groups that have been enjoying the tool now examine it.
 
 A facilitator-timed round of short spoken contributions, without presentations.
 
-- One 45-second spoken insight per group, with no slides. The Reporter picks the
-  strongest of three: the most significant limitation you found, the most important
-  human-in-the-loop safeguard you built in or one honest thing this exposed about how
-  your field is over- or under-using AI for this task. The third option is where the
-  field-level reflection gets voiced from the work just done. Offer it, and never force
-  it.
+- One 45-second spoken insight per group, with no slides. The person keeping the note
+  chooses one of three points: the most significant limitation found, the most important human
+  checkpoint, or an observation about how the field over- or under-uses AI for this
+  task. The third option brings the field-level reflection into the room. Offer it but
+  do not force it.
 - Keep a visible timer. At 45 seconds, thank the group and move on.
-- Timing, and be honest with yourself about it. Seven minutes is 420 seconds, and a
-  handover between groups costs five to ten seconds even when it runs well. Nine groups
-  at 45 seconds each leaves nothing for those handovers, and ten groups do not fit at
-  all. So with eight groups, keep to 45 seconds. With nine or ten, announce 35 seconds at
-  the start of the round, and if you are still behind after six groups, take a one-line
-  contribution from the rest. Every group's written note is captured either way,
-  so a group that gives one line has still been heard.
+- Seven minutes is 420 seconds, and each handover takes five to ten seconds. Eight
+  groups can have 45 seconds each. With nine or ten groups, announce 35 seconds at the
+  start. If you are still behind after six groups, take one line from the rest. Their
+  written notes are captured either way.
 - As each group speaks, jot the recurring thread (over-trust, hallucinated citations,
   data leakage, de-skilling, a clever checkpoint) for the synthesis.
 
 ### 5.6 Close · 13:40–13:45 · slides 28–34
 
-Synthesise the round instead of summarising it. Pull two or three concrete insights from the
-lightning round onto the threads slide (slide 29). Then connect them to the through-line
-(slide 30): friction as signal, the tool spectrum, the data red lines, the human in the
-loop and the bigger questions. Give the take-home actions (slide 31), point to the further reading (slide
-32) and the follow-up email, and close on time at 13:45.
+Pull two or three concrete insights from the lightning round onto the threads slide
+(slide 29). Connect them to the workshop's main ideas on slide 30: friction as signal,
+the tool spectrum, data red lines, human oversight and the wider questions. Give the
+take-home actions, point to the further reading and follow-up email, then close at
+13:45.
 
 ---
 
@@ -292,16 +281,16 @@ Friction (ask everywhere)
 
 | If… | Then… |
 |---|---|
-| Wi-Fi fails | Switch the affected groups to the offline path: critique a printed worked example (`docs/worked_examples.md`) against the rubric. The thinking is the deliverable, and the tool is only the occasion for it. |
+| Wi-Fi fails | Give the affected groups a printed worked example (`docs/worked_examples.md`) and the fallback note. They can still critique the output and prepare a line for the room. |
 | A chosen tool demands payment or a login wall | Move down the spectrum to a free off-the-shelf chat tool, and treat the paywall itself as a finding under Financial & Scalability. |
-| The app will not load for a group | Fall back to HackMD (hackmd.io) or paper for that group. The rubric template is plain Markdown and portable, and the facilitator transcribes it into the archive afterwards. A brief Wi-Fi blip needs no action, because the app caches offline and re-syncs. |
-| A group finishes early | Send them to the rubric dimension they have thought about least, which is usually Financial & Scalability or the automation–steering map, or set them to red-team a neighbouring group's output by probing it adversarially for weaknesses the other group missed. |
-| A group stalls | Shrink the task. 'Forget the grand version. What is the smallest real thing the tool could help with in ten minutes?' |
-| Uneven groups (four or six) | At four, the Convenor doubles as Steward. At six, split Driver and Sceptic across two people, or add a second Sceptic, since more red-teaming does no harm. |
+| The app will not load for a group | Fall back to HackMD (hackmd.io) or paper for that group, using the headings in the pack. They are plain Markdown and portable, and the facilitator transcribes the note into the archive afterwards. A brief Wi-Fi blip needs no action, because the app caches offline and re-syncs. |
+| A group finishes early | Send them to the optional boxes in the app: the automation–steering map, oversight choice and field reflection. Or set them to red-team a neighbouring group's output by probing it for weaknesses the other group missed. |
+| A group stalls | Shrink the task. 'What is the smallest self-contained task the tool could help with in ten minutes?' |
+| Uneven groups (four or six) | The three jobs absorb it. At four, one person takes two of them. At six, the extra pair of hands doubts the output alongside everyone else, which is where the value is anyway. |
 | Fewer or more than ten groups | The lightning round is about seven minutes, which just fits eight groups at 45 seconds, and only if handovers stay near five seconds. With nine or ten, announce 35 seconds at the start of the round, and if you are still behind after six groups take a one-line contribution from the rest. Never overrun the 13:45 finish. |
 | Someone pastes sensitive data | Stop it gently and immediately, note it as a live example of why the red lines exist and have them anonymise or synthesise before continuing. |
-| A dominant voice | Lean on roles: 'Steward, what is your read?' Give quieter roles explicit air. |
-| A sceptical or hostile participant | Welcome it, because scepticism is the point. Channel it into the Sceptic role and the museum. |
+| A dominant voice | Lean on the jobs: 'Whoever is guarding the red lines, what is your read?' Give the quieter people explicit air. |
+| A sceptical or hostile participant | Welcome the challenge and channel it into the museum of caught errors. That is what the exercise is for. |
 | AV or logo issues | The deck is self-contained and the logo is embedded. If projection fails, the instructions are all in `project_tracks.md` and the rubric template. |
 
 ---

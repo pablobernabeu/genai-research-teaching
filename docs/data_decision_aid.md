@@ -1,74 +1,46 @@
-# One-page data decision aid: can I paste this in?
+# Data decision aid: can I paste this in?
 
-Print one per group, or keep it open in a tab, and use it before anything goes into
-a free, third-party AI tool. It is a thinking aid and not legal advice. Institutional
-policy, the UK GDPR and research ethics still govern.
+Your group sheet has the short version. For the fifteen-minute activity, use this test.
 
----
+> If you would not pin it to a public noticeboard in the building, do not paste it into
+> a free consumer AI tool.
 
-## The one-line test
+Free tiers may reuse what you enter for model training, and their settings can change
+without notice. Treat anything you paste as non-private and impossible to withdraw.
 
-> If you would not pin it to a public noticeboard in the building, do not paste it
-> into a free consumer AI tool.
+## Fine, careful, never
 
-Free tiers commonly reuse your input to train models, and settings change without
-notice. Treat anything you type as potentially non-private and non-retractable.
-
----
-
-## Walk the four questions
-
-1. Is it personal data? Does it relate to an identifiable living person (names,
-   emails, student or participant records, anything that could single someone out,
-   even indirectly)? If yes, do not paste it as it is. Anonymise or synthesise it, and
-   it is then no longer personal data. If it has to stay identifiable, a lawful basis
-   is necessary but nowhere near sufficient: you also need a tool your institution has
-   cleared, with a processor contract behind it, which a free consumer tool is not.
-2. Is it special category data under Article 9 of the UK GDPR? That means racial or
-   ethnic origin, political opinions, religious or philosophical beliefs, trade union
-   membership, genetic data, biometric data used to identify someone, health, sex life
-   or sexual orientation. Criminal offence data, under Article 10, carries similar
-   weight. If yes, stop there, because a free consumer tool is the wrong place, and your
-   options are to anonymise beyond recognition, to synthesise or to abstain. Children's data and commercially sensitive
-   material are not special category, but both carry extra duties, so treat them the
-   same way here.
-3. Is it confidential, unpublished or restricted? This covers unpublished data or
-   manuscripts, grant drafts, peer-review files, material covered by a non-disclosure
-   agreement, anything under embargo and anything shared without co-author or
-   participant consent. If yes, stop there, because confidentiality and embargoes are not yours
-   alone to waive.
-4. Do you hold the rights? Is the text or image yours to share, or is it someone
-   else's intellectual property? If unsure, treat it as restricted.
-
-If you cleared all four, you are probably fine. If any gave you pause, that pause is
-the signal, so take one of the routes below before you paste anything.
-
----
-
-## At a glance: fine, careful, never
-
-| ✓ Generally fine | ▲ Pause and treat with care | ✗ Do not paste into a free tool |
+| ✓ Fine | ▲ Take care | ✗ Never in a free tool |
 |---|---|---|
-| Already-public text (your published abstract) | Lightly disguised real material | Personal data of identifiable people |
-| Fully synthetic or fabricated examples | Aggregated or partially de-identified data | Special category, criminal offence or children's data |
-| Generic, non-identifying questions | Draft prose with no sensitive content | Unpublished data, grants, peer review |
-| Your own writing, where you hold the rights | Anything you would hesitate to email widely | Confidential, embargoed or NDA-covered material |
+| Already-public text, or your own writing | Lightly disguised real material | Personal data of identifiable people |
+| Fully synthetic examples | Aggregated or de-identified data | Special category, criminal offence or children's data |
+| Generic, non-identifying questions | Draft prose with nothing sensitive in it | Unpublished, confidential, embargoed or NDA work |
 
----
+## Questions to ask first
 
-## If the answer is no: what to do instead
+1. Is it personal data? Anything relating to an identifiable living person counts,
+   including what singles someone out indirectly.
+2. Is it special category data? Article 9 of the UK GDPR covers racial or ethnic origin,
+   political opinions, religious or philosophical beliefs, trade union membership,
+   genetic and biometric data, health, sex life and sexual orientation, and Article 10
+   gives criminal offence data similar weight.
+3. Is it confidential, unpublished or embargoed? Peer review, grant drafts and anything
+   shared with you in confidence count, and confidentiality is not yours alone to waive.
+4. Do you hold the rights? If the words or images are someone else's, or you are unsure,
+   treat them as restricted.
 
-- Anonymise. Remove names, identifiers and anything that singles someone out, and
-  check that it cannot be re-identified by combination.
-- Synthesise. Recreate the structure of the problem with invented content. A critique
-  of a method works just as well on a paraphrased method.
-- Abstract up a level. Discuss the shape of the task, and leave out the sensitive
-  specifics.
-- Use an appropriately governed tool. An enterprise or paid service under a proper
-  data-processing agreement may be acceptable where a free consumer tool is not. That
-  is a decision for your institution, and it is out of scope today.
-- Abstain. Sometimes the right answer is to leave the tool alone. That is a valid
-  finding, and a good one for your museum of caught errors.
+## Safer routes
+
+- Anonymise. Strip identifiers, and check that nothing can be re-identified by
+  combination.
+- Synthesise. Rebuild the problem with invented content, since a critique works as well
+  on a paraphrased version as on the original.
+- Abstract up a level. Discuss the shape of the task and leave the sensitive specifics
+  out of it.
+- Use a governed tool. A service under a data processing agreement may pass where a free
+  one does not, though that is a decision for your institution and out of scope today.
+- Abstain. Leaving the tool alone is sometimes the finding, and a good entry for your
+  museum of caught errors.
 
 ---
 

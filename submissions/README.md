@@ -10,8 +10,8 @@ consented submissions in the workshop app, with HackMD or paper notes as the fal
    (genai-rt.web.app): the problem, the artefact, the errors caught, the
    automation–steering map, the oversight model, the key insight and a field
    reflection. No participant needs a GitHub account. A group that cannot use the app
-   writes the fuller [rubric template](../evaluation_rubric_template.md) in HackMD or
-   on paper and shares it with the facilitator, who may record HackMD links in the
+   writes the same headings from the [rubric template](../evaluation_rubric_template.md)
+   in HackMD or on paper and shares them with the facilitator, who may record HackMD links in the
    pinned [fallback issue](../.github/ISSUE_TEMPLATE/group-submission.md).
 2. The facilitator approves each group from the private dashboard. Approved work
    appears on the session's passcode-gated dashboard for the room, and it becomes
@@ -34,7 +34,7 @@ consented submissions in the workshop app, with HackMD or paper notes as the fal
 4. For HackMD-fallback groups, open the note, export it to Markdown (HackMD's ··· menu
    under Download and Markdown, or append `/download` to a published note's URL),
    check it and add it alongside the rest. Archive a fallback note only if the group
-   said yes to the 'Share publicly?' line in the template.
+   answered yes to the 'Archive this note publicly?' line in the template.
 
 The shape of an archived note is in [`_TEMPLATE.md`](_TEMPLATE.md): the app's export
 shape first, and the fuller fallback shape after it.

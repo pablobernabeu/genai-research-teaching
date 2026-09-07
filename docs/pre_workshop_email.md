@@ -31,7 +31,7 @@ No view here is the last word, because the technology moves too fast for that. P
 
 An anonymous warm-up poll, which is optional and takes about 60 seconds, helps me pitch the session to the room: [POLL URL].
 
-One thing is worth saying about data. These are free, third-party tools whose free tiers may reuse what you type. Treat anything you paste as potentially non-private. You remain responsible for compliance with your own institutional policy, the UK GDPR and research ethics. We will return to this on the day, with a one-page decision aid to help.
+One thing is worth saying about data. These are free, third-party tools whose free tiers may reuse what you type. Treat anything you paste as potentially non-private. You remain responsible for compliance with your own institutional policy, the UK GDPR and research ethics. We will return to this on the day, and the sheet at your table carries a short check to work through before you paste anything.
 
 If you have any questions, just reply. See you on 9 September 2026.
 

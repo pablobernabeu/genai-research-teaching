@@ -1,74 +1,55 @@
 # Project tracks
 
-Four tracks, each a different test of where generative AI helps a researcher and
-where it must not be trusted. Choose one track per group, bearing in mind that a spread across the room makes the lightning round richer. If one seed draws a crowd and another none, the facilitator will say so as people move.
+Four tracks explore where generative AI can help a researcher and where it needs close
+human judgement. Choose one track per group. A spread across the room makes the
+lightning round more useful.
 
-Each track can be entered in the fifteen-minute build window of Part 2 (see the
-[facilitator guide](workshop_plan.md)), and none can be finished in it, which is
-expected. Work the tool on a real problem, record one caught error and one insight, and
-sketch the automation–steering map if time is left. Bound the work as you go: in Track
-A, verify the three objections you find most consequential instead of all of them, and
-in Track D, audit one of your audience versions in full rather than all of them.
-The deliverable is a clear account of what helped, what failed and where a human
-stayed in charge.
-
-> Time is short, so keep the artefact small. Track C (rapid prototyping) is a deliberate
-> stretch: in fifteen minutes, you will not finish and fully verify a working artefact,
-> and that is fine, because the verification habit, which is what you checked and
-> what you refused to trust, matters more here than a finished build. If a track is running long, drop
-> the map before the insight.
+Each track is designed to begin in the fifteen-minute build window of Part 2 (see the
+[facilitator guide](workshop_plan.md)). Keep the artefact small. In Track A, verify the
+three objections that matter most. In Track D, audit one audience version in full.
+Record what helped, what failed and what required human judgement.
 
 ## Quick group seeds (for fast formation)
 
-To form groups fast at the end of Part 1, people gather at a concrete idea, and the
-letter beside it is its track. Aim for fives, and your group then takes one problem into Part 2, either this seed or a real one a member brings.
+At the end of Part 1, people gather at a concrete idea, and the letter beside it is the
+track. Aim for groups of five. Each group takes one problem into Part 2: the seed or a
+member's non-confidential problem.
 
 - Stress-test a study design (A) · Critique an assessment or marking rubric (A)
 - Turn messy notes into owned actions (B) · Tame an email or admin backlog (B) · Plan a module, project or paper (B)
 - A one-page explainer of a finding (C) · A quick visualisation or interactive teaching aid (C)
 - A lay summary or press angle (D) · Explain a hard concept for students (D) · A social thread from a paper (D)
 
-## Before you start: common ground
+## Before you start
 
-- Five angles, divided however suits you: Convenor, Reporter, Driver, Sceptic and
-  Steward (see the optional [role cards](docs/role_cards.md)). Each maps to a rubric
-  dimension. An experienced group can keep it informal, but leave none unwatched.
-- One real problem per group. Use the seed you formed around, or swap in a member's
-  real, non-confidential problem (anonymise or synthesise it first). If none is to
-  hand, each track below has a ready worked example in
-  [docs/worked_examples.md](docs/worked_examples.md).
-- Research or teaching. Every track works for a teaching task too: a lesson plan or
-  assessment to stress-test (A), teaching admin to triage (B), a student-facing
-  explainer to build (C), a concept to translate for students (D).
-- Free tiers only. No paid plans, no installs and no prior experience assumed, and
-  everything runs in a browser. One person in the group does need a device already
-  signed in to a free chat assistant. If nobody is, do not spend the window creating an
-  account: use a tool that works without signing in, or share a neighbouring group's
-  screen for one run, and spend your own time on the verification.
-- Mind the red lines before you paste anything. Use the one-page
-  [data decision aid](docs/data_decision_aid.md). When in doubt, anonymise,
-  synthesise or abstain.
-- Record the friction. Where the tool resists you is the most valuable thing you will
-  find. Keep a running [museum of caught errors](docs/museum_of_caught_errors.md).
-- Reflect on the bigger picture. Your note has a short societal reflection: does this
-  widen or narrow disparities (first versus second language, support, career stage,
-  background), what would you disclose, and what happens to thinking when the tool
-  does the writing?
-- Plan automation against steering. In your human-in-the-loop section, map which
-  phases you will automate and where a human steers, then decide whether that
-  oversight is interwoven through the whole project or staged at distinct checkpoints,
-  and why.
-- Write as you go in the app, whose form covers the problem, the artefact, the caught
-  errors, the map, the oversight model, your insight and the field reflection. Submit for review before the
-  lightning round at 13:33 where you can, and during it at the latest. The fuller
-  [rubric template](evaluation_rubric_template.md), with the tailored note headings
-  listed under each track, is for the HackMD or paper fallback and for a group that
-  wants to record its scores and reflection. No GitHub account is needed.
+Each table has a [group sheet](docs/group_one_pager.md) with the app details, join code
+and red lines. The session runs like this.
 
-It is worth pausing over what free tools do with your data. Free consumer tiers commonly reuse inputs to
-improve models, and settings change without notice. Treat anything you paste as
-potentially non-private. This kit names tools as examples on a spectrum and endorses
-none of them, so check each tool's current terms yourself.
+1. Agree one problem: the seed you formed around or a member's non-confidential problem,
+   anonymised first. If neither is to hand, each track has a
+   [worked example](docs/worked_examples.md).
+2. Share out three jobs. Someone drives the tool, someone guards the data red lines and
+   someone keeps the note and speaks for the group. Everyone else doubts the output,
+   and that is the job nobody delegates.
+3. Check anything you plan to paste against the red lines on the group sheet. The fuller
+   [data decision aid](docs/data_decision_aid.md) stays with the facilitator.
+4. Use the tool on that problem and keep an output you can show, such as a critique, a
+   template or a translation.
+5. Record one or two caught errors for the [museum of caught errors](docs/museum_of_caught_errors.md).
+   Note where the tool was fluent but wrong.
+6. Prepare one line for the lightning round: the limitation you found, the checkpoint
+   you would require before use or how your field over- or under-uses AI for this task.
+   Submit in the app before 13:33, or during the round at the latest.
+
+The same tracks work for teaching: a lesson plan or assessment to stress-test (A),
+teaching admin to triage (B), a student-facing explainer to build (C) or a concept to
+translate for students (D). Everything runs in a browser on free tiers, and one person
+needs a device already signed in to a chat assistant. If nobody has one, use a tool that
+does not require sign-in or share a neighbouring group's screen for one run. The tools
+named below are examples, not endorsements, so check their current terms. A group with
+time left can add the automation–steering map, the oversight choice and the field
+reflection in the app. The [rubric](evaluation_rubric_template.md) supports the paper
+fallback and debrief. The pivot at 13:26 lands during the third step of each outline.
 
 ---
 
@@ -78,13 +59,12 @@ The spectrum: off-the-shelf chat, optionally with a no-code 'critical reviewer'
 prompt you save and reuse.
 
 ### Rationale
-Researchers are trained to find weaknesses in others' work and are systematically
-worse at finding them in their own. A language model will readily play critical
-reviewer, but will it surface genuine blind spots, or fluent, generic boilerplate and
-plausible-sounding objections that do not actually hold? This track turns the tool on
-a real design and then does the harder second step of verifying which critiques are
-real. It is the purest test of the day's thesis that friction is a signal. Here, the
-friction is your own discomfort at a critique you cannot immediately dismiss.
+Researchers are trained to find weaknesses in others' work and are worse at finding
+them in their own. A language model will readily play critical reviewer, though much of
+what it offers is fluent boilerplate or a plausible objection that does not hold. The
+track turns it on a real design and then takes the harder second step of verifying
+which critiques are real. The friction here is your own discomfort at a critique you
+cannot dismiss.
 
 ### Free-tier tooling
 ChatGPT (free), Claude (free), Google Gemini (free) or Microsoft Copilot (free) for
@@ -93,19 +73,17 @@ the model makes against real sources. One off-the-shelf tool is enough, and comp
 two is instructive.
 
 ### Task outline
-1. Frame (orientation). Take a real, non-confidential methods section, design,
-   sampling plan or analysis strategy, and strip identifiers.
-2. Critique (build). Prompt the model to act as a sceptical reviewer across several
-   explicit lenses: sampling and recruitment, construct validity (does the measure
-   capture what it claims to?), confounds, analysis choices, generalisability and
-   ethics. Adapt the lenses to your field, since not all apply to every design or
-   assessment. Ask for its reasoning as well as its verdicts.
-3. Verify (evaluation). For each 'blind spot' it raises, classify it as real (a
-   genuine weakness you had not fully weighed), generic (true of almost any study, so
-   not informative) or wrong (a hallucinated or invalid objection). Cross-check
+1. Frame. Take a real, non-confidential methods section, design, sampling plan or
+   analysis strategy, and strip the identifiers.
+2. Critique. Prompt the model to act as a sceptical reviewer across explicit lenses:
+   sampling and recruitment, construct validity, confounds, analysis choices,
+   generalisability and ethics. Adapt them to your field, and ask for reasoning as well
+   as verdicts.
+3. Verify. Classify each 'blind spot' as real (a weakness you had not weighed), generic
+   (true of almost any study) or wrong (hallucinated or invalid), and cross-check
    factual claims in Perplexity.
-4. Distil. Turn the exercise into a reusable critique protocol (the prompt plus the
-   verification rule) that a colleague could apply tomorrow.
+4. Distil the exercise into a reusable critique protocol, the prompt plus the
+   verification rule, that a colleague could apply tomorrow.
 
 ### Created artefact
 A reusable methodological-critique protocol (the prompt and a verification rule),
@@ -117,21 +95,6 @@ unpublished participant data or confidential grant or peer-review content. Free 
 may retain inputs. If your design is sensitive, paraphrase it into a generic version
 first, because the critique still works on the structure.
 
-### Note headings (tailored)
-- Project Definition: the design under review and what a useful critique would change.
-- Technology Stack: the tool(s) chosen and why off-the-shelf suffices here.
-- Data Security & Ethics: how you de-identified the design, and disclosure if this
-  critique fed a real submission.
-- Financial & Scalability Constraints: whether the free tier sustains this as a
-  routine pre-submission check.
-- Human-in-the-Loop Protocol: your rule for accepting, parking or rejecting a machine
-  critique, who signs off and whether oversight is interwoven or staged.
-- Deliverable: a link to the protocol and the classified blind-spot list.
-- Museum of caught errors: the most confidently wrong or emptily generic critique, and
-  what it taught you.
-- Lightning-round insight: the single most significant limitation, or the safeguard
-  you built in.
-
 ---
 
 ## Track B · Accessible Executive-Function Layer
@@ -140,13 +103,11 @@ The spectrum: off-the-shelf chat, plus a reusable template or saved prompt (ligh
 no-code).
 
 ### Rationale
-A great deal of research work is executive function: planning, sequencing, triaging,
-summarising and turning a sprawling inbox or a messy set of notes into ordered next
-actions. Used well, AI can lower that load and widen access, which is particularly
-valuable for neurodivergent colleagues or anyone under heavy administrative strain.
-Used carelessly, the same scaffolding de-skills, creates dependency or advantages
-only those fluent at prompting. This track builds a useful aid and asks where the
-scaffolding should stop.
+A great deal of research work is executive function: planning, sequencing, triaging
+and turning messy notes into ordered next actions. Used well, AI lowers that load and
+widens access, which matters for neurodivergent colleagues and anyone under heavy
+administrative strain. Used carelessly, it de-skills or helps only those already fluent
+at prompting. The track builds a useful aid and asks where the scaffolding should stop.
 
 ### Free-tier tooling
 ChatGPT (free), Claude (free), Gemini (free) or Copilot (free), with Grammarly (free
@@ -154,14 +115,13 @@ tier) for the clarity of the resulting text. Optionally, a free note tool you al
 use, to hold the template.
 
 ### Task outline
-1. Pick a real recurring burden (orientation): a weekly planning ritual, a
-   meeting-notes-to-actions conversion, an inbox triage or a reading backlog.
-2. Build a workflow (build). Design an AI-assisted routine and capture it as a
-   reusable template or prompt that outlasts a single chat. Test it on real (redacted)
-   material.
-3. Stress-test (evaluation). Check three failure modes: accuracy (does it drop or
-   invent actions?), over-reliance (what skill atrophies if you always use it?) and
-   equity (does it only help people who phrase prompts well, or in English?).
+1. Pick a real recurring burden: a weekly planning ritual, a meeting-notes-to-actions
+   conversion, an inbox triage or a reading backlog.
+2. Build the workflow as a reusable template or prompt that outlasts a single chat,
+   then test it on real, redacted material.
+3. Stress-test it. Look for dropped or invented actions, for the skill that would
+   atrophy with constant use and for the way a prompt-shaped aid helps only those
+   already fluent in English.
 4. Set the guardrails. Decide what the human must always still do.
 
 ### Created artefact
@@ -175,18 +135,6 @@ pastoral or HR content) into free tools. Redact to roles and topics ('a PhD stud
 asks about an extension') instead of identities. Calendar and inbox content is
 personal data.
 
-### Note headings (tailored)
-- Project Definition: the burden you are reducing and what 'better' means.
-- Technology Stack: why a template or prompt instead of ad hoc chat.
-- Data Security & Ethics: how you redacted, and the equity and accessibility effects.
-- Financial & Scalability Constraints: free-tier limits, and whether it helps a whole
-  team or just one fluent user.
-- Human-in-the-Loop Protocol: what the human always verifies, the de-skilling
-  guardrail, and whether oversight is interwoven or staged.
-- Deliverable: a link to the template and the guardrails note.
-- Museum of caught errors: a dropped or invented action, and how you caught it.
-- Lightning-round insight: the limitation, or the safeguard.
-
 ---
 
 ## Track C · Rapid Prototyping for Knowledge Translation *(technical stretch)*
@@ -195,14 +143,13 @@ The spectrum: no-code app builders through to the IDE or API level, which offers
 most control and the most responsibility.
 
 ### Rationale
-Findings often die in PDFs. A small interactive artefact (a one-page explainer, a
-simple visualisation, a tiny calculator) can carry a result to people who will never
-read the paper, and generative AI now builds such things from a prompt in minutes.
-That speed is the hazard, because it is trivial to produce something that
-looks right and is subtly wrong. This is the 'vibe-coding' trap: accepting code
-because it runs and looks plausible, without reading it or testing whether it is
-actually right. The track embraces the speed and then insists on the verification that
-publication would demand.
+Findings often die in PDFs. A small artefact such as an explainer, a chart or a tiny
+calculator can carry a result to people who will never read the paper, and generative
+AI builds such things from a prompt in minutes. That speed is the hazard, since the
+'vibe-coding' trap is accepting code because it runs and looks plausible when it is
+subtly wrong. The track takes the speed and then insists on the verification that
+publication would demand. You will not finish and fully verify in fifteen minutes,
+which is fine, because the habit matters more here than a finished build.
 
 ### Free-tier tooling
 Browser-based, with nothing to install:
@@ -219,16 +166,15 @@ If a group has GitHub experience and wants to publish, GitHub Pages is free, but
 Git is required today, and previewing locally in the tool is enough.
 
 ### Task outline
-1. Choose a finding (orientation): a public or synthetic result with a number, a
-   relationship or a process worth conveying.
-2. Generate (build). Use a tool to produce a small working artefact (a one-page
-   explainer, a chart, a simple interactive), and iterate on it.
-3. Verify (evaluation). This is the point of the track. Check correctness (do the
-   numbers and logic survive scrutiny?), accessibility (colour, contrast, plain
-   language, keyboard use), licensing (any libraries or assets it pulled in) and
-   failure modes (what breaks with odd input?). Keep a verification log.
-4. State the gate. Write down precisely what a human must confirm before this could
-   ever be published in your name.
+1. Choose a finding that is public or synthetic and carries a number, a relationship or
+   a process worth conveying.
+2. Generate a small working artefact with a tool, and iterate on it.
+3. Verify. This is the point of the track. Check that the numbers and the logic
+   survive scrutiny, that colour, contrast, plain language and keyboard use are sound,
+   that anything it pulled in is licensed and that odd input does not break it. Keep a
+   verification log.
+4. State the gate. Write down what a human must confirm before this could ever be
+   published in your name.
 
 ### Created artefact
 A small working prototype (an HTML page, a Colab chart or a simple interactive) plus a
@@ -240,19 +186,6 @@ generated code before trusting it, because models invent functions, mishandle ed
 cases and import libraries with licences you have not checked. The fact that it ran
 does not mean that it is correct.
 
-### Note headings (tailored)
-- Project Definition: the finding and the audience the artefact serves.
-- Technology Stack: where on the spectrum you worked, and the trade-off you accepted.
-- Data Security & Ethics: data provenance, the licences of generated code and assets,
-  and accessibility.
-- Financial & Scalability Constraints: free-tier and hosting limits, and what
-  publishing would actually require.
-- Human-in-the-Loop Protocol: your verification gate before publication, who is
-  accountable for correctness, and whether oversight is interwoven or staged.
-- Deliverable: a link to the prototype (or screenshots) and the verification log.
-- Museum of caught errors: the bug that 'looked right', and how you caught it.
-- Lightning-round insight: the limitation, or the safeguard.
-
 ---
 
 ## Track D · Public Engagement Translator
@@ -260,28 +193,26 @@ does not mean that it is correct.
 The spectrum: off-the-shelf chat, plus free readability and translation aids.
 
 ### Rationale
-Translating dense research into honest public-facing language is a real skill and a
-real need, whether for lay summaries, a thread, a press-release draft or a schools
-explainer. AI is fluent at this, which is precisely the risk: it will cheerfully
-over-claim, flatten caveats and smooth nuance into something more confident than the
-evidence supports. The track produces audience-tailored translations and then audits
-them for fidelity, treating accessibility and accuracy as a tension to be managed.
+Translating dense research into clear public language is an important skill, whether for
+a lay summary, a press-release draft or a schools explainer. AI is
+fluent at this, and the fluency is the risk, since it will cheerfully over-claim,
+flatten caveats and smooth nuance into something more confident than the evidence
+supports. The track produces audience-tailored translations and audits them for
+fidelity.
 
 ### Free-tier tooling
-ChatGPT (free), Claude (free), Gemini (free) or Copilot (free) for drafting; Grammarly
-(free) and the Hemingway Editor (free, web) for readability; DeepL (free) for
-translation into another language; and Canva (free) if a simple visual helps. All are
-browser-based.
+ChatGPT (free), Claude (free), Gemini (free) or Copilot (free) for drafting, with
+Grammarly (free) and the Hemingway Editor (free, web) for readability. DeepL (free)
+handles translation into another language, and Canva (free) is there if a simple visual
+helps. All are browser-based.
 
 ### Task outline
-1. Choose a finding (orientation): a real abstract or result that is already public
-   or cleared for sharing.
-2. Translate (build). Produce versions for two or three distinct audiences, for
-   example an interested public, a policy reader and secondary-school pupils. Vary the
-   reading level deliberately.
-3. Audit for fidelity (evaluation). Line up each version against the source and mark
-   accuracy drift: over-claims, lost caveats, false certainty and misleading
-   simplifications. Decide what a human science communicator must fix.
+1. Choose a finding that is already public or cleared for sharing.
+2. Translate it for two or three distinct audiences, for example an interested public,
+   a policy reader and secondary-school pupils, varying the reading level deliberately.
+3. Audit for fidelity. Line each version up against the source and mark the drift:
+   over-claims, lost caveats, false certainty and misleading simplification. Decide
+   what a human science communicator must fix.
 4. Build a check. Distil a reusable translation and fidelity checklist.
 
 ### Created artefact
@@ -292,19 +223,6 @@ AI-assisted science communication.
 Use findings that are already public or cleared for release, and mind embargoes and
 co-author consent. Translating someone else's unpublished work into a public post can
 breach both ethics and trust.
-
-### Note headings (tailored)
-- Project Definition: the finding and the audiences you are translating for.
-- Technology Stack: the drafting, readability and translation tools used.
-- Data Security & Ethics: publication status, embargo and consent, and the ethics of
-  disclosing AI assistance in science communication.
-- Financial & Scalability Constraints: free-tier limits, and sustaining this across a
-  communications workflow.
-- Human-in-the-Loop Protocol: the fidelity check before anything goes public, who
-  approves, and whether oversight is interwoven or staged.
-- Deliverable: a link to the summaries and the fidelity checklist.
-- Museum of caught errors: the most persuasive over-claim the tool produced.
-- Lightning-round insight: the limitation, or the safeguard.
 
 ---
 

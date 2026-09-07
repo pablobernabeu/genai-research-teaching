@@ -101,7 +101,9 @@ problem a member brings).
 `draft`, then (group submits) `submitted`, then (facilitator) `approved` or `reopened`,
 then (group edits and resubmits) `submitted`, and so on. The public dashboard shows
 `approved` only. The dashboard does not offer Reopen on an approved card, because
-approval blanks the join code and each device discards its stored session, so a reopened
+approval blanks the join and session codes but does not change `ownerUids`, so an
+already-connected group device can still receive a reopened record. A device that has
+reloaded after approval will need the facilitator's help to regain access.
 group could not get back in. The rules themselves do not forbid it, so avoid moving an
 approved document back from the Firestore console.
 

@@ -1,12 +1,11 @@
 # Generative AI in research and teaching: a practical, critical workshop
 
-A complete, public, reproducible teaching kit for a two-part featured workshop
-(30 + 30 minutes, split by lunch) that helps university researchers and educators use
-generative AI responsibly and effectively, and decide when to leave it alone.
+A public, reproducible teaching kit for university researchers and educators. It
+supports two 30-minute workshop sessions, split by lunch, on using generative AI
+responsibly and effectively, including when to leave it alone.
 
-The repository serves two purposes. It is a teaching kit that a facilitator can pick
-up and run, and it is an open archive of participants' group work, collected on the
-day and committed afterwards under [`submissions/`](submissions/).
+The repository provides material a facilitator can run and an open archive of group
+work collected on the day under [`submissions/`](submissions/).
 
 > The stance is critical, evidence-oriented and balanced. The aim is discernment, not
 > enthusiasm. One idea runs through everything here: the friction a researcher feels
@@ -14,7 +13,7 @@ day and committed afterwards under [`submissions/`](submissions/).
 
 ---
 
-## The workshop at a glance
+## Workshop overview
 
 A featured workshop in two parts, split by a networking lunch, for 40 to 50 people
 (lecturers, senior lecturers and heads of research centres), using free-tier tools only
@@ -26,14 +25,15 @@ and with nothing to install. There are 60 minutes of contact time:
 | Networking lunch | 12:30–13:15 | a break |
 | Part 2 · Practical AI for research and teaching | 13:15–13:45 | applied session in the workshop app: build, interrogate, share one insight |
 
-In Part 2, groups of five choose one of four tracks and work a real problem from their
+In Part 2, groups of five choose one of four tracks and work on a problem from their
 research or teaching, capturing it in the workshop app
-([genai-rt.web.app](https://genai-rt.web.app)). Each group assesses its work against a
-five-dimension rubric, which it scores when it tidies the note afterwards, and a museum
-of caught errors. It then gives a short spoken
-insight, choosing one of three options. These are the most significant limitation it
-found, the most important human-in-the-loop safeguard it built in or one honest
-observation about how its field is over- or under-using AI for the task.
+([genai-rt.web.app](https://genai-rt.web.app)). The fifteen minutes ask for three
+things: run the tool on the problem, catch it out where it was fluent and wrong, and
+settle on one line for the room. That line is the most significant limitation the group
+found, the most important human-in-the-loop safeguard it would insist on or an
+observation about how its field is over- or under-using AI for the task. A
+five-dimension rubric sits in the pack for a group that wants to score itself
+afterwards, and it is deliberately not part of the fifteen minutes.
 
 The session has five aims: to enjoy it, to reflect critically, to learn, to collaborate
 and to create.
@@ -48,7 +48,7 @@ and to create.
 ├── workshop_plan.md                ← facilitator guide: framing, objectives, timings, prompts, contingencies
 ├── slides.md                       ← Marp deck (Part 1 conceptual · lunch · Part 2 applied)
 ├── project_tracks.md               ← the four tracks, with tooling, tasks, artefacts and data notes
-├── evaluation_rubric_template.md   ← the rubric and the full note template (the app has its own shorter form; HackMD or paper on the fallback)
+├── evaluation_rubric_template.md   ← the rubric and the fallback note, for afterwards and for a group that cannot use the app
 │
 ├── firebase-app/                   ← the Part 2 workshop app: Firestore + Hosting, security rules, three pages
 │   └── README.md                   ← app architecture, data model, security model and setup
@@ -67,14 +67,11 @@ and to create.
 │   ├── facilitator_run_sheet.md    ← minute-by-minute run sheet for the day
 │   ├── morning_checklist.md        ← what to do before the room fills
 │   ├── facilitator_day_of_reset.md ← one-page app reset checklist (passcode, timer, clean-up, export)
-│   ├── group_one_pager.md          ← one-page group quick start (print one or two per table)
-│   ├── group_pack_cover.md         ← cover and orientation sheet for the printed group-pack booklet
-│   ├── role_cards.md               ← optional prompt cards for the five group roles
+│   ├── group_one_pager.md          ← the group sheet: the whole of Part 2 on one side (two per table)
 │   ├── cue_cards.md                ← print-ready facilitator cue cards
 │   ├── icebreaker.md               ← a senior-appropriate opener
-│   ├── starter_prompts.md          ← a starter-prompt library, per track
-│   ├── worked_examples.md          ← one worked example per track (offline fallback)
-│   ├── data_decision_aid.md        ← one-page 'can I paste this?' decision aid
+│   ├── worked_examples.md          ← a ready example for each track (the group reference pack)
+│   ├── data_decision_aid.md        ← the fuller 'can I paste this?' reference behind the group sheet
 │   ├── museum_of_caught_errors.md  ← the device for collecting caught errors
 │   └── post_workshop_followup.md   ← follow-up email and responsible-use commitment
 │
@@ -112,8 +109,9 @@ npm run build:pdf      # PDF only (needs a Chromium or Edge browser present)
 npm run build:pptx     # PowerPoint
 npm run build:docs     # PDFs of project_tracks.md and the rubric → dist/
 npm run build:preview  # organiser preview pack → slides + group pack + facilitator pack (needs a Chromium browser)
-npm run build:handouts # print-ready handout PDFs → dist/handouts/ (role cards, data aid, rubric, cue cards, and so on)
-npm run build:grouppack       # one combined per-table booklet → dist/handouts/group-pack.pdf
+npm run build:handouts # print-ready handout PDFs → dist/handouts/ (data aid, examples, rubric, cue cards, and so on)
+npm run build:reprint  # only the replacement PDFs needed after an older print bundle → handouts/reprint-jobs/
+npm run build:grouppack       # the per-table pack → dist/handouts/group-pack.pdf
 npm run build:facilitatorpack # one combined facilitator booklet → dist/handouts/facilitator-pack.pdf
 npm run build:publish  # refresh the committed ready-to-print PDFs in handouts/
 npm run watch          # live-reloading preview in the browser
@@ -123,7 +121,7 @@ npm run clean          # remove dist/
 ```
 
 A `Makefile` mirrors these for Unix users: `make`, `make html`, `make pdf`,
-`make pptx`, `make docs`, `make pack`, `make handouts`, `make grouppack`,
+`make pptx`, `make docs`, `make pack`, `make handouts`, `make reprint`, `make grouppack`,
 `make facilitatorpack`, `make publish`, `make watch` and `make clean`. The npm
 scripts remain the primary, cross-platform interface, and `archive:pr` is theirs
 alone.
@@ -149,13 +147,22 @@ Print-ready PDFs are committed under [`handouts/`](handouts/), so you can downlo
 print them without building anything:
 
 - [`handouts/slides.pdf`](handouts/slides.pdf), the full deck.
-- [`handouts/group-pack.pdf`](handouts/group-pack.pdf), the combined per-table booklet (cover, role cards, data aid, rubric, worked examples, starter prompts).
+- [`handouts/group-pack.pdf`](handouts/group-pack.pdf), the per-table pack (a ready example for each track, then the rubric and fallback note).
 - [`handouts/facilitator-pack.pdf`](handouts/facilitator-pack.pdf), the combined facilitator booklet (cue cards, run sheet, morning checklist).
-- [`handouts/group-one-pager.pdf`](handouts/group-one-pager.pdf), the one-page group quick start.
+- [`handouts/group-one-pager.pdf`](handouts/group-one-pager.pdf), the group sheet, which holds the whole of Part 2 on one side.
 - [`handouts/facilitator-day-of-reset.pdf`](handouts/facilitator-day-of-reset.pdf), the one-page app reset checklist.
 
 They are generated from the Markdown sources and may lag behind them, so run
 `npm run build:publish` to refresh them after editing.
+
+### Reprinting after an earlier bundle
+
+If one copy of the earlier, longer print bundle has already been printed, run
+`npm run build:reprint`. It writes three separate jobs to
+[`handouts/reprint-jobs/`](handouts/reprint-jobs/), with the copy count and print side in
+each filename. Keep the earlier cue cards, run sheet, morning checklist, reset sheet,
+seed signs and table numbers. The one-page facilitator update tells you how to use them
+with the revised 15-minute activity.
 
 ## Sharing a preview
 
@@ -189,9 +196,9 @@ Participants never touch Git or GitHub. The flow is deliberately simple.
 1. Each group captures its work in the workshop app
    ([genai-rt.web.app](https://genai-rt.web.app)), whose short form covers the
    essentials. No participant needs a GitHub account, and there is nothing to install.
-   A group that cannot use the app writes the fuller
-   [rubric template](evaluation_rubric_template.md) in HackMD or on paper and shares it
-   with the facilitator.
+   A group that cannot use the app writes the same headings from the
+   [rubric template](evaluation_rubric_template.md) in HackMD or on paper and shares
+   them with the facilitator.
 2. The facilitator approves each group from the private dashboard. Approved work
    appears on the passcode-gated session dashboard for the room.
 3. After the session, the facilitator exports the approved, consented work and commits
