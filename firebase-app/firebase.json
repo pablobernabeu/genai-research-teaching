@@ -4,6 +4,8 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
+    "//": "The project holds three hosting sites. Name the one the slides, the handouts and the app all point at, so a plain `firebase deploy --only hosting` cannot land on the default site by mistake.",
+    "site": "genai-rt",
     "public": "public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "headers": [
