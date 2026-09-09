@@ -23,7 +23,7 @@ MARP   := npx marp --config-file ./marp.config.mjs
 SLIDES := ./slides.md
 OUT    := ./dist
 
-.PHONY: all html pdf pptx docs pack handouts handoutscore onepagers reprint grouppack facilitatorpack signs bundle publish watch preview clean install
+.PHONY: all html pdf pptx docs pack handouts handoutscore onepagers reprint grouppack facilitatorpack signs bundle publish-slides publish watch preview clean install
 
 all: html pdf
 
@@ -68,6 +68,17 @@ signs:
 # The bundle reads the five built PDFs from the same folder it writes to, so build them first.
 bundle: grouppack onepagers signs
 	node scripts/printbundle.mjs --out dist/handouts
+
+# Refresh ONLY the committed deck, handouts/slides.pdf (mirrors publish:slides).
+#
+# The deck is the one file under handouts/ that is not part of the physical print job:
+# printbundle.mjs assembles the cue cards, the group pack, the group one-pager, the run
+# sheet, the day-of reset, the seed signs and the table numbers, and never the slides. So
+# the deck can be brought back into line with slides.md without touching the paper that
+# was printed for the cohort. Use this instead of `publish` while a cohort is live.
+publish-slides:
+	node -e "require('fs').mkdirSync('handouts',{recursive:true})"
+	$(MARP) $(SLIDES) -o ./handouts/slides.pdf
 
 # Refresh all eight committed, ready-to-print PDFs under handouts/ (mirrors build:publish).
 #

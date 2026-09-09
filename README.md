@@ -64,6 +64,14 @@ Build into `dist/` instead, with `npm run build` for the deck and `npm run build
 `handouts/` alone until this cohort is archived. `git status` shows any accidental
 regeneration, and `git checkout -- handouts/` restores it.
 
+The deck is the exception. `handouts/slides.pdf` is the only one of the eight that the
+physical print job never included, because `scripts/printbundle.mjs` assembles the cue
+cards, the group pack, the group one-pager, the run sheet, the day-of reset, the seed
+signs and the table numbers, and not the slides. So the deck can be brought back into
+line with `slides.md` while a cohort is live, with `npm run publish:slides` or
+`make publish-slides`. That writes `handouts/slides.pdf` and nothing else. Anyone who
+printed the deck for themselves should note that their copy is then a version behind.
+
 ### Reprinting after an earlier bundle
 
 If one copy of the earlier, longer print bundle has already been printed, run
@@ -189,6 +197,7 @@ npm run build:bundle   # the whole print job as one PDF → dist/handouts/print-
 npm run build:reprint  # only the replacement PDFs needed after an older print bundle → handouts/reprint-jobs/
 npm run build:grouppack       # the per-table pack → dist/handouts/group-pack.pdf
 npm run build:facilitatorpack # one combined facilitator booklet → dist/handouts/facilitator-pack.pdf
+npm run publish:slides # refresh ONLY the committed deck → handouts/slides.pdf (safe while a cohort is live)
 npm run build:publish  # refresh the committed ready-to-print PDFs in handouts/ (see 'Ready-to-print PDFs' above)
 npm run check:handouts # verify the committed print set: eight PDFs and three reprint jobs
 npm run watch          # live-reloading preview in the browser
@@ -201,9 +210,10 @@ npm run clean          # remove dist/
 
 A `Makefile` mirrors these for Unix users: `make`, `make html`, `make pdf`,
 `make pptx`, `make docs`, `make pack`, `make handouts`, `make reprint`, `make grouppack`,
-`make facilitatorpack`, `make signs`, `make bundle`, `make publish`, `make watch`,
-`make preview`, `make clean` and `make install`. The npm scripts remain the primary,
-cross-platform interface, and `archive:pr` and `check:handouts` are theirs alone.
+`make facilitatorpack`, `make signs`, `make bundle`, `make publish-slides`,
+`make publish`, `make watch`, `make preview`, `make clean` and `make install`. The npm
+scripts remain the primary, cross-platform interface, and `archive:pr` and
+`check:handouts` are theirs alone.
 
 > When you install, note that marp-cli pulls in `speech-rule-engine` (via MathJax), whose npm
 > registry metadata intermittently fails to parse on the default registry. If
