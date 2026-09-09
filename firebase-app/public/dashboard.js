@@ -18,7 +18,7 @@ import { signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/f
 // class (the bare +esm entry exports a namespace, so `new Chart()` would throw).
 import Chart from "https://cdn.jsdelivr.net/npm/chart.js@4/auto/+esm";
 
-import { db, auth, SCENARIOS, SURVEY, oversightLabel, dashboardHash, friendlyError } from "./common.js";
+import { db, auth, SCENARIOS, SURVEY, oversightLabel, scenarioLabel, dashboardHash, friendlyError } from "./common.js";
 
 const $ = (id) => document.getElementById(id);
 const statusEl = $("status");
@@ -320,7 +320,7 @@ function card(g) {
   if (g.scenario) {
     const sc = document.createElement("span");
     sc.className = "small muted";
-    sc.textContent = g.scenario;
+    sc.textContent = scenarioLabel(g.scenario);
     meta.appendChild(sc);
   }
   el.appendChild(meta);

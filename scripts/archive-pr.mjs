@@ -123,11 +123,22 @@ async function main() {
     interwoven: "Interwoven (checking throughout)",
     staged: "Staged (check at set points)",
   };
+  // 'scenario' holds the stored key, which is not the name the printed group pack uses.
+  // Gloss it exactly as common.js scenarioLabel() does, and pass an unrecognised value
+  // through unchanged.
+  const SCENARIO_LABELS = {
+    "A — Methodological Blind-Spot Detector": "A · Methodological Blind-Spot Detector",
+    "B — Executive-Function Layer": "B · Accessible Executive-Function Layer",
+    "C — Rapid Prototyping": "C · Rapid Prototyping",
+    "D — Public Engagement": "D · Public Engagement Translator",
+    "Own problem": "Own problem",
+  };
+  const scenarioLabel = (s) => SCENARIO_LABELS[String(s || "")] || s;
   let md = `# Approved submissions — ${date}\n\n${groups.length} approved, consented group${groups.length === 1 ? "" : "s"}.\n`;
   groups.forEach((g, i) => {
     const r = g.responses || {};
     md += `\n---\n\n### ${i + 1}. ${g.name || "(unnamed)"}${g.track ? " · Track " + g.track : ""}\n\n`;
-    md += `*Scenario: ${val(g.scenario)}*\n\n`;
+    md += `*Scenario: ${val(scenarioLabel(g.scenario))}*\n\n`;
     md += `**The problem.** ${val(r.problem)}\n\n`;
     md += `**The artefact.** ${val(r.artefact)}\n\n`;
     md += `**Errors caught.** ${val(r.caughtErrors)}\n\n`;

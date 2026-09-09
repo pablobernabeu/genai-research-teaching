@@ -19,7 +19,7 @@ import {
   signOut, onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 
-import { db, auth, friendlyError, normaliseName, dashboardHash, oversightLabel, SURVEY, SURVEY_KEYS } from "./common.js";
+import { db, auth, friendlyError, normaliseName, dashboardHash, oversightLabel, scenarioLabel, SURVEY, SURVEY_KEYS } from "./common.js";
 
 const $ = (id) => document.getElementById(id);
 const signinView = $("signinView");
@@ -345,7 +345,7 @@ function groupBlock(g, heading) {
   const r = g.responses || {};
   const val = (s) => (s && String(s).trim()) || "—";
   let md = `### ${heading}${g.name || "(unnamed)"}${g.track ? " · Track " + g.track : ""}\n\n`;
-  md += `*Scenario: ${val(g.scenario)}*\n\n`;
+  md += `*Scenario: ${val(scenarioLabel(g.scenario))}*\n\n`;
   md += `**The problem.** ${val(r.problem)}\n\n`;
   md += `**The artefact.** ${val(r.artefact)}\n\n`;
   md += `**Errors caught.** ${val(r.caughtErrors)}\n\n`;
@@ -490,7 +490,7 @@ function card(g) {
   if (g.scenario) {
     const sc = document.createElement("span");
     sc.className = "small muted";
-    sc.textContent = g.scenario;
+    sc.textContent = scenarioLabel(g.scenario);
     meta.appendChild(sc);
   }
   el.appendChild(meta);

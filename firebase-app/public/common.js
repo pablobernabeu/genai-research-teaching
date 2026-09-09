@@ -54,16 +54,31 @@ export function generateJoinCode() {
   return code;
 }
 
-// The five scenarios offered, in the short forms used by the one-pager and the app README. The first four carry
-// a track letter (A–D); "Own problem" carries no track. Shared so the group picker
-// and the dashboards label things consistently.
+// The five scenarios offered. The first four carry a track letter (A-D), and "Own
+// problem" carries no track. Shared so the group picker and the dashboards label things
+// consistently.
+//
+// `scenario` is the STORED key: it is written into each group document and matched by
+// equality (group.js trackForScenario, dashboard.js renderScenarioChart), so changing one
+// would orphan any group that had already chosen it. `label` is display only. The two
+// were once identical, which is why the labels drifted from the printed group pack; the
+// labels now match the pack and the instructions panel, and the keys are left alone.
 export const SCENARIOS = [
-  { label: "A — Methodological Blind-Spot Detector", scenario: "A — Methodological Blind-Spot Detector", track: "A" },
-  { label: "B — Executive-Function Layer", scenario: "B — Executive-Function Layer", track: "B" },
-  { label: "C — Rapid Prototyping", scenario: "C — Rapid Prototyping", track: "C" },
-  { label: "D — Public Engagement", scenario: "D — Public Engagement", track: "D" },
+  { label: "A · Methodological Blind-Spot Detector", scenario: "A — Methodological Blind-Spot Detector", track: "A" },
+  { label: "B · Accessible Executive-Function Layer", scenario: "B — Executive-Function Layer", track: "B" },
+  { label: "C · Rapid Prototyping", scenario: "C — Rapid Prototyping", track: "C" },
+  { label: "D · Public Engagement Translator", scenario: "D — Public Engagement", track: "D" },
   { label: "Own problem", scenario: "Own problem", track: "" },
 ];
+
+// Display name for a stored scenario key. Every surface that shows a group's chosen
+// scenario reads it through here, so a stored key never reaches the screen or the
+// archive. An unrecognised value passes through unchanged.
+export function scenarioLabel(value) {
+  const key = String(value || "");
+  const found = SCENARIOS.find((s) => s.scenario === key);
+  return found ? found.label : key;
+}
 
 // The two oversight models, keyed by the value stored in responses.oversight. The stored
 // value is a bare enum, so every surface that shows it (the public card, the facilitator
