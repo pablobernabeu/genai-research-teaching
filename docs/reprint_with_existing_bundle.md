@@ -30,9 +30,10 @@ problem, note one or two errors it makes and prepare one line for the room.
 | When | Say or do this |
 |---|---|
 | 12:08 | Point to the ready example in the new group reference pack. Do not send people to the old starter prompts. |
+| 12:23 | The old sheets name a map on slide 14. Slide 14 now carries the oversight questions alone, so introduce interwoven and staged oversight and leave the map out. It survives only as an optional box in the app, for groups with time in hand. |
 | 12:26 | Say that Part 2 asks groups to run a tool, catch it out and prepare one line for the room. Show slide 15, then form groups around the track signs. |
 | 13:15 | Put the new group sheet on top of the table materials. It carries the instructions participants need during the activity. |
-| 13:18 | Prioritise a caught error and the line for the room. The map, oversight choice and field reflection are optional only when a group has time left. |
+| 13:18 | Prioritise a caught error and the line for the room. The map, oversight choice and field reflection are optional only when a group has time left. Set Minutes to 14 so the countdown ends at 13:32, a minute before groups submit. Where the old run sheet says the countdown ends at 13:33, use 13:32. |
 
 ## Set out at each table
 

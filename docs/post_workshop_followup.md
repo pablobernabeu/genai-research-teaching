@@ -10,21 +10,21 @@ Dear colleague,
 
 Thank you for the energy you brought to Generative AI in research and teaching. The most striking thing was the quality of the caught errors and the safeguards you designed, which is exactly the discernment the session was for.
 
-Your work is now an open archive. The notes of the groups that opted in to sharing have been tidied into a public, reproducible record at https://github.com/pablobernabeu/genai-research-teaching (see `submissions/`). It stands as a frank, collective map of where these tools help and where a human must stay in charge. If your group tidied its note afterwards, or would now like it included, reply to this message and I will add it. The three quick scales many of you filled in are summarised on the session dashboard, and I have included the picture they give below.
+Notes from groups that opted in to sharing have been reviewed and may be published at https://github.com/pablobernabeu/genai-research-teaching (see `submissions/`). They form a collective record of where these tools helped and where human judgement remained necessary. If your group tidied its note afterwards, or would now like it considered for inclusion, reply to this message. The three quick scales many of you filled in are summarised on the session dashboard.
 
 The one idea worth keeping is to treat friction, the moment a tool resists you or quietly gets something wrong, as a signal. It marks where your judgement is doing the real work.
 
 Here is a small, voluntary responsible-use commitment, and if it is useful, adopt one or two of these for the next month:
 
 - I will disclose AI assistance where it matters, in line with policy and publisher rules.
-- I will never paste personal, special-category, confidential or embargoed material into a free consumer tool.
+- I will never paste personal, special-category, confidential or embargoed material into a free AI tool.
 - I will keep a human checkpoint on anything I would put my name to, and verify facts, figures and citations myself.
 - I will record the friction I notice, and let it tell me where I am needed.
-- I will stay accountable for the output: the tool proposes, and I dispose.
+- I will stay accountable for the output, since the tool proposes and I dispose.
 
 If you have a moment, a two-minute, anonymous feedback form would help me improve the next run: [FEEDBACK URL].
 
-The further reading from the close is in the repository's facilitator guide (`workshop_plan.md`) if you would like to go deeper. It includes the Russell Group principles, the ERA living guidelines, the ICO guidance and the studies on AI and critical thinking.
+The further reading from the close is the reading list in the repository (`docs/bibliography.md`) if you would like to go deeper. It includes the Russell Group principles, the ERA living guidelines, the ICO guidance and the studies on AI and critical thinking.
 
 For questions, or to carry the conversation on, please use the Discussions tab in the repository (https://github.com/pablobernabeu/genai-research-teaching/discussions), so that answers help everyone.
 

@@ -1,5 +1,9 @@
 # Group role cards (optional prompt sheet)
 
+*Superseded, and not printed for the 9 September 2026 run. The group sheet
+([`group_one_pager.md`](group_one_pager.md)) carries the three jobs the room actually
+uses. Keep this file out of the room.*
+
 Five angles to keep an eye on in a group of five. Take one each, or divide them
 however suits you. They mark where attention goes, so treat the
 work as shared and rotate the keyboard freely. Each maps to one rubric dimension, so make sure
@@ -16,9 +20,9 @@ The mapping (canonical):
 |---|---|---|
 | **Convenor** | Project Definition | Keeps the real problem and the clock in focus |
 | **Driver** | Technology Stack | Operates the tools and owns the tool choices |
-| **Steward** | Data Security & Ethics | Guards the red lines |
-| **Reporter** | Financial & Scalability | Owns the record, the submission and the spoken insight |
-| **Sceptic** | Human-in-the-Loop Protocol | Tries to break the output and curates the caught errors |
+| **Steward** | Data Security and Ethics | Guards the red lines |
+| **Reporter** | Financial and Scalability | Owns the record, the submission and the spoken insight |
+| **Sceptic** | Human in the Loop | Tries to break the output and curates the caught errors |
 
 ---
 
@@ -74,20 +78,20 @@ The mapping (canonical):
   survives the free tier and a larger cohort. Submit the note before the lightning round
   at 13:33 where you can, and during it at the latest.
 - **At the pivot, about 13:26.** Glance at the note and check it is being filled in as you
-  go, rather than left to the last minute.
+  go, and not left to the last minute.
 - **Worth asking.** 'Does this still work next month, for fifty people, for free?'
 
 ### ✂︎ — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 
-## SCEPTIC · *Human-in-the-Loop Protocol*
+## SCEPTIC · *Human in the Loop*
 
 **Your angle:** testing the output, and deciding where the human has to stay.
 
 - **In the fifteen minutes.** Press on every result, looking for invented detail, bias
   and confident error, and keep the good catches for the museum. Name the checkpoints
   the group would want and the things it would never delegate. If there is time, sketch
-  the automation and steering map, and decide whether your oversight ran throughout or
-  at set points.
+  the automation and steering map, and decide whether your oversight was interwoven
+  through the work or staged at set points.
 - **At the pivot, about 13:26.** This is the one moment to speak: bring your best caught
   error to the group.
 - **Worth asking.** 'Where, exactly, does a human have to check before we trust this?'

@@ -6,6 +6,12 @@
 //   node scripts/printbundle.mjs                  # -> dist/handouts/print-bundle.pdf
 //   node scripts/printbundle.mjs --out handouts   # -> the committed handouts folder
 //   node scripts/printbundle.mjs --groups 8       # size the job for 8 tables (default 10)
+//   node scripts/printbundle.mjs --from handouts --out dist/handouts   # committed PDFs -> dist/
+//
+// Five of the seven sections are PDFs built by the other scripts. They are read from
+// --from, which defaults to --out, so a bundle assembled into dist/ reflects what was
+// built into dist/ and never silently borrows the committed print record in handouts/.
+// Build those inputs before running this, or point --from at the folder that holds them.
 //
 // The cards are laid out two to a page in fixed half-page slots, so the cut line falls
 // at the same height on every sheet and a whole stack can be cut in one pass. Pages
@@ -24,12 +30,15 @@ const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
 
 let args = process.argv.slice(2);
 let outDir = 'dist/handouts';
+let fromDir = null;
 let groups = 10;
 while (args[0] && args[0].startsWith('--')) {
   if (args[0] === '--out') { outDir = args[1]; args = args.slice(2); }
+  else if (args[0] === '--from') { fromDir = args[1]; args = args.slice(2); }
   else if (args[0] === '--groups') { groups = parseInt(args[1], 10); args = args.slice(2); }
   else break;
 }
+if (!fromDir) fromDir = outDir;
 
 function findBrowser() {
   const candidates = [
@@ -149,7 +158,7 @@ const SECTIONS = [
   {
     part: 'Part 2 — collate into group bundles',
     title: 'Group pack booklet',
-    path: 'handouts/group-pack.pdf',
+    path: join(fromDir, 'group-pack.pdf'),
     copies: `${groups} copies, plus one spare`,
     sides: 'Double-sided', paper: 'A4 portrait', finish: 'Stapled, top left',
     note: 'One booklet per table. The cover has fill-in fields, so every table needs its own. The footer numbers every page, so a booklet missing a leaf shows up while collating.',
@@ -158,7 +167,7 @@ const SECTIONS = [
   {
     part: 'Part 2 — collate into group bundles',
     title: 'Group quick-start one-pager',
-    path: 'handouts/group-one-pager.pdf',
+    path: join(fromDir, 'group-one-pager.pdf'),
     copies: `${onePager} copies`,
     sides: 'Single-sided', paper: 'A4 portrait', finish: 'Loose, two laid on each table',
     note: 'Two per table, on top of the booklet.',
@@ -176,7 +185,7 @@ const SECTIONS = [
   {
     part: 'Part 3 — facilitator only',
     title: 'Day-of app reset',
-    path: 'handouts/facilitator-day-of-reset.pdf',
+    path: join(fromDir, 'facilitator-day-of-reset.pdf'),
     copies: '1 copy',
     sides: 'Single-sided', paper: 'A4 portrait', finish: 'Loose',
     note: 'The passcode, timer and export steps for the lunch break.',
@@ -185,7 +194,7 @@ const SECTIONS = [
   {
     part: 'Part 4 — put up around the room',
     title: 'Seed-idea signs',
-    path: 'handouts/seed-signs.pdf',
+    path: join(fromDir, 'seed-signs.pdf'),
     copies: '1 copy',
     sides: 'SINGLE-SIDED', paper: 'A4 LANDSCAPE', finish: 'Heaviest paper available',
     note: 'Posted around the room before 12:00, spread out so ten groups can gather without crowding. Do not let the printer rotate or shrink these to fit portrait.',
@@ -194,7 +203,7 @@ const SECTIONS = [
   {
     part: 'Part 4 — put up around the room',
     title: 'Table numbers',
-    path: 'handouts/table-numbers.pdf',
+    path: join(fromDir, 'table-numbers.pdf'),
     copies: '1 copy',
     sides: 'SINGLE-SIDED', paper: 'A4 LANDSCAPE', finish: 'Heaviest paper available',
     note: 'One on each table, readable across the room.',
@@ -205,6 +214,13 @@ const SECTIONS = [
 const resolved = [];
 for (const s of SECTIONS) {
   const path = typeof s.path === 'function' ? s.path() : s.path;
+  if (!existsSync(path)) {
+    throw new Error(
+      `Missing ${path}. Build the inputs into ${fromDir} first ` +
+      '(npm run build:grouppack, npm run build:onepagers and npm run build:signs), ' +
+      'or pass --from with the folder that holds them.'
+    );
+  }
   const doc = await PDFDocument.load(readFileSync(path));
   resolved.push({ ...s, path, pages: doc.getPageCount() });
 }
@@ -254,7 +270,7 @@ const contentsHtml = `<section class="slip">
   <h1 style="margin-top:-3mm">Workshop print bundle</h1>
   <table><thead><tr><th>Item</th><th>Copies</th><th>Sides</th><th>Paper</th></tr></thead><tbody>${rows}</tbody></table>
   <p class="warn">This cannot be run as one job with one setting. The copy counts differ
-  per item, the two card sections must print single-sided because they are cut, and the
+  per item, the card section must print single-sided because it is cut, and the
   room signs are landscape. Each section below opens with its own instruction slip; the
   slips are not part of the job and need not be printed.</p>
 </section>`;

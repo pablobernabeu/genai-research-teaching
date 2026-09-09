@@ -2,11 +2,13 @@
 
 Your group sheet has the short version. For the fifteen-minute activity, use this test.
 
-> If you would not pin it to a public noticeboard in the building, do not paste it into
-> a free consumer AI tool.
+> If you would not pin it to a public noticeboard in the building, do not put it into
+> a free AI tool.
 
 Free tiers may reuse what you enter for model training, and their settings can change
-without notice. Treat anything you paste as non-private and impossible to withdraw.
+without notice. Treat anything you paste as non-private and impossible to withdraw. The
+same holds for file uploads, browser sessions and connected accounts, and not only for
+pasted text.
 
 ## Fine, careful, never
 
@@ -26,7 +28,7 @@ without notice. Treat anything you paste as non-private and impossible to withdr
    gives criminal offence data similar weight.
 3. Is it confidential, unpublished or embargoed? Peer review, grant drafts and anything
    shared with you in confidence count, and confidentiality is not yours alone to waive.
-4. Do you hold the rights? If the words or images are someone else's, or you are unsure,
+4. Are the rights someone else's? If the words or images are not yours, or you are unsure,
    treat them as restricted.
 
 ## Safer routes

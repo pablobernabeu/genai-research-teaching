@@ -42,10 +42,10 @@ error is worth more than an unexamined 5.
 
 1. Project Definition: is the real problem, and its success criterion, clear?
 2. Technology Stack: is it the right tool on the spectrum, and why?
-3. Data Security & Ethics: were the red lines held, and were the UK GDPR, ethics and
+3. Data Security and Ethics: were the red lines held, and were the UK GDPR, ethics and
    fairness addressed?
-4. Financial & Scalability: does the free tier hold, and what breaks at scale?
-5. Human-in-the-Loop: are there explicit checkpoints, verification and
+4. Financial and Scalability: does the free tier hold, and what breaks at scale?
+5. Human in the Loop: are there explicit checkpoints, verification and
    accountability, with a deliberate map of what is automated against where the human
    steers?
 
@@ -65,9 +65,9 @@ Alongside the rating, each group reflects on the bigger picture.
 ## And one spoken insight
 
 Each group closes with a short spoken insight of up to 45 seconds, given without slides. It picks one
-of three: the single most significant limitation it found, the most important
-human-in-the-loop safeguard it built in or one honest observation about how its field
-is over- or under-using AI for the task.
+of three: the single most significant limitation it found, the checkpoint it would
+require before use or one honest observation about how its field is over- or
+under-using AI for the task.
 
 ---
 

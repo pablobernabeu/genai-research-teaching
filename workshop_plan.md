@@ -44,16 +44,17 @@ builds in those pauses and asks participants what they reveal.
 
 By the end of the session, a participant should be able to:
 
-1. Locate a given task on the tool spectrum (off-the-shelf, no-code or IDE/API
-   level) and justify the choice against control, data exposure and effort.
+1. Locate a given task on the tool spectrum (chat, context-rich workspace, coding or
+   action agent, or a built workflow) and justify the choice against control, data
+   exposure, tool access and effort.
 2. Recognise cognitive friction as a useful signal and record it.
 3. Apply the data-security red lines and a simple decision aid before submitting
    anything to a third-party tool.
 4. Identify the key ethical tensions and name the disclosure and
    accountability implications for their own work.
-5. Design an explicit human-in-the-loop protocol for a task, mapping the
-   automated phases against the human-steered ones and deciding whether oversight
-   is interwoven through the project or staged at distinct checkpoints.
+5. Design explicit human oversight for a task, mapping automated and person-led phases,
+   naming the checks, approvals and accountable role, and deciding whether oversight is
+   interwoven through the work or staged at set points.
 
 The applied session has room for three things: run a tool on one problem, catch one or
 two errors, and prepare one line for the room. These give groups practice in choosing a
@@ -112,7 +113,7 @@ Inside Part 1 (12:00–12:30):
 | 12:14 | The tool spectrum | 3 |
 | 12:17 | Data-security red lines and the ethical landscape | 4 |
 | 12:21 | The bigger questions: paradigm shift, fairness, disclosure | 2 |
-| 12:23 | The human-in-the-loop principle and the automation–steering map | 3 |
+| 12:23 | Design human oversight | 3 |
 | 12:26 | What Part 2 asks, then form groups of five | 4 |
 
 The segments sum to 30 minutes (3 + 2 + 3 + 2 + 4 + 3 + 4 + 2 + 3 + 4). The
@@ -122,7 +123,7 @@ Inside Part 2 (13:15–13:45):
 
 | Clock | Segment | Mins |
 |---|---|---|
-| 13:15 | Settle in: re-find your group after lunch, open the app (HackMD as the fallback), red lines on | 3 |
+| 13:15 | Settle in: re-find your group after lunch, open the app (HackMD as the fallback), red lines visible | 3 |
 | 13:18 | Apply it: run the tool, catch it out and settle on one line for the room, with the optional extras if time is left | 15 |
 | *about 13:26* | *Pivot (woven in): stop building, start interrogating* | |
 | 13:33 | Lightning round: 45 seconds per group on the limitation, the safeguard or how the field over- or under-uses AI here | 7 |
@@ -150,19 +151,26 @@ and interactive.
 - A long line of tools (slide 7). Place AI in the history of productivity tools
   (calculator, computer, spreadsheet, generative AI) and the institutions that reward
   output. Ask when the tool helps and when it does not.
-- Getting started (slide 8). Explain what a chat assistant is, ask participants to pick
-  one free tool, and show the shape of a useful request. Say why mixed-ability groups
-  work well, then move on.
+- Getting started (slide 8). Explain what a chat assistant is, note that a large
+  language model sits behind it, ask participants to pick one free tool, and show the
+  shape of a useful request. Say why mixed-ability groups work well, then move on. The
+  technical note on the slide is there if someone asks, and its practical point is that
+  fluent output is not verified output.
 - Friction as signal (slide 9). Cite Lee et al. and Drosos et al. in a sentence each,
   and note that this applies to marking and writing as well as analysis.
-- The spectrum, red lines and ethics (slides 10–12). Reference frames for Part 2, with
-  the teaching angle named (students' data, assessment integrity, disclosure).
+- The spectrum, red lines and ethics (slides 10–12). Reference frames for Part 2. Note
+  that products can span several modes of use and that an agentic system is a model
+  paired with tools and access, and not an intrinsically cleverer model. Name the
+  teaching angle, which is students' data, assessment integrity and disclosure. Where a
+  system can act, add least privilege, explicit approvals and the rule that fetched
+  content is untrusted.
 - The bigger questions (slide 13). The societal lens: the thinking and writing shift,
   fairness (who is helped and who is left out, by language, support, career stage and
   background) and disclosure. Pose them as live questions to carry into the groupwork,
   without settling them now.
-- Human-in-the-loop and the map (slide 14). Accountability stays human. Preview
-  interwoven and staged oversight.
+- Human oversight (slide 14). Accountability stays with a named person or
+  role. Preview interwoven and staged oversight, which is the choice the app asks each
+  group to make.
 - What Part 2 asks, then form groups (slides 15–16). Give this segment two minutes on
   the task and two on forming groups. Show slide 15, then have people gather at a seed
   idea on slide 16. Post the seed letters around the room beforehand, so people can form
@@ -233,35 +241,37 @@ A facilitator-timed round of short spoken contributions, without presentations.
 ### 5.6 Close · 13:40–13:45 · slides 28–34
 
 Pull two or three concrete insights from the lightning round onto the threads slide
-(slide 29). Connect them to the workshop's main ideas on slide 30: friction as signal,
-the tool spectrum, data red lines, human oversight and the wider questions. Give the
-take-home actions, point to the further reading and follow-up email, then close at
-13:45.
+(slide 29). Then take the room through slide 30, which sets out what to do before,
+during and after an AI-assisted task. Name the workshop's ideas against those three
+cards as you go, so that friction as signal, the spectrum, the red lines and the human
+in the loop are each spoken once more. Give the take-home actions, point to the
+further reading and follow-up email, then close at 13:45.
 
 ---
 
 ## 6. Circulating prompt bank
 
-Carry these with you, because they are tuned to the sub-phases and to the five rubric dimensions, and ask one, listen and move on.
+Carry these with you. They are tuned to the sub-phases and to the five rubric
+dimensions. Ask one, listen and move on.
 
-Project Definition
+Project definition
 - 'What is the actual problem here, in one sentence a colleague would recognise?'
 - 'How will you know the tool helped? What is your success criterion?'
 
-Technology Stack
-- 'Why this tool and not one a level up or down the spectrum?'
-- 'What would you lose, and gain, by moving to a no-code or API approach?'
+Technology stack
+- 'Why this mode? What can it access, where does it run and who approves its actions?'
+- 'What would you gain or lose by moving from chat to a context-rich workspace, coding agent or custom workflow?'
 
-Data Security & Ethics
+Data security and ethics
 - 'What exactly are you about to paste in? Whose data is it?'
-- 'If your group ticks the share box, this note goes into a public archive. Is there anything in it, or anything you have pasted into the tool, that you would regret?'
+- 'If your group opts in, the facilitator may consider this note for a public archive after review. Is there anything in it, or anything you have pasted into the tool, that you would regret?'
 - 'Where would you need to disclose that you used AI for this?'
 
-Financial & Scalability Constraints
-- 'Does this still work on the free tier next month, for fifty people?'
+Financial and scalability
+- 'Does the free tier still hold next month, for fifty people?'
 - 'What breaks first when you scale this: cost, limits or trust?'
 
-Human-in-the-Loop Protocol
+Human in the loop
 - 'Where, precisely, does a human have to check before this is usable?'
 - 'What will you never let the tool decide?'
 - 'Map it: which phases are automated, and where do you steer? Is your oversight interwoven through every step or staged at checkpoints, and why that choice?'
@@ -282,7 +292,7 @@ Friction (ask everywhere)
 | If… | Then… |
 |---|---|
 | Wi-Fi fails | Give the affected groups a printed worked example (`docs/worked_examples.md`) and the fallback note. They can still critique the output and prepare a line for the room. |
-| A chosen tool demands payment or a login wall | Move down the spectrum to a free off-the-shelf chat tool, and treat the paywall itself as a finding under Financial & Scalability. |
+| A chosen tool demands payment or a login wall | Move down the spectrum to a free chat tool, or give the group the ready example from the reference pack, and treat the paywall itself as a finding under Financial and scalability. |
 | The app will not load for a group | Fall back to HackMD (hackmd.io) or paper for that group, using the headings in the pack. They are plain Markdown and portable, and the facilitator transcribes the note into the archive afterwards. A brief Wi-Fi blip needs no action, because the app caches offline and re-syncs. |
 | A group finishes early | Send them to the optional boxes in the app: the automation–steering map, oversight choice and field reflection. Or set them to red-team a neighbouring group's output by probing it for weaknesses the other group missed. |
 | A group stalls | Shrink the task. 'What is the smallest self-contained task the tool could help with in ten minutes?' |
@@ -297,57 +307,59 @@ Friction (ask everywhere)
 
 ## 8. Further reading (verified)
 
-Every entry was checked against a primary source in September 2026. Living documents
-change, so check for the current version before citing them.
+The core citations link to primary research or official sources checked on 9 September
+2026. Product documentation and living guidance change, so check the current version
+before relying on them. A concise, linked list of sources cited in the deck is in
+[`docs/bibliography.md`](docs/bibliography.md).
 
 Governance, policy and assessment
 - Russell Group (2023). *Principles on the use of generative AI tools in
-  education.* <https://www.russellgroup.ac.uk/policy/policy-briefings/principles-use-generative-ai-tools-education>
+  education.* <https://russellgroup.ac.uk/media/6137/rg_ai_principles-final.pdf>
 - European Commission, Directorate-General for Research and Innovation, and ERA Forum
   (2026). *Living guidelines on the responsible use of generative AI in research*, third
-  version, May 2026 (first version March 2024, second version April 2025).
-  <https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/updated-era-living-guidelines-responsible-use-generative-ai-research-2026-05-08_en>
-- Miao, F. & Holmes, W. (2023). *Guidance for generative AI in education and
-  research.* Paris: UNESCO. <https://doi.org/10.54675/EWZM9535> (also at
-  <https://unesdoc.unesco.org/ark:/48223/pf0000386693>)
-- Perkins, M., Furze, L., Roe, J. & MacVaugh, J. (2024). *The Artificial Intelligence
+  edition, May 2026 (first version March 2024, second version April 2025).
+  <https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en>
+- UNESCO (2023). *Guidance for generative AI in education and research.* Paris:
+  UNESCO. <https://doi.org/10.54675/EWZM9535>
+- Perkins, M., Furze, L., Roe, J. & MacVaugh, J. (2024). The Artificial Intelligence
   Assessment Scale (AIAS): a framework for ethical integration of generative AI in
-  educational assessment.* Journal of University Teaching and Learning Practice, 21(6).
+  educational assessment. *Journal of University Teaching and Learning Practice*, 21(6).
   <https://doi.org/10.53761/q3azde36>
-- Perkins, M., Roe, J. & Furze, L. (2025). *Reimagining the Artificial Intelligence
-  Assessment Scale (AIAS): a refined framework for educational assessment.* Journal of
-  University Teaching and Learning Practice, 22(7). <https://doi.org/10.53761/rrm4y757>
+- Perkins, M., Roe, J. & Furze, L. (2025). Reimagining the Artificial Intelligence
+  Assessment Scale (AIAS): a refined framework for educational assessment. *Journal of
+  University Teaching and Learning Practice*, 22(7). <https://doi.org/10.53761/rrm4y757>
   The current version of the scale, which supersedes the 2024 paper.
 - Lodge, J. M., Howard, S., Bearman, M., Dawson, P. & Associates (2023). *Assessment
   reform for the age of artificial intelligence.* Melbourne: Tertiary Education Quality
   and Standards Agency (TEQSA). <https://www.teqsa.gov.au/guides-resources/resources/corporate-publications/assessment-reform-age-artificial-intelligence>
 
 Data protection
-- Information Commissioner's Office (2023). *Guidance on AI and data protection.*
-  Guidance issued under the UK GDPR. <https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/>
+- Information Commissioner's Office. *Guidance on AI and data protection.* Living UK
+  GDPR guidance, accessed 9 September 2026.
+  <https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/>
 
 Cognition, critical thinking and friction
 - Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R. & Wilson,
-  N. (2025). *The impact of generative AI on critical thinking: self-reported reductions
-  in cognitive effort and confidence effects from a survey of knowledge workers.*
-  Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25).
+  N. (2025). The impact of generative AI on critical thinking: self-reported reductions
+  in cognitive effort and confidence effects from a survey of knowledge workers.
+  *Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems.*
   <https://doi.org/10.1145/3706598.3713778>
-- Drosos, I., Sarkar, A., Xu, X. & Toronto, N. (2025). *'It makes you think':
-  provocations help restore critical thinking to AI-assisted knowledge work.*
-  arXiv:2501.17247. <https://arxiv.org/abs/2501.17247>
-- Sarkar, A. (2024). *Intention is all you need.* Proceedings of the 35th Annual
-  Conference of the Psychology of Programming Interest Group (PPIG 2024);
+- Drosos, I., Sarkar, A., Xu, X. & Toronto, N. (2025). 'It makes you think':
+  provocations help restore critical thinking to AI-assisted knowledge work. *arXiv*
+  preprint 2501.17247. <https://arxiv.org/abs/2501.17247>
+- Sarkar, A. (2024). Intention is all you need. *Proceedings of the 35th Annual
+  Conference of the Psychology of Programming Interest Group (PPIG 2024).*
   arXiv:2410.18851. <https://arxiv.org/abs/2410.18851> The scholarly anchor for the
   friction-as-signal thread: natural-language intent does not transfer transparently to
   a tool.
-- Buçinca, Z., Malaya, M. B. & Gajos, K. Z. (2021). *To trust or to think: cognitive
-  forcing functions can reduce overreliance on AI in AI-assisted decision-making.*
-  Proceedings of the ACM on Human-Computer Interaction, 5(CSCW1), Article 188.
+- Buçinca, Z., Malaya, M. B. & Gajos, K. Z. (2021). To trust or to think: cognitive
+  forcing functions can reduce overreliance on AI in AI-assisted decision-making.
+  *Proceedings of the ACM on Human-Computer Interaction*, 5(CSCW1), Article 188.
   <https://doi.org/10.1145/3449287> Deliberate friction reduces over-reliance where
   explanations alone do not.
 - Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö. & Mariman, R. (2025).
-  *Generative AI without guardrails can harm learning: evidence from high school
-  mathematics.* Proceedings of the National Academy of Sciences, 122(26), e2422633122.
+  Generative AI without guardrails can harm learning: evidence from high school
+  mathematics. *Proceedings of the National Academy of Sciences*, 122(26), e2422633122.
   <https://doi.org/10.1073/pnas.2422633122> Unguarded AI lifts practice performance but
   harms later unaided performance. A guarded version that gives hints without answers
   largely removes the harm.
@@ -361,50 +373,73 @@ abstraction, with the human leading the ideation and steering at the critical po
   (Y Combinator). Software 3.0, natural language as the programming layer, and the
   'autonomy slider' that keeps a human verifying in the loop. [video]
   <https://www.youtube.com/watch?v=LCEmiRjPEtQ>
-- Mollick, E. (2023). *Centaurs and cyborgs on the jagged frontier.* One Useful Thing.
+- Mollick, E. (2023). Centaurs and cyborgs on the jagged frontier. *One Useful Thing.*
   Two ways to divide the work with AI (a clean hand-off, or an intertwined loop) while
   the human stays the architect. <https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged>
 
 Productivity, equity and oversight
-- Becker, J., Rush, N., Barnes, E. & Rein, D. (2025). *Measuring the impact of
-  early-2025 AI on experienced open-source developer productivity.* METR;
-  arXiv:2507.09089. <https://arxiv.org/abs/2507.09089> In a randomised trial, AI tools
+- Becker, J., Rush, N., Barnes, E. & Rein, D. (2025). Measuring the impact of
+  early-2025 AI on experienced open-source developer productivity. METR. *arXiv*
+  preprint 2507.09089. <https://arxiv.org/abs/2507.09089> In a randomised trial, AI tools
   made experienced developers about 19% slower while they believed they were roughly 20%
   faster.
-- Vaccaro, M., Almaatouq, A. & Malone, T. W. (2024). *When combinations of humans and
-  AI are useful: a systematic review and meta-analysis.* Nature Human Behaviour, 8,
+- Vaccaro, M., Almaatouq, A. & Malone, T. W. (2024). When combinations of humans and
+  AI are useful: a systematic review and meta-analysis. *Nature Human Behaviour*, 8,
   2293–2303. <https://doi.org/10.1038/s41562-024-02024-1> On average, human–AI
   combinations underperform the better of human or AI alone, with losses on decision
   tasks and gains on creation tasks.
-- Brynjolfsson, E., Li, D. & Raymond, L. R. (2025). *Generative AI at work.* Quarterly
-  Journal of Economics, 140(2), 889–942. <https://doi.org/10.1093/qje/qjae044> A roughly
+- Brynjolfsson, E., Li, D. & Raymond, L. R. (2025). Generative AI at work. *Quarterly
+  Journal of Economics*, 140(2), 889–942. <https://doi.org/10.1093/qje/qjae044> A roughly
   15% average productivity gain, largest for less-experienced workers, narrowing skill
   gaps.
-- Noy, S. & Zhang, W. (2023). *Experimental evidence on the productivity effects of
-  generative artificial intelligence.* Science, 381(6654), 187–192.
+- Noy, S. & Zhang, W. (2023). Experimental evidence on the productivity effects of
+  generative artificial intelligence. *Science*, 381(6654), 187–192.
   <https://doi.org/10.1126/science.adh2586> Writing time cut by about 40% with quality
   gains, compressing the gap between weaker and stronger writers.
-- Liang, W., Yuksekgonul, M., Mao, Y., Wu, E. & Zou, J. (2023). *GPT detectors are
-  biased against non-native English writers.* Patterns, 4(7), 100779.
+- Liang, W., Yuksekgonul, M., Mao, Y., Wu, E. & Zou, J. (2023). GPT detectors are
+  biased against non-native English writers. *Patterns*, 4(7), 100779.
   <https://doi.org/10.1016/j.patter.2023.100779> AI-text detectors misclassify writing by
   non-native English speakers as machine-generated.
 
+Technical background
+- Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C. L., Mishkin, P., Zhang, C.,
+  Agarwal, S., Slama, K., Ray, A., Schulman, J., Hilton, J., Kelton, F., Miller, L.,
+  Simens, M., Askell, A., Welinder, P., Christiano, P., Leike, J. & Lowe, R. (2022).
+  Training language models to follow instructions with human feedback. *Advances in
+  Neural Information Processing Systems*, 35, 27730–27744.
+  <https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract.html>
+  One primary source for the post-training point on slide 8. It is an example, not a
+  universal description of every current model.
+
 Foundational critique
-- Bender, E. M., Gebru, T., McMillan-Major, A. & Shmitchell, S. (2021). *On the
-  dangers of stochastic parrots: can language models be too big?* FAccT '21, 610–623.
+- Bender, E. M., Gebru, T., McMillan-Major, A. & Shmitchell, S. (2021). On the
+  dangers of stochastic parrots: can language models be too big? *Proceedings of the
+  2021 ACM Conference on Fairness, Accountability, and Transparency*, 610–623.
   <https://doi.org/10.1145/3442188.3445922>
-- Kalai, A. T., Nachum, O., Vempala, S. S. & Zhang, E. (2025). *Why language models
-  hallucinate.* arXiv:2509.04664. <https://arxiv.org/abs/2509.04664> Hallucinations as
-  statistical errors that training and benchmarks reward by favouring a confident guess
-  over 'I don't know'.
-- Dahl, M., Magesh, V., Suzgun, M. & Ho, D. E. (2024). *Large legal fictions: profiling
-  legal hallucinations in large language models.* Journal of Legal Analysis, 16(1),
+
+Hallucination and its measurement
+- Kalai, A. T., Nachum, O., Vempala, S. S. & Zhang, E. (2025). Why language models
+  hallucinate. *arXiv* preprint 2509.04664. <https://arxiv.org/abs/2509.04664>
+  Hallucinations as statistical errors that training and benchmarks reward by favouring
+  a confident guess over 'I don't know'.
+- Dahl, M., Magesh, V., Suzgun, M. & Ho, D. E. (2024). Large legal fictions: profiling
+  legal hallucinations in large language models. *Journal of Legal Analysis*, 16(1),
   64–93. <https://doi.org/10.1093/jla/laae003> Measurable hallucination rates in a
   high-stakes professional domain.
 
+Current generative-AI modes and tools (official documentation, accessed 9 September 2026)
+- OpenAI (2026). *Get started with ChatGPT Work.*
+  <https://learn.chatgpt.com/docs/get-started-with-work>
+- OpenAI (2026). *Projects and chats.* <https://learn.chatgpt.com/docs/projects>
+- Anthropic. *Claude Code overview.* <https://code.claude.com/docs/en/overview>
+- GitHub. *GitHub Copilot documentation.* <https://docs.github.com/en/copilot>
+- xAI. *Grok overview.* <https://docs.x.ai/grok/overview>
+- xAI. *Grok Bot: overview.* <https://docs.x.ai/grok-bot/overview>
+- OpenClaw. *OpenClaw documentation.* <https://docs.openclaw.ai/>
+
 Optional pre-reading and pre-watching (set in the briefing email)
-- Girdharry, K. (2026). *A writing professor's new task in the age of AI: teaching
-  students when to struggle.* The Conversation.
+- Girdharry, K. (2026). A writing professor's new task in the age of AI: teaching
+  students when to struggle. *The Conversation.*
   <https://theconversation.com/a-writing-professors-new-task-in-the-age-of-ai-teaching-students-when-to-struggle-276590>
   On friction, struggle and where discernment begins.
 - Sarkar, A. (2025). *How to stop AI from killing your critical thinking.* TED (TEDAI

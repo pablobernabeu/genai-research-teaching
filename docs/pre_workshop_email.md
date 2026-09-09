@@ -14,7 +14,7 @@ Generative AI is the newest in a long line of tools we have always used to exten
 
 You do not need to prepare anything, because in Part 2 your group can work from a ready example we provide for each track. The session is more rewarding on a real problem, though. If you have a recurring one from your research or teaching, come with it in mind. It might be a methods section or an assessment to stress-test, an admin burden to lighten, a finding or concept to make accessible, or a dataset to visualise. Your group works on just one problem, so treat anything you bring as a candidate it might take up, with no commitment on your part. Whatever you bring must be non-confidential, or something you can anonymise first, so please do not bring personal data, students' marks or references, unpublished participant data, confidential grant or peer-review material, or anything under embargo.
 
-In Part 2, you will work in groups of five and write up your group's note in a simple browser app (genai-rt.web.app). There is nothing to install and no account to create: your group names itself, enters a passcode I read out on the day, fills in its note and submits it for me to review. One device between the five of you is enough, and anyone who would rather follow on their own joins with the group name and the six-character code the app shows. If a group would rather not use the app, HackMD, a free browser-based notepad, does the same job, and paper works too. Afterwards, with each group's consent, I tidy the approved notes into an open, public archive of the day.
+In Part 2, you will work in groups of five and write up your group's note in a simple browser app (genai-rt.web.app). There is nothing to install and no account to create. Your group names itself, enters a passcode I read out on the day, fills in its note and submits it for me to review. One device between the five of you is enough, and anyone who would rather follow on their own joins with the group name and the six-character code the app shows. If a group would rather not use the app, HackMD, a browser-based notepad, is the non-sensitive fallback, and paper works too. Afterwards, groups can opt in to sharing non-identifying notes following facilitator review.
 
 What to bring:
 
@@ -29,9 +29,9 @@ On the shift itself, writing and programming are moving up a level of abstractio
 
 No view here is the last word, because the technology moves too fast for that. Please bring your own critical, informed perspective to our shared tables.
 
-An anonymous warm-up poll, which is optional and takes about 60 seconds, helps me pitch the session to the room: [POLL URL].
+A short warm-up poll, which is optional, takes about 60 seconds and records no name or email address, helps me pitch the session to the room: [POLL URL].
 
-One thing is worth saying about data. These are free, third-party tools whose free tiers may reuse what you type. Treat anything you paste as potentially non-private. You remain responsible for compliance with your own institutional policy, the UK GDPR and research ethics. We will return to this on the day, and the sheet at your table carries a short check to work through before you paste anything.
+One thing is worth saying about data. These are free, third-party tools whose free tiers may reuse what you type, and their settings can change without notice. Treat anything you paste as potentially non-private. You remain responsible for compliance with your own institutional policy, the UK GDPR and research ethics. We will return to this on the day, and the sheet at your table carries a short check to work through before you paste anything.
 
 If you have any questions, just reply. See you on 9 September 2026.
 

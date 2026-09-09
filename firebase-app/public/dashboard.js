@@ -18,7 +18,7 @@ import { signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/f
 // class (the bare +esm entry exports a namespace, so `new Chart()` would throw).
 import Chart from "https://cdn.jsdelivr.net/npm/chart.js@4/auto/+esm";
 
-import { db, auth, SCENARIOS, SURVEY, dashboardHash, friendlyError } from "./common.js";
+import { db, auth, SCENARIOS, SURVEY, oversightLabel, dashboardHash, friendlyError } from "./common.js";
 
 const $ = (id) => document.getElementById(id);
 const statusEl = $("status");
@@ -44,13 +44,16 @@ let gateConfig = null;    // { passHash } or null
 let approvedUnsub = null;
 const charts = {};
 
-// Fields shown on each public card (the prose ones).
+// Fields shown on each public card, in display order. 'oversight' holds a bare enum, so it
+// is rendered through oversightLabel(); everything else is prose. The model now sits above
+// the reason that justifies it, and the label matches the facilitator card's.
 const CARD_FIELDS = [
   ["problem", "The problem"],
   ["artefact", "The artefact"],
   ["caughtErrors", "Errors caught"],
   ["map", "Automation–steering map"],
-  ["oversightWhy", "Why this oversight model"],
+  ["oversight", "Oversight model"],
+  ["oversightWhy", "Why that model"],
   ["fieldUse", "Field reflection"],
 ];
 
@@ -162,7 +165,7 @@ function render(groups) {
   if (groups.length === 0) {
     boardStatus.hidden = false;
     boardStatus.className = "notice info";
-    boardStatus.textContent = "No approved submissions yet — check back soon.";
+    boardStatus.textContent = "No approved submissions yet. Check back soon.";
     statsSection.hidden = true;
     cardsEl.replaceChildren();
     return;
@@ -199,8 +202,11 @@ function renderStats(groups) {
   const field = surveyVals(groups, "fieldBalance");
   $("avgTrust").textContent = trust.length ? mean(trust).toFixed(1) : "–";
   $("avgSteering").textContent = steer.length ? mean(steer).toFixed(1) : "–";
+  // A count over a named denominator, not a percentage: the scale is optional, so the
+  // groups that answered are a self-selected subset and a bare "33%" would read as a
+  // third of the room.
   const aboutRight = field.filter((v) => v === 3).length;
-  $("pctAboutRight").textContent = field.length ? Math.round((aboutRight / field.length) * 100) + "%" : "–";
+  $("aboutRightCount").textContent = field.length ? aboutRight + "/" + field.length : "–";
 }
 
 // Diverging bar: under-use (teal) → about right (grey) → over-use (amber).
@@ -253,13 +259,20 @@ function renderTrustSteerChart(groups) {
 }
 
 function renderScenarioChart(groups) {
-  const labels = SCENARIOS.map((s) => s.label);
+  // The category axis carries the track letter only. The full titles run to 38 characters
+  // against roughly 99px per category, so Chart.js would rotate them and then drop ticks
+  // altogether; the card's own heading says these are tracks, and the tooltip gives the
+  // full title on hover.
+  const labels = SCENARIOS.map((s) => s.track || "Own");
   const counts = SCENARIOS.map((s) => groups.filter((g) => g.scenario === s.scenario).length);
   upsert("scenarioChart", "bar",
     { labels, datasets: [{ label: "Approved groups", data: counts, backgroundColor: TEAL }] },
     {
       responsive: true,
-      plugins: { legend: { display: false } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { title: (items) => SCENARIOS[items[0].dataIndex].label } },
+      },
       scales: { y: { beginAtZero: true, ticks: { precision: 0 } } },
     });
 }
@@ -267,6 +280,17 @@ function renderScenarioChart(groups) {
 function renderOversightChart(groups) {
   const interwoven = groups.filter((g) => g.responses && g.responses.oversight === "interwoven").length;
   const staged = groups.filter((g) => g.responses && g.responses.oversight === "staged").length;
+  // The oversight field is optional and the app tells groups to drop it if they fall
+  // behind, so an all-zero doughnut is the likely case. Chart.js draws no arcs for [0, 0],
+  // which would leave a heading, a blank square and a legend. Hide the whole card instead,
+  // and hide the container rather than the canvas so Chart.js is never asked to resize a
+  // display:none canvas and then grow it back.
+  const cardEl = $("oversightChart").closest(".chart-card");
+  if (interwoven + staged === 0) {
+    if (cardEl) cardEl.hidden = true;
+    return;
+  }
+  if (cardEl) cardEl.hidden = false;
   upsert("oversightChart", "doughnut",
     { labels: ["Interwoven", "Staged"], datasets: [{ data: [interwoven, staged], backgroundColor: [TEAL, TEAL_LIGHT] }] },
     { responsive: true, plugins: { legend: { position: "bottom" } } });
@@ -313,19 +337,13 @@ function card(g) {
   const dl = document.createElement("dl");
   dl.className = "responses";
   for (const [key, label] of CARD_FIELDS) {
-    const val = (r[key] || "").trim();
-    if (!val) continue;
+    const raw = (r[key] || "").trim();
+    if (!raw) continue;
+    const val = key === "oversight" ? oversightLabel(raw) : raw;
     const dt = document.createElement("dt");
     dt.textContent = label;
     const dd = document.createElement("dd");
     dd.textContent = val;
-    dl.append(dt, dd);
-  }
-  if (r.oversight) {
-    const dt = document.createElement("dt");
-    dt.textContent = "Oversight model";
-    const dd = document.createElement("dd");
-    dd.textContent = r.oversight;
     dl.append(dt, dd);
   }
   el.appendChild(dl);
@@ -339,7 +357,7 @@ function card(g) {
     const s = document.createElement("p");
     s.className = "small muted";
     s.style.margin = "0.3rem 0 0";
-    s.textContent = "Survey — " + parts.join(" · ");
+    s.textContent = "Survey: " + parts.join(" · ");
     el.appendChild(s);
   }
 

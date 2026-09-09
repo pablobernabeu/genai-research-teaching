@@ -20,8 +20,9 @@
 
 ## Shape 1: the app export
 
-The dashboard export writes one block per approved, consented group, with these
-headings, and the facilitator keeps them as they are.
+The export opens with `# Approved submissions — YYYY-MM-DD` and a count, then gives one
+block per approved, consented group under the headings below, which the facilitator
+keeps as they are. A field a group left empty is exported as a dash.
 
 ### N. Group name · Track X
 
@@ -35,7 +36,9 @@ headings, and the facilitator keeps them as they are.
 
 **Automation–steering map.** …
 
-**Oversight model.** Interwoven or staged, with the group's reason.
+**Oversight model.** Interwoven (checking throughout), or Staged (check at set points).
+
+**Why that model.** …
 
 **Key insight.** …
 
@@ -48,8 +51,6 @@ headings, and the facilitator keeps them as they are.
 A group that could not use the app writes the same headings on HackMD or on paper, so a
 fallback note archives in the same shape as an export. Anything under 'optional' is
 often blank, which is expected.
-
-**Jobs taken (no names):** who drove the tool · who guarded the red lines · who kept the note
 
 **The problem:** …
 

@@ -75,8 +75,8 @@ Examples:
 ## A note on what is preserved
 
 The point of the archive is the reasoning: the tracks chosen, the caught errors, the
-automation–steering map and oversight model, the field reflection and the
-human-in-the-loop safeguards. Rubric scores and the societal reflection are preserved
+automation–steering map and oversight model, the field reflection and the checkpoints
+named. Rubric scores and the societal reflection are preserved
 as well, where a fallback note supplies them. Read across a cohort and you have a frank map of where
 these tools helped real researchers and where a human had to stay in charge.
 

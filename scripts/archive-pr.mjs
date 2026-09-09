@@ -117,6 +117,12 @@ async function main() {
   // --- build the Markdown (same compact shape as the dashboard export) ------
   const date = new Date().toISOString().slice(0, 10);
   const val = (s) => (s && String(s).trim()) || "—";
+  // 'oversight' holds a bare enum. Gloss it exactly as common.js oversightLabel() does, so
+  // this archive, the dashboard export and submissions/_TEMPLATE.md all read the same.
+  const OVERSIGHT = {
+    interwoven: "Interwoven (checking throughout)",
+    staged: "Staged (check at set points)",
+  };
   let md = `# Approved submissions — ${date}\n\n${groups.length} approved, consented group${groups.length === 1 ? "" : "s"}.\n`;
   groups.forEach((g, i) => {
     const r = g.responses || {};
@@ -126,7 +132,8 @@ async function main() {
     md += `**The artefact.** ${val(r.artefact)}\n\n`;
     md += `**Errors caught.** ${val(r.caughtErrors)}\n\n`;
     md += `**Automation–steering map.** ${val(r.map)}\n\n`;
-    md += `**Oversight model.** ${val(r.oversight)}${r.oversightWhy && String(r.oversightWhy).trim() ? " — " + r.oversightWhy.trim() : ""}\n\n`;
+    md += `**Oversight model.** ${r.oversight ? (OVERSIGHT[r.oversight] || r.oversight) : "—"}\n\n`;
+    md += `**Why that model.** ${val(r.oversightWhy)}\n\n`;
     md += `**Key insight.** ${val(r.insight)}\n\n`;
     md += `**Field reflection.** ${val(r.fieldUse)}\n`;
   });

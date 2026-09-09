@@ -26,6 +26,7 @@ const loginForm = $("loginForm");
 const loginError = $("loginError");
 const loginSubmit = $("loginSubmit");
 const workView = $("workView");
+const workHeading = $("workHeading");
 const groupTitle = $("groupTitle");
 const statusBadge = $("statusBadge");
 const joinCodeDisplay = $("joinCodeDisplay");
@@ -45,8 +46,10 @@ const timerAnnounce = $("timerAnnounce");
 const shareConsent = $("shareConsent");
 const surveyFields = $("surveyFields");
 
-// The response textareas we autosave. 'fieldUse' is the optional field reflection — not
-// part of the in-build "core three", but stored and restored like the rest.
+// The response textareas we autosave, addressed by element id (DOM order carries no
+// logic). 'artefact' holds the tool as well, as it does on the printed group pack.
+// 'fieldUse' is the optional field reflection, not part of the in-build "core three",
+// but stored and restored like the rest.
 const RESPONSE_FIELDS = ["problem", "artefact", "caughtErrors", "map", "oversightWhy", "insight", "fieldUse"];
 // (oversight is a response too, but it is a <select> handled alongside the textareas)
 
@@ -142,8 +145,32 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+// A stalled sign-in or resume read (rather than a rejected one) would otherwise leave the
+// page on "Connecting…" for ever, with no retry and no route to the fallback. Forty to
+// fifty devices reaching conference Wi-Fi at 13:15 makes that plausible, so after a wait
+// we show whatever is usable: the login form if we already have an identity, or a warning
+// with a retry and the paper route if we do not.
+const STALL_MS = 12000;
+function showStalledConnection() {
+  if (groupId) return;                       // already in the workspace
+  if (uid) { resuming = false; loginView.hidden = false; authNotice.hidden = true; return; }
+  authNotice.hidden = false;
+  authNotice.className = "notice warn";
+  authNotice.textContent =
+    "Still connecting. Check the Wi-Fi and try again. If it will not connect, use hackmd.io " +
+    "or the paper sheet, under the headings in your group pack.";
+  const retry = document.createElement("button");
+  retry.type = "button";
+  retry.className = "secondary";
+  retry.style.marginLeft = "0.6rem";
+  retry.textContent = "Try again";
+  retry.addEventListener("click", () => window.location.reload());
+  authNotice.appendChild(retry);
+}
+
 (async function init() {
   buildScenarioOptions();
+  const stallTimer = setTimeout(showStalledConnection, STALL_MS);
   let signedIn = false;
   try {
     // The group app always runs as an anonymous user (READ/CREATE/UPDATE rules all
@@ -152,6 +179,8 @@ onAuthStateChanged(auth, (user) => {
     uid = cred.user.uid;
     signedIn = true;
   } catch (err) {
+    clearTimeout(stallTimer);
+    authNotice.hidden = false;
     authNotice.className = "notice error";
     authNotice.textContent =
       "Could not connect. Check your connection and reload. " + friendlyError(err);
@@ -163,6 +192,7 @@ onAuthStateChanged(auth, (user) => {
     // Watch the facilitator's optional session countdown (any signed-in user may read it).
     watchClock();
   }
+  clearTimeout(stallTimer);
   resuming = false;
   if (uid && !groupId) loginView.hidden = false;
 })();
@@ -185,11 +215,16 @@ async function maybeResume() {
       return;
     }
     // A non-approved doc we can read means we are still an owner: re-attach directly.
+    // A slow read can trip the stall timer, which reveals the login form, so the
+    // participant may already have created or joined a group by the time we get here.
+    // Leave them in the group they are working in.
+    if (groupId) return;
     enterGroup(stored.groupId);
   } catch (err) {
     // permission-denied => our anon uid rotated and we are no longer an owner.
     // Keep the stored session for transient failures so a reload can retry it.
     if (err.code !== "permission-denied") return;
+    if (groupId) return;                       // already back in a group (see above)
     if (stored.joinCode && stored.name) {
       try {
         await joinGroup(normaliseName(stored.name), String(stored.joinCode).toUpperCase());
@@ -205,7 +240,7 @@ loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   clearLoginError();
   if (!uid) {
-    showLoginError("Still connecting — please wait a moment and try again.");
+    showLoginError("Still connecting. Please wait a moment and try again.");
     return;
   }
 
@@ -233,9 +268,9 @@ loginForm.addEventListener("submit", async (e) => {
 
   try {
     if (typedCode) {
-      await joinGroup(nameLower, typedCode);
+      await joinGroup(nameLower, typedCode, true);
     } else {
-      await createGroup(rawName.trim(), nameLower, sessionCode);
+      await createGroup(rawName.trim(), nameLower, sessionCode, true);
     }
   } catch (err) {
     // friendlyError + specific messages thrown below
@@ -253,7 +288,7 @@ loginForm.addEventListener("submit", async (e) => {
 // Matches: groupNames create rule (only {groupId}) and groups create rule
 // (ownerUids == [uid], status 'draft', name/nameLower/joinCode strings, code >= 4,
 // and sessionCode == config/app.sessionCode — the per-session passcode gate).
-async function createGroup(displayName, nameLower, sessionCode) {
+async function createGroup(displayName, nameLower, sessionCode, moveFocus = false) {
   const newId = doc(collection(db, "groups")).id; // client-generated id
   const joinCode = generateJoinCode();
   const nameRef = doc(db, "groupNames", nameLower);
@@ -307,13 +342,13 @@ async function createGroup(displayName, nameLower, sessionCode) {
     const msg = String((err && err.message) || "");
     if (code.includes("permission-denied") || /permission|PERMISSION_DENIED/i.test(msg)) {
       const badCode = new Error("bad-session-code");
-      badCode.userMessage = "That session passcode is not right — check with the facilitator (it is needed to start a group).";
+      badCode.userMessage = "That session passcode is not right. Check it with the facilitator, since it is needed to start a group.";
       throw badCode;
     }
     throw err;
   }
 
-  enterGroup(newId);
+  enterGroup(newId, moveFocus);
 }
 
 // JOIN — resolve the name to a groupId via the public-ish index, then add ourselves
@@ -323,7 +358,7 @@ async function createGroup(displayName, nameLower, sessionCode) {
 //
 // Matches: groups join rule (joinCode unchanged, only ownerUids + updatedAt change,
 // our uid added to ownerUids).
-async function joinGroup(nameLower, typedCode) {
+async function joinGroup(nameLower, typedCode, moveFocus = false) {
   const nameSnap = await getDoc(doc(db, "groupNames", nameLower));
   if (!nameSnap.exists()) {
     const notFound = new Error("no-such-group");
@@ -365,15 +400,21 @@ async function joinGroup(nameLower, typedCode) {
     throw err;
   }
 
-  enterGroup(targetId);
+  enterGroup(targetId, moveFocus);
 }
 
 // ---- Enter the live workspace ----------------------------------------------
-function enterGroup(id) {
+// `moveFocus` is true only for a user-initiated create or join, where the button that was
+// pressed sits inside the view we are about to hide, so focus would otherwise fall to
+// document.body and strand a keyboard or screen-reader user at the top of the page. The
+// silent resume from maybeResume() passes false: the page has only just loaded and a focus
+// jump there would be an unexplained one.
+function enterGroup(id, moveFocus = false) {
   if (unsubscribe) { unsubscribe(); unsubscribe = null; }
   groupId = id;
   loginView.hidden = true;
   workView.hidden = false;
+  if (moveFocus && workHeading) workHeading.focus();
 
   const groupRef = doc(db, "groups", groupId);
   // READ rule: we are an owner, so onSnapshot is permitted. Live updates flow in
@@ -389,7 +430,7 @@ function enterGroup(id) {
       // With the persistent cache, a brief drop keeps serving from disk; surface it calmly
       // rather than as a dead-end, and reassure that work is not lost.
       if (!navigator.onLine || err.code === "unavailable") {
-        showWorkError("Working offline — your changes are saved on this device and will sync when you reconnect.");
+        showWorkError("Working offline. Your changes are saved on this device and will sync when you reconnect.");
       } else {
         showWorkError("Lost the live connection. " + friendlyError(err));
       }
@@ -431,9 +472,8 @@ function renderGroup(data) {
   if ((status === "reopened" || (status === "draft" && wasReopened))) {
     reopenedNotice.hidden = false;
     reopenedNotice.innerHTML =
-      "<strong>Reopened for edits.</strong> Facilitator note: " +
-      escapeHtml(reopenedNote) +
-      " — make your changes and resubmit.";
+      "<strong>Reopened for edits.</strong> Make your changes and resubmit. Facilitator note: " +
+      escapeHtml(reopenedNote);
   } else if (status === "submitted") {
     submittedNotice.hidden = false;
   } else if (status === "approved") {
@@ -718,7 +758,7 @@ function renderClock(d) {
       timerChip.hidden = false;
       timerChip.classList.remove("ending");
       timerChip.textContent = "Time's up";
-      timerAnnounce.textContent = "Time is up — start wrapping up.";
+      timerAnnounce.textContent = "Time is up. Start wrapping up.";
       if (clockInterval) { clearInterval(clockInterval); clockInterval = null; }
       return;
     }

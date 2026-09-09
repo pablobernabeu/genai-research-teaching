@@ -11,7 +11,7 @@
   <main class="wrap">
     <header class="page">
       <h1>Workshop app</h1>
-      <p class="sub">Start or join your group, capture the core three and submit when you are ready.</p>
+      <p class="sub">Start or join your group, record your work and submit by 13:33.</p>
       <p class="small muted" style="margin:0.35rem 0 0">
         This is your group's shared note for the session. No device, or trouble here?
         HackMD (hackmd.io) is the fallback.
@@ -19,26 +19,30 @@
     </header>
 
     <!-- Connection / auth status -->
-    <div id="authNotice" class="notice info">Connecting…</div>
+    <div id="authNotice" class="notice info" role="status">Connecting…</div>
 
     <!-- ================= LOGIN ================= -->
     <section id="loginView" class="card" hidden>
       <h2>Start or join a group</h2>
       <p class="muted small">
-        Groups sign in anonymously, with no account and no personal data. Leave the join
-        code blank to create a new group, and you will get a code to share with a
-        second device.
+        Groups sign in anonymously, with no account and no personal data. One device
+        leaves the join code blank and creates the group, then reads out the group name
+        and the six-character code for the other four to type in.
       </p>
 
       <form id="loginForm" autocomplete="off">
         <label for="groupName">Group name
-          <span class="hint">Choose a name that does not identify anyone (for example Otters or Team Kelp).</span>
+          <span class="hint">If your group already exists, type its name exactly as the first device
+            typed it. If you are creating the group, choose a name that identifies nobody and that
+            no other group is likely to pick, since each name can be used only once (for example
+            Team Kelp).</span>
         </label>
         <input type="text" id="groupName" name="groupName" required maxlength="40"
-               placeholder="e.g. Otters" />
+               placeholder="e.g. Team Kelp" />
 
         <label for="joinCode">Join code
-          <span class="hint">Leave blank to create a new group. Enter the code to join an existing one.</span>
+          <span class="hint">Leave blank to create a new group. To join one, enter its code here and
+            its group name in the box above.</span>
         </label>
         <input type="text" id="joinCode" name="joinCode" maxlength="6"
                autocapitalize="characters" spellcheck="false"
@@ -63,7 +67,9 @@
 
       <!-- Join code, always visible once in a group -->
       <div class="card">
-        <h3>Your group: <span id="groupTitle"></span> <span id="statusBadge" class="badge"></span></h3>
+        <!-- h2, not h3: the workspace heading follows the page h1 directly, and group.js
+             moves focus here after a create or join, so it carries tabindex="-1". -->
+        <h2 id="workHeading" tabindex="-1">Your group: <span id="groupTitle"></span> <span id="statusBadge" class="badge"></span></h2>
         <p class="small muted" style="margin:0.2rem 0 0.6rem">Read this code out so the rest of your group can join, typing the same group name:</p>
         <div class="code-block">
           <span class="joincode" id="joinCodeDisplay">––––––</span>
@@ -73,13 +79,13 @@
 
       <!-- Re-readable instructions (P1): open at any point without losing your work. -->
       <details id="instructions" class="card instructions">
-        <summary>What am I doing here? Tap to re-read at any point</summary>
+        <summary>What am I doing here? Open at any point to re-read</summary>
         <div class="instructions-body">
-          <p class="small" style="margin-top:0.6rem"><strong>Fifteen minutes, and three things to do:</strong></p>
+          <p class="small" style="margin-top:0.6rem"><strong>From 13:18 to 13:33, three things to do:</strong></p>
           <ol class="small">
-            <li><strong>Run it.</strong> Put the tool on your problem and keep whatever comes back that is genuinely useful.</li>
+            <li><strong>Use it.</strong> Put the tool on your problem and keep whatever comes back that is genuinely useful.</li>
             <li><strong>Catch it out.</strong> Note one or two moments where it was fluent and wrong.</li>
-            <li><strong>Settle on one line</strong> for the room: the limitation you ran into, the checkpoint you would insist on, or an honest word on whether your field is over- or under-using AI here.</li>
+            <li><strong>Settle on one line</strong> for the room: the limitation you ran into, the checkpoint you would insist on or an honest word on whether your field is over- or under-using AI here.</li>
           </ol>
           <p class="small">If you fall behind, drop anything else before you drop that line. <em>If you finish with
             minutes in hand,</em> the boxes on the map, the oversight model and your field are there for you.</p>
@@ -91,9 +97,9 @@
             <summary>The four tracks: pick one</summary>
             <ul class="small">
               <li><strong>A · Methodological Blind-Spot Detector</strong>: turn the tool on your own study or design and verify which of its critiques are real.</li>
-              <li><strong>B · Executive-Function Layer</strong>: build a small, reusable aid for planning, triage or accessibility (for example, messy notes into owned actions).</li>
+              <li><strong>B · Accessible Executive-Function Layer</strong>: build a small, reusable aid for planning, triage or accessibility (for example, messy notes into owned actions).</li>
               <li><strong>C · Rapid Prototyping</strong> <em>(stretch)</em>: make a small artefact (a script, a chart, an explainer), then check it. Beware the 'vibe-coding' trap, where it runs and looks right but is subtly wrong. You will not fully verify it in 15 minutes, and the verifying is the point.</li>
-              <li><strong>D · Public Engagement</strong>: turn a finding into a lay summary or explainer, then audit it for fidelity (what got distorted?).</li>
+              <li><strong>D · Public Engagement Translator</strong>: turn a finding into a lay summary or explainer, then audit it for fidelity (what got distorted?).</li>
               <li><strong>Own problem</strong>: a real, non-confidential problem a member brings. Anonymise or synthesise it first.</li>
             </ul>
           </details>
@@ -115,9 +121,9 @@
               <li><strong>Personal data?</strong> (identifies a living person) → anonymise it first, and check your lawful basis.</li>
               <li><strong>Special-category or children's data?</strong> (health, ethnicity, beliefs, biometrics) → stop, then synthesise or abstain.</li>
               <li><strong>Confidential, unpublished or embargoed?</strong> (grants, peer review, NDA, no consent) → stop, since it is not yours alone to waive.</li>
-              <li><strong>Do you hold the rights?</strong> If unsure, treat it as restricted.</li>
+              <li><strong>Rights not yours to give away?</strong> If unsure, treat it as restricted.</li>
             </ol>
-            <p class="small"><strong>If the answer to any is no:</strong> anonymise, synthesise, abstract up a level or abstain (a valid finding for your museum).</p>
+            <p class="small">If any of these applies, anonymise, synthesise, abstract up a level or abstain, which is itself a valid finding for the museum of caught errors.</p>
           </details>
         </div>
       </details>
@@ -157,8 +163,10 @@
         </label>
         <textarea id="problem" name="problem"></textarea>
 
+        <!-- One box for both, as on the printed group pack ("The artefact, and the tool
+             that made it"), so the app asks for the tool without adding a control. -->
         <label for="artefact">The artefact
-          <span class="hint">What did the AI produce, and what did you keep?</span>
+          <span class="hint">Which tool made it, what it produced and what you kept.</span>
         </label>
         <textarea id="artefact" name="artefact"></textarea>
 
@@ -166,6 +174,13 @@
           <span class="hint">What did you have to correct, reject or verify?</span>
         </label>
         <textarea id="caughtErrors" name="caughtErrors"></textarea>
+
+        <!-- Key insight sits directly under the core three, as it does on the printed group
+             pack: it is the one line the room hears, and the fields below it are optional. -->
+        <label for="insight">Key insight
+          <span class="hint">The one line you will give the room, in up to 45 seconds. Write this one first if time is short.</span>
+        </label>
+        <textarea id="insight" name="insight"></textarea>
 
         <label for="map">Automation–steering map <span class="muted small">(if you have ~5 min left)</span>
           <span class="hint">Which steps the tool ran, and where <em>you</em> steered by deciding, verifying or overriding.</span>
@@ -179,13 +194,8 @@
           <option value="staged">Staged (check at set points)</option>
         </select>
 
-        <label for="oversightWhy">Why that oversight model?</label>
+        <label for="oversightWhy">Why that oversight model? <span class="muted small">(if you have ~5 min left)</span></label>
         <textarea id="oversightWhy" name="oversightWhy"></textarea>
-
-        <label for="insight">Key insight
-          <span class="hint">The one line you will give the room, in up to 45 seconds.</span>
-        </label>
-        <textarea id="insight" name="insight"></textarea>
 
         <label for="fieldUse">Field reflection <span class="muted small">(optional, for the wrap-up or the lightning round)</span>
           <span class="hint">Is your field generally <em>under-</em> or <em>over-using</em> generative AI for
@@ -197,8 +207,8 @@
           <legend>Three quick reflections <span class="muted small">(optional, and they feed the session dashboard shared in the follow-up)</span></legend>
 
           <div class="survey-q">
-            <p class="survey-label">Compared with good practice, is your field currently using generative AI for this task…</p>
-            <div class="scale" role="radiogroup" aria-label="Is your field using generative AI for this task too little or too much">
+            <p class="survey-label" id="qFieldBalance">Compared with good practice, is your field currently using generative AI for this task…</p>
+            <div class="scale" role="radiogroup" aria-labelledby="qFieldBalance">
               <label><input type="radio" name="fieldBalance" value="1" /><span>Far too little</span></label>
               <label><input type="radio" name="fieldBalance" value="2" /><span>A little too little</span></label>
               <label><input type="radio" name="fieldBalance" value="3" /><span>About right</span></label>
@@ -208,8 +218,8 @@
           </div>
 
           <div class="survey-q">
-            <p class="survey-label">Before you checked it, how far did you trust the AI's output?</p>
-            <div class="scale" role="radiogroup" aria-label="Trust in the AI output before checking">
+            <p class="survey-label" id="qTrust">Before you checked it, how far did you trust the AI's output?</p>
+            <div class="scale" role="radiogroup" aria-labelledby="qTrust">
               <label><input type="radio" name="trust" value="1" /><span>Not at all</span></label>
               <label><input type="radio" name="trust" value="2" /><span>Slightly</span></label>
               <label><input type="radio" name="trust" value="3" /><span>Moderately</span></label>
@@ -219,8 +229,8 @@
           </div>
 
           <div class="survey-q">
-            <p class="survey-label">How much human steering did the task need?</p>
-            <div class="scale" role="radiogroup" aria-label="How much human steering the task needed">
+            <p class="survey-label" id="qSteering">How much human steering did the task need?</p>
+            <div class="scale" role="radiogroup" aria-labelledby="qSteering">
               <label><input type="radio" name="steering" value="1" /><span>Minimal</span></label>
               <label><input type="radio" name="steering" value="2" /><span>A little</span></label>
               <label><input type="radio" name="steering" value="3" /><span>A fair amount</span></label>
@@ -237,6 +247,10 @@
         </label>
 
         <p id="saveState" class="small muted" aria-live="polite">All changes save automatically.</p>
+
+        <p class="small muted">Submitting locks the note, the sharing box above included, so tick that
+          box first if you want your work in the public archive. Submit by 13:33, and if you are
+          still typing when the lightning round starts, submit straight afterwards.</p>
 
         <div class="btn-row">
           <button type="button" id="submitBtn">Submit for review</button>

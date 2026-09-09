@@ -1,19 +1,15 @@
-# Pre-workshop poll (short, anonymous)
+# Pre-workshop poll (short, no direct identifiers)
 
-A 60-second warm-up to gauge the room and pitch the session well. Keep it anonymous
-and optional, and collect no personal data: no names, no email addresses and no
-free-text that could identify anyone.
+A 60-second warm-up to gauge the room and pitch the session well. Keep it optional and
+collect no direct identifiers: no names, email addresses or free-text that could identify
+anyone. Confirm the institution's settings before describing responses as anonymous.
 
 ## Tooling
 
-Use a free, anonymous form tool the institution permits. Microsoft Forms is the
-simplest here, because it comes with an Oxford (Nexus365) account, and Google Forms is
-an equally good fallback. The setting that matters is to make the form open to anyone
-(in Microsoft Forms, *Settings → Who can fill out this form → Anyone can respond*),
-which both lets external attendees in and keeps responses anonymous. Check that no
-name or email is recorded. Avoid Mentimeter here: its free tier caps participation at
-50 people a month, which a cohort of 40 to 50 would exhaust, and it is built for live
-in-room polling, not for an asynchronous pre-read. Put the link in the
+Use a form tool the institution permits. Before sharing it, confirm that it collects no
+name or email address, that its access setting permits the intended attendees and that
+any retained metadata is acceptable under institutional policy. Do not promise anonymity
+if the platform keeps identifiable metadata. Put the link in the
 [pre-workshop email](pre_workshop_email.md) as [POLL URL].
 
 ## The questions
@@ -37,7 +33,7 @@ in-room polling, not for an asynchronous pre-read. Put the link in the
    Methods and analysis · Admin and planning · Building or prototyping ·
    Public communication · Not sure yet
 
-6. *(Optional, anonymous)* In a few words, one hope and one worry about AI in your
+6. *(Optional)* In a few words, one hope and one worry about AI in your
    research.
    *Tell respondents not to include anything identifying.*
 
@@ -47,8 +43,8 @@ The same six questions, laid out the way Forms' Import questions feature expects
 numbered questions, lettered options each on their own line and open text where there
 are no options. Paste the block below into the import box, then check each question
 (Forms can mis-detect a type), set every question to not required (the poll is
-optional) and switch on the Anyone can respond setting described above. Keep this block
-in step with the questions above if you edit them.
+optional) and set the access so the intended attendees can respond, as described above.
+Keep this block in step with the questions above if you edit them.
 
 ```
 1. How often do you currently use generative AI tools in your work?
@@ -94,9 +90,9 @@ E. Not sure yet
 The answers to questions 1 and 2 set the level: mostly sceptics, mostly users or a wide
 mix. Questions 3 and 5 tell you which tracks and framings to emphasise, and the number
 who choose the bigger questions signals how hard to lean on the societal thread.
-Question 4 calibrates how much time to give the data red lines. A couple of anonymous
-lines from question 6 make a good opening slide or a line in the introduction
-('someone hopes…, someone worries…').
+Question 4 calibrates how much time to give the data red lines. A couple of
+non-identifying lines from question 6 make a good opening slide or a line in the
+introduction ('someone hopes…, someone worries…').
 
 Share a one-line summary of the results in the introduction. It signals that you
 listened, and it models transparency about how data is used.

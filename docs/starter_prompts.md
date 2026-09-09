@@ -1,5 +1,9 @@
 # Starter-prompt library
 
+*Superseded, and not printed for the 9 September 2026 run. Each track's first move is in
+the worked examples ([`worked_examples.md`](worked_examples.md)), which is what the
+tables have. Keep this file out of the room.*
+
 Each prompt below is a starting point. Adapt freely, replace the bracketed parts and
 remember the [data decision aid](data_decision_aid.md) before you paste anything.
 

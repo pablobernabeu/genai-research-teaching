@@ -19,7 +19,7 @@ import {
   signOut, onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 
-import { db, auth, friendlyError, normaliseName, dashboardHash, SURVEY, SURVEY_KEYS } from "./common.js";
+import { db, auth, friendlyError, normaliseName, dashboardHash, oversightLabel, SURVEY, SURVEY_KEYS } from "./common.js";
 
 const $ = (id) => document.getElementById(id);
 const signinView = $("signinView");
@@ -50,15 +50,17 @@ let timerStatusInterval = null;
 let latestGroups = [];        // newest snapshot, for the Markdown export
 const cardErrors = new Map(); // group id -> last action error, retained across snapshots
 
-// Human labels for the response fields, in display order.
+// Human labels for the response fields, in the group form's own display order: the core
+// three, then the key insight, then the optional fields. 'oversight' holds a bare enum and
+// is rendered through oversightLabel().
 const RESPONSE_LABELS = [
   ["problem", "The problem"],
   ["artefact", "The artefact"],
   ["caughtErrors", "Errors caught"],
+  ["insight", "Key insight"],
   ["map", "Automation–steering map"],
   ["oversight", "Oversight model"],
   ["oversightWhy", "Why that model"],
-  ["insight", "Key insight"],
   ["fieldUse", "Field reflection"],
 ];
 
@@ -201,7 +203,7 @@ function startConfigListening() {
       const code = snap.exists() ? (snap.data().sessionCode || "") : "";
       currentSessionCode.textContent = code
         ? "Current passcode: " + code
-        : "No passcode set yet — groups cannot start a group until you set one.";
+        : "No passcode set yet. Groups cannot start a group until you set one.";
     },
     (err) => {
       // A non-facilitator would be denied here; the rules, not this page, decide.
@@ -268,7 +270,9 @@ function renderTimerStatus(d) {
   const tick = () => {
     const remaining = endMs - Date.now();
     if (remaining <= 0) {
-      timerStatus.textContent = "Time is up — group screens now show “start wrapping up”.";
+      // What the room can actually see: the visible chip on every group device reads
+      // "Time's up". (The fuller wording goes only to a screen-reader live region.)
+      timerStatus.textContent = "Time is up. Every group's screen now reads 'Time's up'.";
       if (timerStatusInterval) { clearInterval(timerStatusInterval); timerStatusInterval = null; }
       return;
     }
@@ -279,6 +283,19 @@ function renderTimerStatus(d) {
   tick();
   timerStatusInterval = setInterval(tick, 1000);
 }
+
+// The Minutes field. Three printed surfaces tell the facilitator to set it at 11:52 without
+// starting the timer, and nothing is written to Firestore until Start is pressed, so the
+// value has to live on this device: a reload, a re-sign-in or the lunchtime glance at the
+// dashboard would otherwise return the field silently to 15.
+const TIMER_MINUTES_KEY = "genai-rt.facilitator.timerMinutes";
+try {
+  const saved = parseInt(localStorage.getItem(TIMER_MINUTES_KEY), 10);
+  if (saved >= 1 && saved <= 120) timerMinutes.value = String(saved);
+} catch (_) { /* storage unavailable (private browsing): keep the default of 15 */ }
+timerMinutes.addEventListener("input", () => {
+  try { localStorage.setItem(TIMER_MINUTES_KEY, timerMinutes.value); } catch (_) { /* ignore */ }
+});
 
 startTimerBtn.addEventListener("click", async () => {
   timerError.hidden = true;
@@ -307,7 +324,9 @@ resetTimerBtn.addEventListener("click", async () => {
   resetTimerBtn.disabled = true;
   try {
     // Stop for everyone instantly: running:false makes the chip vanish on every group's
-    // snapshot. merge keeps durationSec so the field stays pre-filled for a restart.
+    // snapshot. merge keeps durationSec in the document (the Minutes field itself is
+    // remembered on this device, in localStorage, since a pre-set value is never written
+    // to Firestore).
     await setDoc(doc(db, "config", "clock"), { running: false }, { merge: true });
   } catch (err) {
     timerError.hidden = false;
@@ -331,7 +350,10 @@ function groupBlock(g, heading) {
   md += `**The artefact.** ${val(r.artefact)}\n\n`;
   md += `**Errors caught.** ${val(r.caughtErrors)}\n\n`;
   md += `**Automation–steering map.** ${val(r.map)}\n\n`;
-  md += `**Oversight model.** ${val(r.oversight)}${r.oversightWhy && r.oversightWhy.trim() ? " — " + r.oversightWhy.trim() : ""}\n\n`;
+  // The model and its reason are two entries, so the stored enum is glossed and the reason
+  // is never lost behind a dash.
+  md += `**Oversight model.** ${r.oversight ? oversightLabel(r.oversight) : "—"}\n\n`;
+  md += `**Why that model.** ${val(r.oversightWhy)}\n\n`;
   md += `**Key insight.** ${val(r.insight)}\n\n`;
   md += `**Field reflection.** ${val(r.fieldUse)}\n`;
   return md;
@@ -352,8 +374,8 @@ exportBtn.addEventListener("click", () => {
   if (sharedCount === 0) {
     const approvedCount = latestGroups.filter((g) => g.status === "approved").length;
     exportStatus.textContent = approvedCount === 0
-      ? "No approved submissions yet — approve some first."
-      : "No approved group has consented to public sharing yet — only consented work is exported.";
+      ? "No approved submissions yet. Approve some first."
+      : "No approved group has consented to public sharing yet. Only consented work is exported.";
     return;
   }
   const md = buildSubmissionsMarkdown(latestGroups);
@@ -384,6 +406,28 @@ function sortGroups(groups) {
   });
 }
 
+// Everything one card displays, as a comparable string. Groups autosave about 800ms after
+// each keystroke burst, so with eight to twelve groups building at once this listener fires
+// several times a second. Rebuilding the whole list each time dropped selected text, moved
+// the scroll anchor and could swap a button between mousedown and mouseup, so a card is
+// replaced only when something it shows has actually changed.
+function cardSignature(g) {
+  const r = g.responses || {};
+  const s = g.survey || {};
+  return JSON.stringify([
+    g.name || "",
+    g.status || "draft",
+    g.scenario || "",
+    !!g.shareConsent,
+    RESPONSE_LABELS.map(([key]) => r[key] || ""),
+    SURVEY_KEYS.map((k) => s[k] || 0),
+    g.facilitatorNote || "",
+  ]);
+}
+
+let renderedOrder = [];              // group ids, in the order the DOM holds them
+const renderedCards = new Map();     // group id -> { sig, el }
+
 function render(groups) {
   latestGroups = groups;
   dashStatus.hidden = true;
@@ -393,15 +437,40 @@ function render(groups) {
   countLine.textContent =
     `${sorted.length} group${sorted.length === 1 ? "" : "s"} · ${submitted} awaiting review.`;
 
-  groupList.replaceChildren();
   if (sorted.length === 0) {
     const p = document.createElement("p");
     p.className = "muted";
     p.textContent = "No groups yet.";
-    groupList.appendChild(p);
+    groupList.replaceChildren(p);
+    renderedOrder = [];
+    renderedCards.clear();
     return;
   }
-  for (const g of sorted) groupList.appendChild(card(g));
+
+  const ids = sorted.map((g) => g.id);
+  const orderChanged = ids.length !== renderedOrder.length || ids.some((id, i) => id !== renderedOrder[i]);
+
+  if (orderChanged) {
+    // A group arrived, left, was renamed or changed status. Rebuild once.
+    groupList.replaceChildren();
+    renderedCards.clear();
+    for (const g of sorted) {
+      const el = card(g);
+      renderedCards.set(g.id, { sig: cardSignature(g), el });
+      groupList.appendChild(el);
+    }
+  } else {
+    // Same groups in the same order: touch only the cards whose content moved.
+    for (const g of sorted) {
+      const entry = renderedCards.get(g.id);
+      const sig = cardSignature(g);
+      if (!entry || entry.sig === sig) continue;
+      const el = card(g);
+      entry.el.replaceWith(el);
+      renderedCards.set(g.id, { sig, el });
+    }
+  }
+  renderedOrder = ids;
 }
 
 function card(g) {
@@ -442,7 +511,8 @@ function card(g) {
     const dt = document.createElement("dt");
     dt.textContent = label;
     const dd = document.createElement("dd");
-    const val = (r[key] || "").trim();
+    const raw = (r[key] || "").trim();
+    const val = key === "oversight" ? oversightLabel(raw) : raw;
     if (val) {
       dd.textContent = val;
     } else {
@@ -462,7 +532,7 @@ function card(g) {
     const s = document.createElement("p");
     s.className = "small muted";
     s.style.margin = "0.2rem 0 0";
-    s.textContent = "Survey — " + parts.join(" · ");
+    s.textContent = "Survey: " + parts.join(" · ");
     el.appendChild(s);
   }
 
@@ -491,9 +561,11 @@ function card(g) {
   renameBtn.className = "ghost";
   renameBtn.textContent = "Rename…";
   renameBtn.addEventListener("click", () => rename(g.id, g.name, renameBtn));
-  // Keep Reopen available after approval. The rules leave ownerUids untouched, so the
-  // group's existing devices can still receive the reopened record.
-  row.append(approveBtn, reopenBtn, renameBtn);
+  // The printed day-of reset sheet says Reopen is no longer offered once a group is
+  // approved, so do not offer it.
+  row.append(approveBtn);
+  if (!approved) row.append(reopenBtn);
+  row.append(renameBtn);
   // Copy submission — offered only for approved AND consented work (what the public
   // archive holds), so it pastes straight into submissions/.
   if (approved && g.shareConsent) {
@@ -519,18 +591,45 @@ function card(g) {
   return el;
 }
 
+// Rename and Reopen hold a button reference across a blocking window.prompt, so by the time
+// the action reports back its card may have been replaced by a snapshot. Resolve the LIVE
+// card for the group rather than trusting the button's own (possibly detached) ancestor, so
+// the message lands where the facilitator is looking. The cardErrors map keeps it across
+// any later replacement.
+function liveCardFor(btn) {
+  const origin = btn.closest(".group-card");
+  if (origin && origin.isConnected) return origin;
+  const id = origin ? origin.dataset.groupId : null;
+  if (!id) return null;
+  for (const el of groupList.children) {
+    if (el.dataset && el.dataset.groupId === id) return el;
+  }
+  return null;
+}
+
+function cardIdFor(btn) {
+  const origin = btn.closest(".group-card");
+  return origin ? origin.dataset.groupId : null;
+}
+
 function showCardError(btn, msg) {
-  const cardEl = btn.closest(".group-card");
-  cardErrors.set(cardEl.dataset.groupId, msg);
+  const id = cardIdFor(btn);
+  if (id) cardErrors.set(id, msg);
+  const cardEl = liveCardFor(btn);
+  if (!cardEl) return;   // the card is gone; the message is kept for the next render
   const box = cardEl.querySelector('[data-role="err"]');
+  if (!box) return;
   box.hidden = false;
   box.textContent = msg;
 }
 
 function clearCardError(btn) {
-  const cardEl = btn.closest(".group-card");
-  cardErrors.delete(cardEl.dataset.groupId);
+  const id = cardIdFor(btn);
+  if (id) cardErrors.delete(id);
+  const cardEl = liveCardFor(btn);
+  if (!cardEl) return;
   const box = cardEl.querySelector('[data-role="err"]');
+  if (!box) return;
   box.hidden = true;
   box.textContent = "";
 }
@@ -546,7 +645,7 @@ async function copyGroup(g, btn) {
     setTimeout(() => { btn.textContent = original; }, 1500);
   } catch (_) {
     // Clipboard access can fail outside a secure context or without a user gesture.
-    showCardError(btn, "Your browser would not let the page copy to the clipboard. Use 'Export for the archive (Markdown)' instead.");
+    showCardError(btn, "Your browser would not let the page copy to the clipboard. Use 'Export approved (Markdown)' instead.");
   }
 }
 
@@ -563,7 +662,9 @@ async function approve(id, btn) {
       updatedAt: serverTimestamp(),
     });
     clearCardError(btn);
-    // Snapshot listener re-renders automatically.
+    // The snapshot listener replaces this card, since the status has moved. Re-enable in
+    // case it does not (approving an already-approved group changes nothing visible).
+    btn.disabled = false;
   } catch (err) {
     showCardError(btn, "Could not approve. " + friendlyError(err));
     btn.disabled = false;
@@ -573,11 +674,6 @@ async function approve(id, btn) {
 // REOPEN — prompt for a note, then move status → 'reopened' and set facilitatorNote.
 // Matches the facilitator-update rule (only status + facilitatorNote + updatedAt).
 async function reopen(id, btn) {
-  const g = latestGroups.find((x) => x.id === id);
-  if (g && g.status === "approved" &&
-      !window.confirm("This group is already approved. Reopening removes it from the public dashboard, and a device that has reloaded since approval will not be able to rejoin. Reopen anyway?")) {
-    return;
-  }
   const note = window.prompt(
     "Add a short note for the group (what to fix before resubmitting):",
     ""
@@ -591,6 +687,7 @@ async function reopen(id, btn) {
       updatedAt: serverTimestamp(),
     });
     clearCardError(btn);
+    btn.disabled = false;
   } catch (err) {
     showCardError(btn, "Could not reopen. " + friendlyError(err));
     btn.disabled = false;
@@ -636,7 +733,7 @@ async function rename(id, currentName, btn) {
       const taken = await tx.get(newNameRef);
       if (taken.exists()) {
         const dup = new Error("name-taken");
-        dup.userMessage = "That name is already taken — choose another.";
+        dup.userMessage = "That name is already taken. Choose another.";
         throw dup;
       }
       tx.set(newNameRef, { groupId: id });
@@ -645,6 +742,7 @@ async function rename(id, currentName, btn) {
     });
     clearCardError(btn);
     // The snapshot listener re-renders the card with the new name.
+    btn.disabled = false;
   } catch (err) {
     showCardError(btn, err.userMessage || ("Could not rename. " + friendlyError(err)));
     btn.disabled = false;

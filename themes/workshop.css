@@ -72,12 +72,39 @@ strong { color: var(--workshop-accent); }
 ul, ol { margin-top: 0.2em; }
 li { margin: 0.12em 0; }
 
+/* Avoid a single short word alone on the last line of a paragraph or list item. Browsers
+   without support ignore this, and the line count does not change either way. */
+p, li, .insight-card { text-wrap: pretty; }
+
 blockquote {
   border-left: 4px solid var(--workshop-accent);
-  padding-left: 0.8em;
+  margin: 0.55em 0;
+  padding: 0.55em 0.8em;
+  background: #f1f6f6;
   color: var(--color-dimmed);
-  font-style: italic;
+  font-style: normal;
+  line-height: 1.32;
 }
+/* The parent theme uses ::before and ::after for decorative quotation marks, absolutely
+   positioned in Times New Roman. ::before is repurposed here as the callout's label, so
+   it needs the position and the typeface reset as well as the content: without
+   `position: static` it hangs outside the box on the accent bar, and without
+   `font-family: inherit` it is the only serif type in the deck. ::after is a closing
+   quote mark on boxes that are not quotations, so it is removed outright. */
+blockquote::before {
+  content: "Key point";
+  display: block;
+  position: static;
+  margin-bottom: 0.25em;
+  color: var(--workshop-accent);
+  font-family: inherit;
+  font-size: 0.66em;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+blockquote::after { content: none; }
 
 code {
   background: #e7eeef;
@@ -92,13 +119,15 @@ table {
   font-size: 0.85em;
   border-collapse: collapse;
 }
-table th {
-  background: #eef3f3;
-  color: var(--color-foreground);
-}
+/* The parent theme paints header cells with the foreground colour, so every table in the
+   deck is topped by a dark band with reversed text. That is kept deliberately: it is how
+   the three tables have always rendered, and repainting them pale would need checking
+   against the projector. A `table th` background declared here would be dead code, since
+   gaia's `section table thead th` wins on specificity whatever the source order. */
 table th, table td {
   border: 1px solid var(--workshop-rule);
   padding: 0.32em 0.55em;
+  text-align: left;
 }
 
 /* Logo, top-right, shown only on `brand` slides (the cover and final page).
@@ -139,6 +168,15 @@ section.lead { justify-content: center; }
 section.lead h1 {
   font-size: 2.1em;
   line-height: 1.1;
+  /* Split a two-line divider title near its midpoint rather than leaving one word alone. */
+  text-wrap: balance;
+}
+/* A lead slide's title is centred, so the section rule under an h2 reads as a stray
+   divider rather than as an underline. */
+section.lead h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0.35em;
 }
 /* The one-line descriptor under the title (an h3 on the cover). */
 section.lead h3 {
@@ -147,7 +185,9 @@ section.lead h3 {
   font-weight: 600;
   margin: 0.15em 0 0.4em;
 }
-section.lead .subtitle {
+/* The quiet line under a title. Lead slides use it most, but the closing slide is a
+   normal content slide so that its title lines up with the QR block beneath it. */
+.subtitle {
   color: var(--color-dimmed);
   font-size: 0.92em;
   line-height: 1.45;
@@ -155,18 +195,56 @@ section.lead .subtitle {
 
 /* Utility classes ------------------------------------------------------- */
 .small { font-size: 0.82em; }
-.tiny { font-size: 0.7em; color: var(--color-dimmed); }
 .muted { color: var(--color-dimmed); }
 .center { text-align: center; }
+/* Holds a hyphenated name together when a break would split it across two lines. */
+.nowrap { white-space: nowrap; }
 
-/* Small DOI / source links in the reference list. */
-.doi { font-size: 0.7em; }
-.doi a { color: var(--color-dimmed); overflow-wrap: anywhere; }
-
-/* The Further reading slide carries many references; render them more compactly so the
-   two columns sit comfortably within the page margins. */
+/* The Further reading slide carries many references, so they are set more compactly and
+   the two columns sit comfortably within the page margins. The list is two levels deep
+   (a group heading with its references under it), and font-size is relative, so without
+   the second rule the reduction would apply twice and the references would end up
+   smaller than the footnote that points to the full bibliography. */
 section.refs li { font-size: 0.82em; line-height: 1.3; margin: 0.12em 0; }
+section.refs li li { font-size: 1em; }
 section.refs .columns { gap: 1em; }
+
+/* Source notes on substantive slides: quiet enough not to compete with the activity,
+   but present enough to make claims traceable in a PDF or shared HTML export. */
+.slide-source {
+  display: block;
+  margin-top: 0.55em;
+  color: var(--color-dimmed);
+  font-size: 0.66em;
+  line-height: 1.28;
+}
+
+/* The tool landscape is deliberately compact: it distinguishes interfaces from
+   system access without pretending that current products form a simple ladder. */
+section.tool-landscape table {
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.78em;
+  line-height: 1.1;
+}
+section.tool-landscape th,
+section.tool-landscape td {
+  padding: 0.2em 0.34em;
+  vertical-align: top;
+}
+section.tool-landscape th:nth-child(1),
+section.tool-landscape td:nth-child(1) { width: 20%; }
+section.tool-landscape th:nth-child(2),
+section.tool-landscape td:nth-child(2) { width: 29%; }
+section.tool-landscape th:nth-child(3),
+section.tool-landscape td:nth-child(3) { width: 51%; }
+section.tool-landscape blockquote {
+  margin: 0.3em 0 0.1em;
+  padding: 0.4em 0.7em;
+  font-size: 0.8em;
+  line-height: 1.24;
+}
+section.tool-landscape .slide-source { margin-top: 0.35em; }
 
 /* Data-security red line callout. */
 .redline {
@@ -182,6 +260,39 @@ section .redbox {
 }
 section .redbox p { margin: 0.2em 0; }
 
+/* A compact companion to the data red line when a system can take real-world action. */
+.agent-boundary {
+  margin-top: 0.5em;
+  padding: 0.48em 0.7em;
+  border-left: 4px solid var(--workshop-accent);
+  background: #eef5f5;
+  font-size: 0.72em;
+  line-height: 1.3;
+}
+
+/* Data red lines need room for an operational agent safeguard and its sources, and the
+   red line itself is the instruction the slide exists to give, so it is set above the
+   paragraph that qualifies it rather than below. */
+section.data-redlines .redbox {
+  margin: 0.42em 0 0.3em;
+  padding: 0.48em 0.78em;
+  font-size: 1.08em;
+}
+section.data-redlines .columns {
+  gap: 0.9em;
+  font-size: 0.83em;
+  line-height: 1.18;
+}
+section.data-redlines .columns ul { margin: 0.28em 0; }
+section.data-redlines .agent-boundary {
+  margin-top: 0.3em;
+  padding: 0.4em 0.62em;
+  line-height: 1.26;
+}
+section.data-redlines .slide-source {
+  margin-top: 0.32em;
+}
+
 /* Two-column helper for dense slides. Each column is a child element. */
 .columns {
   display: grid;
@@ -189,6 +300,52 @@ section .redbox p { margin: 0.2em 0; }
   gap: 1.2em;
 }
 .columns ul, .columns ol { margin-top: 0; }
+
+/* The ten seed ideas people walk to at 12:26, set tight so all ten and the track key
+   fit on one slide. */
+.seed-list li { line-height: 1.28; }
+
+/* Compact cards for a single idea with several facets. They create visual hierarchy
+   without turning short workshop prompts into dense mini-documents. */
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7em;
+  margin: 0.7em 0;
+}
+.insight-card {
+  min-height: 6.3em;
+  padding: 0.75em 0.8em;
+  border: 1px solid var(--workshop-rule);
+  border-top: 4px solid var(--workshop-accent);
+  border-radius: 8px;
+  background: var(--workshop-paper);
+  font-size: 0.83em;
+  line-height: 1.32;
+}
+.eyebrow {
+  display: block;
+  margin-bottom: 0.45em;
+  color: var(--workshop-accent);
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+/* The synthesis slide is three cards and nothing else, and it is held up through the
+   close, so the cards are centred in the frame and given a floor deep enough that the
+   two short ones do not read as offcuts of the long one. The type is raised a little for
+   the same reason, since people read this one from a seat instead of glancing at it. */
+section.synthesis {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+section.synthesis .insight-grid { margin: 0.8em 0 0.2em; }
+section.synthesis .insight-card {
+  min-height: 13em;
+  font-size: 0.95em;
+}
 
 /* App-access slide: a scannable QR beside a large-font URL. */
 .qr-row {
@@ -217,6 +374,67 @@ section .redbox p { margin: 0.2em 0; }
   margin-bottom: 0.45em;
   word-break: break-all;
 }
+
+/* Closing slide: the same QR pattern as the app-access slide, sized down so the code,
+   the address and two lines of prose sit together under a centred title. The repository
+   address is longer than the app's, so it is set smaller and allowed to break only at a
+   slash, which keeps it transcribable from the back of the room. */
+.qr-close { gap: 1.4em; margin-top: 0.5em; }
+.qr-close .qr { width: 300px; padding: 10px; }
+.qr-close .qr-text { text-align: left; }
+.qr-close .bigurl {
+  font-size: 0.95em;
+  letter-spacing: -0.1px;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  margin-bottom: 0.55em;
+}
+.qr-close .qr-text p { margin: 0.35em 0; font-size: 0.88em; line-height: 1.35; }
+
+/* Slides that carry only a handful of lines but stay on screen for minutes at a time,
+   such as the pivot and the synthesis. Centring the block and raising the type fills the
+   frame and makes the lines readable from the back, instead of leaving half the slide
+   empty under a short list. */
+section.fill {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  font-size: 31px;
+}
+section.fill h2 { margin-bottom: 0.5em; }
+section.fill li { margin: 0.28em 0; }
+
+/* The build slide. It is the one slide that stays up for the whole fifteen minutes, so
+   it is sized to be read across the room from a seat, not glanced at in passing. It
+   holds the three jobs, the two clock milestones and the red line, and nothing else. */
+section.go {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+section.go h2 {
+  font-size: 1.5em;
+  text-align: center;
+  border-bottom: none;
+  margin-bottom: 0.7em;
+}
+section.go .go-grid { gap: 2em; align-items: start; font-size: 1.06em; }
+section.go .go-grid ol { margin: 0; }
+section.go .go-grid li { margin: 0.3em 0; }
+/* The two clock milestones, set as a two-column grid so a wrapped line starts under the
+   text and not under the time. */
+.milestones {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.7em;
+  row-gap: 0.55em;
+  align-items: baseline;
+  line-height: 1.32;
+}
+section.go .redbox { margin: 1.1em 0 0.7em; font-size: 1.08em; font-weight: 600; }
+/* The closing line carries the app address, and this slide is what a latecomer reads
+   from the back of the room, so it is set larger here than the deck's usual small print. */
+section.go .small { font-size: 0.95em; }
 
 /* An at-a-glance schedule strip used on the agenda slide. */
 .clock {

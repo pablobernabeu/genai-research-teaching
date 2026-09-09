@@ -11,7 +11,7 @@
   <main class="wrap wide">
     <header class="page">
       <h1>Workshop app: live dashboard</h1>
-      <p class="sub">Approved submissions and summary stats for this session.</p>
+      <p class="sub">Approved submissions and summary statistics for this session.</p>
     </header>
 
     <div id="status" class="notice info">Connecting…</div>
@@ -47,20 +47,20 @@
           </div>
           <div class="stat">
             <div class="num" id="avgTrust">–</div>
-            <div class="lbl">avg. trust before checking (1–5)</div>
+            <div class="lbl">mean trust before checking (1–5)</div>
           </div>
           <div class="stat">
             <div class="num" id="avgSteering">–</div>
-            <div class="lbl">avg. human steering (1–5)</div>
+            <div class="lbl">mean human steering (1–5)</div>
           </div>
           <div class="stat">
-            <div class="num" id="pctAboutRight">–</div>
-            <div class="lbl">say their field's use is 'about right'</div>
+            <div class="num" id="aboutRightCount">–</div>
+            <div class="lbl">of the groups that answered rate their field's use about right</div>
           </div>
         </div>
         <div class="charts">
           <div class="chart-card">
-            <h3>Is your field over- or under-using AI here?</h3>
+            <h3>How groups rate their field's use here</h3>
             <canvas id="fieldChart" height="240" role="img"
                     aria-label="Distribution of how groups rate their field's use of AI for this task"></canvas>
           </div>

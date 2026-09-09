@@ -65,6 +65,21 @@ export const SCENARIOS = [
   { label: "Own problem", scenario: "Own problem", track: "" },
 ];
 
+// The two oversight models, keyed by the value stored in responses.oversight. The stored
+// value is a bare enum, so every surface that shows it (the public card, the facilitator
+// card, the exported Markdown) reads it through here and never prints the raw key. The
+// wording matches the group form's own options and the printed group pack's "interwoven
+// or staged".
+export const OVERSIGHT = {
+  interwoven: "Interwoven (checking throughout)",
+  staged: "Staged (check at set points)",
+};
+
+export function oversightLabel(value) {
+  const key = String(value || "");
+  return OVERSIGHT[key] || key;
+}
+
 // The three quick survey scales (each 1–5). Shared so the group form, the dashboard
 // axes and any summaries label them identically. `scale[i]` is the label for value i+1.
 export const SURVEY = {

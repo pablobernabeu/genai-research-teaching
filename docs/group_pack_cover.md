@@ -1,5 +1,13 @@
 # Group table pack
 
+*Superseded, and not printed for the 9 September 2026 run. This cover belongs to the
+earlier, longer table pack, which held five items. The pack built by
+`npm run build:grouppack` holds the worked examples and the rubric alone, and the group
+sheet ([`group_one_pager.md`](group_one_pager.md)) carries the instructions groups need
+during the activity. Keep this file out of the room, and see
+[`reprint_with_existing_bundle.md`](reprint_with_existing_bundle.md) for what goes on
+the tables.*
+
 **Group:** \_\_\_\_\_\_ *(a short, friendly name that does not identify anyone, such as 'Otters' or 'Team Kelp')*   ·   **Track:** \_\_\_\_\_\_  (A · B · C · D)
 
 Everything your group needs for the applied session is in this booklet. You have about

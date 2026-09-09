@@ -11,6 +11,8 @@
 #   make reprint     replacement jobs for a previously printed older bundle
 #   make grouppack       one combined per-table group pack PDF
 #   make facilitatorpack one combined facilitator pack PDF
+#   make signs      the seed-idea signs and table numbers into dist/handouts/
+#   make bundle     the whole print job as one PDF into dist/handouts/
 #   make publish    refresh the committed ready-to-print PDFs in handouts/ (npm run build:publish)
 #   make watch      live-reloading preview
 #   make preview    open the deck in the browser (npm run preview)
@@ -21,7 +23,7 @@ MARP   := npx marp --config-file ./marp.config.mjs
 SLIDES := ./slides.md
 OUT    := ./dist
 
-.PHONY: all html pdf pptx docs pack handouts handoutscore onepagers reprint grouppack facilitatorpack publish watch preview clean install
+.PHONY: all html pdf pptx docs pack handouts handoutscore onepagers reprint grouppack facilitatorpack signs bundle publish watch preview clean install
 
 all: html pdf
 
@@ -60,7 +62,19 @@ grouppack:
 facilitatorpack:
 	node scripts/md2pdf.mjs --out dist/handouts --bundle facilitator-pack docs/cue_cards.md docs/facilitator_run_sheet.md docs/morning_checklist.md
 
-# Refresh the five committed, ready-to-print PDFs under handouts/ (mirrors build:publish).
+signs:
+	node scripts/roomsigns.mjs --out dist/handouts
+
+# The bundle reads the five built PDFs from the same folder it writes to, so build them first.
+bundle: grouppack onepagers signs
+	node scripts/printbundle.mjs --out dist/handouts
+
+# Refresh all eight committed, ready-to-print PDFs under handouts/ (mirrors build:publish).
+#
+# handouts/ holds the paper printed for 9 September 2026. Running this overwrites that
+# record with whatever the Markdown now says, so do not run it until that cohort is
+# archived. `git status` shows any accidental regeneration, and the way back is
+# `git checkout -- handouts/`.
 publish:
 	node -e "require('fs').mkdirSync('handouts',{recursive:true})"
 	$(MARP) $(SLIDES) -o ./handouts/slides.pdf
@@ -68,6 +82,8 @@ publish:
 	node scripts/md2pdf.mjs --compact --out handouts docs/facilitator_day_of_reset.md
 	node scripts/md2pdf.mjs --out handouts --bundle group-pack docs/worked_examples.md evaluation_rubric_template.md
 	node scripts/md2pdf.mjs --out handouts --bundle facilitator-pack docs/cue_cards.md docs/facilitator_run_sheet.md docs/morning_checklist.md
+	node scripts/roomsigns.mjs --out handouts
+	node scripts/printbundle.mjs --out handouts
 
 watch:
 	$(MARP) -w -s .

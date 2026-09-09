@@ -31,8 +31,8 @@ and audit.
 Authentication is minimal, in that groups and the public dashboard sign in anonymously, and the
 facilitator signs in with a Google account recognised by its verified email. All trust
 is enforced in `firestore.rules`, never in the interface. The dashboard adds a passcode
-gate on top, using the same passcode groups use, which is a privacy gate rather than a
-hard wall (see the security model).
+gate on top, using the same passcode groups use, which raises the privacy bar without
+being a hard wall (see the security model).
 
 For resilience, the group app persists its `groupId` locally and silently rejoins after
 a reload or disconnect. An optional facilitator-controlled countdown shows as a calm,
@@ -62,7 +62,7 @@ Pages (in `public/`):
 | `track` | string | `A`, `B`, `C`, `D` or empty |
 | `shareConsent` | bool | the group's opt-in consent to include its non-identifying submission in the public archive; only consented, approved work is exported or sent as a pull request |
 | `survey` | map | three optional 1–5 scales: `fieldBalance` (the field under- or over-using AI here), `trust` (trust in the output before checking) and `steering` (human steering needed); they power the dashboard plots, and `0` or absent means unanswered |
-| `responses` | map | `problem`, `artefact`, `caughtErrors`, `map`, `oversight` (`interwoven`, `staged` or empty), `oversightWhy`, `insight` and `fieldUse` (an optional field reflection) |
+| `responses` | map | `problem`, `artefact` (what the tool produced, which tool made it and what the group kept), `caughtErrors`, `insight`, `map`, `oversight` (`interwoven`, `staged` or empty), `oversightWhy` and `fieldUse` (an optional field reflection) |
 | `facilitatorNote` | string | set by the facilitator when reopening |
 | `createdAt` / `updatedAt` | timestamp | `serverTimestamp()` |
 
@@ -92,20 +92,18 @@ and only the facilitator may write, and only that one field (`hasOnly`). It is t
 passcode that gates group creation (`config/app`), set once from the Session passcode
 panel, so a viewer needs nothing beyond the passcode the facilitator already reads out.
 
-Scenarios offered: A Methodological Blind-Spot Detector, B Executive-Function Layer,
-C Rapid Prototyping, D Public Engagement and Own problem (a real, non-confidential
-problem a member brings).
+Scenarios offered: A Methodological Blind-Spot Detector, B Accessible
+Executive-Function Layer, C Rapid Prototyping, D Public Engagement Translator and Own
+problem (a real, non-confidential problem a member brings).
 
 ### Status flow
 
 `draft`, then (group submits) `submitted`, then (facilitator) `approved` or `reopened`,
 then (group edits and resubmits) `submitted`, and so on. The public dashboard shows
 `approved` only. The dashboard does not offer Reopen on an approved card, because
-approval blanks the join and session codes but does not change `ownerUids`, so an
-already-connected group device can still receive a reopened record. A device that has
-reloaded after approval will need the facilitator's help to regain access.
-group could not get back in. The rules themselves do not forbid it, so avoid moving an
-approved document back from the Firestore console.
+approval blanks the join and session codes, so a device that has reloaded since approval
+could not get back in. The rules themselves do not forbid the move, so avoid pushing an
+approved document back from the Firestore console either.
 
 ## Setup (about 15 minutes; the Spark free plan is enough, with no Cloud Functions)
 
@@ -160,8 +158,8 @@ substitute.
   `submitted` is readable without ownership, nor is anything readable without an
   (anonymous) token. This keeps approved work off the open, unauthenticated, indexable
   web, and the dashboard layers a passcode gate on top, using the same passcode groups
-  use (verified client-side against a hash in `config/dashboard`). This is a privacy gate
-  rather than a hard wall. The data is non-identifying by design, and a determined
+  use (verified client-side against a hash in `config/dashboard`). The gate raises the
+  privacy bar and is not a hard wall. The data is non-identifying by design, and a determined
   signed-in caller could still read `approved` documents directly, since there is no
   backend on the free plan to enforce a typed secret on a read. The protection is sized to the data.
 - Only the facilitator can read or write `config/app` (the session passcode).

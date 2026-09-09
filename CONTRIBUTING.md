@@ -51,9 +51,13 @@ npm run watch    # live preview while editing
 ```
 
 Please rebuild and skim the deck before submitting changes that touch `slides.md` or
-the theme, and run `npm run build:publish` so that the committed PDFs under
-`handouts/` match the Markdown. The CI workflow builds the deck on every pull request,
-and on pushes to `main` that touch the deck, the theme, the assets or the Marp
+the theme. Build into `dist/` while you work, and leave the PDFs under `handouts/`
+alone. They are the record of the paper printed for the session of 9 September 2026,
+and both `npm run build:publish` and `make publish` overwrite that record with the
+current wording. Regenerating them is a decision for the facilitator once the cohort is
+archived, so if it happens by accident, `git status` will show it and
+`git checkout -- handouts/` restores it. The CI workflow builds the deck on every pull
+request, and on pushes to `main` that touch the deck, the theme, the assets or the Marp
 configuration.
 
 ## The submissions archive
