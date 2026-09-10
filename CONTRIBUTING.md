@@ -62,10 +62,11 @@ configuration.
 
 ## The submissions archive
 
-`submissions/` is an archive of participants' work, curated by the facilitator after
-the session (see [`submissions/README.md`](submissions/README.md)). Please do not
-open pull requests adding to it directly, and never add anything containing personal
-data.
+Participants' work stays in the workshop app and is read on its passcode-gated session
+dashboard. `submissions/` holds none of it, and documents the shape and the steps for a
+facilitator who decides, cohort by cohort and with the groups' agreement, to publish one
+openly (see [`submissions/README.md`](submissions/README.md)). Please do not open pull
+requests adding to it directly, and never add anything containing personal data.
 
 ## Licence of contributions
 

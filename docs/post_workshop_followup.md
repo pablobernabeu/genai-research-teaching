@@ -1,16 +1,16 @@
 # Post-workshop follow-up email and responsible-use commitment
 
-> Send three to five days after the session. It closes the loop, shares the open archive and offers a light, voluntary commitment to carry the thinking forward. The paragraphs are continuous single lines, so the body pastes cleanly into an email client.
+> Send three to five days after the session. It closes the loop, points people at the session dashboard where their work lives and offers a light, voluntary commitment to carry the thinking forward. The paragraphs are continuous single lines, so the body pastes cleanly into an email client.
 
 ---
 
-Subject: Thank you, the archive and a small commitment
+Subject: Thank you, your group's work and a small commitment
 
 Dear colleague,
 
 Thank you for the energy you brought to Generative AI in research and teaching. The most striking thing was the quality of the caught errors and the safeguards you designed, which is exactly the discernment the session was for.
 
-Notes from groups that opted in to sharing have been reviewed and may be published at https://github.com/pablobernabeu/genai-research-teaching (see `submissions/`). They form a collective record of where these tools helped and where human judgement remained necessary. If your group tidied its note afterwards, or would now like it considered for inclusion, reply to this message. The three quick scales many of you filled in are summarised on the session dashboard.
+You can read what every group approved and agreed to share at https://genai-rt.web.app/dashboard.html. Enter the session passcode I read out on the day, the same one your group used to start, and the board opens with all the shared submissions and a summary of the three quick scales many of you filled in. Together they are a record of where these tools helped and where human judgement remained necessary. The work is not published anywhere else, so if you have lost the passcode, or would like your group's note amended or taken down, just ask me.
 
 The one idea worth keeping is to treat friction, the moment a tool resists you or quietly gets something wrong, as a signal. It marks where your judgement is doing the real work.
 
@@ -26,7 +26,7 @@ If you have a moment, a two-minute, anonymous feedback form would help me improv
 
 The further reading from the close is the reading list in the repository (`docs/bibliography.md`) if you would like to go deeper. It includes the Russell Group principles, the ERA living guidelines, the ICO guidance and the studies on AI and critical thinking.
 
-For questions, or to carry the conversation on, please use the Discussions tab in the repository (https://github.com/pablobernabeu/genai-research-teaching/discussions), so that answers help everyone.
+To carry the conversation on, please use the Discussions tab in the repository (https://github.com/pablobernabeu/genai-research-teaching/discussions), so that answers help everyone. For anything about your own group's work, or anything you would rather not put in public, write to me at pablo.bernabeu@education.ox.ac.uk.
 
 With thanks,
 

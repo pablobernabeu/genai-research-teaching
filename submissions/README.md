@@ -1,8 +1,18 @@
-# Submissions: the open archive
+# Submissions
 
-This folder is the reproducible archive of participants' group work. Nothing here is
-produced with Git on the day. The facilitator curates it afterwards from the approved,
-consented submissions in the workshop app, with HackMD or paper notes as the fallback.
+> **Looking for the work your group did on 9 September 2026?** It is not published in
+> this repository. Go to
+> [genai-rt.web.app/dashboard.html](https://genai-rt.web.app/dashboard.html) and enter
+> the session passcode your facilitator read out on the day. The board shows every
+> submission the groups approved and agreed to share, with the summary statistics. If
+> you no longer have the passcode, or have any other query, write to
+> [pablo.bernabeu@education.ox.ac.uk](mailto:pablo.bernabeu@education.ox.ac.uk).
+
+Group work stays in the workshop app, and the session dashboard is where participants
+read it. This folder holds no participants' work. It documents the shape an archived
+note takes, in [`_TEMPLATE.md`](_TEMPLATE.md), and the steps below, for a facilitator
+adapting the kit who does decide to publish a cohort openly. Publishing is a decision to
+take cohort by cohort, with the groups' agreement, and not the default.
 
 ## How collection works
 
@@ -14,12 +24,13 @@ consented submissions in the workshop app, with HackMD or paper notes as the fal
    in HackMD or on paper and shares them with the facilitator, who may record HackMD links in the
    pinned [fallback issue](../.github/ISSUE_TEMPLATE/group-submission.md).
 2. The facilitator approves each group from the private dashboard. Approved work
-   appears on the session's passcode-gated dashboard for the room, and it becomes
-   world-readable only once archived here.
-3. After the session, the facilitator exports the approved submissions whose groups
-   opted in to sharing and commits them here.
+   appears on the session's passcode-gated dashboard, which is where participants read
+   it, during the session and afterwards. It becomes world-readable only if a
+   facilitator archives it here, which the 9 September 2026 cohort did not do.
+3. The passcode therefore has to stay set for participants to come back to the board.
+   Clearing it on the facilitator page closes the dashboard to everyone.
 
-## The archive workflow (facilitator, after the session)
+## The archive workflow, if a cohort is published (facilitator, after the session)
 
 1. On the facilitator dashboard, click Export approved (Markdown). It downloads a
    file named `YYYY-MM-DD_genai-rt-submissions.md`, dated with the day you export,
@@ -79,6 +90,11 @@ automation–steering map and oversight model, the field reflection and the chec
 named. Rubric scores and the societal reflection are preserved
 as well, where a fallback note supplies them. Read across a cohort and you have a frank map of where
 these tools helped real researchers and where a human had to stay in charge.
+
+## Queries
+
+Anything about a submission, about the dashboard passcode or about withdrawing work
+goes to [pablo.bernabeu@education.ox.ac.uk](mailto:pablo.bernabeu@education.ox.ac.uk).
 
 ---
 
