@@ -5,7 +5,8 @@ supports two 30-minute workshop sessions, split by lunch, on using generative AI
 responsibly and effectively, including when to leave it alone.
 
 The repository provides material a facilitator can run and an open archive of group
-work collected on the day under [`submissions/`](submissions/).
+work collected on the day under [`submissions/`](submissions/). Participants can also
+read their own cohort's approved work on the app's passcode-gated session dashboard.
 
 > The stance is critical, evidence-oriented and balanced. The aim is discernment, not
 > enthusiasm. One idea runs through everything here: the friction a researcher feels
@@ -163,16 +164,23 @@ Participants never touch Git or GitHub. The flow is deliberately simple.
    them with the facilitator.
 2. The facilitator approves each group from the private dashboard. Approved work
    appears on the passcode-gated session dashboard for the room.
-3. After the session, the facilitator exports the approved, consented work and commits
-   it under [`submissions/`](submissions/) using the sortable naming convention
-   `YYYY-MM-DD_groupNN_track-X_short-slug.md`.
+3. After the session, the facilitator exports the approved work of the groups that
+   consented to sharing and commits it under [`submissions/`](submissions/), using the
+   sortable naming convention `YYYY-MM-DD_groupNN_track-X_short-slug.md`.
+4. Participants read their own cohort's approved work, consented or not, on the
+   dashboard at
+   [genai-rt.web.app/dashboard.html](https://genai-rt.web.app/dashboard.html), with the
+   passcode they were given on the day. That board stays open only while its passcode
+   stays set, so setting a new one for a later session closes it on the earlier cohort.
 
 Full details, including the app, the export step and the fallback issue template, are
 in [`submissions/README.md`](submissions/README.md) and
 [`firebase-app/README.md`](firebase-app/README.md).
 
-Questions and discussion go to the repository's Discussions tab. The closing slide
-and the follow-up email point there, so that answers are shared with everyone. In a
+Questions and discussion go to the repository's Discussions tab, so that answers are
+shared with everyone, and anything that should not be public goes to
+[pablo.bernabeu@education.ox.ac.uk](mailto:pablo.bernabeu@education.ox.ac.uk). The
+closing slide and the follow-up email point to both. In a
 fork or an adapted copy, turn the feature on under *Settings → Features → Discussions*.
 
 ---

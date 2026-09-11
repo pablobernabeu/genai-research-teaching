@@ -10,7 +10,7 @@ A short reset that gets the live app into a clean, ready state for Westminster o
 - [ ] Confirm that sign-in actually completes and that you are on the dashboard, not on the sign-in card. If it bounces, the project's Google sign-in needs checking in the Firebase console, which is a pre-deployment concern to fix before the room fills.
 - [ ] Clear the rehearsal and test groups. Deletion is console-only, with no button on the dashboard. In the Firestore console, delete stray test documents from the `groups` collection and the matching `groupNames` entry, or the name stays reserved.
 - [ ] Confirm that the facilitator group list is clear of rehearsal entries (that is where draft and submitted test groups show) and that the public board at genai-rt.web.app/dashboard.html is empty.
-- [ ] Set today's passcode in the Session passcode panel and write it where you can read it out (it overwrites any rehearsal value). The status should then read 'Passcode set. Read it out to the room.' Confirm that the public dashboard opens with this passcode too. Until it is set, no group can start.
+- [ ] Set today's passcode in the Session passcode panel and write it where you can read it out (it overwrites any rehearsal value). The status should then read 'Passcode set. Read it out to the room.' Confirm that the public dashboard opens with this passcode too. Until it is set, no group can start. Note that setting a new passcode closes the dashboard on any earlier cohort still using the old one, so keep a record of which passcode belongs to which session before overwriting it.
 - [ ] In the Session timer panel, set Minutes (the default is 15, the build window) but do not start it yet. Set it to 14 rather than 15, so the countdown ends at 13:32 and leaves a minute to submit inside the build window. Pressing Start again with a new number simply restarts the countdown, so if the settle-in runs late, set Minutes to the time remaining until 13:32.
 - [ ] Have the 'Open the workshop app' slide ready, with the large URL genai-rt.web.app and the scannable QR code.
 - [ ] During lunch, glance at the dashboard once more: passcode set, no stray groups, timer not running.
@@ -32,8 +32,9 @@ A short reset that gets the live app into a clean, ready state for Westminster o
 ## After Part 2 (once groups have submitted)
 
 - [ ] Export approved (Markdown) from the dashboard is the default path. It exports only approved and consented groups and downloads `YYYY-MM-DD_genai-rt-submissions.md`, dated with the day you export.
-- [ ] Check it before committing (names and content), rename it to the workshop date if you exported later, then commit under `submissions/`.
+- [ ] Check it before committing (names and content), rename it to the workshop date if you exported later, then commit under `submissions/`. Redact anything that identifies a person or an institution, and record on the note what you took out.
 - [ ] Alternatively, from your own machine if pre-configured, run `npm run archive:pr` (it needs `GENAI_RT_PROJECT` and `GENAI_RT_API_KEY` set and `gh` already logged in). To preview, run `npm run archive:pr -- --dry-run`. If either is not ready, use the Markdown export above.
+- [ ] Leave the session passcode set. The dashboard is how participants reach the work that was approved but not consented to sharing, and it closes on them the moment the passcode changes.
 
 ## Troubleshooting
 

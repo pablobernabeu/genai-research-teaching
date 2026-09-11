@@ -51,8 +51,8 @@ A featured workshop in two 30-minute parts, split by a networking lunch.
 | When | Action |
 |---|---|
 | Same day | Check that every app group is approved on the dashboard, and that any HackMD-fallback group's link is in the issue. Nudge any missing. |
-| +1–2 days | Export the approved, consented work from the dashboard (Export approved (Markdown)), export any HackMD-fallback note too, and archive under `submissions/` (see [submissions/README.md](../submissions/README.md)). |
-| +3–5 days | Send the [follow-up email](post_workshop_followup.md) with the responsible-use commitment and the archive link. |
+| +1–2 days | Export the approved, consented work from the dashboard (Export approved (Markdown)), export any HackMD-fallback note too, and archive under `submissions/` (see [submissions/README.md](../submissions/README.md)). Leave the session passcode set, so participants can still reach the dashboard. |
+| +3–5 days | Send the [follow-up email](post_workshop_followup.md) with the responsible-use commitment, the archive link, and the dashboard link and passcode. |
 
 ---
 

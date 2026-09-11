@@ -12,6 +12,11 @@
     <header class="page">
       <h1>Workshop app: live dashboard</h1>
       <p class="sub">Approved submissions and summary statistics for this session.</p>
+      <p class="small muted" style="margin:0.35rem 0 0">
+        Were you at the session? Enter the passcode your facilitator read out and you can
+        read every submission the groups approved and agreed to share. Questions go to
+        <a href="mailto:pablo.bernabeu@education.ox.ac.uk">pablo.bernabeu@education.ox.ac.uk</a>.
+      </p>
     </header>
 
     <div id="status" class="notice info">Connecting…</div>
@@ -20,8 +25,8 @@
     <section id="gateView" class="card signin-card" hidden>
       <h2>Enter the session passcode</h2>
       <p class="muted small">
-        This dashboard is for the current session. Enter the passcode your facilitator
-        read out, the same one groups use to start.
+        Enter the passcode your facilitator read out, the same one groups use to start.
+        It keeps working after the session, so you can come back to this page later.
       </p>
       <form id="gateForm" autocomplete="off">
         <label for="gatePass">Passcode</label>
@@ -88,6 +93,10 @@
 
     <p class="experimental">
       This board shows approved submissions only. The app is the record of the session, and HackMD is the fallback for groups that cannot use it.
+      The groups that ticked the sharing box are also published, redacted, in the open archive at
+      <a href="https://github.com/pablobernabeu/genai-research-teaching/tree/main/submissions" target="_blank" rel="noopener">github.com/pablobernabeu/genai-research-teaching</a>.
+      For any query about the session or about your group's submission, write to
+      <a href="mailto:pablo.bernabeu@education.ox.ac.uk">pablo.bernabeu@education.ox.ac.uk</a>.
     </p>
   </main>
 
