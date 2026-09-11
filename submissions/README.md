@@ -4,12 +4,11 @@ This folder is the reproducible archive of participants' group work. Nothing her
 produced with Git on the day. The facilitator curates it afterwards from the approved,
 consented submissions in the workshop app, with HackMD or paper notes as the fallback.
 
-> **Were you at the session and looking for your group's work?** The consented notes are
-> the files in this folder. To read everything your cohort had approved, including the
-> groups that did not tick the sharing box, go to
-> [genai-rt.web.app/dashboard.html](https://genai-rt.web.app/dashboard.html) and enter
-> the session passcode your facilitator read out on the day. If you no longer have the
-> passcode, or have any other query, write to
+> **Were you at the session and looking for your group's work?** The archived notes are
+> the files in this folder. Your cohort's session dashboard is at
+> [genai-rt.web.app/dashboard.html](https://genai-rt.web.app/dashboard.html), which opens
+> with the session passcode your facilitator read out on the day. If you no longer have
+> the passcode, or have any other query, write to
 > [pablo.bernabeu@education.ox.ac.uk](mailto:pablo.bernabeu@education.ox.ac.uk).
 
 ## How collection works

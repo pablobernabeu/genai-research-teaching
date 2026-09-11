@@ -34,7 +34,7 @@ A short reset that gets the live app into a clean, ready state for Westminster o
 - [ ] Export approved (Markdown) from the dashboard is the default path. It exports only approved and consented groups and downloads `YYYY-MM-DD_genai-rt-submissions.md`, dated with the day you export.
 - [ ] Check it before committing (names and content), rename it to the workshop date if you exported later, then commit under `submissions/`. Redact anything that identifies a person or an institution, and record on the note what you took out.
 - [ ] Alternatively, from your own machine if pre-configured, run `npm run archive:pr` (it needs `GENAI_RT_PROJECT` and `GENAI_RT_API_KEY` set and `gh` already logged in). To preview, run `npm run archive:pr -- --dry-run`. If either is not ready, use the Markdown export above.
-- [ ] Leave the session passcode set. The dashboard is how participants reach the work that was approved but not consented to sharing, and it closes on them the moment the passcode changes.
+- [ ] Leave the session passcode set. It is how participants reach the session dashboard, and the board closes on them the moment the passcode changes.
 
 ## Troubleshooting
 

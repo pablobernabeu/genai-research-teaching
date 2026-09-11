@@ -5,8 +5,8 @@ supports two 30-minute workshop sessions, split by lunch, on using generative AI
 responsibly and effectively, including when to leave it alone.
 
 The repository provides material a facilitator can run and an open archive of group
-work collected on the day under [`submissions/`](submissions/). Participants can also
-read their own cohort's approved work on the app's passcode-gated session dashboard.
+work collected on the day under [`submissions/`](submissions/). Each cohort also has
+its own passcode-gated session dashboard in the app.
 
 > The stance is critical, evidence-oriented and balanced. The aim is discernment, not
 > enthusiasm. One idea runs through everything here: the friction a researcher feels
@@ -167,8 +167,7 @@ Participants never touch Git or GitHub. The flow is deliberately simple.
 3. After the session, the facilitator exports the approved work of the groups that
    consented to sharing and commits it under [`submissions/`](submissions/), using the
    sortable naming convention `YYYY-MM-DD_groupNN_track-X_short-slug.md`.
-4. Participants read their own cohort's approved work, consented or not, on the
-   dashboard at
+4. Participants reach their cohort's session dashboard at
    [genai-rt.web.app/dashboard.html](https://genai-rt.web.app/dashboard.html), with the
    passcode they were given on the day. That board stays open only while its passcode
    stays set, so setting a new one for a later session closes it on the earlier cohort.
