@@ -1,16 +1,16 @@
 # Post-workshop follow-up email and responsible-use commitment
 
-> Send three to five days after the session. It closes the loop, points people at the session dashboard where their work lives and offers a light, voluntary commitment to carry the thinking forward. The paragraphs are continuous single lines, so the body pastes cleanly into an email client.
+> Send three to five days after the session. It closes the loop, shares the open archive, points people at the session dashboard and offers a light, voluntary commitment to carry the thinking forward. The paragraphs are continuous single lines, so the body pastes cleanly into an email client.
 
 ---
 
-Subject: Thank you, your group's work and a small commitment
+Subject: Thank you, the archive and a small commitment
 
 Dear colleague,
 
 Thank you for the energy you brought to Generative AI in research and teaching. The most striking thing was the quality of the caught errors and the safeguards you designed, which is exactly the discernment the session was for.
 
-You can read what every group approved and agreed to share at https://genai-rt.web.app/dashboard.html. Enter the session passcode I read out on the day, the same one your group used to start, and the board opens with all the shared submissions and a summary of the three quick scales many of you filled in. Together they are a record of where these tools helped and where human judgement remained necessary. The work is not published anywhere else, so if you have lost the passcode, or would like your group's note amended or taken down, just ask me.
+Notes from the groups that ticked the sharing box have been reviewed, redacted where they named anyone or any institution, and published at https://github.com/pablobernabeu/genai-research-teaching (see `submissions/`). They form a collective record of where these tools helped and where human judgement remained necessary. You can also read your cohort's approved work in full, sharing box ticked or not, at https://genai-rt.web.app/dashboard.html: enter the session passcode I read out on the day, and the board opens with the submissions and a summary of the three quick scales many of you filled in. If you have lost the passcode, or would like your group's note amended or taken down, just ask me.
 
 The one idea worth keeping is to treat friction, the moment a tool resists you or quietly gets something wrong, as a signal. It marks where your judgement is doing the real work.
 

@@ -4,9 +4,9 @@ A public, reproducible teaching kit for university researchers and educators. It
 supports two 30-minute workshop sessions, split by lunch, on using generative AI
 responsibly and effectively, including when to leave it alone.
 
-The repository provides material a facilitator can run. Group work collected on the day
-stays in the workshop app and is read on its passcode-gated session dashboard, not
-published here. See [`submissions/`](submissions/).
+The repository provides material a facilitator can run and an open archive of group
+work collected on the day under [`submissions/`](submissions/). Participants can also
+read their own cohort's approved work on the app's passcode-gated session dashboard.
 
 > The stance is critical, evidence-oriented and balanced. The aim is discernment, not
 > enthusiasm. One idea runs through everything here: the friction a researcher feels
@@ -132,7 +132,7 @@ than from the paper.
 │   ├── post_workshop_followup.md   ← follow-up email and responsible-use commitment
 │   └── group_pack_cover.md · role_cards.md · starter_prompts.md ← superseded material from the earlier, longer activity, not printed for 9 September 2026
 │
-├── submissions/                    ← where to read a cohort's work, and the archive option
+├── submissions/                    ← the open archive of group notes
 │   ├── README.md                   ← collection, export and naming convention
 │   └── _TEMPLATE.md                ← shape of an archived note
 │
@@ -164,12 +164,14 @@ Participants never touch Git or GitHub. The flow is deliberately simple.
    them with the facilitator.
 2. The facilitator approves each group from the private dashboard. Approved work
    appears on the passcode-gated session dashboard for the room.
-3. After the session, participants read the approved work on that same dashboard, at
+3. After the session, the facilitator exports the approved work of the groups that
+   consented to sharing and commits it under [`submissions/`](submissions/), using the
+   sortable naming convention `YYYY-MM-DD_groupNN_track-X_short-slug.md`.
+4. Participants read their own cohort's approved work, consented or not, on the
+   dashboard at
    [genai-rt.web.app/dashboard.html](https://genai-rt.web.app/dashboard.html), with the
-   passcode they were given. The work is not published in this repository, so the
-   passcode must stay set for the board to remain open. A facilitator adapting the kit
-   who does want a public archive will find the steps and the naming convention in
-   [`submissions/README.md`](submissions/README.md).
+   passcode they were given on the day. That board stays open only while its passcode
+   stays set, so setting a new one for a later session closes it on the earlier cohort.
 
 Full details, including the app, the export step and the fallback issue template, are
 in [`submissions/README.md`](submissions/README.md) and

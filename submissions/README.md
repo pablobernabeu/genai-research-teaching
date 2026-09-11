@@ -1,18 +1,16 @@
-# Submissions
+# Submissions: the open archive
 
-> **Looking for the work your group did on 9 September 2026?** It is not published in
-> this repository. Go to
+This folder is the reproducible archive of participants' group work. Nothing here is
+produced with Git on the day. The facilitator curates it afterwards from the approved,
+consented submissions in the workshop app, with HackMD or paper notes as the fallback.
+
+> **Were you at the session and looking for your group's work?** The consented notes are
+> the files in this folder. To read everything your cohort had approved, including the
+> groups that did not tick the sharing box, go to
 > [genai-rt.web.app/dashboard.html](https://genai-rt.web.app/dashboard.html) and enter
-> the session passcode your facilitator read out on the day. The board shows every
-> submission the groups approved and agreed to share, with the summary statistics. If
-> you no longer have the passcode, or have any other query, write to
+> the session passcode your facilitator read out on the day. If you no longer have the
+> passcode, or have any other query, write to
 > [pablo.bernabeu@education.ox.ac.uk](mailto:pablo.bernabeu@education.ox.ac.uk).
-
-Group work stays in the workshop app, and the session dashboard is where participants
-read it. This folder holds no participants' work. It documents the shape an archived
-note takes, in [`_TEMPLATE.md`](_TEMPLATE.md), and the steps below, for a facilitator
-adapting the kit who does decide to publish a cohort openly. Publishing is a decision to
-take cohort by cohort, with the groups' agreement, and not the default.
 
 ## How collection works
 
@@ -25,12 +23,14 @@ take cohort by cohort, with the groups' agreement, and not the default.
    pinned [fallback issue](../.github/ISSUE_TEMPLATE/group-submission.md).
 2. The facilitator approves each group from the private dashboard. Approved work
    appears on the session's passcode-gated dashboard, which is where participants read
-   it, during the session and afterwards. It becomes world-readable only if a
-   facilitator archives it here, which the 9 September 2026 cohort did not do.
-3. The passcode therefore has to stay set for participants to come back to the board.
-   Clearing it on the facilitator page closes the dashboard to everyone.
+   their own cohort's work, during the session and afterwards, and it becomes
+   world-readable only once archived here. The passcode therefore has to stay set for
+   participants to come back to that board, since clearing it on the facilitator page
+   closes the dashboard to everyone.
+3. After the session, the facilitator exports the approved submissions whose groups
+   opted in to sharing and commits them here.
 
-## The archive workflow, if a cohort is published (facilitator, after the session)
+## The archive workflow (facilitator, after the session)
 
 1. On the facilitator dashboard, click Export approved (Markdown). It downloads a
    file named `YYYY-MM-DD_genai-rt-submissions.md`, dated with the day you export,
@@ -75,19 +75,43 @@ YYYY-MM-DD_groupNN_track-X_short-slug.md
   own problem.
 - `short-slug` is two or three words on the problem, lower-case and hyphenated.
 
-Examples:
+Examples, which are illustrative and belong to no archived cohort:
 
 ```
-2026-09-09_group01_track-A_survey-method-critique.md
-2026-09-09_group03_track-C_reading-time-explainer.md
-2026-09-09_group07_track-D_lay-summary-fidelity.md
+2026-10-14_group01_track-A_survey-method-critique.md
+2026-10-14_group03_track-C_reading-time-explainer.md
+2026-10-14_group07_track-D_lay-summary-fidelity.md
 ```
+
+## Archived cohorts
+
+### 9 September 2026
+
+Four groups, all approved and all consented to sharing. One file per group, in export
+order:
+
+| File | Track | The problem |
+|---|---|---|
+| [`2026-09-09_group01_track-D_abstract-audience-translation.md`](2026-09-09_group01_track-D_abstract-audience-translation.md) | D · Public Engagement Translator | one research abstract translated for three audiences, across two tools |
+| [`2026-09-09_group02_track-B_email-admin-backlog.md`](2026-09-09_group02_track-B_email-admin-backlog.md) | B · Accessible Executive-Function Layer | an email or admin backlog, worked on a student check-in message |
+| [`2026-09-09_group03_track-C_reading-time-one-pager.md`](2026-09-09_group03_track-C_reading-time-one-pager.md) | C · Rapid Prototyping | a one-page explainer built on the track's synthetic reading-time data |
+| [`2026-09-09_group04_track-A_coursework-assessment-framework.md`](2026-09-09_group04_track-A_coursework-assessment-framework.md) | A · Methodological Blind-Spot Detector | a framework for coursework assessment in UK higher education |
+
+Two things were taken out. Group 04 named the institution it was studying, and that name
+is replaced with a bracketed placeholder. The placeholder takes the name out of the note,
+and no further than that, because this repository names the workshop host and the date
+elsewhere, so a reader may still infer the institution. Separately, no note reproduces
+the name its group chose in the app, since two of the four chose their position in the
+room, which identifies them to everyone who was there. Each note records on its face what
+was taken out of it.
 
 ## A note on what is preserved
 
 The point of the archive is the reasoning: the tracks chosen, the caught errors, the
 automation–steering map and oversight model, the field reflection and the checkpoints
-named. Rubric scores and the societal reflection are preserved
+named. A note also carries the group's three optional scales, which are the field's use
+here, trust before checking and human steering needed, with 'Not answered' where a group
+skipped one. Rubric scores and the societal reflection are preserved
 as well, where a fallback note supplies them. Read across a cohort and you have a frank map of where
 these tools helped real researchers and where a human had to stay in charge.
 
