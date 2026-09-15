@@ -1,4 +1,4 @@
-# Generative AI in research and teaching: a practical, critical workshop
+# Generative AI in research and teaching: A practical, critical workshop
 
 A public, reproducible teaching kit for university researchers and educators. It
 supports two 30-minute workshop sessions, split by lunch, on using generative AI
